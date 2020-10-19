@@ -1,0 +1,10 @@
+@mixin box-size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-size-line-height($w, $h) {
+  width: $w;
+  height: $h;
+  line-height: $h;
+}

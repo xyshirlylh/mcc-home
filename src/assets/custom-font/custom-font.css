@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Arial";
+    src: local('Arial'), url("ARIAL.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: local('Source Sans Pro'), url("SourceSansPro-Regular.otf") format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: local('Helvetica Neue'), url("Helvetica25UltraLight.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: local('Avenir'), url("AvenirLTStd-Medium.otf") format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: local('Raleway'), url("Raleway-VariableFont_wght.ttf") format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}

@@ -1,0 +1,181 @@
+@import "reset";
+
+body, html, #app {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #303133;
+  background-color: #fff;
+  font-family: $font-family1;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*************** layout ******************/
+.flex-1 { flex: 1 }
+.flex-2 { flex: 2 }
+.flex-3 { flex: 3 }
+.flex-4 { flex: 4 }
+.flex-5 { flex: 5 }
+
+.flex-wrap { flex-wrap: wrap; }
+.font-bold { font-weight: bold; }
+.cursor-pointer { cursor: pointer; }
+.align-items-center { align-items: center; }
+.flex-row { display: flex; flex-direction: row; }
+.justify-content-end { justify-content: flex-end; }
+.justify-content-center { justify-content: center; }
+.flex-column { display: flex; flex-direction: column; }
+.justify-content-between { justify-content: space-between; }
+
+
+/*************** z-index  *****************/
+.z-index-1000 { z-index: 1000 }
+.z-index-100  { z-index: 100  }
+
+
+/*************** position  ****************/
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.text-align-center { text-align: center; }
+.position-covered  { left: 0; top: 0; right: 0; bottom: 0; }
+.position-fix      { position: fixed; left: 0; top: 0; right: 0; bottom: 0; }
+
+
+/*************** font family ****************/
+.f-f-sans    { font-family: $font-family1; }
+.f-f-neue    { font-family: $font-family2; }
+.f-f-arial   { font-family: $font-family5; }
+.f-f-avenir  { font-family: $font-family3; }
+.f-f-raleway { font-family: $font-family4; }
+
+
+/*************** font size ******************/
+.f-s-10 { font-size: 1rem; }
+.f-s-11 { font-size: 1.1rem; }
+.f-s-12 { font-size: 1.2rem; }
+.f-s-14 { font-size: 1.4rem; }
+.f-s-15 { font-size: 1.5rem; }
+.f-s-16 { font-size: 1.6rem; }
+.f-s-17 { font-size: 1.7rem; }
+.f-s-18 { font-size: 1.8rem; }
+.f-s-20 { font-size: 2rem; }
+.f-s-25 { font-size: 2.5rem; }
+.f-s-30 { font-size: 3rem; }
+.f-s-40 { font-size: 4rem; }
+.f-s-80 { font-size: 8rem; }
+
+
+/*************** font color *****************/
+.f-c-0 { color: #ffffff }
+.f-c-1 { color: #000000 }
+.f-c-2 { color: #D00814 }
+.f-c-3 { color: #898A8B }
+.f-c-4 { color: #A2A0A0 }
+.f-c-5 { color: #E09A16 }
+.f-c-6 { color: #139517 }
+.f-c-7 { color: #B6B9C1 }
+.f-c-8 { color: #9DA2A5 }
+.f-c-9 { color: #B2B1B1 }
+.f-c-10{ color: #6E6E6E }
+.f-c-11{ color: #4B4B4B }
+.f-c-12{ color: #017BBC }
+.f-c-13{ color: #4D4F5C }
+.f-c-14{ color: #204051 }
+.f-c-15{ color: #84A9AC }
+
+
+/*************** bg color *****************/
+.bg-c-0  { background-color: #ffffff }
+.bg-c-1  { background-color: #204051 }
+.bg-c-2  { background-color: #152934 }
+.bg-c-3  { background-color: #A5A5A5 }
+.bg-c-4  { background-color: #566C77 }
+.bg-c-5  { background-color: #7E36F0 }
+.bg-c-6  { background-color: #EAEAEA }
+.bg-c-7  { background-color: #E3E3E3 }
+.bg-c-8  { background-color: #017BBC }
+.bg-c-9  { background-color: #E09A16 }
+.bg-c-10 { background-color: #D00814 }
+.bg-c-11 { background-color: #E6E6E6 }
+.bg-c-12 { background-color: #127BBC }
+.bg-c-13 { background-color: #F1F9FF }
+.bg-c-14 { background-color: #139517 }
+.bg-c-15 { background-color: #4B4B4B }
+.bg-c-16 { background-color: #6E6E6E }
+.bg-c-17 { background-color: #A3A1FB }
+.bg-c-18 { background-color: #bebebe }
+
+
+/*************** border radio ************/
+.b-r-2  { border-radius: 2px  }
+.b-r-4  { border-radius: 4px  }
+.b-r-30 { border-radius: 30px }
+
+
+/************** overwrite *******************/
+
+
+/*************** shared ******************/
+
+
+/*************** responsive ******************/
+@media screen and (max-width: 1920px) {
+  body, html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  body, html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body, html {
+    font-size: 10px;
+  }
+}
+
+/* ipad pro */
+@media screen and (max-width: 1024px) {
+  body, html {
+    font-size: 9px;
+  }
+}
+
+/* ipad */
+@media screen and (max-width: 768px) {
+  body {
+  }
+}
+
+/* iphone6 7 8 plus */
+@media screen and (max-width: 414px) {
+  body {
+  }
+}
+
+/* iphoneX */
+@media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 3) {
+  body {
+  }
+}
+
+/* iphone6 7 8 */
+@media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 2) {
+  body {
+  }
+}
+
+/* iphone5 */
+@media screen and (max-width: 320px) {
+  body {
+  }
+}
+
+
