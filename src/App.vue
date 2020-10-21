@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name : 'app',
+  
+  
+}
+</script>
+
+
 <style lang="scss">
   @import "./assets/styles/common.scss";
   /*@import "assets/iconfont/style.css";*/
