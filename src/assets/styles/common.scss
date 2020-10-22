@@ -51,10 +51,11 @@ body, html, #app {
 .f-f-arial   { font-family: $font-family5; }
 .f-f-avenir  { font-family: $font-family3; }
 .f-f-raleway { font-family: $font-family4; }
+.f-f-rubik   { font-family: $font-family6; }
 
 
 /*************** font size ******************/
-.f-s-10 { font-size: 1rem; }
+.f-s-10 { font-size: 1rem;   }
 .f-s-11 { font-size: 1.1rem; }
 .f-s-12 { font-size: 1.2rem; }
 .f-s-14 { font-size: 1.4rem; }
@@ -62,52 +63,29 @@ body, html, #app {
 .f-s-16 { font-size: 1.6rem; }
 .f-s-17 { font-size: 1.7rem; }
 .f-s-18 { font-size: 1.8rem; }
-.f-s-20 { font-size: 2rem; }
+.f-s-20 { font-size: 2rem;   }
+.f-s-24 { font-size: 2.4rem; }
 .f-s-25 { font-size: 2.5rem; }
-.f-s-30 { font-size: 3rem; }
-.f-s-40 { font-size: 4rem; }
-.f-s-80 { font-size: 8rem; }
+.f-s-30 { font-size: 3rem;   }
+.f-s-33 { font-size: 3.3rem; }
+.f-s-36 { font-size: 3.6rem; }
+.f-s-40 { font-size: 4rem;   }
+.f-s-80 { font-size: 8rem;   }
+.f-s-99 { font-size: 9.9rem; }
+.f-s-100{ font-size: 10rem;  }
+.f-s-129{ font-size: 12.9rem; }
 
 
 /*************** font color *****************/
-.f-c-0 { color: #ffffff }
-.f-c-1 { color: #000000 }
-.f-c-2 { color: #D00814 }
-.f-c-3 { color: #898A8B }
-.f-c-4 { color: #A2A0A0 }
-.f-c-5 { color: #E09A16 }
-.f-c-6 { color: #139517 }
-.f-c-7 { color: #B6B9C1 }
-.f-c-8 { color: #9DA2A5 }
-.f-c-9 { color: #B2B1B1 }
-.f-c-10{ color: #6E6E6E }
-.f-c-11{ color: #4B4B4B }
-.f-c-12{ color: #017BBC }
-.f-c-13{ color: #4D4F5C }
-.f-c-14{ color: #204051 }
-.f-c-15{ color: #84A9AC }
+.f-c-1  { color: #000000 }
+.f-c-10 { color: #C6C6C6 }
+.f-c-11 { color: #4A91F2 }
+.f-c-12 { color: #3B7DD8 }
+.f-c-13 { color: #717171 }
+
 
 
 /*************** bg color *****************/
-.bg-c-0  { background-color: #ffffff }
-.bg-c-1  { background-color: #204051 }
-.bg-c-2  { background-color: #152934 }
-.bg-c-3  { background-color: #A5A5A5 }
-.bg-c-4  { background-color: #566C77 }
-.bg-c-5  { background-color: #7E36F0 }
-.bg-c-6  { background-color: #EAEAEA }
-.bg-c-7  { background-color: #E3E3E3 }
-.bg-c-8  { background-color: #017BBC }
-.bg-c-9  { background-color: #E09A16 }
-.bg-c-10 { background-color: #D00814 }
-.bg-c-11 { background-color: #E6E6E6 }
-.bg-c-12 { background-color: #127BBC }
-.bg-c-13 { background-color: #F1F9FF }
-.bg-c-14 { background-color: #139517 }
-.bg-c-15 { background-color: #4B4B4B }
-.bg-c-16 { background-color: #6E6E6E }
-.bg-c-17 { background-color: #A3A1FB }
-.bg-c-18 { background-color: #bebebe }
 
 
 /*************** border radio ************/
@@ -125,56 +103,73 @@ body, html, #app {
 /*************** responsive ******************/
 @media screen and (max-width: 1920px) {
   body, html {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 
 @media screen and (max-width: 1440px) {
   body, html {
-    font-size: 12px;
+    font-size: 7.2px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  body, html {
+    font-size: 7.11px;
   }
 }
 
 @media screen and (max-width: 1280px) {
   body, html {
-    font-size: 10px;
+    font-size: 6.6px;
   }
 }
 
 /* ipad pro */
 @media screen and (max-width: 1024px) {
   body, html {
-    font-size: 9px;
+    font-size: 5.30px;
   }
 }
 
 /* ipad */
 @media screen and (max-width: 768px) {
-  body {
+  body, html {
+    font-size: 4px;
   }
 }
 
+
 /* iphone6 7 8 plus */
 @media screen and (max-width: 414px) {
-  body {
+  body, html {
+    font-size: 2.156px;
   }
 }
 
 /* iphoneX */
 @media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 3) {
-  body {
+  body, html {
+    font-size: 1.95px;
   }
 }
 
 /* iphone6 7 8 */
 @media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 2) {
-  body {
+  body, html {
+    font-size: 1.953px;
   }
 }
 
 /* iphone5 */
 @media screen and (max-width: 320px) {
-  body {
+  body, html {
+    font-size: 1.6666px;
+  }
+}
+@media screen and (max-width: 568px) {
+  body, html {
+    font-size: 2.958px;
   }
 }
 

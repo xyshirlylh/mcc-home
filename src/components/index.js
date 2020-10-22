@@ -1,7 +1,9 @@
 import Gap from './gap/Gap';
+import ProjectImageCard from "./card/ProjectImageCard";
 
 const components = [
   Gap,
+  ProjectImageCard,
 ];
 
 export default (Vue) => {
