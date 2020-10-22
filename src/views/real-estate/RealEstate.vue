@@ -139,7 +139,7 @@
 
 <style scoped lang="scss" type="text/scss">
   .real-estate {
-    width: calc(100% - 28rem);
+    width: 100%;
     min-height: 100%;
     padding: 18.1rem 14rem 0 14rem;
 
