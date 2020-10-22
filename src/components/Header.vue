@@ -99,67 +99,142 @@
 </script>
 
 <style scoped lang="scss" type="text/scss">
-  header {
-    @include box-size(100%, 50px);
-    border-bottom: 2px solid #E3E3E3;
+  @media screen and (max-width: 1024px) {
+    header {
+      @include box-size(100%, 50px);
+      border-bottom: 2px solid #E3E3E3;
 
-    .left {
-      padding-left: 14rem;
+      .left {
+        padding-left: 14rem;
+      }
+
+      .box-menu {
+        @include box-size-line-height(120px, 50px);
+
+        span:first-child {
+          letter-spacing: 0.96px;
+          padding-left: 17px;
+          padding-right: 10px;
+          font-size: 15px;
+        }
+
+        .icon-menu {
+          .line {
+            background-color: #000000;
+            transform-origin: 7px;
+            position: absolute;
+            height: 2px;
+            left: 75%;
+            transition: all 500ms ease;
+          }
+          .line-1 {
+            width: 30px;
+            margin-top: 15px;
+          }
+          .line-2 {
+            width: 20px;
+            margin-top: 25px;
+          }
+          .line-3 {
+            width: 25px;
+            margin-top: 35px;
+          }
+        }
+
+        &:hover {
+          .line-2, .line-3 {
+            width: 30px;
+          }
+        }
+      }
+
+      .menu-list {
+        width: 100%;
+        height: 0;
+        background-color: #ffffff;
+        padding-left: 14rem;
+        padding-right: 53px;
+        box-shadow: 0px 3px 6px #00000029;
+        transition: height 300ms ease-in-out;
+
+        .row-icon {
+          margin-top: 23px;
+          p:last-child {
+            font-size: 14px;
+          }
+        }
+      }
     }
+  }
 
-    .box-menu {
-      @include box-size-line-height(120px, 50px);
+  @media screen and (min-width: 1025px) {
+    header {
+      @include box-size(100%, 9.4rem);
+      border-bottom: 2px solid #E3E3E3;
 
-      span:first-child {
-        letter-spacing: 0.96px;
-        padding-left: 17px;
-        padding-right: 10px;
-        font-size: 15px;
-      }
+      .left {
+        padding-left: 14rem;
 
-      .icon-menu {
-        .line {
-          background-color: #000000;
-          transform-origin: 7px;
-          position: absolute;
-          height: 2px;
-          left: 75%;
-          transition: all 500ms ease;
-        }
-        .line-1 {
-          width: 30px;
-          margin-top: 15px;
-        }
-        .line-2 {
-          width: 20px;
-          margin-top: 25px;
-        }
-        .line-3 {
-          width: 25px;
-          margin-top: 35px;
+        img {
+          width: 6.2rem;
+          height: 5.1rem;
         }
       }
 
-      &:hover {
-        .line-2, .line-3 {
-          width: 30px;
+      .box-menu {
+        @include box-size-line-height(20.3rem, 9.4rem);
+
+        span:first-child {
+          letter-spacing: 0.96px;
+          padding-left: 5rem;
+          padding-right: 10px;
+          font-size: 2.4rem;
+        }
+
+        .icon-menu {
+          .line {
+            background-color: #000000;
+            transform-origin: 7px;
+            position: absolute;
+            height: 2px;
+            left: 75%;
+            transition: all 500ms ease;
+          }
+          .line-1 {
+            width: 4.5rem;
+            margin-top: 3rem;
+          }
+          .line-2 {
+            width: 3rem;
+            margin-top: 4.5rem;
+          }
+          .line-3 {
+            width: 3.8rem;
+            margin-top: 6rem;
+          }
+        }
+
+        &:hover {
+          .line-2, .line-3 {
+            width: 4.5rem;
+          }
         }
       }
-    }
 
-    .menu-list {
-      width: 100%;
-      height: 0;
-      background-color: #ffffff;
-      padding-left: 14rem;
-      padding-right: 53px;
-      box-shadow: 0px 3px 6px #00000029;
-      transition: height 300ms ease-in-out;
+      .menu-list {
+        width: 100%;
+        height: 0;
+        background-color: #ffffff;
+        padding-left: 14rem;
+        padding-right: 53px;
+        box-shadow: 0px 3px 6px #00000029;
+        transition: height 300ms ease-in-out;
 
-      .row-icon {
-        margin-top: 23px;
-        p:last-child {
-          font-size: 14px;
+        .row-icon {
+          margin-top: 23px;
+          p:last-child {
+            font-size: 14px;
+          }
         }
       }
     }

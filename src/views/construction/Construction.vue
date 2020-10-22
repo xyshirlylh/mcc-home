@@ -7,9 +7,9 @@
 
         <p class="f-s-100 f-c-1 font-bold" style="letter-spacing: 4px">Construction</p>
 
-        <gap :height="50"/>
+        <gap :height="40"/>
 
-        <p class="f-s-25 f-c-1">MCC Land develops and manages a wide range of properties including residential, commercial, office, and landmark projects, like Universal Studios Singapore and Resorts World. <br/><br/><br/>They are mostly known for their high-rise luxury condominium projects.</p>
+        <p class="f-s-25 f-c-1">MCC Land develops and manages a wide range of properties including residential, commercial, office, and landmark projects, like Universal Studios Singapore and Resorts World. <br/><br/>They are mostly known for their high-rise luxury condominium projects.</p>
 
         <gap :height="69"/>
 
@@ -21,19 +21,20 @@
       <gap :width="39"/>
 
       <ul class="flex-row flex-3 flex-wrap justify-content-between">
-        <li v-for="(item, i) in numbers" :key="item.id" :style="{borderBottomWidth: item.count ? 1 : 0}">
+        <li v-for="(item, i) in numbers" :key="item.id">
           <div class="f-c-12 flex-row">
             <p class="f-s-129 f-f-rubik" :ref="'countRef' + i">{{item.count}}</p>
             <p class="f-s-99 flex-row align-items-center">{{item.unit}}</p>
           </div>
-          <p class="f-c-13 f-f-sans f-s-25">{{item.label}}</p>
+
+          <p class="f-c-13 f-f-sans f-s-25 label-comment" :style="{borderBottomWidth: item.count ? 1 : 0}">{{item.label}}</p>
         </li>
       </ul>
     </section>
 
     <gap :height="200"/>
 
-    <section>
+    <section class="image-list">
       <label ref="titleOfSectionOne" class="f-s-36">Singapore construction projects</label>
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
@@ -47,7 +48,7 @@
 
     <gap :height="100"/>
 
-    <section>
+    <section class="image-list">
       <label class="f-s-36">International construction projects</label>
 
       <ul class="flex-row flex-wrap">
@@ -136,7 +137,7 @@
   .real-estate {
     width: 100%;
     min-height: 100%;
-    padding: 18.1rem 14rem 0 14rem;
+    padding: 14rem 14rem 0 14rem;
 
     .top-container {
       display: flex;
@@ -157,24 +158,30 @@
 
     section:nth-child(1) {
       ul {
+        padding-top: 8.5rem;
+
         li {
           width: 42.2rem;
-          border-bottom: 0.5px solid rgba(0,0,0,0.5);
 
           div {
             p:first-child {
               width: 28rem;
               letter-spacing: .5rem;
             }
+            p {
+              line-height: 11rem;
+            }
           }
 
-          &>p {
-            margin: 1.6rem 0;
+          .label-comment {
+            padding: 1.6rem 0;
+            border-bottom: 0.5px solid rgba(0,0,0,0.5);
           }
         }
       }
     }
-    section {
+
+    .image-list {
       label {
         line-height: 5.1rem;
         color: rgba(0,0,0,0.5);

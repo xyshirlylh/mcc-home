@@ -9,7 +9,7 @@
 
         <gap :height="50"/>
 
-        <p class="f-s-25 f-c-1">MCC Land develops and manages a wide range of properties including residential, commercial, office, and landmark projects, like Universal Studios Singapore and Resorts World. <br/><br/><br/>They are mostly known for their high-rise luxury condominium projects.</p>
+        <p class="f-s-25 f-c-1">MCC Land develops and manages a wide range of properties including residential, commercial, office, and landmark projects, like Universal Studios Singapore and Resorts World. <br/><br/>They are mostly known for their high-rise luxury condominium projects.</p>
 
         <gap :height="69"/>
 
@@ -25,7 +25,7 @@
             <p class="f-s-99 flex-row align-items-center">{{item.unit}}</p>
           </div>
 
-          <p class="f-c-13 f-f-sans f-s-25">{{item.label}}</p>
+          <p class="f-c-13 f-f-sans f-s-25 label-comment">{{item.label}}</p>
         </li>
       </ul>
     </section>
@@ -141,7 +141,7 @@
   .real-estate {
     width: 100%;
     min-height: 100%;
-    padding: 18.1rem 14rem 0 14rem;
+    padding: 14rem 14rem 0 14rem;
 
     .top-container {
       display: flex;
@@ -171,14 +171,19 @@
               width: 28rem;
               letter-spacing: .5rem;
             }
+
+            p {
+              line-height: 11rem;
+            }
           }
 
-          &>p {
+          .label-comment {
             margin: 1.6rem 0;
           }
         }
       }
     }
+
     section {
       label {
         line-height: 5.1rem;
