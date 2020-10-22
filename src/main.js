@@ -3,7 +3,8 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import components from './components/index'
+import components from './components/index';
+window.$ = window.jQuery = require('jquery');
 
 Vue.config.productionTip = false;
 Vue.use(components);

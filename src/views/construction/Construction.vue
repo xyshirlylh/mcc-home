@@ -2,10 +2,10 @@
   <div class="real-estate">
     <section class="top-container">
       <div class="flex-2">
-        <p class="f-s-25 f-c-10">MCC Land</p>
+        <p class="f-s-25 f-c-10">MCC Singapore</p>
         <gap :height="30"/>
 
-        <p class="f-s-100 f-c-1 font-bold" style="letter-spacing: 4px">Real estate</p>
+        <p class="f-s-100 f-c-1 font-bold" style="letter-spacing: 4px">Construction</p>
 
         <gap :height="50"/>
 
@@ -14,26 +14,27 @@
         <gap :height="69"/>
 
         <p class="f-s-24 f-c-11 font-bold cursor-pointer" @click="showAllProject">See all projects</p>
+
+        <img src="../../assets/imgs/construction/Screenshot_2020-08-17_at_15073@2x.png" width="100%"/>
       </div>
 
-      <gap :width="124"/>
+      <gap :width="39"/>
 
-      <ul class="flex-3 flex-row flex-wrap justify-content-between">
+      <ul class="flex-row flex-3 flex-wrap justify-content-between">
         <li v-for="(item, i) in numbers" :key="item.id" :style="{borderBottomWidth: item.count ? 1 : 0}">
           <div class="f-c-12 flex-row">
             <p class="f-s-129 f-f-rubik" :ref="'countRef' + i">{{item.count}}</p>
             <p class="f-s-99 flex-row align-items-center">{{item.unit}}</p>
           </div>
-
           <p class="f-c-13 f-f-sans f-s-25">{{item.label}}</p>
         </li>
       </ul>
     </section>
 
-    <gap :height="150"/>
+    <gap :height="200"/>
 
     <section>
-      <label ref="titleOfSectionOne" class="f-s-36">Singapore property projects</label>
+      <label ref="titleOfSectionOne" class="f-s-36">Singapore construction projects</label>
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
         <template v-for="item in propertiesInSG">
@@ -47,7 +48,7 @@
     <gap :height="100"/>
 
     <section>
-      <label class="f-s-36">International property projects</label>
+      <label class="f-s-36">International construction projects</label>
 
       <ul class="flex-row flex-wrap">
         <template v-for="(item, i) in propertiesInInt">
@@ -61,45 +62,38 @@
 </template>
 
 <script>
-  import anime from 'animejs/lib/anime.es.js';
   import ProjectImageCard from "../../components/card/ProjectImageCard";
+  import anime from "animejs";
 
   export default {
-    name: "RealEstate",
+    name: "Construction",
     components: {ProjectImageCard},
     data() {
       return {
         boxWidth: 0,
         numbers: [
           {id: '5', count: '', unit: '', label: ''},
-          {id: '0', count: '13', unit: '', label: 'Total No. of completed projects'},
-          {id: '1', count: '52', unit: 'm', label: 'Total No. of turnkey contract'},
-          {id: '2', count: '97.3', unit: 'm', label: 'Total sq. ft.'},
-          {id: '3', count: '68.2', unit: 'm', label: 'Sq. ft. of industrial property'},
-          {id: '4', count: '21.6', unit: 'm', label: 'Year of First International Acquisition'},
+          {id: '0', count: '89.2', unit: '', label: 'Total No. of completed projects'},
+          {id: '1', count: '56.1', unit: 'm', label: 'Total No. of turnkey contract'},
+          {id: '2', count: '24.3', unit: 'm', label: 'Total sq. ft.'},
+          {id: '3', count: '66', unit: 'm', label: 'Sq. ft. of industrial property'},
+          {id: '4', count: '43', unit: 'm', label: 'Year of First International Acquisition'},
         ],
         propertiesInSG: [
-          {id: '0', imageSrc: require('../../assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), type: 'Residential property', year: '2018', name: 'Queens Peak', location: 'Central, Singapore'},
-          {id: '1', imageSrc: require('../../assets/imgs/real-estate/alps-residences-img-001@2x.png'), type: 'Residential property', year: '2018', name: 'The Alps Residences', location: 'Central, Singapore'},
-          {id: '2', imageSrc: require('../../assets/imgs/real-estate/northwave-img-002@2x.png'), type: 'Residential property', year: '2018', name: 'Northwave', location: 'Central, Singapore'},
-          {id: '3', imageSrc: require('../../assets/imgs/real-estate/poiz-img-002@2x.png'), type: 'Residential property', year: '2018', name: 'The Poiz', location: 'Central, Singapore'},
-          {id: '4', imageSrc: require('../../assets/imgs/real-estate/santorini-img-002@2x.png'), type: 'Residential property', year: '2018', name: 'The Santorini', location: 'Central, Singapore'},
-          {id: '5', imageSrc: require('../../assets/imgs/real-estate/sea-horizon-img-003@2x.png'), type: 'Residential property', year: '2018', name: 'Sea Horizon', location: 'Central, Singapore'},
-          {id: '6', imageSrc: require('../../assets/imgs/real-estate/forestville-img-008@2x.png'), type: 'Residential property', year: '2018', name: 'Forestville', location: 'Central, Singapore'},
-          {id: '7', imageSrc: require('../../assets/imgs/real-estate/one-canberra-img-004@2x.png'), type: 'Residential property', year: '2018', name: 'One Canberra', location: 'Central, Singapore'},
-          {id: '8', imageSrc: require('../../assets/imgs/real-estate/nautical-img-001@2x.png'), type: 'Residential property', year: '2018', name: 'The Nautical', location: 'Central, Singapore'},
-          {id: '9', imageSrc: require('../../assets/imgs/real-estate/canberra-residences-img-007@2x.png'), type: 'Residential property', year: '2018', name: 'Canberra Residences', location: 'Central, Singapore'},
-          {id: '10', imageSrc: require('../../assets/imgs/real-estate/canopy-img-001@2x.png'), type: 'Residential property', year: '2018', name: 'The Canopy', location: 'Central, Singapore'},
+          {id: '0', imageSrc: require('../../assets/imgs/construction/sentosa-006@2x.png'), type: 'Residential property', year: '2018', name: 'Resorts World Sentosa', location: 'Central, Singapore'},
+          {id: '1', imageSrc: require('../../assets/imgs/construction/woodlands-checkpoint-002@2x.png'), type: 'Residential property', year: '2018', name: 'Woodlands Checkpoint', location: 'Central, Singapore'},
+          {id: '2', imageSrc: require('../../assets/imgs/construction/singapore-expo-001@2x.png'), type: 'Residential property', year: '2018', name: 'Singapore Expo', location: 'Central, Singapore'},
+          {id: '3', imageSrc: require('../../assets/imgs/construction/sunshine-garden-img-006@2x.png'), type: 'Residential property', year: '2018', name: 'Sunshine Garden', location: 'Central, Singapore'},
+          {id: '4', imageSrc: require('../../assets/imgs/construction/emerald-img-001@2x.png'), type: 'Residential property', year: '2018', name: 'Emerald', location: 'Central, Singapore'},
+          {id: '5', imageSrc: require('../../assets/imgs/construction/anchorvale-horizon-img-006@2x.png'), type: 'Residential property', year: '2018', name: 'Anchorvale Horizon', location: 'Central, Singapore'},
         ],
         propertiesInInt: [
-          {id: '0', imageSrc: require('../../assets/imgs/real-estate/Dara-Sakor-Slider-5@2x.png'), type: 'Residential property', year: '2018', name: 'Dara Sakor', location: 'Central, Singapore'},
-          {id: '1', imageSrc: require('../../assets/imgs/real-estate/skyvilla-img-002@2x.png'), type: 'Residential property', year: '2018', name: 'Sky Villa', location: 'Central, Singapore'},
+          {id: '0', imageSrc: require('../../assets/imgs/construction/Dara-Sakor-Slider-5@2x.png'), type: 'Residential property', year: '2018', name: 'Dara Sakor', location: 'Central, Singapore'},
         ],
-        timer: null,
       }
     },
     created() {
-      this.timer = setTimeout(() => {
+      setTimeout(() => {
         const width = this.$refs.contentRef.clientWidth;
         this.boxWidth = `${((width - 50)/2)}px`;
 
@@ -123,6 +117,7 @@
         for (let i = 0; i < this.numbers.length; i++) {
           const item = this.numbers[i];
           const el = this.$refs[`countRef${i}`];
+
 
           item.count && anime({
             targets: el,
@@ -187,6 +182,7 @@
 
       ul {
         margin-top: 6rem;
+
         li {
           margin-bottom: 5.7rem;
         }
