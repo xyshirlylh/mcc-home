@@ -17,7 +17,13 @@ const routes = [
   {
     path: '/construction',
     component: () => import('../views/construction/Construction')
-  }
+  },
+
+  {
+    path: "/loading",
+    name: "Loading",
+    component: () => import("../views/Loading.vue"),
+  },
 ];
 
 const router = new VueRouter({
