@@ -1,9 +1,6 @@
 <template>
   <div class="home">
-    <Header />
-
-    <div>
-      
+    <section class="top-container">
       <div id="ID01">
         <span>01</span>
       </div>
@@ -37,47 +34,7 @@
         </svg>
       </div>
 
-      <div id="Group_899">
-        <svg class="Ellipse_179_n">
-          <ellipse
-            id="Ellipse_179_n"
-            rx="6.5"
-            ry="6.5"
-            cx="6.5"
-            cy="6.5"
-          ></ellipse>
-        </svg>
-        <svg class="Ellipse_180_n">
-          <ellipse
-            id="Ellipse_180_n"
-            rx="47.5"
-            ry="47.5"
-            cx="47.5"
-            cy="47.5"
-          ></ellipse>
-        </svg>
-      </div>
-
-      <div id="Group_900">
-        <svg class="Ellipse_179_oa">
-          <ellipse
-            id="Ellipse_179_oa"
-            rx="6.5"
-            ry="6.5"
-            cx="6.5"
-            cy="6.5"
-          ></ellipse>
-        </svg>
-        <svg class="Ellipse_180_oa">
-          <ellipse
-            id="Ellipse_180_oa"
-            rx="47.5"
-            ry="47.5"
-            cx="47.5"
-            cy="47.5"
-          ></ellipse>
-        </svg>
-      </div>
+     <gap :height="364"/>
 
       <div id="Consultation">
         <span>Consultation</span>
@@ -91,36 +48,15 @@
         <span>Construction</span>
       </div>
 
-      <div id="ID02">
-        <span>02</span>
-      </div>
-
-      <div id="ID03">
-        <span>03</span>
-      </div>
-
-      <div id="ID04">
-        <span>04</span>
-      </div>
-
-      <div id="ID05">
-        <span>05</span>
-      </div>
-    </div>
-
-    <Footer />
+      
+    </section>
+    <gap :height="3000"/>
   </div>
 </template>
 
 <script>
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 export default {
   name: "Home",
-  components: {
-    Header,
-    Footer,
-  },
 };
 </script>
 
@@ -176,7 +112,7 @@ export default {
 }
 
 #Group_872 {
-  position: relative;
+  position: absolute;
   width: 95px;
   height: 95px;
   left: 140px;
@@ -185,7 +121,7 @@ export default {
 }
 
 #Group_899 {
-  position: relative;
+  position: absolute;
   width: 95px;
   height: 95px;
   left: 0px;
@@ -203,7 +139,7 @@ export default {
   shape-rendering: auto;
 }
 .Ellipse_179 {
-  position: relative;
+  position: absolute;
   overflow: visible;
   width: 13px;
   height: 13px;
@@ -221,7 +157,7 @@ export default {
   shape-rendering: auto;
 }
 .Ellipse_180 {
-  position: relative;
+  position: absolute;
   overflow: visible;
   width: 95px;
   height: 95px;
@@ -229,19 +165,11 @@ export default {
   top: 0px;
 }
 
-#Group_900 {
-  position: relative;
-  width: 95px;
-  height: 95px;
-  left: 0px;
-  top: 236px;
-  overflow: visible;
-}
+
 
 #Consultation {
-  left: 112px;
-  top: 5px;
   position: relative;
+  left: 252px;
   overflow: visible;
   width: 355px;
   white-space: nowrap;
@@ -254,9 +182,8 @@ export default {
   letter-spacing: 0.4px;
 }
 #Real_Estate {
-  left: 112px;
-  top: 122px;
   position: relative;
+  left: 252px;
   overflow: visible;
   width: 303px;
   white-space: nowrap;
@@ -269,9 +196,8 @@ export default {
   letter-spacing: 0.4px;
 }
 #Construction {
-  left: 112px;
-  top: 239px;
   position: relative;
+  left: 252px;
   overflow: visible;
   width: 358px;
   white-space: nowrap;
@@ -281,67 +207,6 @@ export default {
   font-weight: normal;
   font-size: 61px;
   color: rgba(227, 227, 227, 1);
-  letter-spacing: 0.4px;
-}
-
-#ID02 {
-  left: 140px;
-  top: 1150px;
-  position: absolute;
-  overflow: visible;
-  width: 49px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: PT Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 41px;
-  color: rgba(198, 198, 198, 1);
-  letter-spacing: 0.4px;
-}
-#ID03 {
-  left: 140px;
-  top: 2376px;
-  position: absolute;
-  overflow: visible;
-  width: 49px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: PT Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 41px;
-  color: rgba(191, 214, 246, 1);
-  letter-spacing: 0.4px;
-}
-#ID04 {
-  left: 140px;
-  top: 3427px;
-  position: absolute;
-  overflow: visible;
-  width: 49px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: PT Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 41px;
-  color: rgba(0, 0, 0, 1);
-  letter-spacing: 0.4px;
-}
-#ID05 {
-  left: 140px;
-  top: 4753px;
-  position: absolute;
-  overflow: visible;
-  width: 49px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: PT Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 41px;
-  color: rgba(191, 214, 246, 1);
   letter-spacing: 0.4px;
 }
 </style>
