@@ -10,9 +10,16 @@ const routes = [
     name: 'Home',
     component: Home
   },
+
+  {
+    path: "/loading",
+    name: "Loading",
+    component: () => import("../views/Loading.vue"),
+  },
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 });
 
