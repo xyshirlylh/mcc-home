@@ -1,19 +1,19 @@
 <template>
   <div>
     <el-header style="height: 94px; border: 1px solid #eee">
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-1">
-          <span
-            ><img
-              class="resize"
-              src="../assets/img/Group 871.svg"
-              style="padding: 23px"
-          /></span>
-        </div>
-        <div class="col-8"></div>
-        <div class="col-2">
-          <p
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+            <span style="position: relative; left: 80px"
+              ><img
+                class="resize"
+                src="../assets/img/Group 871.svg"
+                style="padding: 23px"
+            /></span>
+          </div>
+          <div class="col-8"></div>
+          <div
+            class="col-2"
             style="
               padding: 34px;
               color: var(--unnamed-color-000000);
@@ -25,7 +25,16 @@
             "
           >
             Menu
-          </p>
+
+            <svg
+              aria-hidden="true"
+              width="30px"
+              height="30px"
+              style="margin-left: 20px"
+            >
+              <use xlink:href="#iconmenu_normal"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </el-header>
