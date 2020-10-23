@@ -14,14 +14,15 @@
         <span>What we do</span>
       </div>
 
-      
       <gap :height="69" />
 
       <div>
         <div class="subtitles" style="text-align: center">
           <div class="subtitle" @mouseover="consultation()">
             <svg class="small-icon">
-              <ellipse style="stroke:#E3E3E3" v-if="selected === 1"
+              <ellipse
+                style="stroke: #e3e3e3"
+                v-if="selected === 1"
                 id="Ellipse_179"
                 rx="40"
                 ry="40"
@@ -37,14 +38,15 @@
                 cy="47.5"
               ></ellipse>
             </svg>
-            <span v-if="selected === 1" style="color:black">Consultation</span>
+            <span v-if="selected === 1" style="color: black">Consultation</span>
             <span v-else>Consultation</span>
           </div>
-          
 
           <div class="subtitle" @mousemove="realestate()">
             <svg class="small-icon">
-              <ellipse style="stroke:#E3E3E3" v-if="selected === 2"
+              <ellipse
+                style="stroke: #e3e3e3"
+                v-if="selected === 2"
                 id="Ellipse_179"
                 rx="40"
                 ry="40"
@@ -60,14 +62,15 @@
                 cy="47.5"
               ></ellipse>
             </svg>
-            <span v-if="selected === 2" style="color:black">Real Estate</span>
+            <span v-if="selected === 2" style="color: black">Real Estate</span>
             <span v-else>Real Estate</span>
           </div>
-          
 
           <div class="subtitle" @mouseover="construction()">
             <svg class="small-icon">
-              <ellipse style="stroke:#E3E3E3" v-if="selected === 3"
+              <ellipse
+                style="stroke: #e3e3e3"
+                v-if="selected === 3"
                 id="Ellipse_179"
                 rx="40"
                 ry="40"
@@ -83,24 +86,26 @@
                 cy="47.5"
               ></ellipse>
             </svg>
-            <span v-if="selected === 3" style="color:black">Construction</span>
+            <span v-if="selected === 3" style="color: black">Construction</span>
             <span v-else>Construction</span>
           </div>
-          
         </div>
 
-        <div class="content" >
-          <img v-if="selected === 1"
+        <div class="content">
+          <img
+            v-if="selected === 1"
             class="image"
             src="../../assets/imgs/home/scott-graham-5fNmWej4tAA-unspl@2x.png"
             alt=""
           />
-          <img v-else-if="this.selected === 2"
+          <img
+            v-else-if="this.selected === 2"
             class="image"
             src="../../assets/imgs/home/realestate.png"
             alt=""
           />
-          <img v-else-if="selected === 3"
+          <img
+            v-else-if="selected === 3"
             class="image"
             src="../../assets/imgs/home/construction.png"
             alt=""
@@ -123,6 +128,42 @@
         </div>
       </div>
     </div>
+
+    <gap :height="60" />
+
+    <div class="block2">
+      <div class="ID">
+        <span>02</span>
+      </div>
+
+      <svg class="title-underline">
+        <line x1="0" y1="0" x2="100" y2="0" />
+      </svg>
+
+      <div class="title">
+        <span>about us</span>
+      </div>
+
+      <gap :height="69" />
+
+      <div class="background">
+        <gap :height="100" />
+
+        <div class="content">
+          <p class="content-head">Mcc Singapore</p>
+          <p>
+            Incorporated in 2010, MCC Land (Singapore) Limited has been actively
+            involved in Singapore’s real estate scene and achieved good results.
+            It has developed five development projects, co-developed two
+            development projects and managed five development projects. The
+            company has been
+          </p>
+        </div>
+
+        <img src="../../assets/imgs/home/MCC_BUILDING.png" alt="" />
+      </div>
+    </div>
+
     <gap :height="3000" />
   </div>
 </template>
@@ -162,7 +203,7 @@ export default {
   }
 
   @media screen and (max-width: 1023px) {
-    .top-container {
+    .block {
       flex-direction: column;
     }
   }
@@ -200,8 +241,6 @@ export default {
     top: 268.5px;
   }
 
-  
-
   .title {
     top: 295px;
     left: 210px;
@@ -220,8 +259,8 @@ export default {
     &:hover {
       color: var(--unnamed-color-000000);
     }
-    span{
-      margin-left:20px;
+    span {
+      margin-left: 20px;
     }
     margin-left: 50px;
 
@@ -246,6 +285,12 @@ export default {
       max-width: 100%;
       height: auto;
     }
+    color: var(--unnamed-color-000000);
+    text-align: left;
+    font: normal normal normal 20px/28px Source Sans Pro;
+    letter-spacing: 0.8px;
+    color: #000000;
+    opacity: 1;
   }
 
   .small-icon {
@@ -269,6 +314,44 @@ export default {
     border: 1px solid #000000;
     border-radius: 4px;
     opacity: 1;
+  }
+
+  .block2 {
+    display: flex;
+    flex-direction: column;
+    .background {
+      background-image: url("../../assets/imgs/home/blue-blend-watercolour-waterco@2x.png");
+      background-color: white;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      //position: relative;
+    }
+    img {
+      margin-top: 37%;
+      max-width: 50%;
+      max-height: 50%;
+    }
+
+    .content {
+      .content-head {
+        color: var(--unnamed-color-000000);
+        text-align: left;
+        font: normal normal normal 45px/64px Source Sans Pro;
+        letter-spacing: 1.8px;
+        color: #000000;
+        opacity: 1;
+      }
+      float: right;
+      width: 55%;
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal normal 22px/45px Source Sans Pro;
+      letter-spacing: 0.88px;
+      color: #000000;
+      opacity: 1;
+    }
   }
 }
 </style>
