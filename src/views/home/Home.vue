@@ -1,212 +1,274 @@
 <template>
   <div class="home">
-    <section class="top-container">
-      <div id="ID01">
+    <gap :height="119" />
+    <div class="block1">
+      <div class="ID">
         <span>01</span>
       </div>
 
-      <svg class="Line_76" viewBox="0 0 145 1">
-        <path id="Line_76" d="M 0 0 L 145 0"></path>
+      <svg class="title-underline">
+        <line x1="0" y1="0" x2="100" y2="0" />
       </svg>
 
-      <div id="What_we_do">
+      <div class="title">
         <span>What we do</span>
       </div>
 
-      <div id="Group_872">
-        <svg class="Ellipse_179">
-          <ellipse
-            id="Ellipse_179"
-            rx="6.5"
-            ry="6.5"
-            cx="6.5"
-            cy="6.5"
-          ></ellipse>
-        </svg>
-        <svg class="Ellipse_180">
-          <ellipse
-            id="Ellipse_180"
-            rx="47.5"
-            ry="47.5"
-            cx="47.5"
-            cy="47.5"
-          ></ellipse>
-        </svg>
-      </div>
-
-     <gap :height="364"/>
-
-      <div id="Consultation">
-        <span>Consultation</span>
-      </div>
-
-      <div id="Real_Estate">
-        <span>Real Estate</span>
-      </div>
-
-      <div id="Construction">
-        <span>Construction</span>
-      </div>
-
       
-    </section>
-    <gap :height="3000"/>
+      <gap :height="69" />
+
+      <div>
+        <div class="subtitles" style="text-align: center">
+          <div class="subtitle" @mouseover="consultation()">
+            <svg class="small-icon">
+              <ellipse style="stroke:#E3E3E3" v-if="selected === 1"
+                id="Ellipse_179"
+                rx="40"
+                ry="40"
+                cx="47.5"
+                cy="47.5"
+              ></ellipse>
+
+              <ellipse
+                id="Ellipse_179"
+                rx="6.5"
+                ry="6.5"
+                cx="47.5"
+                cy="47.5"
+              ></ellipse>
+            </svg>
+            <span v-if="selected === 1" style="color:black">Consultation</span>
+            <span v-else>Consultation</span>
+          </div>
+          
+
+          <div class="subtitle" @mousemove="realestate()">
+            <svg class="small-icon">
+              <ellipse style="stroke:#E3E3E3" v-if="selected === 2"
+                id="Ellipse_179"
+                rx="40"
+                ry="40"
+                cx="47.5"
+                cy="47.5"
+              ></ellipse>
+
+              <ellipse
+                id="Ellipse_179"
+                rx="6.5"
+                ry="6.5"
+                cx="47.5"
+                cy="47.5"
+              ></ellipse>
+            </svg>
+            <span v-if="selected === 2" style="color:black">Real Estate</span>
+            <span v-else>Real Estate</span>
+          </div>
+          
+
+          <div class="subtitle" @mouseover="construction()">
+            <svg class="small-icon">
+              <ellipse style="stroke:#E3E3E3" v-if="selected === 3"
+                id="Ellipse_179"
+                rx="40"
+                ry="40"
+                cx="47.5"
+                cy="47.5"
+              ></ellipse>
+
+              <ellipse
+                id="Ellipse_179"
+                rx="6.5"
+                ry="6.5"
+                cx="47.5"
+                cy="47.5"
+              ></ellipse>
+            </svg>
+            <span v-if="selected === 3" style="color:black">Construction</span>
+            <span v-else>Construction</span>
+          </div>
+          
+        </div>
+
+        <div class="content" >
+          <img v-if="selected === 1"
+            class="image"
+            src="../../assets/imgs/home/scott-graham-5fNmWej4tAA-unspl@2x.png"
+            alt=""
+          />
+          <img v-else-if="this.selected === 2"
+            class="image"
+            src="../../assets/imgs/home/realestate.png"
+            alt=""
+          />
+          <img v-else-if="selected === 3"
+            class="image"
+            src="../../assets/imgs/home/construction.png"
+            alt=""
+          />
+          <br /><br />
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy
+          </p>
+          <div
+            style="display: flex; justify-content: center; align-items: center"
+          ></div>
+
+          <br />
+          <button class="button">Read More</button>
+        </div>
+      </div>
+    </div>
+    <gap :height="3000" />
   </div>
 </template>
 
 <script>
 export default {
   name: "Home",
+  data: function () {
+    return {
+      selected: 1,
+    };
+  },
+
+  methods: {
+    consultation: function () {
+      this.selected = 1;
+    },
+    realestate: function () {
+      this.selected = 2;
+    },
+    construction: function () {
+      this.selected = 3;
+    },
+  },
 };
 </script>
 
-<style>
-#ID01 {
-  left: 140px;
-  top: 213px;
-  position: absolute;
-  overflow: visible;
-  width: 49px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: PT Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 41px;
-  color: rgba(191, 214, 246, 1);
-  letter-spacing: 0.4px;
-}
-#What_we_do {
-  left: 210px;
-  top: 295px;
-  position: absolute;
-  overflow: visible;
-  width: 142px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: PT Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 26px;
-  color: rgba(113, 113, 113, 1);
-  letter-spacing: 0.4px;
-}
+<style lang="scss" scoped>
+.home {
+  width: 100%;
+  min-height: 100%;
+  padding: 14rem 14rem 0 14rem;
 
-#Line_76 {
-  fill: transparent;
-  stroke: rgba(113, 113, 113, 1);
-  stroke-width: 1px;
-  stroke-linejoin: miter;
-  stroke-linecap: butt;
-  stroke-miterlimit: 4;
-  shape-rendering: auto;
-}
-.Line_76 {
-  overflow: visible;
-  position: absolute;
-  width: 145px;
-  height: 1px;
-  left: 140px;
-  top: 268.5px;
-  transform: matrix(1, 0, 0, 1, 0, 0);
-}
+  .block1 {
+    display: flex;
+    flex-direction: column;
+  }
 
-#Group_872 {
-  position: absolute;
-  width: 95px;
-  height: 95px;
-  left: 140px;
-  top: 359px;
-  overflow: visible;
-}
+  @media screen and (max-width: 1023px) {
+    .top-container {
+      flex-direction: column;
+    }
+  }
 
-#Group_899 {
-  position: absolute;
-  width: 95px;
-  height: 95px;
-  left: 0px;
-  top: 118px;
-  overflow: visible;
-}
+  @media screen and (max-width: 768px) {
+    .box-container {
+      width: 100% !important;
+    }
+  }
 
-#Ellipse_179 {
-  fill: transparent;
-  stroke: rgba(59, 125, 216, 1);
-  stroke-width: 1px;
-  stroke-linejoin: miter;
-  stroke-linecap: butt;
-  stroke-miterlimit: 4;
-  shape-rendering: auto;
-}
-.Ellipse_179 {
-  position: absolute;
-  overflow: visible;
-  width: 13px;
-  height: 13px;
-  left: 42px;
-  top: 42px;
-}
+  .ID {
+    top: 213px;
+    left: 140px;
+    width: 48px;
+    height: 48px;
+    color: var(--unnamed-color-bfd6f6);
+    text-align: left;
+    font: normal normal bold 41px/53px PT Sans;
+    letter-spacing: 1.64px;
+    color: #bfd6f6;
+    opacity: 1;
+  }
 
-#Ellipse_180 {
-  fill: transparent;
-  stroke: rgba(227, 227, 227, 1);
-  stroke-width: 1px;
-  stroke-linejoin: miter;
-  stroke-linecap: butt;
-  stroke-miterlimit: 4;
-  shape-rendering: auto;
-}
-.Ellipse_180 {
-  position: absolute;
-  overflow: visible;
-  width: 95px;
-  height: 95px;
-  left: 0px;
-  top: 0px;
-}
+  .title-underline {
+    fill: transparent;
+    stroke: rgba(113, 113, 113, 1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+    width: 145px;
+    height: 1px;
+    left: 140px;
+    top: 268.5px;
+  }
 
+  
 
+  .title {
+    top: 295px;
+    left: 210px;
+    width: 141px;
+    height: 30px;
+    margin-left: 70px;
+    color: var(--unnamed-color-717171);
+    text-align: left;
+    font: normal normal normal 26px/33px PT Sans;
+    letter-spacing: 1.04px;
+    color: #717171;
+    opacity: 1;
+  }
 
-#Consultation {
-  position: relative;
-  left: 252px;
-  overflow: visible;
-  width: 355px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 61px;
-  color: rgba(0, 0, 0, 1);
-  letter-spacing: 0.4px;
-}
-#Real_Estate {
-  position: relative;
-  left: 252px;
-  overflow: visible;
-  width: 303px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 61px;
-  color: rgba(227, 227, 227, 1);
-  letter-spacing: 0.4px;
-}
-#Construction {
-  position: relative;
-  left: 252px;
-  overflow: visible;
-  width: 358px;
-  white-space: nowrap;
-  text-align: left;
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 61px;
-  color: rgba(227, 227, 227, 1);
-  letter-spacing: 0.4px;
+  .subtitle {
+    &:hover {
+      color: var(--unnamed-color-000000);
+    }
+    span{
+      margin-left:20px;
+    }
+    margin-left: 50px;
+
+    color: var(--unnamed-color-e3e3e3);
+    text-align: left;
+    font: normal normal normal 2.73vw/3.354vw Source Sans Pro;
+    letter-spacing: 2px;
+    color: #e3e3e3;
+    opacity: 1;
+  }
+
+  .subtitles {
+    float: left;
+    max-width: 45%;
+    height: auto;
+  }
+
+  .content {
+    float: right;
+    width: 55%;
+    .image {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .small-icon {
+    width: 95px;
+    height: 95px;
+    opacity: 1;
+    fill: transparent;
+    stroke: rgba(59, 125, 216, 1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+  }
+
+  .button {
+    background-color: white;
+    width: 220px;
+    height: 54px;
+    border: 1px solid var(--unnamed-color-000000);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    opacity: 1;
+  }
 }
 </style>
