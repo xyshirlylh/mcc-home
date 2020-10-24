@@ -164,6 +164,56 @@
       </div>
     </div>
 
+    <gap :height="200" />
+
+    <div class="block3">
+      <div class="ID">
+        <span>03</span>
+      </div>
+
+      <svg class="title-underline">
+        <line x1="0" y1="0" x2="100" y2="0" />
+      </svg>
+
+      <div class="title">
+        <span>MCC history</span>
+      </div>
+
+      <gap :height="69" />
+    </div>
+
+    <div class="background-4">
+      <div class="block4">
+        <div class="ID">
+          <span>04</span>
+        </div>
+
+        <svg class="title-underline">
+          <line x1="0" y1="0" x2="100" y2="0" />
+        </svg>
+
+        <div class="title">
+          <span>MCC news</span>
+        </div>
+
+        <gap :height="69" />
+
+        <div class="head-4">
+          <p>Featured news of MCC Singapore</p>
+          <button>View more</button>
+        </div>
+
+        <div class="gallery">
+          <div class="box-1"></div>
+          <div class="box-2"></div>
+          <div class="box-3"></div>
+
+        </div>
+
+        
+      </div>
+    </div>
+
     <gap :height="3000" />
   </div>
 </template>
@@ -195,9 +245,10 @@ export default {
 .home {
   width: 100%;
   min-height: 100%;
-  padding: 14rem 14rem 0 14rem;
+  //padding: 14rem 14rem 0 14rem;
 
   .block1 {
+    padding: 14rem 14rem 0 14rem;
     display: flex;
     flex-direction: column;
   }
@@ -244,7 +295,7 @@ export default {
   .title {
     top: 295px;
     left: 210px;
-    width: 141px;
+    width: 200px;
     height: 30px;
     margin-left: 70px;
     color: var(--unnamed-color-717171);
@@ -317,6 +368,16 @@ export default {
   }
 
   .block2 {
+    .ID {
+      margin-left: 14rem;
+    }
+    .title-underline {
+      margin-left: 14rem;
+    }
+    .title {
+      margin-left: 18.375rem;
+    }
+    //padding: 14rem 14rem 0 14rem;
     display: flex;
     flex-direction: column;
     .background {
@@ -329,8 +390,10 @@ export default {
       //position: relative;
     }
     img {
-      margin-top: 37%;
-      max-width: 50%;
+      margin-top: 35%;
+      margin-left: 90px;
+
+      max-width: 35%;
       max-height: 50%;
     }
 
@@ -349,6 +412,49 @@ export default {
       text-align: left;
       font: normal normal normal 22px/45px Source Sans Pro;
       letter-spacing: 0.88px;
+      color: #000000;
+      opacity: 1;
+    }
+  }
+
+  .block3 {
+    padding: 14rem 14rem 0 14rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .background-4 {
+    background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
+    //opacity: 0.15;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    //position: relative;
+  }
+
+  .block4 {
+    padding: 14rem 14rem 0 14rem;
+    display: flex;
+    flex-direction: column;
+    .ID {
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal bold 41px/53px PT Sans;
+      letter-spacing: 1.64px;
+      color: rgba(0, 0, 0, 1);
+      opacity: 1;
+    }
+    .title-underline {
+      border: 1px solid var(--unnamed-color-000000);
+      border: 1px solid #000000;
+      opacity: 1;
+    }
+    .title {
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal normal 26px/37px Source Sans Pro;
+      letter-spacing: 1.04px;
       color: #000000;
       opacity: 1;
     }
