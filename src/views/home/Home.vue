@@ -207,14 +207,82 @@
           <div class="box-1"></div>
           <div class="box-2"></div>
           <div class="box-3"></div>
-
         </div>
-
-        
       </div>
     </div>
 
-    <gap :height="3000" />
+    <div class="block5">
+      <div class="ID">
+        <span>05</span>
+      </div>
+
+      <svg class="title-underline">
+        <line x1="0" y1="0" x2="100" y2="0" />
+      </svg>
+
+      <div class="title">
+        <span>our culture</span>
+      </div>
+
+      <gap :height="80" />
+
+      <div class="row-1">
+        <div class="col-1">
+          <div class="title">
+            <p>Mission</p>
+          </div>
+          <div class="content">
+            <p>Transforming lives, inspiring society</p>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="title">
+            <p>Vision</p>
+          </div>
+          <div class="content">
+            <p>To be a global leading urbanisation enterprise</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="title">
+            <p>Culture</p>
+          </div>
+          <div class="content">
+            <p>
+              Make a difference. Creativity. Cooperation. Sincerity.
+              Goal-oriented
+            </p>
+          </div>
+        </div>
+      </div>
+      <gap :height="500" />
+
+      <div class="title-2">
+        <p>CONTACT US</p>
+      </div>
+
+      <gap :height="70" />
+
+      <div class="input">
+        <div class="email">
+          <input type="text" value="Your email address…">
+        </div>
+
+        <gap :height="63" />
+        <div class="text">
+          <textarea type="text" >Leave your message here…</textarea>
+        </div>
+      </div>
+
+      <gap :height="40" />
+      <div class="button-1">
+        <button class="button-2">Confirm</button>
+      </div>
+
+      <gap :height="69" />
+    </div>
+
+    
   </div>
 </template>
 
@@ -421,6 +489,7 @@ export default {
     padding: 14rem 14rem 0 14rem;
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
 
   .background-4 {
@@ -457,6 +526,106 @@ export default {
       letter-spacing: 1.04px;
       color: #000000;
       opacity: 1;
+    }
+  }
+
+  .block5 {
+    padding: 14rem 14rem 0 14rem;
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    .title {
+      color: var(--unnamed-color-717171);
+      text-align: left;
+      font: normal normal normal 26px/37px Source Sans Pro;
+      letter-spacing: 1.04px;
+      color: rgba(113, 113, 113, 1);
+    }
+    .title-2 {
+      text-align: center;
+      color: var(--unnamed-color-000000);
+      font: normal normal bold 41px/53px PT Sans;
+      letter-spacing: 1.64px;
+      color: rgba(0, 0, 0, 1);
+    }
+    .input {
+      margin-left: auto;
+      margin-right: auto;
+      .email {
+        input[type="text"] {
+          width: 592px;
+          border: none;
+          border-bottom: 1px solid rgba(112, 112, 112, 1);
+          color: var(--unnamed-color-c6c6c6);
+text-align: left;
+font: normal normal normal 22px/45px Source Sans Pro;
+letter-spacing: 0.88px;
+color: rgba(198, 198, 198, 1);
+        }
+      }
+      .text {
+        textarea {
+          width: 592px;
+          height: 148px;
+          background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+          border: 1px solid rgba(112, 112, 112, 1);
+          border-radius: 3px;
+          color: var(--unnamed-color-c6c6c6);
+text-align: left;
+font: normal normal normal 22px/45px Source Sans Pro;
+letter-spacing: 0.88px;
+color: rgba(198, 198, 198, 1);
+        }
+      }
+    }
+    .button-1 {
+      margin-left: auto;
+      margin-right: auto;
+      .button-2 {
+        text-align: center;
+        font: normal normal normal 22px/32px Source Sans Pro;
+        letter-spacing: 0.88px;
+        width: 132px;
+        height: 54px;
+        border: none;
+        
+        background: rgba(74, 145, 242, 1) 0% 0% no-repeat padding-box;
+        color: white;
+        border-radius: 4px;
+      }
+    }
+
+    .row-1 {
+      .title {
+        color: var(--unnamed-color-000000);
+        text-align: center;
+        font: normal normal bold 35px/64px Open Sans;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 1);
+      }
+      .content {
+        margin-top: 50px;
+        color: var(--unnamed-color-000000);
+        text-align: left;
+        font: normal normal normal 28px/50px Open Sans;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 1);
+      }
+      .col-1 {
+        float: left;
+        width: 33%;
+        max-width: 33%;
+      }
+      .col-2 {
+        float: left;
+        width: 33%;
+        max-width: 33%;
+      }
+      .col-3 {
+        float: left;
+        width: 33%;
+        max-width: 33%;
+      }
     }
   }
 }
