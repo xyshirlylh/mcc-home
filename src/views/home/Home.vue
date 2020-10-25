@@ -198,15 +198,37 @@
 
         <gap :height="69" />
 
-        <div class="head-4">
+        <div class="head">
           <p>Featured news of MCC Singapore</p>
-          <button>View more</button>
+          <div class="button-1">
+            <button>View more</button>
+          </div>
         </div>
 
+        <gap :height='50'/>
+
         <div class="gallery">
-          <div class="box-1"></div>
-          <div class="box-2"></div>
-          <div class="box-3"></div>
+          <div class="box-1">
+            <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="">
+            <div class="background-white">
+              <h1>Title 1</h1>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+            </div>
+          </div>
+          <div class="box-2">
+            <img src="../../assets/imgs/home/ID4@2x.png" alt="">
+            <div class="background-white">
+              <h1>Title 2</h1>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+            </div>
+          </div>
+          <div class="box-3">
+            <img src="../../assets/imgs/home/ID3@2x.png" alt="">
+            <div class="background-white">
+              <h1>Title 3</h1>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -265,15 +287,23 @@
 
       <div class="input">
         <div class="email">
-          <input type="text"  v-model="email" @focus="clearContent('email')" @blur="resetContent('email')">
-          
+          <input
+            type="text"
+            v-model="email"
+            @focus="clearContent('email')"
+            @blur="resetContent('email')"
+          />
         </div>
 
         <gap :height="63" />
         <div class="text">
-          <textarea type="input" v-model="text" @focus="clearContent('text')" @blur="resetContent('text')"></textarea>
+          <textarea
+            type="input"
+            v-model="text"
+            @focus="clearContent('text')"
+            @blur="resetContent('text')"
+          ></textarea>
         </div>
-        
       </div>
 
       <gap :height="40" />
@@ -283,8 +313,6 @@
 
       <gap :height="69" />
     </div>
-
-    
   </div>
 </template>
 
@@ -294,9 +322,8 @@ export default {
   data: function () {
     return {
       selected: 1,
-      email:'Your email address…',
-      text:'Leave your message here…',
-
+      email: "Your email address…",
+      text: "Leave your message here…",
     };
   },
 
@@ -311,38 +338,34 @@ export default {
       this.selected = 3;
     },
 
-    clearContent: function(content){
-      if(content==='email' && this.email==='Your email address…'){
-        this.email = null
-
-      }else if(content === 'text' && this.text==='Leave your message here…'){
-        this.text = null
-
+    clearContent: function (content) {
+      if (content === "email" && this.email === "Your email address…") {
+        this.email = null;
+      } else if (
+        content === "text" &&
+        this.text === "Leave your message here…"
+      ) {
+        this.text = null;
       }
-      
-
     },
 
-    resetContent: function(content){
-      if(this.email === ''){
-        this.email = null
+    resetContent: function (content) {
+      if (this.email === "") {
+        this.email = null;
       }
 
-      if(this.text === ''){
-        this.text = null
+      if (this.text === "") {
+        this.text = null;
       }
 
-      if(content ==='email' && this.email === null){
-        this.email = 'Your email address…'
+      if (content === "email" && this.email === null) {
+        this.email = "Your email address…";
       }
 
-      if(content ==='text' && this.text === null){
-        this.text = 'Leave your message here…'
+      if (content === "text" && this.text === null) {
+        this.text = "Leave your message here…";
       }
-
-
-
-    }
+    },
   },
 };
 </script>
@@ -541,9 +564,39 @@ export default {
   }
 
   .block4 {
+
+
     padding: 14rem 14rem 0 14rem;
     display: flex;
     flex-direction: column;
+    .gallery{
+      .background-white{
+        background-color: white;
+      }
+      text-align: center;
+      img{
+        width:100%;
+        height: auto;
+      }
+      .box-1{
+        float: left;
+        max-width: 30%;
+
+      }
+      .box-2{
+        margin-left: 30px;
+        float: left;
+        max-width: 30%;
+
+      }
+      .box-3{
+        margin-left: 30px;
+        float: left;
+        max-width: 30%;
+      }
+      
+    }
+
     .ID {
       color: var(--unnamed-color-000000);
       text-align: left;
@@ -564,6 +617,42 @@ export default {
       letter-spacing: 1.04px;
       color: #000000;
       opacity: 1;
+    }
+
+    .head {
+      .button-1 {
+        float: right;
+        max-width: 20%;
+
+        button {
+          text-align: center;
+          font: normal normal normal 22px/32px Source Sans Pro;
+          letter-spacing: 0.88px;
+          width: 132px;
+          height: 54px;
+          border: none;
+          width: 220px;
+          height: 54px;
+
+          background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
+          color: black;
+          border: 1px solid #000000;
+          border-radius: 4px;
+        }
+      }
+
+      max-width: 100%;
+      p {
+        float: left;
+        max-width: 80%;
+      }
+
+      height: 64px;
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal normal 45px/64px Source Sans Pro;
+      letter-spacing: 1.8px;
+      color: #000000;
     }
   }
 
@@ -595,10 +684,10 @@ export default {
           border: none;
           border-bottom: 1px solid rgba(112, 112, 112, 1);
           color: var(--unnamed-color-c6c6c6);
-text-align: left;
-font: normal normal normal 22px/45px Source Sans Pro;
-letter-spacing: 0.88px;
-color: rgba(198, 198, 198, 1);
+          text-align: left;
+          font: normal normal normal 22px/45px Source Sans Pro;
+          letter-spacing: 0.88px;
+          color: rgba(198, 198, 198, 1);
         }
       }
       .text {
@@ -609,10 +698,10 @@ color: rgba(198, 198, 198, 1);
           border: 1px solid rgba(112, 112, 112, 1);
           border-radius: 3px;
           color: var(--unnamed-color-c6c6c6);
-text-align: left;
-font: normal normal normal 22px/45px Source Sans Pro;
-letter-spacing: 0.88px;
-color: rgba(198, 198, 198, 1);
+          text-align: left;
+          font: normal normal normal 22px/45px Source Sans Pro;
+          letter-spacing: 0.88px;
+          color: rgba(198, 198, 198, 1);
         }
       }
     }
@@ -626,7 +715,7 @@ color: rgba(198, 198, 198, 1);
         width: 132px;
         height: 54px;
         border: none;
-        
+
         background: rgba(74, 145, 242, 1) 0% 0% no-repeat padding-box;
         color: white;
         border-radius: 4px;
