@@ -166,9 +166,37 @@
 
     <gap :height="200" />
 
-    <div class="block3">
+    <div class="background-3">
+      <div class="block3">
+        <div class="gallery">
+          <div class="column-1">
+            <div class="ID">
+              <span>03</span>
+            </div>
+
+            <svg class="title-underline">
+              <line x1="0" y1="0" x2="100" y2="0" />
+            </svg>
+
+            <div class="title">
+              <span>MCC history</span>
+            </div>
+          </div>
+          <div class="column-2">
+            <button @click="goLeft()">left</button>
+            <button @click="goRight()">right</button>
+          </div>
+        </div>
+        <div class="year">
+          {{years[yearIndex]}}
+        </div>
+      </div>
+    </div>
+
+    <div class="background-4">
+      <gap :height="166" />
       <div class="ID">
-        <span>03</span>
+        <span>04</span>
       </div>
 
       <svg class="title-underline">
@@ -176,28 +204,14 @@
       </svg>
 
       <div class="title">
-        <span>MCC history</span>
+        <span>MCC news</span>
       </div>
 
-      <gap :height="69" />
-    </div>
+      <div class="left">
+        <button>left</button>
+      </div>
 
-    <div class="background-4">
       <div class="block4">
-        <div class="ID">
-          <span>04</span>
-        </div>
-
-        <svg class="title-underline">
-          <line x1="0" y1="0" x2="100" y2="0" />
-        </svg>
-
-        <div class="title">
-          <span>MCC news</span>
-        </div>
-
-        <gap :height="69" />
-
         <div class="head">
           <p>Featured news of MCC Singapore</p>
           <div class="button-1">
@@ -205,31 +219,48 @@
           </div>
         </div>
 
-        <gap :height='50'/>
+        <gap :height="100" />
 
         <div class="gallery">
           <div class="box-1">
-            <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="">
+            <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
             <div class="background-white">
               <h1>Title 1</h1>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+              </p>
             </div>
           </div>
           <div class="box-2">
-            <img src="../../assets/imgs/home/ID4@2x.png" alt="">
+            <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
             <div class="background-white">
               <h1>Title 2</h1>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+              </p>
             </div>
           </div>
           <div class="box-3">
-            <img src="../../assets/imgs/home/ID3@2x.png" alt="">
+            <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
             <div class="background-white">
               <h1>Title 3</h1>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+              </p>
             </div>
           </div>
         </div>
+
+        <gap :height="209" />
+      </div>
+      <div class="right">
+        <button>right</button>
       </div>
     </div>
 
@@ -324,6 +355,8 @@ export default {
       selected: 1,
       email: "Your email address…",
       text: "Leave your message here…",
+      years:[1997,2005,2008,2010],
+      yearIndex:0
     };
   },
 
@@ -348,6 +381,7 @@ export default {
         this.text = null;
       }
     },
+    
 
     resetContent: function (content) {
       if (this.email === "") {
@@ -366,6 +400,19 @@ export default {
         this.text = "Leave your message here…";
       }
     },
+
+    goLeft: function(){
+      this.yearIndex=this.yearIndex-1
+      if(this.yearIndex<0){
+        this.yearIndex = 3
+      }
+    },
+    goRight: function(){
+      this.yearIndex=this.yearIndex+1
+      if(this.yearIndex>3){
+        this.yearIndex = 0
+      }
+    }
   },
 };
 </script>
@@ -546,58 +593,117 @@ export default {
     }
   }
 
-  .block3 {
-    padding: 14rem 14rem 0 14rem;
-    display: flex;
-    flex-direction: column;
+  .background-3 {
+    background-image: url("../../assets/imgs/home/MCC_BUILDING@2x.png");
+    background-color: white;
     height: 100vh;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    margin-bottom: 66px;
+    .block3 {
+      padding: 14rem 14rem 0 14rem;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100%;
+      .year {
+        top: 3023px;
+        left: 134px;
+        width: 328px;
+        height: 127px;
+        color: var(--unnamed-color-1381ce);
+        text-align: left;
+        font: normal normal bold 127px/152px Wigwag;
+        letter-spacing: 5.08px;
+        color: rgba(19, 129, 206, 1);
+        margin-top: 50vh;
+      }
+
+      .column-1 {
+        float: left;
+        max-width: 30%;
+        width: 30%;
+      }
+      .column-2 {
+        button {
+          margin-top: 15%;
+          margin-left: 5%;
+        }
+        float: right;
+        max-width: 30%;
+        width: 30%;
+      }
+    }
   }
 
   .background-4 {
     background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 100vh;
+    height: 130vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     //position: relative;
-  }
+    button {
+      margin-left: 30%;
+      margin-right: 30%;
+    }
 
-  .block4 {
+    .left {
+      margin-top: 50vh;
 
+      float: left;
+      width: 10%;
+      max-width: 10%;
+    }
 
-    padding: 14rem 14rem 0 14rem;
-    display: flex;
-    flex-direction: column;
-    .gallery{
-      .background-white{
-        background-color: white;
-      }
-      text-align: center;
-      img{
-        width:100%;
-        height: auto;
-      }
-      .box-1{
-        float: left;
-        max-width: 30%;
+    .right {
+      margin-top: 50vh;
+      float: left;
+      width: 10%;
+      max-width: 10%;
+    }
 
+    .block4 {
+      margin-top: 14rem;
+      float: left;
+      width: 80%;
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      .gallery {
+        margin-top: 3%;
+        .background-white {
+          padding: 10%;
+          background-color: white;
+        }
+        text-align: center;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        .box-1 {
+          float: left;
+          max-width: 30%;
+          max-height: 50%;
+        }
+        .box-2 {
+          margin-left: 5%;
+          float: left;
+          max-width: 30%;
+        }
+        .box-3 {
+          margin-left: 5%;
+          float: left;
+          max-width: 30%;
+        }
       }
-      .box-2{
-        margin-left: 30px;
-        float: left;
-        max-width: 30%;
-
-      }
-      .box-3{
-        margin-left: 30px;
-        float: left;
-        max-width: 30%;
-      }
-      
     }
 
     .ID {
+      margin-left: 14rem;
       color: var(--unnamed-color-000000);
       text-align: left;
       font: normal normal bold 41px/53px PT Sans;
@@ -606,11 +712,13 @@ export default {
       opacity: 1;
     }
     .title-underline {
+      margin-left: 14rem;
       border: 1px solid var(--unnamed-color-000000);
       border: 1px solid #000000;
       opacity: 1;
     }
     .title {
+      margin-left: 14rem;
       color: var(--unnamed-color-000000);
       text-align: left;
       font: normal normal normal 26px/37px Source Sans Pro;
