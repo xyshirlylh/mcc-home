@@ -265,13 +265,15 @@
 
       <div class="input">
         <div class="email">
-          <input type="text" value="Your email address…">
+          <input type="text"  v-model="email" @focus="clearContent('email')" @blur="resetContent('email')">
+          
         </div>
 
         <gap :height="63" />
         <div class="text">
-          <textarea type="text" >Leave your message here…</textarea>
+          <textarea type="input" v-model="text" @focus="clearContent('text')" @blur="resetContent('text')"></textarea>
         </div>
+        
       </div>
 
       <gap :height="40" />
@@ -292,6 +294,9 @@ export default {
   data: function () {
     return {
       selected: 1,
+      email:'Your email address…',
+      text:'Leave your message here…',
+
     };
   },
 
@@ -305,6 +310,39 @@ export default {
     construction: function () {
       this.selected = 3;
     },
+
+    clearContent: function(content){
+      if(content==='email' && this.email==='Your email address…'){
+        this.email = null
+
+      }else if(content === 'text' && this.text==='Leave your message here…'){
+        this.text = null
+
+      }
+      
+
+    },
+
+    resetContent: function(content){
+      if(this.email === ''){
+        this.email = null
+      }
+
+      if(this.text === ''){
+        this.text = null
+      }
+
+      if(content ==='email' && this.email === null){
+        this.email = 'Your email address…'
+      }
+
+      if(content ==='text' && this.text === null){
+        this.text = 'Leave your message here…'
+      }
+
+
+
+    }
   },
 };
 </script>
