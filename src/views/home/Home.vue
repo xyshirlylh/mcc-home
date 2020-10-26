@@ -160,7 +160,12 @@
           </p>
         </div>
 
-        <img src="../../assets/imgs/home/MCC_BUILDING.png" alt="" />
+        <img
+          class="img"
+          ref="img-2"
+          src="../../assets/imgs/home/MCC_BUILDING.png"
+          alt=""
+        />
       </div>
     </div>
 
@@ -188,7 +193,7 @@
           </div>
         </div>
         <div class="year">
-          {{years[yearIndex]}}
+          {{ years[yearIndex] }}
         </div>
       </div>
     </div>
@@ -355,12 +360,36 @@ export default {
       selected: 1,
       email: "Your email address…",
       text: "Leave your message here…",
-      years:[1997,2005,2008,2010],
-      yearIndex:0
+      years: [1997, 2005, 2008, 2010],
+      yearIndex: 0,
+      scrollTop: 0,
     };
   },
 
+  mounted() {
+    window.addEventListener('scroll', this.scrollTrigger)
+    
+  },
+
+  destroy() {
+  window.removeEventListener('scroll', this.scrollTrigger)
+},
+
   methods: {
+    scrollTrigger: function(){
+      this.scrollTop = window.scrollY
+      if (
+        this.scrollTop > 1000 
+      ) {
+        this.$refs["img-2"].style.transform='scale(1.5)';
+        console.log(this.$refs["img-2"].style)
+      } else {
+        this.$refs["img-2"].style.transform='scale(1)';
+      }
+    },
+
+
+
     consultation: function () {
       this.selected = 1;
     },
@@ -381,7 +410,6 @@ export default {
         this.text = null;
       }
     },
-    
 
     resetContent: function (content) {
       if (this.email === "") {
@@ -401,18 +429,18 @@ export default {
       }
     },
 
-    goLeft: function(){
-      this.yearIndex=this.yearIndex-1
-      if(this.yearIndex<0){
-        this.yearIndex = 3
+    goLeft: function () {
+      this.yearIndex = this.yearIndex - 1;
+      if (this.yearIndex < 0) {
+        this.yearIndex = 3;
       }
     },
-    goRight: function(){
-      this.yearIndex=this.yearIndex+1
-      if(this.yearIndex>3){
-        this.yearIndex = 0
+    goRight: function () {
+      this.yearIndex = this.yearIndex + 1;
+      if (this.yearIndex > 3) {
+        this.yearIndex = 0;
       }
-    }
+    },
   },
 };
 </script>
@@ -565,12 +593,14 @@ export default {
       background-size: cover;
       //position: relative;
     }
-    img {
-      margin-top: 35%;
+    .img {
+      margin-top: 30%;
       margin-left: 90px;
 
-      max-width: 35%;
+      max-width: 25%;
       max-height: 50%;
+      transform: scale(1);
+      transition: 1s
     }
 
     .content {
@@ -591,6 +621,7 @@ export default {
       color: #000000;
       opacity: 1;
     }
+    
   }
 
   .background-3 {
