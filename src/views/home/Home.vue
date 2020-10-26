@@ -173,7 +173,7 @@
 
     <div class="background-3">
       <div class="block3">
-        <div class="gallery">
+        <div class="gallery-3">
           <div class="column-1">
             <div class="ID">
               <span>03</span>
@@ -192,8 +192,94 @@
             <button @click="goRight()">right</button>
           </div>
         </div>
-        <div class="year">
-          {{ years[yearIndex] }}
+
+        <div class="gallery">
+          <div class="year">
+            {{ years[yearIndex] }}
+          </div>
+
+          <div class="box-1">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+
+            <div class="year-small">
+              <p>{{ years[yearIndex] }}</p>
+            </div>
+
+            <div class="subtitle">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
+            </div>
+          </div>
+          <div class="box-2">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex+1] }}</p>
+            </div>
+            
+          </div>
+          <div class="box-3">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex+2] }}</p>
+            </div>
+          </div>
+          <div class="box-4">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex+3] }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -360,35 +446,30 @@ export default {
       selected: 1,
       email: "Your email address…",
       text: "Leave your message here…",
-      years: [1997, 2005, 2008, 2010],
+      years: [1997, 2005, 2008, 2010,1997, 2005, 2008, 2010],
       yearIndex: 0,
       scrollTop: 0,
     };
   },
 
   mounted() {
-    window.addEventListener('scroll', this.scrollTrigger)
-    
+    window.addEventListener("scroll", this.scrollTrigger);
   },
 
   destroy() {
-  window.removeEventListener('scroll', this.scrollTrigger)
-},
+    window.removeEventListener("scroll", this.scrollTrigger);
+  },
 
   methods: {
-    scrollTrigger: function(){
-      this.scrollTop = window.scrollY
-      if (
-        this.scrollTop > 1000 
-      ) {
-        this.$refs["img-2"].style.transform='scale(1.5)';
-        console.log(this.$refs["img-2"].style)
+    scrollTrigger: function () {
+      this.scrollTop = window.scrollY;
+      if (this.scrollTop > 1000) {
+        this.$refs["img-2"].style.transform = "scale(1.5)";
+        console.log(this.$refs["img-2"].style);
       } else {
-        this.$refs["img-2"].style.transform='scale(1)';
+        this.$refs["img-2"].style.transform = "scale(1)";
       }
     },
-
-
 
     consultation: function () {
       this.selected = 1;
@@ -600,7 +681,7 @@ export default {
       max-width: 25%;
       max-height: 50%;
       transform: scale(1);
-      transition: 1s
+      transition: 1s;
     }
 
     .content {
@@ -621,7 +702,6 @@ export default {
       color: #000000;
       opacity: 1;
     }
-    
   }
 
   .background-3 {
@@ -631,24 +711,106 @@ export default {
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: 30%;
-    margin-bottom: 66px;
+    //margin-bottom: 66px;
     .block3 {
       padding: 14rem 14rem 0 14rem;
       display: flex;
       flex-direction: column;
       height: 100vh;
       width: 100%;
-      .year {
-        top: 3023px;
-        left: 134px;
-        width: 328px;
-        height: 127px;
-        color: var(--unnamed-color-1381ce);
-        text-align: left;
-        font: normal normal bold 127px/152px Wigwag;
-        letter-spacing: 5.08px;
-        color: rgba(19, 129, 206, 1);
-        margin-top: 50vh;
+
+      .block-3-cercle {
+        position: absolute;
+        left: 0px;
+        bottom: 60vh;
+        width: 34px;
+        height: 34px;
+        fill: transparent;
+        stroke: rgba(19, 129, 206, 1);
+        stroke-width: 2px;
+      }
+
+      .block-3-line {
+        position: absolute;
+        left: 16px;
+        bottom: 0;
+        width: 34px;
+        height: 60vh;
+        stroke: rgba(198, 198, 198, 1);
+        stroke-width: 3;
+      }
+
+      .gallery {
+        float: left;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        .year {
+          float: left;
+          max-width: 30%;
+          color: var(--unnamed-color-1381ce);
+          text-align: left;
+          font: normal normal bold 10vw Wigwag;
+          letter-spacing: 5.08px;
+          color: rgba(19, 129, 206, 1);
+          margin-top: 40vh;
+        }
+        .year-small {
+            position: absolute;
+            left: 50px;
+            bottom: 58vh;
+            color: var(--unnamed-color-1381ce);
+            text-align: left;
+            font: normal normal bold 37px/53px Source Sans Pro;
+            letter-spacing: 1.48px;
+            color: rgba(19, 129, 206, 1);
+          }
+        .box-1 {
+          position: absolute;
+          bottom: 0;
+          left: 30%;
+          height: 100px;
+          width: 30%;
+          float: left;
+          
+          .subtitle {
+            position: absolute;
+            left: 4px;
+            bottom: 52vh;
+            color: var(--unnamed-color-000000);
+            text-align: left;
+            font: normal normal 900 37px/51px Avenir;
+            font-size: 1.5vw;
+            letter-spacing: 0px;
+            color: rgba(0, 0, 0, 1);
+          }
+          .content {
+            position: absolute;
+            left: 55px;
+            bottom: 45vh;
+          }
+        }
+        .box-2 {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          height: 100px;
+          width: 30%;
+        }
+        .box-3 {
+          position: absolute;
+          bottom: 0;
+          left: 70%;
+          height: 100px;
+          width: 30%;
+        }
+        .box-4 {
+          position: absolute;
+          bottom: 0;
+          left: 90%;
+          height: 100px;
+          width: 30%;
+        }
       }
 
       .column-1 {
