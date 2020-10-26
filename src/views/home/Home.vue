@@ -761,7 +761,7 @@ export default {
             bottom: 58vh;
             color: var(--unnamed-color-1381ce);
             text-align: left;
-            font: normal normal bold 37px/53px Source Sans Pro;
+            font: normal normal bold 2vw Source Sans Pro;
             letter-spacing: 1.48px;
             color: rgba(19, 129, 206, 1);
           }
@@ -779,12 +779,13 @@ export default {
             bottom: 52vh;
             color: var(--unnamed-color-000000);
             text-align: left;
-            font: normal normal 900 37px/51px Avenir;
-            font-size: 1.5vw;
+            font: normal normal 1.5vw Avenir;
+            //font-size: 1.5vw;
             letter-spacing: 0px;
             color: rgba(0, 0, 0, 1);
           }
           .content {
+            font: normal normal normal 1vw Avenir;
             position: absolute;
             left: 55px;
             bottom: 45vh;
