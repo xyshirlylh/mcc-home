@@ -168,7 +168,7 @@
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15">DEVELOPMENT</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">DEVELOPMENT</p>
           <gap :height="18" />
           <p class="f-f-arial f-s-16 f-c-16">T: 0065 6508 2288</p>
           <gap :height="10" />
@@ -176,7 +176,7 @@
 
           <gap :height="38" />
 
-          <p class="f-f-arial f-s-12 f-c-15">CONSTRUCTION</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">CONSTRUCTION</p>
           <gap :height="18" />
           <p class="f-f-arial f-s-16 f-c-16">T: 0065 6766 6883</p>
           <gap :height="10" />
@@ -186,13 +186,13 @@
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15">STUFF PAGE</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">STUFF PAGE</p>
           <gap :height="36" />
           <p class="f-f-arial f-s-16 f-c-16 label-hover">Employee Operations</p>
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15">OTHER</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">OTHER</p>
           <gap :height="40" />
 
           <p class="f-f-arial f-s-16 f-c-16 label-hover">Carrer</p>

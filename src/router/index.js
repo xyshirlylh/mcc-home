@@ -18,7 +18,6 @@ const routes = [
     path: '/construction',
     component: () => import('../views/construction/Construction')
   },
-
   {
     path: "/loading",
     name: "Loading",
