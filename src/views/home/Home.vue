@@ -160,15 +160,134 @@
           </p>
         </div>
 
-        <img src="../../assets/imgs/home/MCC_BUILDING.png" alt="" />
+        <img
+          class="img"
+          ref="img-2"
+          src="../../assets/imgs/home/MCC_BUILDING.png"
+          alt=""
+        />
       </div>
     </div>
 
     <gap :height="200" />
 
-    <div class="block3">
+    <div class="background-3">
+      <div class="block3">
+        <div class="gallery-3">
+          <div class="column-1">
+            <div class="ID">
+              <span>03</span>
+            </div>
+
+            <svg class="title-underline">
+              <line x1="0" y1="0" x2="100" y2="0" />
+            </svg>
+
+            <div class="title">
+              <span>MCC history</span>
+            </div>
+          </div>
+          <div class="column-2">
+            <button @click="goLeft()">left</button>
+            <button @click="goRight()">right</button>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <div class="year">
+            {{ years[yearIndex] }}
+          </div>
+
+          <div class="box-1">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+
+            <div class="year-small">
+              <p>{{ years[yearIndex] }}</p>
+            </div>
+
+            <div class="subtitle">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
+            </div>
+          </div>
+          <div class="box-2">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex+1] }}</p>
+            </div>
+            
+          </div>
+          <div class="box-3">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex+2] }}</p>
+            </div>
+          </div>
+          <div class="box-4">
+            <svg class="block-3-cercle">
+              <ellipse
+                id="Ellipse_178_o"
+                rx="16"
+                ry="16"
+                cx="17"
+                cy="17"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="1800" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex+3] }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="background-4">
+      <gap :height="166" />
       <div class="ID">
-        <span>03</span>
+        <span>04</span>
       </div>
 
       <svg class="title-underline">
@@ -176,45 +295,146 @@
       </svg>
 
       <div class="title">
-        <span>MCC history</span>
+        <span>MCC news</span>
+      </div>
+
+      <div class="left">
+        <button>left</button>
+      </div>
+
+      <div class="block4">
+        <div class="head">
+          <p>Featured news of MCC Singapore</p>
+          <div class="button-1">
+            <button>View more</button>
+          </div>
+        </div>
+
+        <gap :height="100" />
+
+        <div class="gallery">
+          <div class="box-1">
+            <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
+            <div class="background-white">
+              <h1>Title 1</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+              </p>
+            </div>
+          </div>
+          <div class="box-2">
+            <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
+            <div class="background-white">
+              <h1>Title 2</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+              </p>
+            </div>
+          </div>
+          <div class="box-3">
+            <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
+            <div class="background-white">
+              <h1>Title 3</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <gap :height="209" />
+      </div>
+      <div class="right">
+        <button>right</button>
+      </div>
+    </div>
+
+    <div class="block5">
+      <div class="ID">
+        <span>05</span>
+      </div>
+
+      <svg class="title-underline">
+        <line x1="0" y1="0" x2="100" y2="0" />
+      </svg>
+
+      <div class="title">
+        <span>our culture</span>
+      </div>
+
+      <gap :height="80" />
+
+      <div class="row-1">
+        <div class="col-1">
+          <div class="title">
+            <p>Mission</p>
+          </div>
+          <div class="content">
+            <p>Transforming lives, inspiring society</p>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="title">
+            <p>Vision</p>
+          </div>
+          <div class="content">
+            <p>To be a global leading urbanisation enterprise</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="title">
+            <p>Culture</p>
+          </div>
+          <div class="content">
+            <p>
+              Make a difference. Creativity. Cooperation. Sincerity.
+              Goal-oriented
+            </p>
+          </div>
+        </div>
+      </div>
+      <gap :height="500" />
+
+      <div class="title-2">
+        <p>CONTACT US</p>
+      </div>
+
+      <gap :height="70" />
+
+      <div class="input">
+        <div class="email">
+          <input
+            type="text"
+            v-model="email"
+            @focus="clearContent('email')"
+            @blur="resetContent('email')"
+          />
+        </div>
+
+        <gap :height="63" />
+        <div class="text">
+          <textarea
+            type="input"
+            v-model="text"
+            @focus="clearContent('text')"
+            @blur="resetContent('text')"
+          ></textarea>
+        </div>
+      </div>
+
+      <gap :height="40" />
+      <div class="button-1">
+        <button class="button-2">Confirm</button>
       </div>
 
       <gap :height="69" />
     </div>
-
-    <div class="background-4">
-      <div class="block4">
-        <div class="ID">
-          <span>04</span>
-        </div>
-
-        <svg class="title-underline">
-          <line x1="0" y1="0" x2="100" y2="0" />
-        </svg>
-
-        <div class="title">
-          <span>MCC news</span>
-        </div>
-
-        <gap :height="69" />
-
-        <div class="head-4">
-          <p>Featured news of MCC Singapore</p>
-          <button>View more</button>
-        </div>
-
-        <div class="gallery">
-          <div class="box-1"></div>
-          <div class="box-2"></div>
-          <div class="box-3"></div>
-
-        </div>
-
-        
-      </div>
-    </div>
-
-    <gap :height="3000" />
   </div>
 </template>
 
@@ -224,10 +444,33 @@ export default {
   data: function () {
     return {
       selected: 1,
+      email: "Your email address…",
+      text: "Leave your message here…",
+      years: [1997, 2005, 2008, 2010,1997, 2005, 2008, 2010],
+      yearIndex: 0,
+      scrollTop: 0,
     };
   },
 
+  mounted() {
+    window.addEventListener("scroll", this.scrollTrigger);
+  },
+
+  destroy() {
+    window.removeEventListener("scroll", this.scrollTrigger);
+  },
+
   methods: {
+    scrollTrigger: function () {
+      this.scrollTop = window.scrollY;
+      if (this.scrollTop > 1000) {
+        this.$refs["img-2"].style.transform = "scale(1.5)";
+        console.log(this.$refs["img-2"].style);
+      } else {
+        this.$refs["img-2"].style.transform = "scale(1)";
+      }
+    },
+
     consultation: function () {
       this.selected = 1;
     },
@@ -236,6 +479,48 @@ export default {
     },
     construction: function () {
       this.selected = 3;
+    },
+
+    clearContent: function (content) {
+      if (content === "email" && this.email === "Your email address…") {
+        this.email = null;
+      } else if (
+        content === "text" &&
+        this.text === "Leave your message here…"
+      ) {
+        this.text = null;
+      }
+    },
+
+    resetContent: function (content) {
+      if (this.email === "") {
+        this.email = null;
+      }
+
+      if (this.text === "") {
+        this.text = null;
+      }
+
+      if (content === "email" && this.email === null) {
+        this.email = "Your email address…";
+      }
+
+      if (content === "text" && this.text === null) {
+        this.text = "Leave your message here…";
+      }
+    },
+
+    goLeft: function () {
+      this.yearIndex = this.yearIndex - 1;
+      if (this.yearIndex < 0) {
+        this.yearIndex = 3;
+      }
+    },
+    goRight: function () {
+      this.yearIndex = this.yearIndex + 1;
+      if (this.yearIndex > 3) {
+        this.yearIndex = 0;
+      }
     },
   },
 };
@@ -389,12 +674,14 @@ export default {
       background-size: cover;
       //position: relative;
     }
-    img {
-      margin-top: 35%;
+    .img {
+      margin-top: 30%;
       margin-left: 90px;
 
-      max-width: 35%;
+      max-width: 25%;
       max-height: 50%;
+      transform: scale(1);
+      transition: 1s;
     }
 
     .content {
@@ -417,27 +704,200 @@ export default {
     }
   }
 
-  .block3 {
-    padding: 14rem 14rem 0 14rem;
-    display: flex;
-    flex-direction: column;
+  .background-3 {
+    background-image: url("../../assets/imgs/home/MCC_BUILDING@2x.png");
+    background-color: white;
+    height: 100vh;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    //margin-bottom: 66px;
+    .block3 {
+      padding: 14rem 14rem 0 14rem;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100%;
+
+      .block-3-cercle {
+        position: absolute;
+        left: 0px;
+        bottom: 60vh;
+        width: 34px;
+        height: 34px;
+        fill: transparent;
+        stroke: rgba(19, 129, 206, 1);
+        stroke-width: 2px;
+      }
+
+      .block-3-line {
+        position: absolute;
+        left: 16px;
+        bottom: 0;
+        width: 34px;
+        height: 60vh;
+        stroke: rgba(198, 198, 198, 1);
+        stroke-width: 3;
+      }
+
+      .gallery {
+        float: left;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        .year {
+          float: left;
+          max-width: 30%;
+          color: var(--unnamed-color-1381ce);
+          text-align: left;
+          font: normal normal bold 10vw Wigwag;
+          letter-spacing: 5.08px;
+          color: rgba(19, 129, 206, 1);
+          margin-top: 40vh;
+        }
+        .year-small {
+            position: absolute;
+            left: 50px;
+            bottom: 58vh;
+            color: var(--unnamed-color-1381ce);
+            text-align: left;
+            font: normal normal bold 2vw Source Sans Pro;
+            letter-spacing: 1.48px;
+            color: rgba(19, 129, 206, 1);
+          }
+        .box-1 {
+          position: absolute;
+          bottom: 0;
+          left: 30%;
+          height: 100px;
+          width: 30%;
+          float: left;
+          
+          .subtitle {
+            position: absolute;
+            left: 4px;
+            bottom: 52vh;
+            color: var(--unnamed-color-000000);
+            text-align: left;
+            font: normal normal 1.5vw Avenir;
+            //font-size: 1.5vw;
+            letter-spacing: 0px;
+            color: rgba(0, 0, 0, 1);
+          }
+          .content {
+            font: normal normal normal 1vw Avenir;
+            position: absolute;
+            left: 55px;
+            bottom: 45vh;
+          }
+        }
+        .box-2 {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          height: 100px;
+          width: 30%;
+        }
+        .box-3 {
+          position: absolute;
+          bottom: 0;
+          left: 70%;
+          height: 100px;
+          width: 30%;
+        }
+        .box-4 {
+          position: absolute;
+          bottom: 0;
+          left: 90%;
+          height: 100px;
+          width: 30%;
+        }
+      }
+
+      .column-1 {
+        float: left;
+        max-width: 30%;
+        width: 30%;
+      }
+      .column-2 {
+        button {
+          margin-top: 15%;
+          margin-left: 5%;
+        }
+        float: right;
+        max-width: 30%;
+        width: 30%;
+      }
+    }
   }
 
   .background-4 {
     background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 100vh;
+    height: 130vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     //position: relative;
-  }
+    button {
+      margin-left: 30%;
+      margin-right: 30%;
+    }
 
-  .block4 {
-    padding: 14rem 14rem 0 14rem;
-    display: flex;
-    flex-direction: column;
+    .left {
+      margin-top: 50vh;
+
+      float: left;
+      width: 10%;
+      max-width: 10%;
+    }
+
+    .right {
+      margin-top: 50vh;
+      float: left;
+      width: 10%;
+      max-width: 10%;
+    }
+
+    .block4 {
+      margin-top: 14rem;
+      float: left;
+      width: 80%;
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      .gallery {
+        margin-top: 3%;
+        .background-white {
+          padding: 10%;
+          background-color: white;
+        }
+        text-align: center;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        .box-1 {
+          float: left;
+          max-width: 30%;
+          max-height: 50%;
+        }
+        .box-2 {
+          margin-left: 5%;
+          float: left;
+          max-width: 30%;
+        }
+        .box-3 {
+          margin-left: 5%;
+          float: left;
+          max-width: 30%;
+        }
+      }
+    }
+
     .ID {
+      margin-left: 14rem;
       color: var(--unnamed-color-000000);
       text-align: left;
       font: normal normal bold 41px/53px PT Sans;
@@ -446,17 +906,155 @@ export default {
       opacity: 1;
     }
     .title-underline {
+      margin-left: 14rem;
       border: 1px solid var(--unnamed-color-000000);
       border: 1px solid #000000;
       opacity: 1;
     }
     .title {
+      margin-left: 14rem;
       color: var(--unnamed-color-000000);
       text-align: left;
       font: normal normal normal 26px/37px Source Sans Pro;
       letter-spacing: 1.04px;
       color: #000000;
       opacity: 1;
+    }
+
+    .head {
+      .button-1 {
+        float: right;
+        max-width: 20%;
+
+        button {
+          text-align: center;
+          font: normal normal normal 22px/32px Source Sans Pro;
+          letter-spacing: 0.88px;
+          width: 132px;
+          height: 54px;
+          border: none;
+          width: 220px;
+          height: 54px;
+
+          background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
+          color: black;
+          border: 1px solid #000000;
+          border-radius: 4px;
+        }
+      }
+
+      max-width: 100%;
+      p {
+        float: left;
+        max-width: 80%;
+      }
+
+      height: 64px;
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal normal 45px/64px Source Sans Pro;
+      letter-spacing: 1.8px;
+      color: #000000;
+    }
+  }
+
+  .block5 {
+    padding: 14rem 14rem 0 14rem;
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    .title {
+      color: var(--unnamed-color-717171);
+      text-align: left;
+      font: normal normal normal 26px/37px Source Sans Pro;
+      letter-spacing: 1.04px;
+      color: rgba(113, 113, 113, 1);
+    }
+    .title-2 {
+      text-align: center;
+      color: var(--unnamed-color-000000);
+      font: normal normal bold 41px/53px PT Sans;
+      letter-spacing: 1.64px;
+      color: rgba(0, 0, 0, 1);
+    }
+    .input {
+      margin-left: auto;
+      margin-right: auto;
+      .email {
+        input[type="text"] {
+          width: 592px;
+          border: none;
+          border-bottom: 1px solid rgba(112, 112, 112, 1);
+          color: var(--unnamed-color-c6c6c6);
+          text-align: left;
+          font: normal normal normal 22px/45px Source Sans Pro;
+          letter-spacing: 0.88px;
+          color: rgba(198, 198, 198, 1);
+        }
+      }
+      .text {
+        textarea {
+          width: 592px;
+          height: 148px;
+          background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+          border: 1px solid rgba(112, 112, 112, 1);
+          border-radius: 3px;
+          color: var(--unnamed-color-c6c6c6);
+          text-align: left;
+          font: normal normal normal 22px/45px Source Sans Pro;
+          letter-spacing: 0.88px;
+          color: rgba(198, 198, 198, 1);
+        }
+      }
+    }
+    .button-1 {
+      margin-left: auto;
+      margin-right: auto;
+      .button-2 {
+        text-align: center;
+        font: normal normal normal 22px/32px Source Sans Pro;
+        letter-spacing: 0.88px;
+        width: 132px;
+        height: 54px;
+        border: none;
+
+        background: rgba(74, 145, 242, 1) 0% 0% no-repeat padding-box;
+        color: white;
+        border-radius: 4px;
+      }
+    }
+
+    .row-1 {
+      .title {
+        color: var(--unnamed-color-000000);
+        text-align: center;
+        font: normal normal bold 35px/64px Open Sans;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 1);
+      }
+      .content {
+        margin-top: 50px;
+        color: var(--unnamed-color-000000);
+        text-align: left;
+        font: normal normal normal 28px/50px Open Sans;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 1);
+      }
+      .col-1 {
+        float: left;
+        width: 33%;
+        max-width: 33%;
+      }
+      .col-2 {
+        float: left;
+        width: 33%;
+        max-width: 33%;
+      }
+      .col-3 {
+        float: left;
+        width: 33%;
+        max-width: 33%;
+      }
     }
   }
 }
