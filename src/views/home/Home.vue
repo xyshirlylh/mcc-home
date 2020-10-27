@@ -199,7 +199,8 @@
           </div>
 
           <div class="box-1">
-            <svg class="block-3-cercle">
+            <svg class="block-3-cercle" style="fill: black;
+        stroke: black;">
               <ellipse
                 id="Ellipse_178_o"
                 rx="16"
@@ -688,8 +689,9 @@ export default {
       .content-head {
         color: var(--unnamed-color-000000);
         text-align: left;
-        font: normal normal normal 45px/64px Source Sans Pro;
+        font: normal normal normal 3vw Source Sans Pro;
         letter-spacing: 1.8px;
+        line-height: 1.8;
         color: #000000;
         opacity: 1;
       }
@@ -697,7 +699,8 @@ export default {
       width: 55%;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 22px/45px Source Sans Pro;
+      font: normal normal normal 1.7vw Source Sans Pro;
+      line-height: 1.8;
       letter-spacing: 0.88px;
       color: #000000;
       opacity: 1;
@@ -834,7 +837,7 @@ export default {
   .background-4 {
     background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 130vh;
+    height: 170vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -860,6 +863,9 @@ export default {
     }
 
     .block4 {
+      .head{
+        font-size: 3vw;
+      }
       margin-top: 14rem;
       float: left;
       width: 80%;
@@ -1027,8 +1033,8 @@ export default {
     .row-1 {
       .title {
         color: var(--unnamed-color-000000);
-        text-align: center;
-        font: normal normal bold 35px/64px Open Sans;
+        text-align: left;
+        font: normal normal bold 2vw Open Sans;
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
@@ -1036,7 +1042,7 @@ export default {
         margin-top: 50px;
         color: var(--unnamed-color-000000);
         text-align: left;
-        font: normal normal normal 28px/50px Open Sans;
+        font: normal normal normal 1.7vw Open Sans;
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
