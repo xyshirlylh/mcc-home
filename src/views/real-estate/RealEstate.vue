@@ -117,7 +117,7 @@
         const h = $(el).offset().top;
 
         const marginTop = $(this.$refs.contentRef).css('marginTop');
-        $('body,html').animate({scrollTop: h - parseFloat(marginTop)}, 200);
+        $('body,html').animate({scrollTop: h - parseFloat(marginTop) - 50}, 200);
       },
 
       animateNumber() {
@@ -128,9 +128,9 @@
           item.count && anime({
             targets: el,
             innerHTML: [0, item.count],
-            easing: 'linear',
+            easing: 'easeOutElastic(1, .6)',
             round: 10,
-            duration: 1800
+            duration: 1800,
           })
         }
       }

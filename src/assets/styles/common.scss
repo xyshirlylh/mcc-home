@@ -54,6 +54,8 @@ body, html, #app {
 .f-f-rubik   { font-family: $font-family6; }
 .f-f-ptsans  { font-family: $font-family7; }
 .f-f-opensans{ font-family: $font-family8; }
+.f-f-heitisc { font-family: $font-family9; }
+.f-f-wigwag  { font-family: $font-family10; }
 
 
 /*************** font size ******************/
@@ -100,7 +102,9 @@ body, html, #app {
 
 
 /************** overwrite *******************/
-
+a:hover {
+  text-decoration: none !important;
+}
 
 /*************** shared ******************/
 

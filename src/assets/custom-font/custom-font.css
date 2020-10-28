@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Source Sans Pro";
-    src: local('Source Sans Pro'), url("SourceSansPro-Bold.otf"), url("SourceSansPro-Regular.otf") format('otf');
+    src: local('Source Sans Pro'), url("SourceSansPro-Regular.otf") format('otf');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -57,9 +57,17 @@
 @font-face {
     font-family: "Open Sans";
     src: local("Open Sans"),
-    url("OpenSans-Bold.ttf"),
-    url("OpenSans-ExtraBold.ttf"),
-    url("OpenSans-Regular.ttf") format('ttf');
+        url("OpenSans-Bold.ttf"),
+        url("OpenSans-ExtraBold.ttf"),
+        url("OpenSans-Regular.ttf") format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Heiti SC";
+    src: local("Heiti SC"), url("Heiti SC Light.ttf") format('ttf');
     font-weight: normal;
     font-style: normal;
     font-display: block;

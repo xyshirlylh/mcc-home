@@ -21,12 +21,15 @@ const routes = [
   {
     path: "/loading",
     name: "Loading",
-    component: () => import("../views/Loading.vue"),
+    component: () => import("../views/shared/Loading.vue"),
   },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  }
 });
 
 export default router

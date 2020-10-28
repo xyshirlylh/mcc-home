@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <gap :height="119" />
+
     <div class="block1">
       <div class="ID">
         <span>01</span>
@@ -62,7 +63,9 @@
                 cy="47.5"
               ></ellipse>
             </svg>
-            <span v-if="selected === 2" style="color: black">Real Estate</span>
+            <router-link v-if="selected === 2" to="/real-estate">
+              <span style="color: black">Real Estate</span>
+            </router-link>
             <span v-else>Real Estate</span>
           </div>
 
@@ -86,7 +89,9 @@
                 cy="47.5"
               ></ellipse>
             </svg>
-            <span v-if="selected === 3" style="color: black">Construction</span>
+            <router-link v-if="selected === 3" to="/construction">
+              <span style="color: black">Construction</span>
+            </router-link>
             <span v-else>Construction</span>
           </div>
         </div>
@@ -243,7 +248,7 @@
             <div class="year-small">
               <p>{{ years[yearIndex+1] }}</p>
             </div>
-            
+
           </div>
           <div class="box-3">
             <svg class="block-3-cercle">
@@ -775,7 +780,7 @@ export default {
           height: 100px;
           width: 30%;
           float: left;
-          
+
           .subtitle {
             position: absolute;
             left: 4px;
