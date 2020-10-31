@@ -189,8 +189,18 @@
             </div>
           </div>
           <div class="column-2">
-            <button @click="goLeft()">left</button>
-            <button @click="goRight()">right</button>
+            <img
+              @click="goLeft()"
+              type="button"
+              src="../../assets/imgs/home/arrow left.svg"
+              alt=""
+            />
+            <img
+              @click="goRight()"
+              type="button"
+              src="../../assets/imgs/home/arrow right.svg"
+              alt=""
+            />
           </div>
         </div>
 
@@ -299,7 +309,7 @@
       </div>
 
       <div class="left">
-        <button>left</button>
+        <img type="button" src="../../assets/imgs/home/arrow left.svg" alt="" />
       </div>
 
       <div class="block4">
@@ -309,8 +319,6 @@
             <button>View more</button>
           </div>
         </div>
-
-        <gap :height="100" />
 
         <div class="gallery">
           <div class="box-1">
@@ -349,7 +357,11 @@
         </div>
       </div>
       <div class="right">
-        <button>right</button>
+        <img
+          type="button"
+          src="../../assets/imgs/home/arrow right.svg"
+          alt=""
+        />
       </div>
     </div>
 
@@ -365,8 +377,6 @@
       <div class="title">
         <span>our culture</span>
       </div>
-
-      <gap :height="80" />
 
       <div class="row-1">
         <div class="col-1">
@@ -824,6 +834,10 @@ export default {
         float: right;
         max-width: 30%;
         width: 30%;
+        padding: 0 0 0 15%;
+        img {
+          margin-left: 10%;
+        }
       }
     }
   }
@@ -836,13 +850,13 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     //position: relative;
-    button {
-      margin-left: 30%;
-      margin-right: 30%;
-    }
 
     .left {
-      margin-top: 50vh;
+      margin-top: 50rem;
+      img {
+        margin-left: 30%;
+        max-width: 30%;
+      }
 
       float: left;
       width: 10%;
@@ -850,25 +864,26 @@ export default {
     }
 
     .right {
-      margin-top: 50vh;
+      margin-top: 50rem;
+      img {
+        margin-left: 30%;
+        max-width: 30%;
+      }
       float: left;
       width: 10%;
       max-width: 10%;
     }
 
     .block4 {
-      .head {
-        font-size: 4.5rem;
-      }
-
       float: left;
       width: 80%;
       max-width: 80%;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 10rem;
       .gallery {
-        margin-top: 3%;
+        font: normal normal normal 1.6rem/2.2rem Source Sans Pro;
+        margin-top: 3.5rem;
         .background-white {
           padding: 10%;
           background-color: white;
@@ -900,7 +915,7 @@ export default {
       margin-left: 14rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal bold 41px/53px PT Sans;
+      font: normal normal bold 4.1rem/5.3rem PT Sans;
       letter-spacing: 1.64px;
       color: rgba(0, 0, 0, 1);
       opacity: 1;
@@ -910,10 +925,10 @@ export default {
       opacity: 1;
     }
     .title {
-      margin-left: 14rem;
+      margin-left: 21rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 26px/37px Source Sans Pro;
+      font: normal normal normal 2.6rem/3.7rem Source Sans Pro;
       letter-spacing: 1.04px;
       color: #000000;
       opacity: 1;
@@ -947,10 +962,13 @@ export default {
         max-width: 80%;
       }
 
+      margin-top: 10rem;
+      max-height: 6.4rem;
+
       height: 6.4rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 45px/64px Source Sans Pro;
+      font: normal normal normal 4.5rem/6.4rem Source Sans Pro;
       letter-spacing: 1.8px;
       color: #000000;
     }
