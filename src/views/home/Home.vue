@@ -21,18 +21,18 @@
                 style="stroke: #e3e3e3"
                 v-if="selected === 1"
                 id="Ellipse_179"
-                rx="40"
-                ry="40"
-                cx="47.5"
-                cy="47.5"
+                rx="4rem"
+                ry="4rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
 
               <ellipse
                 id="Ellipse_179"
-                rx="6.5"
-                ry="6.5"
-                cx="47.5"
-                cy="47.5"
+                rx="0.65rem"
+                ry="0.65rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
             </svg>
             <span v-if="selected === 1" style="color: black">Consultation</span>
@@ -45,18 +45,18 @@
                 style="stroke: #e3e3e3"
                 v-if="selected === 2"
                 id="Ellipse_179"
-                rx="40"
-                ry="40"
-                cx="47.5"
-                cy="47.5"
+                rx="4rem"
+                ry="4rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
 
               <ellipse
                 id="Ellipse_179"
-                rx="6.5"
-                ry="6.5"
-                cx="47.5"
-                cy="47.5"
+                rx="0.65rem"
+                ry="0.65rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
             </svg>
             <router-link v-if="selected === 2" to="/real-estate">
@@ -71,18 +71,18 @@
                 style="stroke: #e3e3e3"
                 v-if="selected === 3"
                 id="Ellipse_179"
-                rx="40"
-                ry="40"
-                cx="47.5"
-                cy="47.5"
+                rx="4rem"
+                ry="4rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
 
               <ellipse
                 id="Ellipse_179"
-                rx="6.5"
-                ry="6.5"
-                cx="47.5"
-                cy="47.5"
+                rx="0.65rem"
+                ry="0.65rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
             </svg>
             <router-link v-if="selected === 3" to="/construction">
@@ -347,8 +347,6 @@
             </div>
           </div>
         </div>
-
-        <gap :height="209" />
       </div>
       <div class="right">
         <button>right</button>
@@ -375,7 +373,7 @@
           <div class="title">
             <p>Mission</p>
           </div>
-          <div class="content">
+          <div class="f-f-sans f-s-25 content-5">
             <p>Transforming lives, inspiring society</p>
           </div>
         </div>
@@ -383,7 +381,7 @@
           <div class="title">
             <p>Vision</p>
           </div>
-          <div class="content">
+          <div class="content-5">
             <p>To be a global leading urbanisation enterprise</p>
           </div>
         </div>
@@ -391,7 +389,7 @@
           <div class="title">
             <p>Culture</p>
           </div>
-          <div class="content">
+          <div class="content-5">
             <p>
               Make a difference. Creativity. Cooperation. Sincerity.
               Goal-oriented
@@ -454,6 +452,7 @@ export default {
 
   mounted() {
     window.addEventListener("scroll", this.scrollTrigger);
+    //console.log(document.height);
   },
 
   destroy() {
@@ -463,7 +462,8 @@ export default {
   methods: {
     scrollTrigger: function () {
       this.scrollTop = window.scrollY;
-      if (this.scrollTop > 1000) {
+
+      if (this.scrollTop > document.body.scrollHeight * 0.13) {
         this.$refs["img-2"].style.transform = "scale(1.5)";
         console.log(this.$refs["img-2"].style);
       } else {
@@ -534,6 +534,7 @@ export default {
 
   .block1 {
     padding: 21.3rem 7.291vw 0 7.291vw;
+
     display: flex;
     flex-direction: column;
   }
@@ -592,7 +593,7 @@ export default {
         color: var(--unnamed-color-000000);
       }
 
-      margin-left: 50px;
+      margin-left: 5rem;
 
       text-align: left;
     }
@@ -623,8 +624,8 @@ export default {
   }
 
   .small-icon {
-    width: 95px;
-    height: 95px;
+    width: 9.5rem;
+    height: 9.5rem;
     opacity: 1;
     fill: transparent;
     stroke: rgba(59, 125, 216, 1);
@@ -662,15 +663,15 @@ export default {
     .background {
       background-image: url("../../assets/imgs/home/blue-blend-watercolour-waterco@2x.png");
       background-color: white;
-      height: 100vh;
+
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       //position: relative;
     }
     .img {
-      margin-top: 30%;
-      margin-left: 90px;
+      margin-top: 62.3rem;
+      margin-left: 9rem;
 
       max-width: 25%;
       max-height: 50%;
@@ -830,7 +831,7 @@ export default {
   .background-4 {
     background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 170vh;
+    height: 133.8rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -859,7 +860,7 @@ export default {
       .head {
         font-size: 4.5rem;
       }
-      margin-top: 14rem;
+
       float: left;
       width: 80%;
       max-width: 80%;
@@ -906,8 +907,6 @@ export default {
     }
     .title-underline {
       margin-left: 14rem;
-      border: 1px solid var(--unnamed-color-000000);
-      border: 1px solid #000000;
       opacity: 1;
     }
     .title {
@@ -948,7 +947,7 @@ export default {
         max-width: 80%;
       }
 
-      height: 64px;
+      height: 6.4rem;
       color: var(--unnamed-color-000000);
       text-align: left;
       font: normal normal normal 45px/64px Source Sans Pro;
@@ -961,7 +960,7 @@ export default {
     padding: 14rem 14rem 0 14rem;
     display: flex;
     flex-direction: column;
-    height: 200vh;
+    height: 154.6rem;
 
     .title-2 {
       text-align: center;
@@ -994,7 +993,7 @@ export default {
           border-radius: 3px;
           color: var(--unnamed-color-c6c6c6);
           text-align: left;
-          font: normal normal normal 22px/45px Source Sans Pro;
+          font: normal normal normal 2.2rem/4.5rem Source Sans Pro;
           letter-spacing: 0.88px;
           color: rgba(198, 198, 198, 1);
         }
@@ -1018,34 +1017,56 @@ export default {
     }
 
     .row-1 {
+      height: 35rem;
       .title {
         color: var(--unnamed-color-000000);
+
         text-align: left;
-        font: normal normal bold 3rem/6.4rem Open Sans;
+        font: 3.5rem/6.4rem Open Sans;
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
-      .content {
-        margin-top: 50px;
+      .content-5 {
+        margin-top: 5rem;
         text-align: left;
-        font: 2rem/5rem Open Sans;
+        width: 35rem;
+
+        font-size: 3rem;
+
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
       .col-1 {
         float: left;
-        width: 33%;
-        max-width: 33%;
+        max-width: 20%;
+        background-image: url("../../assets/imgs/home/mission.png");
+        height: 30rem;
+        background-color: white;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 60%;
       }
       .col-2 {
         float: left;
-        width: 33%;
-        max-width: 33%;
+        max-width: 20%;
+        margin-left: 20%;
+        background-image: url("../../assets/imgs/home/vision.png");
+        height: 30rem;
+        background-color: white;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 60%;
       }
       .col-3 {
         float: left;
-        width: 33%;
-        max-width: 33%;
+        max-width: 20%;
+        margin-left: 20%;
+        background-image: url("../../assets/imgs/home/culture.png");
+        height: 30rem;
+        background-color: white;
+        background-position: 100% 70%;
+        background-repeat: no-repeat;
+        background-size: 60%;
       }
     }
   }
