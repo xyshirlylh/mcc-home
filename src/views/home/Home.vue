@@ -1036,6 +1036,7 @@ export default {
 
     .row-1 {
       height: 35rem;
+      margin-top: 14.7rem;
       .title {
         color: var(--unnamed-color-000000);
 
