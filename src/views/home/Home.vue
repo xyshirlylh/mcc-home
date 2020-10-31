@@ -1,42 +1,38 @@
 <template>
   <div class="home">
-    <gap :height="119" />
-
     <div class="block1">
       <div class="ID">
-        <span>01</span>
+        <p class="f-f-ptsans">01</p>
       </div>
 
       <svg class="title-underline">
-        <line x1="0" y1="0" x2="100" y2="0" />
+        <line x1="0" y1="0" x2="150" y2="0" />
       </svg>
 
       <div class="title">
-        <span>What we do</span>
+        <p>What we do</p>
       </div>
 
-      <gap :height="69" />
-
       <div>
-        <div class="subtitles" style="text-align: center">
+        <div class="subtitle-s" style="text-align: center">
           <div class="subtitle" @mouseover="consultation()">
             <svg class="small-icon">
               <ellipse
                 style="stroke: #e3e3e3"
                 v-if="selected === 1"
                 id="Ellipse_179"
-                rx="40"
-                ry="40"
-                cx="47.5"
-                cy="47.5"
+                rx="4rem"
+                ry="4rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
 
               <ellipse
                 id="Ellipse_179"
-                rx="6.5"
-                ry="6.5"
-                cx="47.5"
-                cy="47.5"
+                rx="0.65rem"
+                ry="0.65rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
             </svg>
             <span v-if="selected === 1" style="color: black">Consultation</span>
@@ -49,18 +45,18 @@
                 style="stroke: #e3e3e3"
                 v-if="selected === 2"
                 id="Ellipse_179"
-                rx="40"
-                ry="40"
-                cx="47.5"
-                cy="47.5"
+                rx="4rem"
+                ry="4rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
 
               <ellipse
                 id="Ellipse_179"
-                rx="6.5"
-                ry="6.5"
-                cx="47.5"
-                cy="47.5"
+                rx="0.65rem"
+                ry="0.65rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
             </svg>
             <router-link v-if="selected === 2" to="/real-estate">
@@ -75,18 +71,18 @@
                 style="stroke: #e3e3e3"
                 v-if="selected === 3"
                 id="Ellipse_179"
-                rx="40"
-                ry="40"
-                cx="47.5"
-                cy="47.5"
+                rx="4rem"
+                ry="4rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
 
               <ellipse
                 id="Ellipse_179"
-                rx="6.5"
-                ry="6.5"
-                cx="47.5"
-                cy="47.5"
+                rx="0.65rem"
+                ry="0.65rem"
+                cx="4.75rem"
+                cy="4.75rem"
               ></ellipse>
             </svg>
             <router-link v-if="selected === 3" to="/construction">
@@ -142,7 +138,7 @@
       </div>
 
       <svg class="title-underline">
-        <line x1="0" y1="0" x2="100" y2="0" />
+        <line x1="0" y1="0" x2="150" y2="0" />
       </svg>
 
       <div class="title">
@@ -185,7 +181,7 @@
             </div>
 
             <svg class="title-underline">
-              <line x1="0" y1="0" x2="100" y2="0" />
+              <line x1="0" y1="0" x2="150" y2="0" />
             </svg>
 
             <div class="title">
@@ -193,8 +189,18 @@
             </div>
           </div>
           <div class="column-2">
-            <button @click="goLeft()">left</button>
-            <button @click="goRight()">right</button>
+            <img
+              @click="goLeft()"
+              type="button"
+              src="../../assets/imgs/home/arrow left.svg"
+              alt=""
+            />
+            <img
+              @click="goRight()"
+              type="button"
+              src="../../assets/imgs/home/arrow right.svg"
+              alt=""
+            />
           </div>
         </div>
 
@@ -204,8 +210,7 @@
           </div>
 
           <div class="box-1">
-            <svg class="block-3-cercle" style="fill: black;
-        stroke: black;">
+            <svg class="block-3-cercle" style="fill: black; stroke: black">
               <ellipse
                 id="Ellipse_178_o"
                 rx="16"
@@ -246,9 +251,8 @@
               <line x1="0" y1="0" x2="0" y2="1800" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex+1] }}</p>
+              <p>{{ years[yearIndex + 1] }}</p>
             </div>
-
           </div>
           <div class="box-3">
             <svg class="block-3-cercle">
@@ -265,7 +269,7 @@
               <line x1="0" y1="0" x2="0" y2="1800" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex+2] }}</p>
+              <p>{{ years[yearIndex + 2] }}</p>
             </div>
           </div>
           <div class="box-4">
@@ -283,7 +287,7 @@
               <line x1="0" y1="0" x2="0" y2="1800" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex+3] }}</p>
+              <p>{{ years[yearIndex + 3] }}</p>
             </div>
           </div>
         </div>
@@ -297,7 +301,7 @@
       </div>
 
       <svg class="title-underline">
-        <line x1="0" y1="0" x2="100" y2="0" />
+        <line x1="0" y1="0" x2="150" y2="0" />
       </svg>
 
       <div class="title">
@@ -305,7 +309,7 @@
       </div>
 
       <div class="left">
-        <button>left</button>
+        <img type="button" src="../../assets/imgs/home/arrow left.svg" alt="" />
       </div>
 
       <div class="block4">
@@ -315,8 +319,6 @@
             <button>View more</button>
           </div>
         </div>
-
-        <gap :height="100" />
 
         <div class="gallery">
           <div class="box-1">
@@ -353,11 +355,13 @@
             </div>
           </div>
         </div>
-
-        <gap :height="209" />
       </div>
       <div class="right">
-        <button>right</button>
+        <img
+          type="button"
+          src="../../assets/imgs/home/arrow right.svg"
+          alt=""
+        />
       </div>
     </div>
 
@@ -367,21 +371,19 @@
       </div>
 
       <svg class="title-underline">
-        <line x1="0" y1="0" x2="100" y2="0" />
+        <line x1="0" y1="0" x2="150" y2="0" />
       </svg>
 
       <div class="title">
         <span>our culture</span>
       </div>
 
-      <gap :height="80" />
-
       <div class="row-1">
         <div class="col-1">
           <div class="title">
             <p>Mission</p>
           </div>
-          <div class="content">
+          <div class="f-f-sans f-s-25 content-5">
             <p>Transforming lives, inspiring society</p>
           </div>
         </div>
@@ -389,7 +391,7 @@
           <div class="title">
             <p>Vision</p>
           </div>
-          <div class="content">
+          <div class="content-5">
             <p>To be a global leading urbanisation enterprise</p>
           </div>
         </div>
@@ -397,7 +399,7 @@
           <div class="title">
             <p>Culture</p>
           </div>
-          <div class="content">
+          <div class="content-5">
             <p>
               Make a difference. Creativity. Cooperation. Sincerity.
               Goal-oriented
@@ -452,7 +454,7 @@ export default {
       selected: 1,
       email: "Your email address…",
       text: "Leave your message here…",
-      years: [1997, 2005, 2008, 2010,1997, 2005, 2008, 2010],
+      years: [1997, 2005, 2008, 2010, 1997, 2005, 2008, 2010],
       yearIndex: 0,
       scrollTop: 0,
     };
@@ -460,6 +462,7 @@ export default {
 
   mounted() {
     window.addEventListener("scroll", this.scrollTrigger);
+    //console.log(document.height);
   },
 
   destroy() {
@@ -469,7 +472,8 @@ export default {
   methods: {
     scrollTrigger: function () {
       this.scrollTop = window.scrollY;
-      if (this.scrollTop > 1000) {
+
+      if (this.scrollTop > document.body.scrollHeight * 0.13) {
         this.$refs["img-2"].style.transform = "scale(1.5)";
         console.log(this.$refs["img-2"].style);
       } else {
@@ -535,11 +539,12 @@ export default {
 <style lang="scss" scoped>
 .home {
   width: 100%;
-  min-height: 100%;
+  //min-height: 100%;
   //padding: 14rem 14rem 0 14rem;
 
   .block1 {
-    padding: 14rem 14rem 0 14rem;
+    padding: 21.3rem 7.291vw 0 7.291vw;
+
     display: flex;
     flex-direction: column;
   }
@@ -557,87 +562,80 @@ export default {
   }
 
   .ID {
-    top: 213px;
-    left: 140px;
-    width: 48px;
-    height: 48px;
-    color: var(--unnamed-color-bfd6f6);
+    top: 21.3rem;
+    left: 14rem;
+    width: 4.8rem;
+    height: 4.8rem;
     text-align: left;
-    font: normal normal bold 41px/53px PT Sans;
-    letter-spacing: 1.64px;
     color: #bfd6f6;
-    opacity: 1;
+    letter-spacing: 1.64px;
+    line-height: 5.3rem;
+    font: 4.1rem/5.3rem PT Sans;
+    font-weight: 700;
   }
 
   .title-underline {
+    margin-top: 0.694vh;
     fill: transparent;
     stroke: rgba(113, 113, 113, 1);
-    stroke-width: 1px;
+    stroke-width: 2px;
     stroke-linejoin: miter;
     stroke-linecap: butt;
     stroke-miterlimit: 4;
     shape-rendering: auto;
-    width: 145px;
-    height: 1px;
-    left: 140px;
-    top: 268.5px;
+    width: 16rem;
+    height: 2rem;
+    left: 14rem;
   }
 
   .title {
-    top: 295px;
-    left: 210px;
-    width: 200px;
-    height: 30px;
-    margin-left: 70px;
-    color: var(--unnamed-color-717171);
+    margin-left: 7rem;
     text-align: left;
-    font: normal normal normal 26px/33px PT Sans;
+
+    font-size: 2.6rem;
     letter-spacing: 1.04px;
-    color: #717171;
-    opacity: 1;
+    color: rgba(113, 113, 113, 1);
   }
 
-  .subtitle {
-    &:hover {
-      color: var(--unnamed-color-000000);
+  .subtitle-s {
+    .subtitle {
+      &:hover {
+        color: var(--unnamed-color-000000);
+      }
+
+      margin-left: 5rem;
+
+      text-align: left;
     }
     span {
-      margin-left: 20px;
+      margin-left: 0.885vw;
     }
-    margin-left: 50px;
-
-    color: var(--unnamed-color-e3e3e3);
-    text-align: left;
-    font: normal normal normal 2.73vw/3.354vw Source Sans Pro;
-    letter-spacing: 2px;
-    color: #e3e3e3;
-    opacity: 1;
-  }
-
-  .subtitles {
     float: left;
-    max-width: 45%;
-    height: auto;
+    max-width: 50%;
+    margin-top: 1rem;
+    text-align: left;
+    font: normal normal normal 6.1rem/8.6rem Source Sans Pro;
+    letter-spacing: 2.44px;
+    color: rgba(227, 227, 227, 1);
   }
 
   .content {
+    margin-top: 3.9rem;
     float: right;
-    width: 55%;
+    max-width: 50%;
     .image {
       max-width: 100%;
       height: auto;
     }
-    color: var(--unnamed-color-000000);
+
+    font: 2rem/2.8rem Source Sans Pro;
+
     text-align: left;
-    font: normal normal normal 20px/28px Source Sans Pro;
-    letter-spacing: 0.8px;
-    color: #000000;
-    opacity: 1;
   }
 
   .small-icon {
-    width: 95px;
-    height: 95px;
+    width: 9.5rem;
+    height: 9.5rem;
     opacity: 1;
     fill: transparent;
     stroke: rgba(59, 125, 216, 1);
@@ -650,12 +648,13 @@ export default {
 
   .button {
     background-color: white;
-    width: 220px;
-    height: 54px;
+    width: 22rem;
+    height: 5.4rem;
     border: 1px solid var(--unnamed-color-000000);
     border: 1px solid #000000;
     border-radius: 4px;
     opacity: 1;
+    font: 2.2rem/3.2rem Source Sans Pro;
   }
 
   .block2 {
@@ -674,15 +673,15 @@ export default {
     .background {
       background-image: url("../../assets/imgs/home/blue-blend-watercolour-waterco@2x.png");
       background-color: white;
-      height: 100vh;
+
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       //position: relative;
     }
     .img {
-      margin-top: 30%;
-      margin-left: 90px;
+      margin-top: 62.3rem;
+      margin-left: 9rem;
 
       max-width: 25%;
       max-height: 50%;
@@ -764,15 +763,15 @@ export default {
           margin-top: 40vh;
         }
         .year-small {
-            position: absolute;
-            left: 50px;
-            bottom: 58vh;
-            color: var(--unnamed-color-1381ce);
-            text-align: left;
-            font: normal normal bold 2vw Source Sans Pro;
-            letter-spacing: 1.48px;
-            color: rgba(19, 129, 206, 1);
-          }
+          position: absolute;
+          left: 50px;
+          bottom: 58vh;
+          color: var(--unnamed-color-1381ce);
+          text-align: left;
+          font: normal normal bold 2vw Source Sans Pro;
+          letter-spacing: 1.48px;
+          color: rgba(19, 129, 206, 1);
+        }
         .box-1 {
           position: absolute;
           bottom: 0;
@@ -818,7 +817,7 @@ export default {
           bottom: 0;
           left: 90%;
           height: 100px;
-          width: 30%;
+          width: 5%;
         }
       }
 
@@ -835,6 +834,10 @@ export default {
         float: right;
         max-width: 30%;
         width: 30%;
+        padding: 0 0 0 15%;
+        img {
+          margin-left: 10%;
+        }
       }
     }
   }
@@ -842,18 +845,18 @@ export default {
   .background-4 {
     background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 170vh;
+    height: 133.8rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     //position: relative;
-    button {
-      margin-left: 30%;
-      margin-right: 30%;
-    }
 
     .left {
-      margin-top: 50vh;
+      margin-top: 50rem;
+      img {
+        margin-left: 30%;
+        max-width: 30%;
+      }
 
       float: left;
       width: 10%;
@@ -861,25 +864,26 @@ export default {
     }
 
     .right {
-      margin-top: 50vh;
+      margin-top: 50rem;
+      img {
+        margin-left: 30%;
+        max-width: 30%;
+      }
       float: left;
       width: 10%;
       max-width: 10%;
     }
 
     .block4 {
-      .head{
-        font-size: 3vw;
-      }
-      margin-top: 14rem;
       float: left;
       width: 80%;
       max-width: 80%;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 10rem;
       .gallery {
-        margin-top: 3%;
+        font: normal normal normal 1.6rem/2.2rem Source Sans Pro;
+        margin-top: 3.5rem;
         .background-white {
           padding: 10%;
           background-color: white;
@@ -911,22 +915,20 @@ export default {
       margin-left: 14rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal bold 41px/53px PT Sans;
+      font: normal normal bold 4.1rem/5.3rem PT Sans;
       letter-spacing: 1.64px;
       color: rgba(0, 0, 0, 1);
       opacity: 1;
     }
     .title-underline {
       margin-left: 14rem;
-      border: 1px solid var(--unnamed-color-000000);
-      border: 1px solid #000000;
       opacity: 1;
     }
     .title {
-      margin-left: 14rem;
+      margin-left: 21rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 26px/37px Source Sans Pro;
+      font: normal normal normal 2.6rem/3.7rem Source Sans Pro;
       letter-spacing: 1.04px;
       color: #000000;
       opacity: 1;
@@ -939,13 +941,13 @@ export default {
 
         button {
           text-align: center;
-          font: normal normal normal 22px/32px Source Sans Pro;
+          font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
           letter-spacing: 0.88px;
-          width: 132px;
-          height: 54px;
+          width: 13.2rem;
+          height: 5.4rem;
           border: none;
-          width: 220px;
-          height: 54px;
+          width: 22rem;
+          height: 5.4rem;
 
           background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
           color: black;
@@ -960,10 +962,13 @@ export default {
         max-width: 80%;
       }
 
-      height: 64px;
+      margin-top: 10rem;
+      max-height: 6.4rem;
+
+      height: 6.4rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 45px/64px Source Sans Pro;
+      font: normal normal normal 4.5rem/6.4rem Source Sans Pro;
       letter-spacing: 1.8px;
       color: #000000;
     }
@@ -973,19 +978,13 @@ export default {
     padding: 14rem 14rem 0 14rem;
     display: flex;
     flex-direction: column;
-    height: 200vh;
-    .title {
-      color: var(--unnamed-color-717171);
-      text-align: left;
-      font: normal normal normal 26px/37px Source Sans Pro;
-      letter-spacing: 1.04px;
-      color: rgba(113, 113, 113, 1);
-    }
+    height: 154.6rem;
+
     .title-2 {
       text-align: center;
       color: var(--unnamed-color-000000);
-      font: normal normal bold 41px/53px PT Sans;
-      letter-spacing: 1.64px;
+      font: normal normal bold 4.1rem/5.3rem PT Sans;
+      letter-spacing: 0.164rem;
       color: rgba(0, 0, 0, 1);
     }
     .input {
@@ -993,26 +992,26 @@ export default {
       margin-right: auto;
       .email {
         input[type="text"] {
-          width: 592px;
+          width: 59.2rem;
           border: none;
           border-bottom: 1px solid rgba(112, 112, 112, 1);
           color: var(--unnamed-color-c6c6c6);
           text-align: left;
-          font: normal normal normal 22px/45px Source Sans Pro;
-          letter-spacing: 0.88px;
+          font: normal normal normal 2.2rem/4.5rem Source Sans Pro;
+          letter-spacing: 0.088rem;
           color: rgba(198, 198, 198, 1);
         }
       }
       .text {
         textarea {
-          width: 592px;
+          width: 59.2rem;
           height: 148px;
           background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
           border: 1px solid rgba(112, 112, 112, 1);
           border-radius: 3px;
           color: var(--unnamed-color-c6c6c6);
           text-align: left;
-          font: normal normal normal 22px/45px Source Sans Pro;
+          font: normal normal normal 2.2rem/4.5rem Source Sans Pro;
           letter-spacing: 0.88px;
           color: rgba(198, 198, 198, 1);
         }
@@ -1023,10 +1022,10 @@ export default {
       margin-right: auto;
       .button-2 {
         text-align: center;
-        font: normal normal normal 22px/32px Source Sans Pro;
-        letter-spacing: 0.88px;
-        width: 132px;
-        height: 54px;
+        font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
+        letter-spacing: 0.088rem;
+        width: 13.2rem;
+        height: 5.4rem;
         border: none;
 
         background: rgba(74, 145, 242, 1) 0% 0% no-repeat padding-box;
@@ -1036,35 +1035,57 @@ export default {
     }
 
     .row-1 {
+      height: 35rem;
+      margin-top: 14.7rem;
       .title {
         color: var(--unnamed-color-000000);
+
         text-align: left;
-        font: normal normal bold 2vw Open Sans;
+        font: 3.5rem/6.4rem Open Sans;
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
-      .content {
-        margin-top: 50px;
-        color: var(--unnamed-color-000000);
+      .content-5 {
+        margin-top: 5rem;
         text-align: left;
-        font: normal normal normal 1.7vw Open Sans;
+        width: 35rem;
+
+        font-size: 3rem;
+
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
       .col-1 {
         float: left;
-        width: 33%;
-        max-width: 33%;
+        max-width: 20%;
+        background-image: url("../../assets/imgs/home/mission.png");
+        height: 30rem;
+        background-color: white;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 60%;
       }
       .col-2 {
         float: left;
-        width: 33%;
-        max-width: 33%;
+        max-width: 20%;
+        margin-left: 20%;
+        background-image: url("../../assets/imgs/home/vision.png");
+        height: 30rem;
+        background-color: white;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 60%;
       }
       .col-3 {
         float: left;
-        width: 33%;
-        max-width: 33%;
+        max-width: 20%;
+        margin-left: 20%;
+        background-image: url("../../assets/imgs/home/culture.png");
+        height: 30rem;
+        background-color: white;
+        background-position: 100% 70%;
+        background-repeat: no-repeat;
+        background-size: 60%;
       }
     }
   }
