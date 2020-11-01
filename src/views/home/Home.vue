@@ -190,13 +190,13 @@
           </div>
           <div class="column-2">
             <img
-              @click="goLeft()"
+              @click="moveLeft()"
               type="button"
               src="../../assets/imgs/home/arrow left.svg"
               alt=""
             />
             <img
-              @click="goRight()"
+              @click="moveRight()"
               type="button"
               src="../../assets/imgs/home/arrow right.svg"
               alt=""
@@ -204,12 +204,12 @@
           </div>
         </div>
 
-        <div class="gallery">
+        <div class="gallery" ref="gallery">
           <div class="year">
             {{ years[yearIndex] }}
           </div>
 
-          <div class="box-1">
+          <div class="box-1" ref="box1">
             <svg class="block-3-cercle" style="fill: black; stroke: black">
               <ellipse
                 id="Ellipse_178_o"
@@ -287,6 +287,60 @@
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 3] }}</p>
+            </div>
+          </div>
+
+          <div class="box-5">
+            <svg class="block-3-cercle">
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex + 4] }}</p>
+            </div>
+          </div>
+
+          <div class="box-6">
+            <svg class="block-3-cercle">
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex + 5] }}</p>
+            </div>
+          </div>
+
+          <div class="box-7">
+            <svg class="block-3-cercle">
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[yearIndex + 6] }}</p>
             </div>
           </div>
         </div>
@@ -453,15 +507,25 @@ export default {
       selected: 1,
       email: "Your email address…",
       text: "Leave your message here…",
-      years: [1997, 2005, 2008, 2010, 1997, 2005, 2008, 2010],
+      years: [1992, 1997, 2006, 2008, 2010, 2017, 2020],
       yearIndex: 0,
       scrollTop: 0,
+      index:0,
     };
+  },
+
+  computed: {
+    userStyle() {
+      return {};
+    },
   },
 
   mounted() {
     window.addEventListener("scroll", this.scrollTrigger);
     //console.log(document.height);
+
+    
+
   },
 
   destroy() {
@@ -478,6 +542,34 @@ export default {
       } else {
         this.$refs["img-2"].style.transform = "scale(1)";
       }
+    },
+
+    moveLeft: function(){
+      if(this.index < 1){
+        this.index = 0
+      }
+      if(this.index > 6){
+        this.index = 6
+      }
+      
+      this.$refs.gallery.scrollLeft = this.$refs.gallery.offsetWidth * 0.527 * (this.index-1)
+      console.log(this.$refs.gallery.scrollLeft)
+      this.index = this.index - 1
+      
+    },
+
+    moveRight: function(){
+      if(this.index > 6){
+        this.index = 6
+      }
+      if(this.index < 1){
+        this.index = 0
+      }
+      
+      this.$refs.gallery.scrollLeft = this.$refs.gallery.offsetWidth * 0.527 * (this.index+1)
+      console.log(this.$refs.gallery.scrollLeft)
+      this.index = this.index + 1
+      
     },
 
     consultation: function () {
@@ -519,18 +611,8 @@ export default {
       }
     },
 
-    goLeft: function () {
-      this.yearIndex = this.yearIndex - 1;
-      if (this.yearIndex < 0) {
-        this.yearIndex = 3;
-      }
-    },
-    goRight: function () {
-      this.yearIndex = this.yearIndex + 1;
-      if (this.yearIndex > 3) {
-        this.yearIndex = 0;
-      }
-    },
+    
+    
   },
 };
 </script>
@@ -711,13 +793,7 @@ export default {
   }
 
   .background-3 {
-    background-image: url("../../assets/imgs/home/MCC_BUILDING@2x.png");
-    background-color: white;
     height: 107.5rem;
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    //margin-bottom: 66px;
     .block3 {
       .ID {
         margin-left: 14rem;
@@ -755,6 +831,10 @@ export default {
       }
 
       .gallery {
+        $box1positionx: 60rem;
+        $zoomedDistance: 100rem;
+        $normalDistance: 20rem;
+
         float: left;
         position: relative;
         height: 100%;
@@ -783,16 +863,24 @@ export default {
           color: rgba(19, 129, 206, 1);
         }
         .box-1 {
+          background-image: url("../../assets/imgs/home/jibao.jpg");
+          background-color: white;
+
+          background-position: 20% 100%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+          //margin-bottom: 66px;
+
           position: absolute;
           bottom: 0;
-          left: 30%;
+          left: $box1positionx;
           height: 100%;
-          width: 30%;
+          width: 140rem;
           float: left;
 
           .subtitle {
             position: absolute;
-            left: 0.4rem;
+            left: 20rem;
             bottom: 55rem;
             color: var(--unnamed-color-000000);
             text-align: left;
@@ -804,30 +892,103 @@ export default {
           .content {
             font: normal normal normal 1vw Avenir;
             position: absolute;
-            left: 5.5rem;
-            bottom: 50rem;
+            left: 20rem;
+            bottom: 40rem;
           }
         }
         .box-2 {
+          background-image: url("../../assets/imgs/home/woodlands checkpoint-otc-6.jpg");
+          background-color: white;
+
+          background-position: 20% 100%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+
           position: absolute;
           bottom: 0;
-          left: 50%;
-          height: 10rem;
-          width: 30%;
+          left: $box1positionx + $zoomedDistance;
+          height: 100%;
+          width: 140rem;
         }
         .box-3 {
+          background-image: url("../../assets/imgs/home/组屋-sep.jpg");
+          background-color: white;
+
+          background-position: 20% 100%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+
           position: absolute;
+
           bottom: 0;
-          left: 70%;
-          height: 10rem;
-          width: 30%;
+          left: $box1positionx + $zoomedDistance * 2;
+          height: 100%;
+          width: 140rem;
         }
         .box-4 {
+          background-image: url("../../assets/imgs/home/圣淘沙+（局部）.jpg");
+          background-color: white;
+
+          background-position: 20% 100%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+
           position: absolute;
           bottom: 0;
-          left: 90%;
-          height: 10rem;
-          width: 5%;
+          left: $box1positionx + $zoomedDistance * 3;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-5 {
+          background-image: url("../../assets/imgs/home/Artboard 1.jpg");
+          background-color: white;
+
+          background-position: 20% 100%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 4;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-6 {
+          background-image: url("../../assets/imgs/home/jibao.jpg");
+          background-color: white;
+
+          background-position: 20% 100%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 5;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-7 {
+          background-image: url("../../assets/imgs/home/jibao.jpg");
+          background-color: white;
+
+          background-position: 20% 100%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 6;
+          height: 100%;
+          width: 140rem;
         }
       }
 
