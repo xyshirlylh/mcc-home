@@ -191,12 +191,14 @@
           <div class="column-2">
             <img
               @click="moveLeft()"
+              ref="moveLeft"
               type="button"
               src="../../assets/imgs/home/arrow left.svg"
               alt=""
             />
             <img
               @click="moveRight()"
+              ref="moveRight"
               type="button"
               src="../../assets/imgs/home/arrow right.svg"
               alt=""
@@ -205,7 +207,7 @@
         </div>
 
         <div class="gallery" ref="gallery">
-          <div class="year">
+          <div class="year f-f-wigwag">
             {{ years[yearIndex] }}
           </div>
 
@@ -221,10 +223,10 @@
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
 
-            <div class="year-small">
+            <div class="year-small f-f-sans">
               <p>{{ years[yearIndex] }}</p>
             </div>
 
@@ -232,7 +234,7 @@
               <p>Mcc first launched</p>
             </div>
 
-            <div class="content">
+            <div class="content f-f-avenir">
               <p>Labour Subcontracting & Professional Subcontracting</p>
             </div>
           </div>
@@ -248,7 +250,7 @@
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 1] }}</p>
@@ -266,7 +268,7 @@
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 2] }}</p>
@@ -283,7 +285,7 @@
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 3] }}</p>
@@ -301,7 +303,7 @@
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 4] }}</p>
@@ -319,7 +321,7 @@
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 5] }}</p>
@@ -337,7 +339,7 @@
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="66.75rem" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 6] }}</p>
@@ -500,6 +502,7 @@
 </template>
 
 <script>
+import anime from "animejs/lib/anime.es.js";
 export default {
   name: "Home",
   data: function () {
@@ -510,7 +513,10 @@ export default {
       years: [1992, 1997, 2006, 2008, 2010, 2017, 2020],
       yearIndex: 0,
       scrollTop: 0,
-      index:0,
+      index: 0,
+      //moveLeft: null,
+      //moveRight: null,
+      gallery: null,
     };
   },
 
@@ -523,9 +529,9 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.scrollTrigger);
     //console.log(document.height);
-
-    
-
+    //this.moveLeft = this.$refs.moveLeft;
+    //this.moveRight = this.$refs.moveRight;
+    this.gallery = this.$refs.gallery;
   },
 
   destroy() {
@@ -544,32 +550,36 @@ export default {
       }
     },
 
-    moveLeft: function(){
-      if(this.index < 1){
-        this.index = 0
+    moveLeft: function () {
+      if (this.index < 1) {
+        this.index = 0;
       }
-      if(this.index > 6){
-        this.index = 6
+      if (this.index > 6) {
+        this.index = 6;
       }
-      
-      this.$refs.gallery.scrollLeft = this.$refs.gallery.offsetWidth * 0.527 * (this.index-1)
-      console.log(this.$refs.gallery.scrollLeft)
-      this.index = this.index - 1
-      
+
+      anime({
+        targets: this.gallery,
+        scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index - 1),
+        duration: 500,
+      });
+      this.index = this.index - 1;
     },
 
-    moveRight: function(){
-      if(this.index > 6){
-        this.index = 6
+    moveRight: function () {
+      if (this.index < 1) {
+        this.index = 0;
       }
-      if(this.index < 1){
-        this.index = 0
+      if (this.index > 6) {
+        this.index = 6;
       }
-      
-      this.$refs.gallery.scrollLeft = this.$refs.gallery.offsetWidth * 0.527 * (this.index+1)
-      console.log(this.$refs.gallery.scrollLeft)
-      this.index = this.index + 1
-      
+      // use anime.js
+      anime({
+        targets: this.gallery,
+        scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index + 1),
+        duration: 500,
+      });
+      this.index = this.index + 1;
     },
 
     consultation: function () {
@@ -610,9 +620,6 @@ export default {
         this.text = "Leave your message here…";
       }
     },
-
-    
-    
   },
 };
 </script>
@@ -793,7 +800,12 @@ export default {
   }
 
   .background-3 {
-    height: 107.5rem;
+    background-image: url("../../assets/imgs/home/标尺.png");
+
+    background-position: 0% 100%;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    height: 98.1rem;
     .block3 {
       .ID {
         margin-left: 14rem;
@@ -806,7 +818,7 @@ export default {
       }
       display: flex;
       flex-direction: column;
-      height: 107.5rem;
+      height: 98.1rem;
       width: 100%;
 
       .block-3-cercle {
@@ -814,7 +826,7 @@ export default {
         left: 10rem;
         bottom: 6rem;
         width: 3.4rem;
-        height: 64rem;
+        height: 59.5rem;
         fill: transparent;
         stroke: rgba(19, 129, 206, 1);
         stroke-width: 2px;
@@ -825,7 +837,7 @@ export default {
         left: 11.6rem;
         bottom: 0;
         width: 33.4rem;
-        height: 66.7rem;
+        height: 62.2rem;
         stroke: rgba(198, 198, 198, 1);
         stroke-width: 3;
       }
@@ -839,7 +851,7 @@ export default {
         position: relative;
         height: 100%;
         width: 100%;
-        overflow: scroll;
+        overflow: hidden;
         .year {
           position: absolute;
           left: 13.4rem;
@@ -847,15 +859,15 @@ export default {
           max-width: 30%;
           color: var(--unnamed-color-1381ce);
           text-align: left;
-          font: normal normal bold 10vw Wigwag;
+          font-size: 12.7rem;
           letter-spacing: 5.08px;
           color: rgba(19, 129, 206, 1);
           margin-top: 40vh;
         }
         .year-small {
           position: absolute;
-          left: 5rem;
-          bottom: 60rem;
+          left: 15rem;
+          bottom: 60.5rem;
           color: var(--unnamed-color-1381ce);
           text-align: left;
           font: normal normal bold 2vw Source Sans Pro;
@@ -864,9 +876,9 @@ export default {
         }
         .box-1 {
           background-image: url("../../assets/imgs/home/jibao.jpg");
-          background-color: white;
+          background-color: transparent;
 
-          background-position: 20% 100%;
+          background-position: 20% 90%;
           background-repeat: no-repeat;
           background-size: 80%;
           //margin-bottom: 66px;
@@ -880,7 +892,7 @@ export default {
 
           .subtitle {
             position: absolute;
-            left: 20rem;
+            left: 16rem;
             bottom: 55rem;
             color: var(--unnamed-color-000000);
             text-align: left;
@@ -890,20 +902,20 @@ export default {
             color: rgba(0, 0, 0, 1);
           }
           .content {
-            font: normal normal normal 1vw Avenir;
+            font-size: 2.4rem;
+            letter-spacing: 0.096rem;
             position: absolute;
-            left: 20rem;
-            bottom: 40rem;
+            left: 16rem;
+            bottom: 45rem;
+            max-width: 45rem;
           }
         }
         .box-2 {
           background-image: url("../../assets/imgs/home/woodlands checkpoint-otc-6.jpg");
-          background-color: white;
-
-          background-position: 20% 100%;
+          background-color: transparent;
+          background-position: 20% 60%;
           background-repeat: no-repeat;
           background-size: 80%;
-
 
           position: absolute;
           bottom: 0;
@@ -913,12 +925,10 @@ export default {
         }
         .box-3 {
           background-image: url("../../assets/imgs/home/组屋-sep.jpg");
-          background-color: white;
 
-          background-position: 20% 100%;
+          background-position: 20% 65%;
           background-repeat: no-repeat;
           background-size: 80%;
-
 
           position: absolute;
 
@@ -929,12 +939,10 @@ export default {
         }
         .box-4 {
           background-image: url("../../assets/imgs/home/圣淘沙+（局部）.jpg");
-          background-color: white;
 
-          background-position: 20% 100%;
+          background-position: 20% 80%;
           background-repeat: no-repeat;
           background-size: 80%;
-
 
           position: absolute;
           bottom: 0;
@@ -945,12 +953,10 @@ export default {
 
         .box-5 {
           background-image: url("../../assets/imgs/home/Artboard 1.jpg");
-          background-color: white;
 
-          background-position: 20% 100%;
+          background-position: 30% 100%;
           background-repeat: no-repeat;
-          background-size: 80%;
-
+          background-size: 70%;
 
           position: absolute;
           bottom: 0;
@@ -961,12 +967,10 @@ export default {
 
         .box-6 {
           background-image: url("../../assets/imgs/home/jibao.jpg");
-          background-color: white;
 
           background-position: 20% 100%;
           background-repeat: no-repeat;
           background-size: 80%;
-
 
           position: absolute;
           bottom: 0;
@@ -977,12 +981,10 @@ export default {
 
         .box-7 {
           background-image: url("../../assets/imgs/home/jibao.jpg");
-          background-color: white;
 
           background-position: 20% 100%;
           background-repeat: no-repeat;
           background-size: 80%;
-
 
           position: absolute;
           bottom: 0;
