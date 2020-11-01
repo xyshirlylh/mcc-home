@@ -181,7 +181,7 @@
             </div>
 
             <svg class="title-underline">
-              <line x1="0" y1="0" x2="150" y2="0" />
+              <line x1="0" y1="0" x2="15rem" y2="0" />
             </svg>
 
             <div class="title">
@@ -213,15 +213,15 @@
             <svg class="block-3-cercle" style="fill: black; stroke: black">
               <ellipse
                 id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="66.75rem" />
             </svg>
 
             <div class="year-small">
@@ -240,15 +240,15 @@
             <svg class="block-3-cercle">
               <ellipse
                 id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="66.75rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 1] }}</p>
@@ -258,15 +258,15 @@
             <svg class="block-3-cercle">
               <ellipse
                 id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="66.75rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 2] }}</p>
@@ -275,16 +275,15 @@
           <div class="box-4">
             <svg class="block-3-cercle">
               <ellipse
-                id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="66.75rem" />
             </svg>
             <div class="year-small">
               <p>{{ years[yearIndex + 3] }}</p>
@@ -371,7 +370,7 @@
       </div>
 
       <svg class="title-underline">
-        <line x1="0" y1="0" x2="150" y2="0" />
+        <line x1="0" y1="0" x2="15rem" y2="0" />
       </svg>
 
       <div class="title">
@@ -714,24 +713,32 @@ export default {
   .background-3 {
     background-image: url("../../assets/imgs/home/MCC_BUILDING@2x.png");
     background-color: white;
-    height: 100vh;
+    height: 107.5rem;
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: 30%;
     //margin-bottom: 66px;
     .block3 {
-      padding: 14rem 14rem 0 14rem;
+      .ID {
+        margin-left: 14rem;
+      }
+      .title-underline {
+        margin-left: 14rem;
+      }
+      .title {
+        margin-left: 21rem;
+      }
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 107.5rem;
       width: 100%;
 
       .block-3-cercle {
         position: absolute;
-        left: 0px;
-        bottom: 60vh;
-        width: 34px;
-        height: 34px;
+        left: 10rem;
+        bottom: 6rem;
+        width: 3.4rem;
+        height: 64rem;
         fill: transparent;
         stroke: rgba(19, 129, 206, 1);
         stroke-width: 2px;
@@ -739,10 +746,10 @@ export default {
 
       .block-3-line {
         position: absolute;
-        left: 16px;
+        left: 11.6rem;
         bottom: 0;
-        width: 34px;
-        height: 60vh;
+        width: 33.4rem;
+        height: 66.7rem;
         stroke: rgba(198, 198, 198, 1);
         stroke-width: 3;
       }
@@ -752,8 +759,11 @@ export default {
         position: relative;
         height: 100%;
         width: 100%;
+        overflow: scroll;
         .year {
-          float: left;
+          position: absolute;
+          left: 13.4rem;
+          bottom: 10.9rem;
           max-width: 30%;
           color: var(--unnamed-color-1381ce);
           text-align: left;
@@ -764,8 +774,8 @@ export default {
         }
         .year-small {
           position: absolute;
-          left: 50px;
-          bottom: 58vh;
+          left: 5rem;
+          bottom: 60rem;
           color: var(--unnamed-color-1381ce);
           text-align: left;
           font: normal normal bold 2vw Source Sans Pro;
@@ -776,14 +786,14 @@ export default {
           position: absolute;
           bottom: 0;
           left: 30%;
-          height: 100px;
+          height: 100%;
           width: 30%;
           float: left;
 
           .subtitle {
             position: absolute;
-            left: 4px;
-            bottom: 52vh;
+            left: 0.4rem;
+            bottom: 55rem;
             color: var(--unnamed-color-000000);
             text-align: left;
             font: normal normal 1.5vw Avenir;
@@ -794,48 +804,48 @@ export default {
           .content {
             font: normal normal normal 1vw Avenir;
             position: absolute;
-            left: 55px;
-            bottom: 45vh;
+            left: 5.5rem;
+            bottom: 50rem;
           }
         }
         .box-2 {
           position: absolute;
           bottom: 0;
           left: 50%;
-          height: 100px;
+          height: 10rem;
           width: 30%;
         }
         .box-3 {
           position: absolute;
           bottom: 0;
           left: 70%;
-          height: 100px;
+          height: 10rem;
           width: 30%;
         }
         .box-4 {
           position: absolute;
           bottom: 0;
           left: 90%;
-          height: 100px;
+          height: 10rem;
           width: 5%;
         }
       }
 
       .column-1 {
         float: left;
-        max-width: 30%;
+        max-width: 50%;
         width: 30%;
       }
       .column-2 {
-        button {
-          margin-top: 15%;
-          margin-left: 5%;
-        }
         float: right;
-        max-width: 30%;
+        max-width: 50%;
         width: 30%;
         padding: 0 0 0 15%;
         img {
+          margin-top: 15%;
+
+          max-width: 50%;
+          max-height: 6rem;
           margin-left: 10%;
         }
       }
