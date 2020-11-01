@@ -207,7 +207,7 @@
         </div>
 
         <div class="gallery" ref="gallery">
-          <div class="year f-f-wigwag">
+          <div class="year f-f-wigwag" ref="year">
             {{ years[yearIndex] }}
           </div>
 
@@ -227,18 +227,18 @@
             </svg>
 
             <div class="year-small f-f-sans">
-              <p>{{ years[yearIndex] }}</p>
+              <p>{{ years[0] }}</p>
             </div>
 
-            <div class="subtitle">
+            <div class="subtitle" v-if="index === 0">
               <p>Mcc first launched</p>
             </div>
 
-            <div class="content f-f-avenir">
+            <div class="content f-f-avenir" v-if="index === 0">
               <p>Labour Subcontracting & Professional Subcontracting</p>
             </div>
           </div>
-          <div class="box-2">
+          <div class="box-2" ref="box2">
             <svg class="block-3-cercle">
               <ellipse
                 id="Ellipse_178_o"
@@ -253,10 +253,10 @@
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 1] }}</p>
+              <p>{{ years[1] }}</p>
             </div>
           </div>
-          <div class="box-3">
+          <div class="box-3" ref="box3">
             <svg class="block-3-cercle">
               <ellipse
                 id="Ellipse_178_o"
@@ -271,10 +271,10 @@
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 2] }}</p>
+              <p>{{ years[2] }}</p>
             </div>
           </div>
-          <div class="box-4">
+          <div class="box-4" ref="box4">
             <svg class="block-3-cercle">
               <ellipse
                 rx="1.6rem"
@@ -288,11 +288,11 @@
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 3] }}</p>
+              <p>{{ years[3] }}</p>
             </div>
           </div>
 
-          <div class="box-5">
+          <div class="box-5" ref="box5">
             <svg class="block-3-cercle">
               <ellipse
                 rx="1.6rem"
@@ -306,11 +306,11 @@
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 4] }}</p>
+              <p>{{ years[4] }}</p>
             </div>
           </div>
 
-          <div class="box-6">
+          <div class="box-6" ref="box6">
             <svg class="block-3-cercle">
               <ellipse
                 rx="1.6rem"
@@ -324,11 +324,11 @@
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 5] }}</p>
+              <p>{{ years[5] }}</p>
             </div>
           </div>
 
-          <div class="box-7">
+          <div class="box-7" ref="box7">
             <svg class="block-3-cercle">
               <ellipse
                 rx="1.6rem"
@@ -342,7 +342,7 @@
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 6] }}</p>
+              <p>{{ years[6] }}</p>
             </div>
           </div>
         </div>
@@ -517,6 +517,14 @@ export default {
       //moveLeft: null,
       //moveRight: null,
       gallery: null,
+      box1: null,
+      year: null,
+      box2: null,
+      box3: null,
+      box4: null,
+      box5: null,
+      box6: null,
+      box7: null,
     };
   },
 
@@ -532,6 +540,15 @@ export default {
     //this.moveLeft = this.$refs.moveLeft;
     //this.moveRight = this.$refs.moveRight;
     this.gallery = this.$refs.gallery;
+    this.box1 = this.$refs.box1;
+    this.box2 = this.$refs.box2;
+    this.box3 = this.$refs.box3;
+    this.box4 = this.$refs.box4;
+    this.box5 = this.$refs.box5;
+    this.box6 = this.$refs.box6;
+    this.box7 = this.$refs.box7;
+
+    this.year = this.$refs.year;
   },
 
   destroy() {
@@ -554,32 +571,226 @@ export default {
       if (this.index < 1) {
         this.index = 0;
       }
+
+      if (this.yearIndex < 1) {
+        this.yearIndex = 0;
+      }
+
       if (this.index > 6) {
         this.index = 6;
       }
 
-      anime({
-        targets: this.gallery,
-        scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index - 1),
-        duration: 500,
-      });
+      if (this.index >= 1) {
+        anime({
+          targets: this.gallery,
+          scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index - 1),
+          duration: 500,
+        });
+
+        if (this.index === 1) {
+          anime({
+            targets: this.box1,
+            width: this.box1.offsetWidth * 20,
+            left: "60rem",
+
+            duration: 500,
+          });
+
+          anime({
+            targets: this.year,
+            left: "20rem",
+
+            duration: 500,
+          });
+        } else if (this.index === 2) {
+          anime({
+            targets: this.box2,
+            width: this.box2.offsetWidth * 20,
+            left: "160rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "120rem",
+            duration: 500,
+          });
+        } else if (this.index === 3) {
+          anime({
+            targets: this.box3,
+            width: this.box3.offsetWidth * 20,
+            left: "260rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "225rem",
+            duration: 500,
+          });
+        } else if (this.index === 4) {
+          anime({
+            targets: this.box4,
+            width: this.box4.offsetWidth * 20,
+            left: "360rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "325rem",
+            duration: 500,
+          });
+        } else if (this.index === 5) {
+          anime({
+            targets: this.box5,
+            width: this.box5.offsetWidth * 20,
+            left: "460rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "425rem",
+            duration: 500,
+          });
+        } else if (this.index === 6) {
+          anime({
+            targets: this.box6,
+            width: this.box6.offsetWidth * 20,
+            left: "560rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "525rem",
+            duration: 500,
+          });
+        }
+      }
+
       this.index = this.index - 1;
+      this.yearIndex--;
     },
 
     moveRight: function () {
       if (this.index < 1) {
         this.index = 0;
       }
-      if (this.index > 6) {
+      if (this.yearIndex < 1) {
+        this.yearIndex = 0;
+      }
+
+      if (this.yearIndex > 5) {
+        this.yearIndex = 6;
+      }
+
+      if (this.index > 5) {
         this.index = 6;
       }
       // use anime.js
-      anime({
-        targets: this.gallery,
-        scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index + 1),
-        duration: 500,
-      });
+
+      if (this.index < 6) {
+        anime({
+          targets: this.gallery,
+          scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index + 1),
+          duration: 500,
+        });
+
+        if (this.index === 0) {
+          anime({
+            targets: this.box1,
+            width: this.box1.offsetWidth / 20,
+            left: "105rem",
+
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "120rem",
+
+            duration: 500,
+          });
+        } else if (this.index === 1) {
+          //console.log("123");
+          anime({
+            targets: this.box2,
+            width: this.box2.offsetWidth / 20,
+            left: "205rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "220rem",
+            duration: 500,
+          });
+        } else if (this.index === 2) {
+          //console.log("123");
+          anime({
+            targets: this.box3,
+            width: this.box3.offsetWidth / 20,
+            left: "310rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "325rem",
+            duration: 500,
+          });
+        } else if (this.index === 3) {
+          //console.log("123");
+          anime({
+            targets: this.box4,
+            width: this.box4.offsetWidth / 20,
+            left: "405rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "420rem",
+            duration: 500,
+          });
+        } else if (this.index === 4) {
+          //console.log("123");
+          anime({
+            targets: this.box5,
+            width: this.box5.offsetWidth / 20,
+            left: "500rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "520rem",
+            duration: 500,
+          });
+        } else if (this.index === 5) {
+          //console.log("123");
+          anime({
+            targets: this.box6,
+            width: this.box6.offsetWidth / 20,
+            left: "610rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "625rem",
+            duration: 500,
+          });
+        } else if (this.index === 6) {
+          //console.log("123");
+          anime({
+            targets: this.box7,
+            width: this.box7.offsetWidth / 20,
+            left: "700rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "785rem",
+            duration: 500,
+          });
+        }
+      }
+
       this.index = this.index + 1;
+
+      this.yearIndex++;
     },
 
     consultation: function () {
@@ -954,7 +1165,7 @@ export default {
         .box-5 {
           background-image: url("../../assets/imgs/home/Artboard 1.jpg");
 
-          background-position: 30% 100%;
+          background-position: 30% 90%;
           background-repeat: no-repeat;
           background-size: 70%;
 
@@ -968,7 +1179,7 @@ export default {
         .box-6 {
           background-image: url("../../assets/imgs/home/jibao.jpg");
 
-          background-position: 20% 100%;
+          background-position: 20% 90%;
           background-repeat: no-repeat;
           background-size: 80%;
 
@@ -982,7 +1193,7 @@ export default {
         .box-7 {
           background-image: url("../../assets/imgs/home/jibao.jpg");
 
-          background-position: 20% 100%;
+          background-position: 20% 90%;
           background-repeat: no-repeat;
           background-size: 80%;
 
