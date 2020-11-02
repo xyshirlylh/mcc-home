@@ -181,7 +181,7 @@
             </div>
 
             <svg class="title-underline">
-              <line x1="0" y1="0" x2="150" y2="0" />
+              <line x1="0" y1="0" x2="15rem" y2="0" />
             </svg>
 
             <div class="title">
@@ -190,13 +190,15 @@
           </div>
           <div class="column-2">
             <img
-              @click="goLeft()"
+              @click="moveLeft()"
+              ref="moveLeft"
               type="button"
               src="../../assets/imgs/home/arrow left.svg"
               alt=""
             />
             <img
-              @click="goRight()"
+              @click="moveRight()"
+              ref="moveRight"
               type="button"
               src="../../assets/imgs/home/arrow right.svg"
               alt=""
@@ -204,90 +206,143 @@
           </div>
         </div>
 
-        <div class="gallery">
-          <div class="year">
+        <div class="gallery" ref="gallery">
+          <div class="year f-f-wigwag" ref="year">
             {{ years[yearIndex] }}
           </div>
 
-          <div class="box-1">
+          <div class="box-1" ref="box1">
             <svg class="block-3-cercle" style="fill: black; stroke: black">
               <ellipse
                 id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
 
-            <div class="year-small">
-              <p>{{ years[yearIndex] }}</p>
+            <div class="year-small f-f-sans">
+              <p>{{ years[0] }}</p>
             </div>
 
-            <div class="subtitle">
+            <div class="subtitle" v-if="index === 0">
               <p>Mcc first launched</p>
             </div>
 
-            <div class="content">
+            <div class="content f-f-avenir" v-if="index === 0">
               <p>Labour Subcontracting & Professional Subcontracting</p>
             </div>
           </div>
-          <div class="box-2">
+          <div class="box-2" ref="box2">
             <svg class="block-3-cercle">
               <ellipse
                 id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 1] }}</p>
+              <p>{{ years[1] }}</p>
             </div>
           </div>
-          <div class="box-3">
+          <div class="box-3" ref="box3">
             <svg class="block-3-cercle">
               <ellipse
                 id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 2] }}</p>
+              <p>{{ years[2] }}</p>
             </div>
           </div>
-          <div class="box-4">
+          <div class="box-4" ref="box4">
             <svg class="block-3-cercle">
               <ellipse
-                id="Ellipse_178_o"
-                rx="16"
-                ry="16"
-                cx="17"
-                cy="17"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg class="block-3-line">
-              <line x1="0" y1="0" x2="0" y2="1800" />
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
             <div class="year-small">
-              <p>{{ years[yearIndex + 3] }}</p>
+              <p>{{ years[3] }}</p>
+            </div>
+          </div>
+
+          <div class="box-5" ref="box5">
+            <svg class="block-3-cercle">
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[4] }}</p>
+            </div>
+          </div>
+
+          <div class="box-6" ref="box6">
+            <svg class="block-3-cercle">
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[5] }}</p>
+            </div>
+          </div>
+
+          <div class="box-7" ref="box7">
+            <svg class="block-3-cercle">
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg class="block-3-line">
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+            <div class="year-small">
+              <p>{{ years[6] }}</p>
             </div>
           </div>
         </div>
@@ -371,7 +426,7 @@
       </div>
 
       <svg class="title-underline">
-        <line x1="0" y1="0" x2="150" y2="0" />
+        <line x1="0" y1="0" x2="15rem" y2="0" />
       </svg>
 
       <div class="title">
@@ -447,6 +502,7 @@
 </template>
 
 <script>
+import anime from "animejs/lib/anime.es.js";
 export default {
   name: "Home",
   data: function () {
@@ -454,15 +510,45 @@ export default {
       selected: 1,
       email: "Your email address…",
       text: "Leave your message here…",
-      years: [1997, 2005, 2008, 2010, 1997, 2005, 2008, 2010],
+      years: [1992, 1997, 2006, 2008, 2010, 2017, 2020],
       yearIndex: 0,
       scrollTop: 0,
+      index: 0,
+      //moveLeft: null,
+      //moveRight: null,
+      gallery: null,
+      box1: null,
+      year: null,
+      box2: null,
+      box3: null,
+      box4: null,
+      box5: null,
+      box6: null,
+      box7: null,
     };
+  },
+
+  computed: {
+    userStyle() {
+      return {};
+    },
   },
 
   mounted() {
     window.addEventListener("scroll", this.scrollTrigger);
     //console.log(document.height);
+    //this.moveLeft = this.$refs.moveLeft;
+    //this.moveRight = this.$refs.moveRight;
+    this.gallery = this.$refs.gallery;
+    this.box1 = this.$refs.box1;
+    this.box2 = this.$refs.box2;
+    this.box3 = this.$refs.box3;
+    this.box4 = this.$refs.box4;
+    this.box5 = this.$refs.box5;
+    this.box6 = this.$refs.box6;
+    this.box7 = this.$refs.box7;
+
+    this.year = this.$refs.year;
   },
 
   destroy() {
@@ -479,6 +565,232 @@ export default {
       } else {
         this.$refs["img-2"].style.transform = "scale(1)";
       }
+    },
+
+    moveLeft: function () {
+      if (this.index < 1) {
+        this.index = 0;
+      }
+
+      if (this.yearIndex < 1) {
+        this.yearIndex = 0;
+      }
+
+      if (this.index > 6) {
+        this.index = 6;
+      }
+
+      if (this.index >= 1) {
+        anime({
+          targets: this.gallery,
+          scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index - 1),
+          duration: 500,
+        });
+
+        if (this.index === 1) {
+          anime({
+            targets: this.box1,
+            width: this.box1.offsetWidth * 20,
+            left: "60rem",
+
+            duration: 500,
+          });
+
+          anime({
+            targets: this.year,
+            left: "20rem",
+
+            duration: 500,
+          });
+        } else if (this.index === 2) {
+          anime({
+            targets: this.box2,
+            width: this.box2.offsetWidth * 20,
+            left: "160rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "120rem",
+            duration: 500,
+          });
+        } else if (this.index === 3) {
+          anime({
+            targets: this.box3,
+            width: this.box3.offsetWidth * 20,
+            left: "260rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "225rem",
+            duration: 500,
+          });
+        } else if (this.index === 4) {
+          anime({
+            targets: this.box4,
+            width: this.box4.offsetWidth * 20,
+            left: "360rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "325rem",
+            duration: 500,
+          });
+        } else if (this.index === 5) {
+          anime({
+            targets: this.box5,
+            width: this.box5.offsetWidth * 20,
+            left: "460rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "425rem",
+            duration: 500,
+          });
+        } else if (this.index === 6) {
+          anime({
+            targets: this.box6,
+            width: this.box6.offsetWidth * 20,
+            left: "560rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "525rem",
+            duration: 500,
+          });
+        }
+      }
+
+      this.index = this.index - 1;
+      this.yearIndex--;
+    },
+
+    moveRight: function () {
+      if (this.index < 1) {
+        this.index = 0;
+      }
+      if (this.yearIndex < 1) {
+        this.yearIndex = 0;
+      }
+
+      if (this.yearIndex > 5) {
+        this.yearIndex = 6;
+      }
+
+      if (this.index > 5) {
+        this.index = 6;
+      }
+      // use anime.js
+
+      if (this.index < 6) {
+        anime({
+          targets: this.gallery,
+          scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index + 1),
+          duration: 500,
+        });
+
+        if (this.index === 0) {
+          anime({
+            targets: this.box1,
+            width: this.box1.offsetWidth / 20,
+            left: "105rem",
+
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "120rem",
+
+            duration: 500,
+          });
+        } else if (this.index === 1) {
+          //console.log("123");
+          anime({
+            targets: this.box2,
+            width: this.box2.offsetWidth / 20,
+            left: "205rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "220rem",
+            duration: 500,
+          });
+        } else if (this.index === 2) {
+          //console.log("123");
+          anime({
+            targets: this.box3,
+            width: this.box3.offsetWidth / 20,
+            left: "310rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "325rem",
+            duration: 500,
+          });
+        } else if (this.index === 3) {
+          //console.log("123");
+          anime({
+            targets: this.box4,
+            width: this.box4.offsetWidth / 20,
+            left: "405rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "420rem",
+            duration: 500,
+          });
+        } else if (this.index === 4) {
+          //console.log("123");
+          anime({
+            targets: this.box5,
+            width: this.box5.offsetWidth / 20,
+            left: "500rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "520rem",
+            duration: 500,
+          });
+        } else if (this.index === 5) {
+          //console.log("123");
+          anime({
+            targets: this.box6,
+            width: this.box6.offsetWidth / 20,
+            left: "610rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "625rem",
+            duration: 500,
+          });
+        } else if (this.index === 6) {
+          //console.log("123");
+          anime({
+            targets: this.box7,
+            width: this.box7.offsetWidth / 20,
+            left: "700rem",
+            duration: 500,
+          });
+          anime({
+            targets: this.year,
+            left: "785rem",
+            duration: 500,
+          });
+        }
+      }
+
+      this.index = this.index + 1;
+
+      this.yearIndex++;
     },
 
     consultation: function () {
@@ -517,19 +829,6 @@ export default {
 
       if (content === "text" && this.text === null) {
         this.text = "Leave your message here…";
-      }
-    },
-
-    goLeft: function () {
-      this.yearIndex = this.yearIndex - 1;
-      if (this.yearIndex < 0) {
-        this.yearIndex = 3;
-      }
-    },
-    goRight: function () {
-      this.yearIndex = this.yearIndex + 1;
-      if (this.yearIndex > 3) {
-        this.yearIndex = 0;
       }
     },
   },
@@ -712,26 +1011,33 @@ export default {
   }
 
   .background-3 {
-    background-image: url("../../assets/imgs/home/MCC_BUILDING@2x.png");
-    background-color: white;
-    height: 100vh;
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    //margin-bottom: 66px;
+    background-image: url("../../assets/imgs/home/标尺.png");
+
+    background-position: 0% 100%;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    height: 98.1rem;
     .block3 {
-      padding: 14rem 14rem 0 14rem;
+      .ID {
+        margin-left: 14rem;
+      }
+      .title-underline {
+        margin-left: 14rem;
+      }
+      .title {
+        margin-left: 21rem;
+      }
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 98.1rem;
       width: 100%;
 
       .block-3-cercle {
         position: absolute;
-        left: 0px;
-        bottom: 60vh;
-        width: 34px;
-        height: 34px;
+        left: 10rem;
+        bottom: 6rem;
+        width: 3.4rem;
+        height: 59.5rem;
         fill: transparent;
         stroke: rgba(19, 129, 206, 1);
         stroke-width: 2px;
@@ -739,33 +1045,40 @@ export default {
 
       .block-3-line {
         position: absolute;
-        left: 16px;
+        left: 11.6rem;
         bottom: 0;
-        width: 34px;
-        height: 60vh;
+        width: 33.4rem;
+        height: 62.2rem;
         stroke: rgba(198, 198, 198, 1);
         stroke-width: 3;
       }
 
       .gallery {
+        $box1positionx: 60rem;
+        $zoomedDistance: 100rem;
+        $normalDistance: 20rem;
+
         float: left;
         position: relative;
         height: 100%;
         width: 100%;
+        overflow: hidden;
         .year {
-          float: left;
+          position: absolute;
+          left: 13.4rem;
+          bottom: 10.9rem;
           max-width: 30%;
           color: var(--unnamed-color-1381ce);
           text-align: left;
-          font: normal normal bold 10vw Wigwag;
+          font-size: 12.7rem;
           letter-spacing: 5.08px;
           color: rgba(19, 129, 206, 1);
           margin-top: 40vh;
         }
         .year-small {
           position: absolute;
-          left: 50px;
-          bottom: 58vh;
+          left: 15rem;
+          bottom: 60.5rem;
           color: var(--unnamed-color-1381ce);
           text-align: left;
           font: normal normal bold 2vw Source Sans Pro;
@@ -773,17 +1086,25 @@ export default {
           color: rgba(19, 129, 206, 1);
         }
         .box-1 {
+          background-image: url("../../assets/imgs/home/jibao.jpg");
+          background-color: transparent;
+
+          background-position: 20% 90%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+          //margin-bottom: 66px;
+
           position: absolute;
           bottom: 0;
-          left: 30%;
-          height: 100px;
-          width: 30%;
+          left: $box1positionx;
+          height: 100%;
+          width: 140rem;
           float: left;
 
           .subtitle {
             position: absolute;
-            left: 4px;
-            bottom: 52vh;
+            left: 16rem;
+            bottom: 55rem;
             color: var(--unnamed-color-000000);
             text-align: left;
             font: normal normal 1.5vw Avenir;
@@ -792,50 +1113,113 @@ export default {
             color: rgba(0, 0, 0, 1);
           }
           .content {
-            font: normal normal normal 1vw Avenir;
+            font-size: 2.4rem;
+            letter-spacing: 0.096rem;
             position: absolute;
-            left: 55px;
-            bottom: 45vh;
+            left: 16rem;
+            bottom: 45rem;
+            max-width: 45rem;
           }
         }
         .box-2 {
+          background-image: url("../../assets/imgs/home/woodlands checkpoint-otc-6.jpg");
+          background-color: transparent;
+          background-position: 20% 60%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
           position: absolute;
           bottom: 0;
-          left: 50%;
-          height: 100px;
-          width: 30%;
+          left: $box1positionx + $zoomedDistance;
+          height: 100%;
+          width: 140rem;
         }
         .box-3 {
+          background-image: url("../../assets/imgs/home/组屋-sep.jpg");
+
+          background-position: 20% 65%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
           position: absolute;
+
           bottom: 0;
-          left: 70%;
-          height: 100px;
-          width: 30%;
+          left: $box1positionx + $zoomedDistance * 2;
+          height: 100%;
+          width: 140rem;
         }
         .box-4 {
+          background-image: url("../../assets/imgs/home/圣淘沙+（局部）.jpg");
+
+          background-position: 20% 80%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
           position: absolute;
           bottom: 0;
-          left: 90%;
-          height: 100px;
-          width: 5%;
+          left: $box1positionx + $zoomedDistance * 3;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-5 {
+          background-image: url("../../assets/imgs/home/Artboard 1.jpg");
+
+          background-position: 30% 90%;
+          background-repeat: no-repeat;
+          background-size: 70%;
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 4;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-6 {
+          background-image: url("../../assets/imgs/home/jibao.jpg");
+
+          background-position: 20% 90%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 5;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-7 {
+          background-image: url("../../assets/imgs/home/jibao.jpg");
+
+          background-position: 20% 90%;
+          background-repeat: no-repeat;
+          background-size: 80%;
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 6;
+          height: 100%;
+          width: 140rem;
         }
       }
 
       .column-1 {
         float: left;
-        max-width: 30%;
+        max-width: 50%;
         width: 30%;
       }
       .column-2 {
-        button {
-          margin-top: 15%;
-          margin-left: 5%;
-        }
         float: right;
-        max-width: 30%;
+        max-width: 50%;
         width: 30%;
         padding: 0 0 0 15%;
         img {
+          margin-top: 15%;
+
+          max-width: 50%;
+          max-height: 6rem;
           margin-left: 10%;
         }
       }
