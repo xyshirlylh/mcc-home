@@ -14,7 +14,7 @@
       </div>
 
       <div>
-        <div class="subtitle-s" style="text-align: center">
+        <div class="subtitle-s f-f-sans" style="text-align: center">
           <div class="subtitle" @mouseover="consultation()">
             <svg class="small-icon">
               <ellipse
@@ -111,7 +111,9 @@
             src="../../assets/imgs/home/construction.png"
             alt=""
           />
-          <br /><br />
+          <svg class="line-1">
+            <line x1="0" y1="0" x2="92.2rem" y2="0" />
+          </svg>
           <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -560,7 +562,8 @@ export default {
       this.scrollTop = window.scrollY;
 
       if (this.scrollTop > document.body.scrollHeight * 0.13) {
-        this.$refs["img-2"].style.transform = "scale(1.5)";
+        this.$refs["img-2"].style.transform = "scale(2)";
+        //this.$refs["img-2"].style.margin-top = "scale(2)";
         console.log(this.$refs["img-2"].style);
       } else {
         this.$refs["img-2"].style.transform = "scale(1)";
@@ -663,10 +666,10 @@ export default {
             duration: 500,
           });
         }
-      }
 
-      this.index = this.index - 1;
-      this.yearIndex--;
+        this.index = this.index - 1;
+        this.yearIndex--;
+      }
     },
 
     moveRight: function () {
@@ -786,11 +789,10 @@ export default {
             duration: 500,
           });
         }
+        this.index = this.index + 1;
+
+        this.yearIndex++;
       }
-
-      this.index = this.index + 1;
-
-      this.yearIndex++;
     },
 
     consultation: function () {
@@ -910,26 +912,38 @@ export default {
       margin-left: 0.885vw;
     }
     float: left;
-    max-width: 50%;
+    max-width: 40%;
     margin-top: 1rem;
     text-align: left;
-    font: normal normal normal 6.1rem/8.6rem Source Sans Pro;
+    
+    font-size: 6.1rem;
     letter-spacing: 2.44px;
     color: rgba(227, 227, 227, 1);
   }
 
   .content {
+    width: 92.2rem;
     margin-top: 3.9rem;
     float: right;
-    max-width: 50%;
+    max-width: 60%;
     .image {
       max-width: 100%;
       height: auto;
     }
 
-    font: 2rem/2.8rem Source Sans Pro;
+    font-size: 2rem;
 
     text-align: left;
+    .line-1 {
+        margin-top: 4.2rem;
+        fill: white;
+        stroke: rgba(74, 145, 242, 1);
+        stroke-width: 4px;
+        width: 92.2rem;
+        height: 2rem;
+        left: 14rem;
+      
+    }
   }
 
   .small-icon {
@@ -957,6 +971,7 @@ export default {
   }
 
   .block2 {
+    height: 101.2rem;
     .ID {
       margin-left: 14rem;
     }
@@ -979,11 +994,11 @@ export default {
       //position: relative;
     }
     .img {
-      margin-top: 62.3rem;
+      margin-top: 51.2rem;
       margin-left: 9rem;
 
-      max-width: 25%;
-      max-height: 50%;
+      max-width: 50.5rem;
+      max-height: 38.5rem;
       transform: scale(1);
       transition: 1s;
     }
@@ -992,17 +1007,19 @@ export default {
       .content-head {
         color: var(--unnamed-color-000000);
         text-align: left;
-        font: normal normal normal 3vw Source Sans Pro;
+        //font: normal normal normal 3vw Source Sans Pro;
+        font-size: 4.5rem;
         letter-spacing: 1.8px;
         line-height: 1.8;
         color: #000000;
         opacity: 1;
       }
       float: right;
-      width: 55%;
+      width: 50%;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 1.7vw Source Sans Pro;
+      //font: normal normal normal 1.7vw Source Sans Pro;
+      font-size: 2.2rem;
       line-height: 1.8;
       letter-spacing: 0.88px;
       color: #000000;
@@ -1122,7 +1139,7 @@ export default {
           }
         }
         .box-2 {
-          background-image: url("../../assets/imgs/home/woodlands checkpoint-otc-6.jpg");
+          background-image: url("../../assets/imgs/home/woodlands_checkpoint-otc-6.png");
           background-color: transparent;
           background-position: 20% 60%;
           background-repeat: no-repeat;
