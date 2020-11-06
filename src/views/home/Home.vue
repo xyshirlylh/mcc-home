@@ -14,7 +14,7 @@
       </div>
 
       <div>
-        <div class="subtitle-s" style="text-align: center">
+        <div class="subtitle-s f-f-sans" style="text-align: center">
           <div class="subtitle" @mouseover="consultation()">
             <svg class="small-icon">
               <ellipse
@@ -111,7 +111,9 @@
             src="../../assets/imgs/home/construction.png"
             alt=""
           />
-          <br /><br />
+          <svg class="line-1">
+            <line x1="0" y1="0" x2="92.2rem" y2="0" />
+          </svg>
           <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -130,8 +132,6 @@
       </div>
     </div>
 
-    <gap :height="60" />
-
     <div class="block2">
       <div class="ID">
         <span>02</span>
@@ -145,11 +145,7 @@
         <span>about us</span>
       </div>
 
-      <gap :height="69" />
-
       <div class="background">
-        <gap :height="100" />
-
         <div class="content">
           <p class="content-head">Mcc Singapore</p>
           <p>
@@ -212,7 +208,11 @@
           </div>
 
           <div class="box-1" ref="box1">
-            <svg class="block-3-cercle" style="fill: black; stroke: black">
+            <svg
+              class="block-3-cercle"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 0"
+            >
               <ellipse
                 id="Ellipse_178_o"
                 rx="1.6rem"
@@ -222,7 +222,25 @@
               ></ellipse>
             </svg>
 
-            <svg class="block-3-line">
+            <svg class="block-3-cercle" v-else>
+              <ellipse
+                id="Ellipse_178_o"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg
+              class="block-3-line"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 0"
+            >
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+
+            <svg class="block-3-line" v-else>
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
 
@@ -239,7 +257,11 @@
             </div>
           </div>
           <div class="box-2" ref="box2">
-            <svg class="block-3-cercle">
+            <svg
+              class="block-3-cercle"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 1"
+            >
               <ellipse
                 id="Ellipse_178_o"
                 rx="1.6rem"
@@ -249,15 +271,38 @@
               ></ellipse>
             </svg>
 
-            <svg class="block-3-line">
+            <svg class="block-3-cercle" v-else>
+              <ellipse
+                id="Ellipse_178_o"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg
+              class="block-3-line"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 0"
+            >
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
+
+            <svg class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+
             <div class="year-small">
               <p>{{ years[1] }}</p>
             </div>
           </div>
           <div class="box-3" ref="box3">
-            <svg class="block-3-cercle">
+            <svg
+              class="block-3-cercle"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 2"
+            >
               <ellipse
                 id="Ellipse_178_o"
                 rx="1.6rem"
@@ -267,15 +312,38 @@
               ></ellipse>
             </svg>
 
-            <svg class="block-3-line">
+            <svg class="block-3-cercle" v-else>
+              <ellipse
+                id="Ellipse_178_o"
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg
+              class="block-3-line"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 2"
+            >
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
+
+            <svg class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+
             <div class="year-small">
               <p>{{ years[2] }}</p>
             </div>
           </div>
           <div class="box-4" ref="box4">
-            <svg class="block-3-cercle">
+            <svg
+              class="block-3-cercle"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 3"
+            >
               <ellipse
                 rx="1.6rem"
                 ry="1.6rem"
@@ -284,16 +352,38 @@
               ></ellipse>
             </svg>
 
-            <svg class="block-3-line">
+            <svg class="block-3-cercle" v-else>
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg
+              class="block-3-line"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 3"
+            >
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
+
+            <svg class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+
             <div class="year-small">
               <p>{{ years[3] }}</p>
             </div>
           </div>
 
           <div class="box-5" ref="box5">
-            <svg class="block-3-cercle">
+            <svg
+              class="block-3-cercle"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 4"
+            >
               <ellipse
                 rx="1.6rem"
                 ry="1.6rem"
@@ -302,16 +392,38 @@
               ></ellipse>
             </svg>
 
-            <svg class="block-3-line">
+            <svg class="block-3-cercle" v-else>
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg
+              class="block-3-line"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 4"
+            >
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
+
+            <svg class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+
             <div class="year-small">
               <p>{{ years[4] }}</p>
             </div>
           </div>
 
           <div class="box-6" ref="box6">
-            <svg class="block-3-cercle">
+            <svg
+              class="block-3-cercle"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 5"
+            >
               <ellipse
                 rx="1.6rem"
                 ry="1.6rem"
@@ -320,16 +432,38 @@
               ></ellipse>
             </svg>
 
-            <svg class="block-3-line">
+            <svg class="block-3-cercle" v-else>
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg
+              class="block-3-line"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 5"
+            >
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
+
+            <svg class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+
             <div class="year-small">
               <p>{{ years[5] }}</p>
             </div>
           </div>
 
           <div class="box-7" ref="box7">
-            <svg class="block-3-cercle">
+            <svg
+              class="block-3-cercle"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 6"
+            >
               <ellipse
                 rx="1.6rem"
                 ry="1.6rem"
@@ -338,9 +472,27 @@
               ></ellipse>
             </svg>
 
-            <svg class="block-3-line">
+            <svg class="block-3-cercle" v-else>
+              <ellipse
+                rx="1.6rem"
+                ry="1.6rem"
+                cx="1.7rem"
+                cy="1.7rem"
+              ></ellipse>
+            </svg>
+
+            <svg
+              class="block-3-line"
+              style="fill: black; stroke: black"
+              v-if="yearIndex === 6"
+            >
               <line x1="0" y1="0" x2="0" y2="62.2rem" />
             </svg>
+
+            <svg class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            </svg>
+
             <div class="year-small">
               <p>{{ years[6] }}</p>
             </div>
@@ -509,7 +661,7 @@ export default {
     return {
       selected: 1,
       email: "Your email address…",
-      text: "Leave your message here…",
+      text: "  Leave your message here…",
       years: [1992, 1997, 2006, 2008, 2010, 2017, 2020],
       yearIndex: 0,
       scrollTop: 0,
@@ -560,7 +712,8 @@ export default {
       this.scrollTop = window.scrollY;
 
       if (this.scrollTop > document.body.scrollHeight * 0.13) {
-        this.$refs["img-2"].style.transform = "scale(1.5)";
+        this.$refs["img-2"].style.transform = "scale(2)";
+        //this.$refs["img-2"].style.margin-top = "scale(2)";
         console.log(this.$refs["img-2"].style);
       } else {
         this.$refs["img-2"].style.transform = "scale(1)";
@@ -584,89 +737,108 @@ export default {
         anime({
           targets: this.gallery,
           scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index - 1),
-          duration: 500,
+          duration: 300,
+          easing: "easeOutElastic(3, 1)",
         });
 
         if (this.index === 1) {
+          this.box1.style.backgroundSize = "80%";
           anime({
             targets: this.box1,
             width: this.box1.offsetWidth * 20,
             left: "60rem",
 
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
 
           anime({
             targets: this.year,
             left: "20rem",
 
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 2) {
+          this.box2.style.backgroundSize = "80%";
           anime({
             targets: this.box2,
             width: this.box2.offsetWidth * 20,
             left: "160rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "120rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 3) {
+          this.box3.style.backgroundSize = "80%";
           anime({
             targets: this.box3,
             width: this.box3.offsetWidth * 20,
             left: "260rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "225rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 4) {
+          this.box4.style.backgroundSize = "80%";
           anime({
             targets: this.box4,
             width: this.box4.offsetWidth * 20,
             left: "360rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "325rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 5) {
+          this.box5.style.backgroundSize = "70%";
           anime({
             targets: this.box5,
             width: this.box5.offsetWidth * 20,
             left: "460rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "425rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 6) {
+          this.box6.style.backgroundSize = "80%";
           anime({
             targets: this.box6,
             width: this.box6.offsetWidth * 20,
             left: "560rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "525rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         }
-      }
 
-      this.index = this.index - 1;
-      this.yearIndex--;
+        this.index = this.index - 1;
+        this.yearIndex--;
+      }
     },
 
     moveRight: function () {
@@ -690,107 +862,126 @@ export default {
         anime({
           targets: this.gallery,
           scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index + 1),
-          duration: 500,
+          duration: 300,
+          easing: "easeOutElastic(3, 1)",
         });
 
         if (this.index === 0) {
+          this.box1.style.backgroundSize = "0%";
           anime({
             targets: this.box1,
             width: this.box1.offsetWidth / 20,
             left: "105rem",
-
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "120rem",
-
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 1) {
+          this.box2.style.backgroundSize = "0%";
           //console.log("123");
           anime({
             targets: this.box2,
             width: this.box2.offsetWidth / 20,
             left: "205rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "220rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 2) {
+          this.box3.style.backgroundSize = "0%";
           //console.log("123");
           anime({
             targets: this.box3,
             width: this.box3.offsetWidth / 20,
             left: "310rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "325rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 3) {
+          this.box4.style.backgroundSize = "0%";
           //console.log("123");
           anime({
             targets: this.box4,
             width: this.box4.offsetWidth / 20,
             left: "405rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "420rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 4) {
+          this.box5.style.backgroundSize = "0%";
           //console.log("123");
           anime({
             targets: this.box5,
             width: this.box5.offsetWidth / 20,
             left: "500rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "520rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 5) {
+          this.box6.style.backgroundSize = "0%";
           //console.log("123");
           anime({
             targets: this.box6,
             width: this.box6.offsetWidth / 20,
             left: "610rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "625rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         } else if (this.index === 6) {
+          this.box7.style.backgroundSize = "0%";
           //console.log("123");
           anime({
             targets: this.box7,
             width: this.box7.offsetWidth / 20,
             left: "700rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
             left: "785rem",
-            duration: 500,
+            duration: 300,
+            easing: "easeOutElastic(3, 1)",
           });
         }
+        this.index = this.index + 1;
+
+        this.yearIndex++;
       }
-
-      this.index = this.index + 1;
-
-      this.yearIndex++;
     },
 
     consultation: function () {
@@ -842,7 +1033,7 @@ export default {
   //padding: 14rem 14rem 0 14rem;
 
   .block1 {
-    padding: 21.3rem 7.291vw 0 7.291vw;
+    padding: 11.3rem 7.291vw 0 7.291vw;
 
     display: flex;
     flex-direction: column;
@@ -910,26 +1101,37 @@ export default {
       margin-left: 0.885vw;
     }
     float: left;
-    max-width: 50%;
+    max-width: 40%;
     margin-top: 1rem;
     text-align: left;
-    font: normal normal normal 6.1rem/8.6rem Source Sans Pro;
+
+    font-size: 6.1rem;
     letter-spacing: 2.44px;
     color: rgba(227, 227, 227, 1);
   }
 
   .content {
+    width: 92.2rem;
     margin-top: 3.9rem;
     float: right;
-    max-width: 50%;
+    max-width: 60%;
     .image {
       max-width: 100%;
       height: auto;
     }
 
-    font: 2rem/2.8rem Source Sans Pro;
+    font-size: 2rem;
 
     text-align: left;
+    .line-1 {
+      margin-top: 4.2rem;
+      fill: white;
+      stroke: rgba(74, 145, 242, 1);
+      stroke-width: 4px;
+      width: 92.2rem;
+      height: 2rem;
+      left: 14rem;
+    }
   }
 
   .small-icon {
@@ -957,6 +1159,7 @@ export default {
   }
 
   .block2 {
+    height: 101.2rem;
     .ID {
       margin-left: 14rem;
     }
@@ -970,6 +1173,7 @@ export default {
     display: flex;
     flex-direction: column;
     .background {
+      height: 100%;
       background-image: url("../../assets/imgs/home/blue-blend-watercolour-waterco@2x.png");
       background-color: white;
 
@@ -979,12 +1183,13 @@ export default {
       //position: relative;
     }
     .img {
-      margin-top: 62.3rem;
-      margin-left: 9rem;
+      margin-top: 50rem;
+      margin-left: 0rem;
 
-      max-width: 25%;
-      max-height: 50%;
+      max-width: 50.5rem;
+      max-height: 38.5rem;
       transform: scale(1);
+      transform-origin: bottom left;
       transition: 1s;
     }
 
@@ -992,17 +1197,19 @@ export default {
       .content-head {
         color: var(--unnamed-color-000000);
         text-align: left;
-        font: normal normal normal 3vw Source Sans Pro;
+        //font: normal normal normal 3vw Source Sans Pro;
+        font-size: 4.5rem;
         letter-spacing: 1.8px;
         line-height: 1.8;
         color: #000000;
         opacity: 1;
       }
       float: right;
-      width: 55%;
+      width: 50%;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 1.7vw Source Sans Pro;
+      //font: normal normal normal 1.7vw Source Sans Pro;
+      font-size: 2.2rem;
       line-height: 1.8;
       letter-spacing: 0.88px;
       color: #000000;
@@ -1016,7 +1223,7 @@ export default {
     background-position: 0% 100%;
     background-repeat: repeat-x;
     background-size: 100%;
-    height: 98.1rem;
+    height: 88rem;
     .block3 {
       .ID {
         margin-left: 14rem;
@@ -1029,7 +1236,7 @@ export default {
       }
       display: flex;
       flex-direction: column;
-      height: 98.1rem;
+      height: 88rem;
       width: 100%;
 
       .block-3-cercle {
@@ -1122,7 +1329,7 @@ export default {
           }
         }
         .box-2 {
-          background-image: url("../../assets/imgs/home/woodlands checkpoint-otc-6.jpg");
+          background-image: url("../../assets/imgs/home/woodlands_checkpoint-otc-6.png");
           background-color: transparent;
           background-position: 20% 60%;
           background-repeat: no-repeat;
