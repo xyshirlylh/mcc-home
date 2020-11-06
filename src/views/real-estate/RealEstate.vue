@@ -2,17 +2,17 @@
   <div class="real-estate">
     <section class="top-container">
       <div class="flex-2">
-        <p class="f-s-25 f-c-10">MCC Land</p>
+        <p class="f-s-25 f-c-10 subtitle">MCC Land</p>
 
-        <gap :height="30"/>
+        <!-- <gap :height="30"/> -->
 
-        <p class="f-s-100 f-c-1 font-bold" style="letter-spacing: 4px">Real estate</p>
+        <p class="f-s-100 f-c-1 font-bold title" style="letter-spacing: 4px">Real estate</p>
 
         <gap :height="50"/>
 
-        <p class="f-s-25 f-c-1">MCC Land develops and manages a wide range of properties including residential, commercial, office, and landmark projects, like Universal Studios Singapore and Resorts World. <br/><br/>They are mostly known for their high-rise luxury condominium projects.</p>
+        <p class="f-s-25 f-c-1 content">MCC Land develops and manages a wide range of properties including residential, commercial, office, and landmark projects, like Universal Studios Singapore and Resorts World. <br/><br/>They are mostly known for their high-rise luxury condominium projects.</p>
 
-        <gap :height="69"/>
+        <gap :height="100"/>
 
         <p class="f-s-24 f-c-11 font-bold cursor-pointer" @click="showAllProject">See all projects</p>
       </div>
@@ -140,13 +140,26 @@
 
 <style scoped lang="scss" type="text/scss">
   .real-estate {
-    width: 100%;
+    width: calc(100% - 28rem);
     min-height: 100%;
-    padding: 14rem 14rem 0 14rem;
+    padding: 18.1rem 14rem 0 14rem;
 
     .top-container {
       display: flex;
       flex-direction: row;
+
+      .subtitle {
+        height: 3.6rem; 
+        line-height: 3.6rem;
+      }
+      .title {
+        letter-spacing: 4px; 
+        height: 14.2rem; 
+        line-height: 14.2rem;
+      }
+      .content {
+        line-height: 3.6rem;
+      }
     }
 
     @media screen and (max-width: 1023px) {
@@ -179,7 +192,7 @@
           }
 
           .label-comment {
-            margin: 1.6rem 0;
+            margin: 2rem 0;
           }
         }
       }
@@ -192,7 +205,7 @@
       }
 
       ul {
-        margin-top: 6rem;
+        margin-top: 7rem;
         li {
           margin-bottom: 5.7rem;
         }

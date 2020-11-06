@@ -101,11 +101,15 @@
 </script>
 
 <style scoped lang="scss" type="text/scss">
+  header {
+    border-top: 4px solid #4A91F2;
+    border-bottom: 2px solid #E3E3E3;
+  }
+
   @media screen and (max-width: 1024px) {
     header {
       @include box-size(100%, 50px);
-      border-bottom: 2px solid #E3E3E3;
-
+    
       .left {
         padding-left: 14rem;
       }
@@ -172,8 +176,7 @@
   @media screen and (min-width: 1025px) {
     header {
       @include box-size(100%, 9.4rem);
-      border-bottom: 2px solid #E3E3E3;
-
+      
       .left {
         padding-left: 14rem;
 
