@@ -2,9 +2,11 @@
   <g id="_929764" data-name="929764" transform="translate(60 60) rotate(180)">
     <g id="Group_854" data-name="Group 854">
       <g id="Group_853" data-name="Group 853">
-        <path id="Path_2292" data-name="Path 2292" d="M30,0A30,30,0,1,0,60,30,30.034,30.034,0,0,0,30,0Zm0,57.391A27.391,27.391,0,1,1,57.391,30,27.421,27.421,0,0,1,30,57.391Z" fill="#1381ce"/>
+        <circle cx="30" cy="30" r="28"  stroke-width="3" stroke="#1381ce" fill="none" />
         <path id="Path_2293" data-name="Path 2293" d="M194.825,112.484a1.656,1.656,0,1,0-2.341,2.341L204.56,126.9l-12.077,12.077a1.656,1.656,0,1,0,2.341,2.341l13.247-13.247a1.654,1.654,0,0,0,0-2.341Z" transform="translate(-170.278 -96.901)" fill="#1381ce"/>
       </g>
     </g>
   </g>
 </svg>
+
+
