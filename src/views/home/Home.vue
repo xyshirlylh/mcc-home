@@ -762,38 +762,40 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="title-2">
-        <p>CONTACT US</p>
+    <div class="title-2">
+      <p>CONTACT US</p>
+    </div>
+
+    <gap :height="70" />
+
+    <div class="input">
+      <div class="email">
+        <input
+          type="text"
+          v-model="email"
+          @focus="clearContent('email')"
+          @blur="resetContent('email')"
+        />
       </div>
 
-      <gap :height="70" />
-
-      <div class="input">
-        <div class="email">
-          <input
-            type="text"
-            v-model="email"
-            @focus="clearContent('email')"
-            @blur="resetContent('email')"
-          />
-        </div>
-
-        <gap :height="63" />
-        <div class="text">
-          <textarea
-            type="input"
-            v-model="text"
-            @focus="clearContent('text')"
-            @blur="resetContent('text')"
-          ></textarea>
-        </div>
-      </div>
-
-      <div class="button-1">
-        <button class="button-2">Confirm</button>
+      <gap :height="63" />
+      <div class="text">
+        <textarea
+          type="input"
+          v-model="text"
+          @focus="clearContent('text')"
+          @blur="resetContent('text')"
+        ></textarea>
       </div>
     </div>
+
+    <div class="button-5-1">
+      <button class="button-5-2">Confirm</button>
+    </div>
+
+    <gap :height="123" />
   </div>
 </template>
 
@@ -1220,6 +1222,7 @@ export default {
     text-align: left;
 
     font-size: 2.6rem;
+    line-height: 3.7rem;
     letter-spacing: 1.04px;
     color: rgba(113, 113, 113, 1);
   }
@@ -1232,9 +1235,10 @@ export default {
     .subtitle-s {
       display: flex;
       flex-direction: column;
+      width: 46.6rem;
 
       .subtitle {
-        width: 60rem;
+        width: 46.6rem;
         display: flex;
         flex-direction: row;
         &:hover {
@@ -1268,6 +1272,7 @@ export default {
 
       margin-top: 1rem;
       text-align: left;
+      width: 71.8rem;
 
       font-size: 6.1rem;
       letter-spacing: 2.44px;
@@ -1723,7 +1728,8 @@ export default {
       margin-left: 21rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font: normal normal normal 2.6rem/3.7rem Source Sans Pro;
+      font-size: 2.6rem;
+      line-height: 3.7rem;
       letter-spacing: 1.04px;
       color: #000000;
       opacity: 1;
@@ -1789,62 +1795,7 @@ export default {
     padding: 21.3rem 0 0 14rem;
     display: flex;
     flex-direction: column;
-    height: 140rem;
-
-    .title-2 {
-      margin-top: 10%;
-      margin-left: 70.3rem;
-      color: var(--unnamed-color-000000);
-      font: normal normal bold 4.1rem/5.3rem PT Sans;
-      letter-spacing: 0.164rem;
-      color: rgba(0, 0, 0, 1);
-    }
-    .input {
-      margin-left: 52.9rem;
-      .email {
-        input[type="text"] {
-          width: 59.2rem;
-          border: none;
-          border-bottom: 1px solid rgba(112, 112, 112, 1);
-          color: var(--unnamed-color-c6c6c6);
-          text-align: left;
-          font: normal normal normal 2.2rem/4.5rem Source Sans Pro;
-          letter-spacing: 0.088rem;
-          color: rgba(198, 198, 198, 1);
-        }
-      }
-      .text {
-        textarea {
-          width: 59.2rem;
-          height: 15rem;
-          max-height: 15rem;
-          background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
-          border: 1px solid rgba(112, 112, 112, 1);
-          border-radius: 3px;
-          color: var(--unnamed-color-c6c6c6);
-          text-align: left;
-          font: normal normal normal 2.2rem/4.5rem Source Sans Pro;
-          letter-spacing: 0.88px;
-          color: rgba(198, 198, 198, 1);
-        }
-      }
-    }
-    .button-1 {
-      margin-left: 75.4rem;
-      margin-top: 4rem;
-      .button-2 {
-        text-align: center;
-        font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
-        letter-spacing: 0.088rem;
-        width: 13.2rem;
-        height: 5.4rem;
-        border: none;
-
-        background: rgba(74, 145, 242, 1) 0% 0% no-repeat padding-box;
-        color: white;
-        border-radius: 4px;
-      }
-    }
+    height: 70rem;
 
     .row-1 {
       height: 35rem;
@@ -1921,6 +1872,65 @@ export default {
         background-repeat: no-repeat;
         background-size: 50%;
       }
+    }
+  }
+
+  .title-2 {
+    margin-top: 10%;
+    text-align: center;
+    color: var(--unnamed-color-000000);
+    font: normal normal bold 4.1rem/5.3rem PT Sans;
+    letter-spacing: 0.164rem;
+    color: rgba(0, 0, 0, 1);
+  }
+  .input {
+    .email {
+      display: flex;
+      justify-content: space-around;
+      input[type="text"] {
+        width: 59.2rem;
+        border: none;
+        border-bottom: 1px solid rgba(112, 112, 112, 1);
+        color: var(--unnamed-color-c6c6c6);
+        text-align: left;
+        font: normal normal normal 2.2rem/4.5rem Source Sans Pro;
+        letter-spacing: 0.088rem;
+        color: rgba(198, 198, 198, 1);
+      }
+    }
+    .text {
+      display: flex;
+      justify-content: space-around;
+      textarea {
+        width: 59.2rem;
+        height: 15rem;
+        max-height: 15rem;
+        background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+        border: 1px solid rgba(112, 112, 112, 1);
+        border-radius: 3px;
+        color: var(--unnamed-color-c6c6c6);
+        text-align: left;
+        font: normal normal normal 2.2rem/4.5rem Source Sans Pro;
+        letter-spacing: 0.88px;
+        color: rgba(198, 198, 198, 1);
+      }
+    }
+  }
+  .button-5-1 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
+    .button-5-2 {
+      text-align: center;
+      font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
+      letter-spacing: 0.088rem;
+      width: 13.2rem;
+      height: 5.4rem;
+      border: none;
+
+      background: rgba(74, 145, 242, 1) 0% 0% no-repeat padding-box;
+      color: white;
+      border-radius: 4px;
     }
   }
 
