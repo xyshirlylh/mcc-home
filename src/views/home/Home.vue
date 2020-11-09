@@ -184,8 +184,6 @@
       </div>
     </div>
 
-    <gap :height="200" />
-
     <div class="background-3">
       <div class="block3">
         <div class="gallery-3">
@@ -581,7 +579,6 @@
     </div>
 
     <div class="background-4">
-      <gap :height="166" />
       <div class="ID">
         <span>04</span>
       </div>
@@ -1186,15 +1183,13 @@ export default {
   //padding: 14rem 14rem 0 14rem;
 
   .block1 {
-    padding: 11.3rem 7.291vw 0 7.291vw;
+    padding: 21.3rem 14rem 0 14rem;
 
     display: flex;
     flex-direction: column;
   }
 
   .ID {
-    top: 21.3rem;
-    left: 14rem;
     width: 4.8rem;
     height: 4.8rem;
     text-align: left;
@@ -1296,7 +1291,7 @@ export default {
         margin-top: 4.2rem;
         fill: white;
         stroke: rgba(74, 145, 242, 1);
-        stroke-width: 4px;
+        stroke-width: 0.6rem;
         width: 100%;
         height: 2rem;
         left: 14rem;
@@ -1337,7 +1332,9 @@ export default {
   }
 
   .block2 {
-    height: 75rem;
+    padding: 21.3rem 0 0 0;
+    height: 90rem;
+
     .ID {
       margin-left: 14rem;
     }
@@ -1354,7 +1351,7 @@ export default {
       flex-direction: row;
       justify-content: space-between;
 
-      height: 100%;
+      height: 92%;
       background-image: url("../../assets/imgs/home/blue-blend-watercolour-waterco@2x.png");
       background-color: white;
 
@@ -1364,8 +1361,8 @@ export default {
       //position: relative;
     }
     .img {
-      margin-top: 33rem;
-      margin-left: 14rem;
+      margin-top: 40rem;
+      margin-left: 0rem;
 
       max-width: 50.5rem;
       max-height: 38.5rem;
@@ -1401,12 +1398,13 @@ export default {
   }
 
   .background-3 {
+    padding: 21.3rem 0 0 0;
     background-image: url("../../assets/imgs/home/标尺.png");
 
     background-position: 0% 100%;
     background-repeat: repeat-x;
     background-size: 100%;
-    height: 73rem;
+    height: 80rem;
     .block3 {
       .ID {
         margin-left: 14rem;
@@ -1625,6 +1623,7 @@ export default {
   }
 
   .background-4 {
+    padding: 21.3rem 0 0 0;
     display: flex;
     flex-flow: column;
     background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
@@ -1787,22 +1786,21 @@ export default {
   }
 
   .block5 {
-    padding: 14rem 0 0 14rem;
+    padding: 21.3rem 0 0 14rem;
     display: flex;
     flex-direction: column;
     height: 140rem;
 
     .title-2 {
       margin-top: 10%;
-      text-align: center;
+      margin-left: 70.3rem;
       color: var(--unnamed-color-000000);
       font: normal normal bold 4.1rem/5.3rem PT Sans;
       letter-spacing: 0.164rem;
       color: rgba(0, 0, 0, 1);
     }
     .input {
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 52.9rem;
       .email {
         input[type="text"] {
           width: 59.2rem;
@@ -1832,8 +1830,7 @@ export default {
       }
     }
     .button-1 {
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 75.4rem;
       margin-top: 4rem;
       .button-2 {
         text-align: center;
@@ -1862,8 +1859,8 @@ export default {
         height: 4.7rem;
 
         svg {
-          width: 10%;
-          margin-top: 6%;
+          width: 3rem;
+          margin-top: 3rem;
           fill: transparent;
           stroke: rgba(19, 129, 206, 1);
           stroke-width: 1rem;
@@ -1874,7 +1871,8 @@ export default {
         }
 
         .title-5 {
-          width: 40%;
+          margin-left: 0.5rem;
+          width: 50%;
           color: var(--unnamed-color-000000);
 
           text-align: left;
@@ -1906,6 +1904,7 @@ export default {
       }
       .col-2 {
         background-image: url("../../assets/imgs/home/vision.png");
+
         height: 35rem;
         width: 30%;
         background-color: white;
