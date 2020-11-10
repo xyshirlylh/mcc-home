@@ -7,7 +7,10 @@
     </p>
 
     <p v-if="!showMenuList" ref="boxMenu" class="box-menu cursor-pointer" @click="onClickMenu">
-      <span>Menu</span>
+      
+      <!--
+
+      -->
 
       <span class="icon-menu position-relative">
         <em class="line line-1"></em>
@@ -126,7 +129,7 @@
 
         .icon-menu {
           .line {
-            background-color: #000000;
+            background-color: #1381CE;
             transform-origin: 7px;
             position: absolute;
             height: 2px;
@@ -198,7 +201,7 @@
 
         .icon-menu {
           .line {
-            background-color: #000000;
+            background-color: #1381CE;
             transform-origin: 7px;
             position: absolute;
             height: 2px;

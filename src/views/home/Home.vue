@@ -640,8 +640,8 @@
             <div class="box-1">
               <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
               <div class="background-white">
-                <h1>Title 1</h1>
-                <p>
+                <h1 class="f-f-sans">Title 1</h1>
+                <p class="f-f-sans">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et
@@ -651,8 +651,8 @@
             <div class="box-2">
               <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
               <div class="background-white">
-                <h1>Title 2</h1>
-                <p>
+                <h1 class="f-f-sans">Title 2</h1>
+                <p class="f-f-sans">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et
@@ -662,8 +662,8 @@
             <div class="box-3">
               <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
               <div class="background-white">
-                <h1>Title 3</h1>
-                <p>
+                <h1 class="f-f-sans">Title 3</h1>
+                <p class="f-f-sans">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et
@@ -1011,9 +1011,10 @@ export default {
       // use anime.js
 
       if (this.index < 6) {
+        console.log(this.gallery.offsetWidth)
         anime({
           targets: this.gallery,
-          scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index + 1),
+          scrollLeft: (this.gallery.offsetWidth)/1920*1270,
           duration: 500,
           easing: "easeOutElastic(3, 1)",
         });
@@ -1023,13 +1024,14 @@ export default {
           anime({
             targets: this.box1,
             //width: this.box1.offsetWidth / 20,
-            left: "105rem",
+            width: '39rem',
+            left: (this.gallery.offsetWidth)/1920*1330,
             duration: 500,
             easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
-            left: "120rem",
+            left: (this.gallery.offsetWidth)/1920*1400,
             duration: 500,
             easing: "easeOutElastic(3, 1)",
           });
@@ -1185,7 +1187,7 @@ export default {
   //padding: 14rem 14rem 0 14rem;
 
   .block1 {
-    padding: 21.3rem 14rem 0 14rem;
+    padding: 21.3rem 20rem 0 20rem;
 
     display: flex;
     flex-direction: column;
@@ -1195,7 +1197,7 @@ export default {
     width: 4.8rem;
     height: 4.8rem;
     text-align: left;
-    color: #bfd6f6;
+    color: #4a9ef2;
     letter-spacing: 1.64px;
     line-height: 5.3rem;
     font: 4.1rem/5.3rem PT Sans;
@@ -1203,7 +1205,7 @@ export default {
   }
 
   .title-underline {
-    margin-top: 0.694vh;
+    margin-top: 1.4vh;
     fill: transparent;
     stroke: rgba(113, 113, 113, 1);
     stroke-width: 2px;
@@ -1235,10 +1237,11 @@ export default {
     .subtitle-s {
       display: flex;
       flex-direction: column;
-      width: 46.6rem;
+      width: 60rem;
 
       .subtitle {
-        width: 46.6rem;
+        margin-top: 0.6rem;
+        width: 60rem;
         display: flex;
         flex-direction: row;
         &:hover {
@@ -1317,7 +1320,9 @@ export default {
     border: 1px solid #000000;
     border-radius: 4px;
     opacity: 1;
-    font: 2.2rem/3.2rem Source Sans Pro;
+    //font: 2.2rem/3.2rem Source Sans Pro;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
     p {
       margin-left: 10%;
       width: 40%;
@@ -1427,7 +1432,7 @@ export default {
 
       .block-3-cercle {
         position: absolute;
-        left: 10rem;
+        left: 0rem;
         bottom: 3.2rem;
         width: 3.4rem;
         height: 50rem;
@@ -1438,7 +1443,7 @@ export default {
 
       .block-3-line {
         position: absolute;
-        left: 11.6rem;
+        left: 1.6rem;
         bottom: 0;
         width: 33.4rem;
         height: 50rem;
@@ -1447,30 +1452,21 @@ export default {
       }
 
       .gallery {
-        $box1positionx: 60rem;
-        $zoomedDistance: 100rem;
-        $normalDistance: 20rem;
+        
+        display: flex;
+        flex-direction: row;
+        $box1positionx: 50.1rem;
+        $zoomedDistance: 127rem;
+        //$normalDistance: 42.4rem;
 
-        float: left;
+        
         position: relative;
         height: 100%;
         width: 100%;
-        overflow: hidden;
-        .year {
-          position: absolute;
-          left: 13.4rem;
-          bottom: 10.9rem;
-          max-width: 30%;
-          color: var(--unnamed-color-1381ce);
-          text-align: left;
-          font-size: 12.7rem;
-          letter-spacing: 5.08px;
-          color: rgba(19, 129, 206, 1);
-          margin-top: 40vh;
-        }
+        overflow: auto;
         .year-small {
           position: absolute;
-          left: 15rem;
+          left: 5rem;
           bottom: 50rem;
           color: var(--unnamed-color-1381ce);
           text-align: left;
@@ -1478,6 +1474,19 @@ export default {
           letter-spacing: 1.48px;
           color: rgba(19, 129, 206, 1);
         }
+        .year {
+          position: absolute;
+          left: 13.4rem;
+          bottom: 10.9rem;
+          max-width: 32.8rem;
+          color: var(--unnamed-color-1381ce);
+          text-align: left;
+          font-size: 12.7rem;
+          letter-spacing: 5.08px;
+          color: rgba(19, 129, 206, 1);
+          margin-top: 40vh;
+        }
+        
         .box-1 {
           background-image: url("../../assets/imgs/home/jibao.jpg");
           background-color: transparent;
@@ -1490,8 +1499,7 @@ export default {
           bottom: 0;
           left: $box1positionx;
           height: 100%;
-          width: 140rem;
-          float: left;
+          width: $zoomedDistance;
 
           .subtitle {
             position: absolute;
@@ -1672,8 +1680,11 @@ export default {
           font: normal normal normal 1.6rem/2.2rem Source Sans Pro;
           h1 {
             font-size: 3.6rem;
+            letter-spacing: 0.144rem;
           }
           p {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
             margin-top: 5rem;
           }
           margin-top: 3.5rem;
@@ -1743,7 +1754,9 @@ export default {
         button {
           display: flex;
           justify-content: space-around;
-          font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
+          //font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
+          font-size: 2.2rem;
+          line-height: 3.2rem;
           letter-spacing: 0.88px;
 
           border: none;
@@ -1934,7 +1947,7 @@ export default {
     }
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 768px) {
     .container-1 {
       display: flex;
       flex-direction: column;
