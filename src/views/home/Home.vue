@@ -1,20 +1,28 @@
 <template>
   <div class="home">
     <div class="block1">
-      <div class="ID">
-        <p class="f-f-ptsans">01</p>
-      </div>
+      <div class="container-1-left">
+        <div class="block-1-message">
+          <p>Hello,</p>
+          <br />
+          <p>Welcome to MCC Singapore!</p>
+        </div>
 
-      <svg class="title-underline">
-        <line x1="0" y1="0" x2="150" y2="0" />
-      </svg>
+        <div>
+          <div class="ID">
+            <p class="f-f-ptsans">01</p>
+          </div>
 
-      <div class="title">
-        <p>What we do</p>
-      </div>
+          <svg class="title-underline">
+            <line x1="0" y1="0" x2="150" y2="0" />
+          </svg>
 
-      <div class="container-1">
-        <div class="subtitle-s f-f-sans" style="text-align: center">
+          <div class="title">
+            <p>What we do</p>
+          </div>
+        </div>
+
+        <div class="subtitle-s f-f-raleway" style="text-align: center">
           <div class="subtitle" @mouseover="consultation()">
             <svg class="small-icon">
               <ellipse
@@ -103,14 +111,39 @@
             <span v-else>Construction</span>
           </div>
         </div>
+      </div>
 
+      <div class="container-1-right">
         <div class="content">
-          <img
-            v-if="selected === 1"
-            class="image"
-            src="../../assets/imgs/home/scott-graham-5fNmWej4tAA-unspl@2x.png"
-            alt=""
-          />
+          <div v-if="selected === 1" class="image-1">
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+              </p>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            ></div>
+
+            <br />
+            <button class="button">
+              <p>Read More</p>
+
+              <svg class="button-arrow" viewBox="0 8 25 25">
+                <path d="M0 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
+              </svg>
+            </button>
+          </div>
           <img
             v-else-if="this.selected === 2"
             class="image"
@@ -123,29 +156,6 @@
             src="../../assets/imgs/home/construction.png"
             alt=""
           />
-          <svg class="line-1">
-            <line x1="0" y1="0" x2="92.2rem" y2="0" />
-          </svg>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy
-          </p>
-          <div
-            style="display: flex; justify-content: center; align-items: center"
-          ></div>
-
-          <br />
-          <button class="button">
-            <p>Read More</p>
-
-            <svg class="button-arrow" viewBox="0 8 25 25">
-              <path d="M0 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
-            </svg>
-          </button>
         </div>
       </div>
     </div>
@@ -1011,10 +1021,10 @@ export default {
       // use anime.js
 
       if (this.index < 6) {
-        console.log(this.gallery.offsetWidth)
+        console.log(this.gallery.offsetWidth);
         anime({
           targets: this.gallery,
-          scrollLeft: (this.gallery.offsetWidth)/1920*1270,
+          scrollLeft: (this.gallery.offsetWidth / 1920) * 1270,
           duration: 500,
           easing: "easeOutElastic(3, 1)",
         });
@@ -1024,14 +1034,14 @@ export default {
           anime({
             targets: this.box1,
             //width: this.box1.offsetWidth / 20,
-            width: '39rem',
-            left: (this.gallery.offsetWidth)/1920*1330,
+            width: "39rem",
+            left: (this.gallery.offsetWidth / 1920) * 1330,
             duration: 500,
             easing: "easeOutElastic(3, 1)",
           });
           anime({
             targets: this.year,
-            left: (this.gallery.offsetWidth)/1920*1400,
+            left: (this.gallery.offsetWidth / 1920) * 1400,
             duration: 500,
             easing: "easeOutElastic(3, 1)",
           });
@@ -1187,13 +1197,15 @@ export default {
   //padding: 14rem 14rem 0 14rem;
 
   .block1 {
-    padding: 21.3rem 20rem 0 20rem;
+    padding: 21.3rem 14rem 0 14rem;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   .ID {
+    margin-top: 12rem;
     width: 4.8rem;
     height: 4.8rem;
     text-align: left;
@@ -1229,21 +1241,27 @@ export default {
     color: rgba(113, 113, 113, 1);
   }
 
-  .container-1 {
+  .container-1-left {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+
+    min-width: 55rem;
+
+    .block-1-message {
+      font-size: 2rem;
+    }
 
     .subtitle-s {
       display: flex;
       flex-direction: column;
-      width: 60rem;
+      width: 50rem;
+      margin-top: 9rem;
 
       .subtitle {
-        margin-top: 0.6rem;
-        width: 60rem;
+        width: 50rem;
         display: flex;
         flex-direction: row;
+
         &:hover {
           color: var(--unnamed-color-000000);
         }
@@ -1268,76 +1286,96 @@ export default {
         }
 
         span {
-          margin-left: 0.885vw;
+          margin-left: 1.7rem;
           margin-top: 1.5rem;
         }
       }
 
-      margin-top: 1rem;
       text-align: left;
-      width: 71.8rem;
 
-      font-size: 6.1rem;
+      font-size: 5.9rem;
       letter-spacing: 2.44px;
       color: rgba(227, 227, 227, 1);
     }
+  }
+
+  .container-1-right {
+    display: flex;
+    flex-direction: column;
+    width: 110.9rem;
+    height: 65.7rem;
 
     .content {
-      width: 92.2rem;
-      margin-top: 3.9rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+      p {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: white;
+
+        width: 82rem;
+      }
+      .button {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        background-color: rgba(74, 145, 242, 1);
+        margin-top: 2rem;
+        width: 22rem;
+        height: 5.4rem;
+        border: 1px solid var(--unnamed-color-000000);
+
+        border-radius: 4px;
+        opacity: 1;
+        //font: 2.2rem/3.2rem Source Sans Pro;
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        p {
+          margin-left: 10%;
+          width: 40%;
+          height: 100%;
+          margin-top: 5%;
+          white-space: nowrap;
+        }
+        .button-arrow {
+          margin-top: 6%;
+          margin-left: 10%;
+          width: 30%;
+          //margin-bottom: 90%;
+          height: 100%;
+          stroke: white;
+          stroke-width: 0.6px;
+        }
+      }
 
       line-height: 2.8rem;
-      .image {
-        max-width: 100%;
-        height: auto;
+      .image-1 {
+        &:hover {
+          filter: blur(12px);
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+        height: 65.7rem;
+        background-image: url("../../assets/imgs/home/scott-graham-5fNmWej4tAA-unspl@2x.png");
+        background-color: white;
+        //filter: blur(12px);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
 
       font-size: 2rem;
-
-      text-align: left;
-      .line-1 {
-        margin-top: 4.2rem;
-        fill: white;
-        stroke: rgba(74, 145, 242, 1);
-        stroke-width: 0.6rem;
-        width: 100%;
-        height: 2rem;
-        left: 14rem;
-      }
-    }
-  }
-
-  .button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    background-color: white;
-    margin-top: 2rem;
-    width: 22rem;
-    height: 5.4rem;
-    border: 1px solid var(--unnamed-color-000000);
-    border: 1px solid #000000;
-    border-radius: 4px;
-    opacity: 1;
-    //font: 2.2rem/3.2rem Source Sans Pro;
-    font-size: 2.2rem;
-    line-height: 3.2rem;
-    p {
-      margin-left: 10%;
-      width: 40%;
-      height: 100%;
-      margin-top: 5%;
-      white-space: nowrap;
-    }
-    .button-arrow {
-      margin-top: 6%;
-      margin-left: 10%;
-      width: 30%;
-      //margin-bottom: 90%;
-      height: 100%;
-      stroke: #000000;
-      stroke-width: 0.6px;
     }
   }
 
@@ -1452,14 +1490,12 @@ export default {
       }
 
       .gallery {
-        
         display: flex;
         flex-direction: row;
         $box1positionx: 50.1rem;
         $zoomedDistance: 127rem;
         //$normalDistance: 42.4rem;
 
-        
         position: relative;
         height: 100%;
         width: 100%;
@@ -1486,7 +1522,7 @@ export default {
           color: rgba(19, 129, 206, 1);
           margin-top: 40vh;
         }
-        
+
         .box-1 {
           background-image: url("../../assets/imgs/home/jibao.jpg");
           background-color: transparent;
