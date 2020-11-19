@@ -115,74 +115,101 @@
 
       <div class="container-1-right">
         <div class="content">
-          <div v-if="selected === 1" class="image-1">
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-              </p>
-            </div>
-
+          <div v-if="selected === 1">
             <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              "
-            ></div>
+              v-if="mouseover === true"
+              @mouseleave="clear"
+              class="image-1-blur"
+            >
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum.
+                </p>
+              </div>
 
-            <br />
-            <button class="button">
-              <p>Read More</p>
+              <button class="button">
+                <p>Read More</p>
 
-              <svg class="button-arrow" viewBox="0 8 25 25">
-                <path d="M0 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
-              </svg>
-            </button>
+                <svg class="button-arrow" viewBox="0 8 25 25">
+                  <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
+                </svg>
+              </button>
+            </div>
+            <div v-else class="image-1" @mouseover="blur"></div>
           </div>
-          <img
-            v-else-if="this.selected === 2"
-            class="image"
-            src="../../assets/imgs/home/realestate.png"
-            alt=""
-          />
-          <img
-            v-else-if="selected === 3"
-            class="image"
-            src="../../assets/imgs/home/construction.png"
-            alt=""
-          />
+
+          <div v-else-if="this.selected === 2">
+            <div
+              v-if="mouseover === true"
+              @mouseleave="clear"
+              class="image-2-blur"
+            >
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum.
+                </p>
+              </div>
+
+              <button class="button">
+                <p>Read More</p>
+
+                <svg class="button-arrow" viewBox="0 8 25 25">
+                  <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
+                </svg>
+              </button>
+            </div>
+            <div v-else class="image-2" @mouseover="blur"></div>
+          </div>
+          <div v-else-if="selected === 3">
+            <div
+              v-if="mouseover === true"
+              @mouseleave="clear"
+              class="image-3-blur"
+            >
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum.
+                </p>
+              </div>
+
+              <button class="button">
+                <p>Read More</p>
+
+                <svg class="button-arrow" viewBox="0 8 25 25">
+                  <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
+                </svg>
+              </button>
+            </div>
+            <div v-else class="image-3" @mouseover="blur"></div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="block2">
-      <div class="ID">
-        <span>02</span>
-      </div>
-
-      <svg class="title-underline">
-        <line x1="0" y1="0" x2="150" y2="0" />
-      </svg>
-
-      <div class="title">
-        <span>about us</span>
-      </div>
-
       <div class="background">
-        <img
-          class="img"
-          ref="img-2"
-          src="../../assets/imgs/home/MCC_BUILDING.png"
-          alt=""
-        />
+        <div class="ID" style="color: white">
+          <span>02</span>
+        </div>
 
+        <svg class="title-underline" style="stroke: white">
+          <line x1="0" y1="0" x2="150" y2="0" />
+        </svg>
+
+        <div class="title" style="color: white">
+          <span>about us</span>
+        </div>
         <div class="content">
-          <p class="content-head">Mcc Singapore</p>
+          <p class="content-head f-f-raleway">About us</p>
           <p>
             Incorporated in 2010, MCC Land (Singapore) Limited has been actively
             involved in Singapore’s real estate scene and achieved good results.
@@ -190,6 +217,13 @@
             development projects and managed five development projects. The
             company has been
           </p>
+          <button class="button-2">
+            <p>Read More</p>
+
+            <svg class="button-arrow" viewBox="0 8 25 25">
+              <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -816,6 +850,7 @@ export default {
   data: function () {
     return {
       selected: 1,
+      mouseover: false,
       email: "Your email address…",
       text: "  Leave your message here…",
       years: [1992, 1997, 2006, 2008, 2010, 2017, 2020],
@@ -864,6 +899,14 @@ export default {
   },
 
   methods: {
+    blur: function () {
+      this.mouseover = true;
+    },
+
+    clear: function () {
+      this.mouseover = false;
+    },
+
     goRealEstate: function () {
       this.$router.push("/real-estate");
     },
@@ -1311,20 +1354,25 @@ export default {
       width: 100%;
       height: 100%;
 
+      line-height: 2.8rem;
       p {
         margin-left: auto;
         margin-right: auto;
+        margin-top: 24.7rem;
         text-align: center;
+        font-size: 2rem;
         color: white;
 
         width: 82rem;
       }
       .button {
-        margin-left: auto;
-        margin-right: auto;
+        position: absolute;
+        left: 40%;
+        top: 38rem;
+
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
 
         background-color: rgba(74, 145, 242, 1);
         margin-top: 2rem;
@@ -1351,24 +1399,89 @@ export default {
           //margin-bottom: 90%;
           height: 100%;
           stroke: white;
-          stroke-width: 0.6px;
+          stroke-width: 1px;
         }
       }
 
-      line-height: 2.8rem;
-      .image-1 {
-        &:hover {
-          filter: blur(12px);
-        }
+      .image-1-blur {
+        position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-self: center;
+
         width: 100%;
+
+        height: 65.7rem;
+        background-image: url("../../assets/imgs/home/blur-scott-graham-5fNmWej4tAA-unspl@2x.png");
+        background-color: white;
+        //filter: blur(12px);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      .image-2-blur {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        height: 65.7rem;
+        background-image: url("../../assets/imgs/home/blur-realestate.png");
+        background-color: white;
+        //filter: blur(12px);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      .image-3-blur {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        height: 65.7rem;
+        background-image: url("../../assets/imgs/home/blur-construction.png");
+        background-color: white;
+        //filter: blur(12px);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .image-1 {
+        width: 100%;
+
         height: 65.7rem;
         background-image: url("../../assets/imgs/home/scott-graham-5fNmWej4tAA-unspl@2x.png");
         background-color: white;
-        //filter: blur(12px);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .image-2 {
+        width: 100%;
+
+        height: 65.7rem;
+        background-image: url("../../assets/imgs/home/realestate.png");
+        background-color: white;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .image-3 {
+        width: 100%;
+
+        height: 65.7rem;
+        background-image: url("../../assets/imgs/home/construction.png");
+        background-color: white;
 
         background-position: center;
         background-repeat: no-repeat;
@@ -1383,29 +1496,28 @@ export default {
     padding: 21.3rem 0 0 0;
     height: 90rem;
 
-    .ID {
-      margin-left: 14rem;
-    }
-    .title-underline {
-      margin-left: 14rem;
-    }
-    .title {
-      margin-left: 18.375rem;
-    }
-    //padding: 14rem 14rem 0 14rem;
-
     .background {
+      .ID {
+        margin-left: 14rem;
+      }
+      .title-underline {
+        margin-left: 14rem;
+      }
+      .title {
+        margin-left: 18.375rem;
+      }
+      //padding: 14rem 14rem 0 14rem;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
 
       height: 92%;
-      background-image: url("../../assets/imgs/home/blue-blend-watercolour-waterco@2x.png");
+      background-image: url("../../assets/imgs/home/bady-abbas-MDgRcuGYu58-unsplas@2x.png"),
+        url("../../assets/imgs/home/Group_920@2x.png");
       background-color: white;
 
-      background-position: center;
+      background-position: center, bottom;
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: 100% 100%, 102.6rem 19.7rem;
       //position: relative;
     }
     .img {
@@ -1420,11 +1532,14 @@ export default {
     }
 
     .content {
-      margin-right: 14rem;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
       line-height: 4.5rem;
+
       .content-head {
         color: var(--unnamed-color-000000);
-        text-align: left;
+        text-align: center;
         //font: normal normal normal 3vw Source Sans Pro;
         font-size: 4.5rem;
         letter-spacing: 1.8px;
@@ -1432,21 +1547,59 @@ export default {
         color: #000000;
         opacity: 1;
       }
-      float: right;
-      width: 70.5rem;
+
+      width: 100.1rem;
       color: var(--unnamed-color-000000);
-      text-align: left;
+      text-align: center;
       //font: normal normal normal 1.7vw Source Sans Pro;
       font-size: 2.2rem;
       line-height: 1.8;
       letter-spacing: 0.88px;
       color: #000000;
       opacity: 1;
+
+      .button-2 {
+        position: absolute;
+        left: 39.5%;
+        top: 22rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        background-color: transparent;
+        border: 0.2rem solid black; /* Green */
+        margin-top: 20px;
+        width: 22rem;
+        height: 5.4rem;
+
+        border-radius: 4px;
+        opacity: 1;
+        //font: 2.2rem/3.2rem Source Sans Pro;
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        p {
+          margin-left: 10%;
+          width: 40%;
+          height: 100%;
+          margin-top: 5%;
+          white-space: nowrap;
+        }
+        .button-arrow {
+          margin-top: 6%;
+          margin-left: 10%;
+          width: 30%;
+          //margin-bottom: 90%;
+          height: 100%;
+          stroke: black;
+          stroke-width: 1px;
+        }
+      }
     }
   }
 
   .background-3 {
-    padding: 21.3rem 0 0 0;
+    padding: 20.1rem 0 0 0;
     background-image: url("../../assets/imgs/home/标尺.png");
 
     background-position: 0% 100%;
@@ -1456,6 +1609,7 @@ export default {
     .block3 {
       .ID {
         margin-left: 14rem;
+        margin-top: 0;
       }
       .title-underline {
         margin-left: 14rem;
@@ -1524,7 +1678,7 @@ export default {
         }
 
         .box-1 {
-          background-image: url("../../assets/imgs/home/jibao.jpg");
+          background-image: url("../../assets/imgs/home/Artboard_1@2x.png");
           background-color: transparent;
 
           background-position: 20% 40%;
@@ -1845,6 +1999,10 @@ export default {
     display: flex;
     flex-direction: column;
     height: 70rem;
+
+    .ID {
+      margin-top: 0;
+    }
 
     .row-1 {
       height: 35rem;
