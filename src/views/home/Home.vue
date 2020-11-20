@@ -22,8 +22,8 @@
           </div>
         </div>
 
-        <div class="subtitle-s f-f-raleway" style="text-align: center">
-          <div class="subtitle" @mouseover="consultation()">
+        <div class="subtitle-s " style="text-align: center">
+          <div class="subtitle " @mouseover="consultation()">
             <svg class="small-icon">
               <ellipse
                 style="stroke: #e3e3e3"
@@ -210,7 +210,7 @@
         </div>
         <div class="content">
           <p class="content-head f-f-raleway">About us</p>
-          <p>
+          <p style="margin-top:10px">
             Incorporated in 2010, MCC Land (Singapore) Limited has been actively
             involved in Singapore’s real estate scene and achieved good results.
             It has developed five development projects, co-developed two
@@ -1234,6 +1234,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 .home {
   width: 100%;
   //min-height: 100%;
@@ -1329,6 +1330,7 @@ export default {
         }
 
         span {
+          font: normal normal bold 5rem/6.9rem Raleway;
           margin-left: 1.7rem;
           margin-top: 1.5rem;
         }
@@ -1540,20 +1542,23 @@ export default {
       .content-head {
         color: var(--unnamed-color-000000);
         text-align: center;
+        font: normal normal bold 45px/53px Raleway;
+        letter-spacing: 1.8px;
         //font: normal normal normal 3vw Source Sans Pro;
         font-size: 4.5rem;
         letter-spacing: 1.8px;
 
         color: #000000;
         opacity: 1;
+
       }
 
       width: 100.1rem;
       color: var(--unnamed-color-000000);
       text-align: center;
-      //font: normal normal normal 1.7vw Source Sans Pro;
-      font-size: 2.2rem;
-      line-height: 1.8;
+      font: normal normal normal  Source Sans Pro;
+      font-size: 1.9rem;
+      letter-spacing: 1.8px;
       letter-spacing: 0.88px;
       color: #000000;
       opacity: 1;
@@ -1561,7 +1566,7 @@ export default {
       .button-2 {
         position: absolute;
         left: 39.5%;
-        top: 22rem;
+        top: 24rem;
 
         display: flex;
         flex-direction: row;
