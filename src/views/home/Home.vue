@@ -22,8 +22,8 @@
           </div>
         </div>
 
-        <div class="subtitle-s " style="text-align: center">
-          <div class="subtitle " @mouseover="consultation()">
+        <div class="subtitle-s" style="text-align: center">
+          <div class="subtitle" @mouseover="consultation()">
             <svg class="small-icon">
               <ellipse
                 style="stroke: #e3e3e3"
@@ -210,7 +210,7 @@
         </div>
         <div class="content">
           <p class="content-head f-f-raleway">About us</p>
-          <p style="margin-top:10px">
+          <p style="margin-top: 10px">
             Incorporated in 2010, MCC Land (Singapore) Limited has been actively
             involved in Singapore’s real estate scene and achieved good results.
             It has developed five development projects, co-developed two
@@ -623,6 +623,9 @@
     </div>
 
     <div class="background-4">
+      <div class="head-4">
+        <p>MCC Singapore History</p>
+      </div>
       <div class="ID">
         <span>04</span>
       </div>
@@ -636,119 +639,111 @@
       </div>
 
       <div class="container-4">
-        <div class="left">
-          <svg type="button" width="60" height="60" viewBox="0 0 60 60">
-            <g
-              id="_929764"
-              data-name="929764"
-              transform="translate(60 60) rotate(180)"
-            >
-              <g id="Group_854" data-name="Group 854">
-                <g id="Group_853" data-name="Group 853">
-                  <circle
-                    cx="30"
-                    cy="30"
-                    r="28"
-                    stroke-width="3"
-                    stroke="#1381ce"
-                    fill="none"
-                  />
-                  <path
-                    id="Path_2293"
-                    data-name="Path 2293"
-                    d="M194.825,112.484a1.656,1.656,0,1,0-2.341,2.341L204.56,126.9l-12.077,12.077a1.656,1.656,0,1,0,2.341,2.341l13.247-13.247a1.654,1.654,0,0,0,0-2.341Z"
-                    transform="translate(-170.278 -96.901)"
-                    fill="#1381ce"
-                  />
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
         <div class="block4">
-          <div class="head">
-            <p>Featured news of MCC Singapore</p>
-            <div class="button-1">
-              <button>
-                <p>View more</p>
-
-                <svg class="button-arrow" viewBox="0 8 25 25">
-                  <path d="M0 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-
           <div class="gallery">
+            <div class="left">
+              <svg type="button" width="60" height="60" viewBox="0 0 60 60">
+                <g
+                  id="_929764"
+                  data-name="929764"
+                  transform="translate(60 60) rotate(180)"
+                >
+                  <g id="Group_854" data-name="Group 854">
+                    <g id="Group_853" data-name="Group 853">
+                      <circle
+                        cx="30"
+                        cy="30"
+                        r="28"
+                        stroke-width="3"
+                        stroke="black"
+                        fill="none"
+                      />
+                      <path
+                        id="Path_2293"
+                        data-name="Path 2293"
+                        d="M194.825,112.484a1.656,1.656,0,1,0-2.341,2.341L204.56,126.9l-12.077,12.077a1.656,1.656,0,1,0,2.341,2.341l13.247-13.247a1.654,1.654,0,0,0,0-2.341Z"
+                        transform="translate(-170.278 -96.901)"
+                        fill="black"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
             <div class="box-1">
-              <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
+              <div>
+                <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
+              </div>
+
               <div class="background-white">
-                <h1 class="f-f-sans">Title 1</h1>
-                <p class="f-f-sans">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et
-                </p>
+                <div class="f-f-sans">Title 1</div>
               </div>
             </div>
             <div class="box-2">
-              <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
+              <div>
+                <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
+              </div>
+
               <div class="background-white">
-                <h1 class="f-f-sans">Title 2</h1>
-                <p class="f-f-sans">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et
-                </p>
+                <div class="f-f-sans">Title 2</div>
+              </div>
+              <div class="head">
+                <div class="button-1">
+                  <button>
+                    <p>View more</p>
+
+                    <svg class="button-arrow" viewBox="0 8 25 25">
+                      <path d="M7 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
             <div class="box-3">
-              <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
+              <div>
+                <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
+              </div>
+
               <div class="background-white">
-                <h1 class="f-f-sans">Title 3</h1>
-                <p class="f-f-sans">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et
-                </p>
+                <div class="f-f-sans">Title 3</div>
               </div>
             </div>
+
+            <div class="right">
+              <svg
+                @click="moveRight()"
+                ref="moveRight"
+                type="button"
+                key=""
+                id="_929764"
+                data-name="929764"
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                viewBox="0 0 60 60"
+              >
+                <g id="Group_854" data-name="Group 854">
+                  <g id="Group_853" data-name="Group 853">
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="28"
+                      stroke-width="3"
+                      stroke="black"
+                      fill="none"
+                    />
+                    <path
+                      id="Path_2293"
+                      data-name="Path 2293"
+                      d="M194.825,112.484a1.656,1.656,0,1,0-2.341,2.341L204.56,126.9l-12.077,12.077a1.656,1.656,0,1,0,2.341,2.341l13.247-13.247a1.654,1.654,0,0,0,0-2.341Z"
+                      transform="translate(-170.278 -96.901)"
+                      fill="black"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
           </div>
-        </div>
-        <div class="right">
-          <svg
-            @click="moveRight()"
-            ref="moveRight"
-            type="button"
-            key=""
-            id="_929764"
-            data-name="929764"
-            xmlns="http://www.w3.org/2000/svg"
-            width="60"
-            height="60"
-            viewBox="0 0 60 60"
-          >
-            <g id="Group_854" data-name="Group 854">
-              <g id="Group_853" data-name="Group 853">
-                <circle
-                  cx="30"
-                  cy="30"
-                  r="28"
-                  stroke-width="3"
-                  stroke="#1381ce"
-                  fill="none"
-                />
-                <path
-                  id="Path_2293"
-                  data-name="Path 2293"
-                  d="M194.825,112.484a1.656,1.656,0,1,0-2.341,2.341L204.56,126.9l-12.077,12.077a1.656,1.656,0,1,0,2.341,2.341l13.247-13.247a1.654,1.654,0,0,0,0-2.341Z"
-                  transform="translate(-170.278 -96.901)"
-                  fill="#1381ce"
-                />
-              </g>
-            </g>
-          </svg>
         </div>
       </div>
     </div>
@@ -1234,7 +1229,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 .home {
   width: 100%;
   //min-height: 100%;
@@ -1550,13 +1546,12 @@ export default {
 
         color: #000000;
         opacity: 1;
-
       }
 
       width: 100.1rem;
       color: var(--unnamed-color-000000);
       text-align: center;
-      font: normal normal normal  Source Sans Pro;
+      font: normal normal normal Source Sans Pro;
       font-size: 1.9rem;
       letter-spacing: 1.8px;
       letter-spacing: 0.88px;
@@ -1831,21 +1826,25 @@ export default {
   }
 
   .background-4 {
-    padding: 21.3rem 0 0 0;
+    //padding: 21.3rem 0 0 0;
+    .head-4 {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20.1rem;
+      text-align: left;
+      font: normal normal bold 4.5rem/5.3rem Raleway;
+      color: rgba(31, 118, 173, 1);
+    }
     display: flex;
     flex-flow: column;
-    background: rgba(68, 139, 217, 0.15) 0% 0% no-repeat padding-box;
+    background: rgba(143, 177, 205, 0.54) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 120rem;
+    height: 133.8rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     //position: relative;
     .container-4 {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-
       svg {
         max-width: 100%;
         max-height: 6rem;
@@ -1860,19 +1859,17 @@ export default {
         }
       }
 
-      .left {
-        margin-top: 45rem;
-
-        width: 5%;
-      }
-
       .block4 {
-        width: 80%;
-
         flex-direction: column;
         height: 10rem;
         .gallery {
-          font: normal normal normal 1.6rem/2.2rem Source Sans Pro;
+          //font: normal normal normal 1.6rem/2.2rem Source Sans Pro;
+          padding: 0 14rem 0 14rem;
+
+          font: normal normal normal 2.8rem/4rem Source Sans Pro;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
           h1 {
             font-size: 3.6rem;
             letter-spacing: 0.144rem;
@@ -1884,41 +1881,106 @@ export default {
           }
           margin-top: 3.5rem;
           .background-white {
-            padding: 10%;
+            padding: 4.6rem 0 0 0;
             background-color: white;
+            height: 8.2rem;
+            max-width: 45.4rem;
           }
           text-align: center;
           img {
             width: 100%;
-            height: auto;
+            height: 100%;
+          }
+          .left {
+            margin-top: 25rem;
+            min-width: 6rem;
+
+            width: 5%;
           }
           .box-1 {
-            float: left;
-            max-width: 30%;
-            max-height: 50%;
+            max-width: 45.4rem;
+            height: 46.5rem;
+            margin-left: 2rem;
           }
           .box-2 {
-            margin-left: 5%;
-            float: left;
-            max-width: 30%;
+            max-width: 45.4rem;
+            height: 46.5rem;
+            margin-left: 6.1rem;
+            .head {
+              .button-1 {
+                button {
+                  margin-left: auto;
+                  margin-right: auto;
+                  display: flex;
+                  justify-content: space-around;
+                  //font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
+
+                  line-height: 3.2rem;
+                  letter-spacing: 0.88px;
+
+                  border: none;
+                  width: 17.8rem;
+                  height: 5.4rem;
+
+                  background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
+                  color: black;
+                  border: 1px solid #000000;
+                  border-radius: 4px;
+                  p {
+                    margin-left: 5%;
+                    width: 40%;
+                    height: 100%;
+                    margin-top: 8%;
+                    white-space: nowrap;
+                  }
+                  .button-arrow {
+                    margin-top: 6%;
+                    margin-left: 10%;
+                    width: 30%;
+                    //margin-bottom: 90%;
+                    height: 100%;
+                    stroke: #000000;
+                    stroke-width: 0.6px;
+                  }
+                }
+              }
+
+              max-width: 100%;
+              p {
+                float: left;
+                max-width: 80%;
+              }
+
+              margin-top: 10rem;
+              max-height: 6.4rem;
+
+              height: 6.4rem;
+              color: var(--unnamed-color-000000);
+              text-align: left;
+              font: normal normal normal 4.5rem/6.4rem Source Sans Pro;
+              letter-spacing: 1.8px;
+              color: #000000;
+            }
           }
           .box-3 {
-            margin-left: 5%;
-            float: left;
-            max-width: 30%;
+            max-width: 45.4rem;
+            height: 46.5rem;
+            margin-left: 6.1rem;
+          }
+          .right {
+            margin-top: 25rem;
+            margin-left: 2rem;
+
+            min-width: 6rem;
+            height: 6rem;
           }
         }
-      }
-
-      .right {
-        margin-top: 45rem;
-
-        width: 5%;
       }
     }
 
     .ID {
       margin-left: 14rem;
+      margin-top: 5.1rem;
       color: var(--unnamed-color-000000);
       text-align: left;
       font: normal normal bold 4.1rem/5.3rem PT Sans;
@@ -1928,74 +1990,18 @@ export default {
     }
     .title-underline {
       margin-left: 14rem;
+      stroke-width: 3px;
       opacity: 1;
     }
     .title {
       margin-left: 21rem;
       color: var(--unnamed-color-000000);
       text-align: left;
-      font-size: 2.6rem;
-      line-height: 3.7rem;
-      letter-spacing: 1.04px;
+      font: normal normal 600 2.4rem/3.3rem Open Sans;
+
+      letter-spacing: 0.96px;
       color: #000000;
       opacity: 1;
-    }
-
-    .head {
-      .button-1 {
-        float: right;
-        max-width: 20%;
-
-        button {
-          display: flex;
-          justify-content: space-around;
-          //font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
-          font-size: 2.2rem;
-          line-height: 3.2rem;
-          letter-spacing: 0.88px;
-
-          border: none;
-          width: 22rem;
-          height: 5.4rem;
-
-          background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
-          color: black;
-          border: 1px solid #000000;
-          border-radius: 4px;
-          p {
-            margin-left: 5%;
-            width: 40%;
-            height: 100%;
-            margin-top: 5%;
-            white-space: nowrap;
-          }
-          .button-arrow {
-            margin-top: 6%;
-            margin-left: 10%;
-            width: 30%;
-            //margin-bottom: 90%;
-            height: 100%;
-            stroke: #000000;
-            stroke-width: 0.6px;
-          }
-        }
-      }
-
-      max-width: 100%;
-      p {
-        float: left;
-        max-width: 80%;
-      }
-
-      margin-top: 10rem;
-      max-height: 6.4rem;
-
-      height: 6.4rem;
-      color: var(--unnamed-color-000000);
-      text-align: left;
-      font: normal normal normal 4.5rem/6.4rem Source Sans Pro;
-      letter-spacing: 1.8px;
-      color: #000000;
     }
   }
 
