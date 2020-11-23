@@ -676,7 +676,7 @@
               </div>
 
               <div class="background-white">
-                <div class="f-f-sans">Title 1</div>
+                <div>Title 1</div>
               </div>
             </div>
             <div class="box-2">
@@ -685,12 +685,14 @@
               </div>
 
               <div class="background-white">
-                <div class="f-f-sans">Title 2</div>
+                <div>Title 2</div>
               </div>
               <div class="head">
                 <div class="button-1">
                   <button>
-                    <p>View more</p>
+                    <div>
+                      <p>View more</p>
+                    </div>
 
                     <svg class="button-arrow" viewBox="0 8 25 25">
                       <path d="M7 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
@@ -1231,6 +1233,7 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 .home {
   width: 100%;
   //min-height: 100%;
@@ -1260,7 +1263,7 @@ export default {
     margin-top: 1.4vh;
     fill: transparent;
     stroke: rgba(113, 113, 113, 1);
-    stroke-width: 2px;
+    stroke-width: 3px;
     stroke-linejoin: miter;
     stroke-linecap: butt;
     stroke-miterlimit: 4;
@@ -1275,7 +1278,7 @@ export default {
     margin-top: 0.3rem;
     text-align: left;
 
-    font-size: 2.6rem;
+    font: normal normal 600 2.4rem/3.3rem Open Sans;
     line-height: 3.7rem;
     letter-spacing: 1.04px;
     color: rgba(113, 113, 113, 1);
@@ -1559,34 +1562,35 @@ export default {
       opacity: 1;
 
       .button-2 {
-        position: absolute;
-        left: 39.5%;
-        top: 24rem;
-
+        &:hover {
+          background-color: white;
+          border-color: white;
+        }
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2.4rem;
         display: flex;
+
         flex-direction: row;
         justify-content: space-around;
 
         background-color: transparent;
         border: 0.2rem solid black; /* Green */
-        margin-top: 20px;
-        width: 22rem;
+
+        width: 16.4rem;
         height: 5.4rem;
 
         border-radius: 4px;
         opacity: 1;
-        //font: 2.2rem/3.2rem Source Sans Pro;
-        font-size: 2.2rem;
-        line-height: 3.2rem;
+
         p {
-          margin-left: 10%;
-          width: 40%;
-          height: 100%;
-          margin-top: 5%;
+          margin-top: 1.2rem;
+          margin-left: 1.2rem;
           white-space: nowrap;
+          font: normal normal normal 1.8rem/2.5rem Source Sans Pro;
         }
         .button-arrow {
-          margin-top: 6%;
+          margin-top: 1rem;
           margin-left: 10%;
           width: 30%;
           //margin-bottom: 90%;
@@ -1867,6 +1871,8 @@ export default {
           padding: 0 14rem 0 14rem;
 
           font: normal normal normal 2.8rem/4rem Source Sans Pro;
+          color: rgba(0, 0, 0, 1);
+          letter-spacing: 0.112rem;
           display: flex;
           flex-direction: row;
           justify-content: space-around;
@@ -1913,10 +1919,6 @@ export default {
                   margin-right: auto;
                   display: flex;
                   justify-content: space-around;
-                  //font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
-
-                  line-height: 3.2rem;
-                  letter-spacing: 0.88px;
 
                   border: none;
                   width: 17.8rem;
@@ -1928,19 +1930,21 @@ export default {
                   border-radius: 4px;
                   p {
                     margin-left: 5%;
-                    width: 40%;
-                    height: 100%;
-                    margin-top: 8%;
+                    max-width: 40%;
+
+                    margin-top: 0.8rem;
                     white-space: nowrap;
+                    font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
                   }
                   .button-arrow {
-                    margin-top: 6%;
-                    margin-left: 10%;
-                    width: 30%;
+                    margin-top: 0.9rem;
+
+                    margin-left: 0;
+                    max-width: 25%;
                     //margin-bottom: 90%;
                     height: 100%;
                     stroke: #000000;
-                    stroke-width: 0.6px;
+                    stroke-width: 0.08rem;
                   }
                 }
               }
@@ -1953,13 +1957,6 @@ export default {
 
               margin-top: 10rem;
               max-height: 6.4rem;
-
-              height: 6.4rem;
-              color: var(--unnamed-color-000000);
-              text-align: left;
-              font: normal normal normal 4.5rem/6.4rem Source Sans Pro;
-              letter-spacing: 1.8px;
-              color: #000000;
             }
           }
           .box-3 {
@@ -2100,7 +2097,7 @@ export default {
     .title-2 {
       text-align: center;
       color: var(--unnamed-color-000000);
-      font: normal normal bold 4.1rem/5.3rem PT Sans;
+      font: normal normal bold 4.1rem/4.9rem Raleway;
       letter-spacing: 0.164rem;
       color: rgba(0, 0, 0, 1);
     }
