@@ -1067,9 +1067,10 @@ export default {
         console.log(this.gallery.offsetWidth);
         anime({
           targets: this.gallery,
-          scrollLeft: (this.gallery.offsetWidth / 1920) * 1270,
+          scrollLeft:
+            (this.gallery.offsetWidth / 1920) * 1270 * (this.index + 1),
           duration: 500,
-          easing: "easeOutElastic(3, 1)",
+          easing: "easeInOutQuad",
         });
 
         if (this.index === 0) {
@@ -1080,13 +1081,13 @@ export default {
             width: "39rem",
             left: (this.gallery.offsetWidth / 1920) * 1330,
             duration: 500,
-            easing: "easeOutElastic(3, 1)",
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
             left: (this.gallery.offsetWidth / 1920) * 1400,
             duration: 500,
-            easing: "easeOutElastic(3, 1)",
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 1) {
           this.box2.style.backgroundSize = "0%";
@@ -1094,31 +1095,41 @@ export default {
           anime({
             targets: this.box2,
             //width: this.box2.offsetWidth / 20,
-            left: "205rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            width: "39rem",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1330 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "220rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1360 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 2) {
           this.box3.style.backgroundSize = "0%";
           //console.log("123");
           anime({
             targets: this.box3,
+            width: "39rem",
             //width: this.box3.offsetWidth / 20,
-            left: "310rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1300 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "325rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1315 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 3) {
           this.box4.style.backgroundSize = "0%";
@@ -1126,15 +1137,20 @@ export default {
           anime({
             targets: this.box4,
             //width: this.box4.offsetWidth / 20,
-            left: "405rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            width: "39rem",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1300 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "420rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1320 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 4) {
           this.box5.style.backgroundSize = "0%";
@@ -1142,15 +1158,20 @@ export default {
           anime({
             targets: this.box5,
             //width: this.box5.offsetWidth / 20,
-            left: "500rem",
+            width: "39rem",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1290 * this.index,
             duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "520rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1300 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 5) {
           this.box6.style.backgroundSize = "0%";
@@ -1158,15 +1179,20 @@ export default {
           anime({
             targets: this.box6,
             //width: this.box6.offsetWidth / 20,
-            left: "610rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            width: "39rem",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1280 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "625rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1290 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 6) {
           this.box7.style.backgroundSize = "0%";
@@ -1174,15 +1200,20 @@ export default {
           anime({
             targets: this.box7,
             //width: this.box7.offsetWidth / 20,
-            left: "700rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            width: "39rem",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1330 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "785rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left:
+              (this.gallery.offsetWidth / 1920) * 1270 +
+              (this.gallery.offsetWidth / 1920) * 1320 * this.index,
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         }
         this.index = this.index + 1;
@@ -1631,7 +1662,7 @@ export default {
 
       .block-3-cercle {
         position: absolute;
-        left: 0rem;
+        left: -1.6rem;
         bottom: 3.2rem;
         width: 3.4rem;
         height: 50rem;
@@ -1642,7 +1673,7 @@ export default {
 
       .block-3-line {
         position: absolute;
-        left: 1.6rem;
+        left: 0rem;
         bottom: 0;
         width: 33.4rem;
         height: 50rem;
@@ -1653,6 +1684,7 @@ export default {
       .gallery {
         display: flex;
         flex-direction: row;
+
         $box1positionx: 50.1rem;
         $zoomedDistance: 127rem;
         //$normalDistance: 42.4rem;
@@ -1660,10 +1692,10 @@ export default {
         position: relative;
         height: 100%;
         width: 100%;
-        overflow: auto;
+        overflow: hidden;
         .year-small {
           position: absolute;
-          left: 5rem;
+          left: 3rem;
           bottom: 50rem;
           color: var(--unnamed-color-1381ce);
           text-align: left;
