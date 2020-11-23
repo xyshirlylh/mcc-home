@@ -206,7 +206,7 @@
         </svg>
 
         <div class="title" style="color: white">
-          <span>about us</span>
+          <span>About us</span>
         </div>
         <div class="content">
           <p class="content-head f-f-raleway">About us</p>
@@ -230,7 +230,7 @@
 
     <div class="background-3">
       <div class="block3">
-        <div class="gallery-3">
+        <div class="block3-row-1">
           <div class="column-1">
             <div class="ID">
               <span>03</span>
@@ -244,8 +244,10 @@
               <span>MCC history</span>
             </div>
           </div>
-          <div class="column-2">
+          <div class="column-2">MCC Singapore History</div>
+          <div class="column-3">
             <svg
+              class="button-left"
               @click="moveLeft()"
               ref="moveLeft"
               type="button"
@@ -282,6 +284,7 @@
             </svg>
 
             <svg
+              class="button-right"
               @click="moveRight()"
               ref="moveRight"
               type="button"
@@ -760,7 +763,7 @@
       </svg>
 
       <div class="title">
-        <span>our culture</span>
+        <span>Our culture</span>
       </div>
 
       <div class="row-1">
@@ -1494,12 +1497,13 @@ export default {
   }
 
   .block2 {
-    padding: 21.3rem 0 0 0;
-    height: 90rem;
+    padding: 17.6rem 0 0 0;
+    height: 87.8rem;
 
     .background {
       .ID {
         margin-left: 14rem;
+        margin-top: 14.9rem;
       }
       .title-underline {
         margin-left: 14rem;
@@ -1511,14 +1515,13 @@ export default {
       display: flex;
       flex-direction: column;
 
-      height: 92%;
-      background-image: url("../../assets/imgs/home/bady-abbas-MDgRcuGYu58-unsplas@2x.png"),
-        url("../../assets/imgs/home/Group_920@2x.png");
+      height: 100%;
+      background-image: url("../../assets/imgs/home/Group_920@2x.png"),
+        url("../../assets/imgs/home/bady-abbas-MDgRcuGYu58-unsplas@2x.png");
       background-color: white;
-
-      background-position: center, bottom;
+      background-position: bottom, center;
       background-repeat: no-repeat;
-      background-size: 100% 100%, 102.6rem 19.7rem;
+      background-size: 102.6rem 19.7rem, 100% 100%;
       //position: relative;
     }
     .img {
@@ -1799,29 +1802,47 @@ export default {
         }
       }
 
-      .column-1 {
-        float: left;
-        max-width: 50%;
-        width: 30%;
-      }
-      .column-2 {
-        float: right;
-        max-width: 50%;
-        width: 30%;
-        padding: 0 0 0 15%;
-
-        svg {
-          margin-top: 15%;
-
+      .block3-row-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .column-1 {
           max-width: 50%;
-          max-height: 6rem;
-          margin-left: 10%;
-          &:hover {
-            circle {
-              fill: #1381ce;
-            }
-            path {
-              fill: white;
+          width: 30%;
+        }
+        .column-2 {
+          display: flex;
+          justify-content: center;
+          margin-top: 13rem;
+          font: normal normal bold 4.5rem/5.3rem Raleway;
+          color: rgba(31, 118, 173, 1);
+          max-width: 50%;
+          width: 40%;
+        }
+        .column-3 {
+          display: flex;
+          justify-content: right;
+          max-width: 50%;
+          width: 30%;
+          margin-top: 5rem;
+
+          .button-left {
+            margin-left: 22rem;
+          }
+
+          svg {
+            margin-top: 15%;
+
+            max-width: 50%;
+            max-height: 6rem;
+            margin-left: 5.5rem;
+            &:hover {
+              circle {
+                fill: #1381ce;
+              }
+              path {
+                fill: white;
+              }
             }
           }
         }
