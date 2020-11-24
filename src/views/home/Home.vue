@@ -322,8 +322,6 @@
         <div class="gallery" ref="gallery">
           <div class="year f-f-wigwag" ref="year">
             <div>{{ years[yearIndex] }}</div>
-          
-            
           </div>
 
           <div class="box-1" ref="box1">
@@ -628,9 +626,6 @@
     </div>
 
     <div class="background-4">
-      <div class="head-4">
-        <p>MCC Singapore History</p>
-      </div>
       <div class="ID">
         <span>04</span>
       </div>
@@ -641,6 +636,9 @@
 
       <div class="title">
         <span>MCC news</span>
+      </div>
+      <div class="head-4">
+        <p>MCC News</p>
       </div>
 
       <div class="container-4">
@@ -718,7 +716,6 @@
 
             <div class="right">
               <svg
-                @click="moveRight()"
                 ref="moveRight"
                 type="button"
                 key=""
@@ -894,8 +891,6 @@ export default {
     this.box7 = this.$refs.box7;
 
     this.year = this.$refs.year;
-
-    
   },
 
   destroy() {
@@ -921,18 +916,14 @@ export default {
 
     resizeTrigger: function () {
       //console.log('resize')
-      
+
       anime({
-          targets: this.gallery,
-          scrollLeft:
-            (this.gallery.offsetWidth / 1920) * 1270 * (this.index),
-          duration: 500,
-          easing: "easeInOutQuad",
-        });
-        
-      
-        
-        },
+        targets: this.gallery,
+        scrollLeft: (this.gallery.offsetWidth / 1920) * 1270 * this.index,
+        duration: 500,
+        easing: "easeInOutQuad",
+      });
+    },
 
     moveRight: function () {
       if (this.index < 1) {
@@ -967,13 +958,13 @@ export default {
             targets: this.box1,
             //width: this.box1.offsetWidth / 20,
             width: "20.3125vw",
-            left: '69vw',
+            left: "69vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: '71.5vw',
+            left: "71.5vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
@@ -984,14 +975,14 @@ export default {
             targets: this.box2,
             //width: this.box2.offsetWidth / 20,
             width: "20.3125vw",
-            left:'134vw',
-              duration: 500,
+            left: "134vw",
+            duration: 500,
             easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left:'135.5vw',
-              
+            left: "135.5vw",
+
             duration: 500,
             easing: "easeInOutQuad",
           });
@@ -1002,13 +993,13 @@ export default {
             targets: this.box3,
             width: "20.3125vw",
             //width: this.box3.offsetWidth / 20,
-            left:'199vw',
+            left: "199vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left:'200.5vw',
+            left: "200.5vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
@@ -1019,13 +1010,13 @@ export default {
             targets: this.box4,
             //width: this.box4.offsetWidth / 20,
             width: "20.3125vw",
-            left:'264vw',
+            left: "264vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left:'266.5vw',
+            left: "266.5vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
@@ -1036,13 +1027,13 @@ export default {
             targets: this.box5,
             //width: this.box5.offsetWidth / 20,
             width: "20.3125vw",
-            left:'329vw',
+            left: "329vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left:'332vw',
+            left: "332vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
@@ -1053,24 +1044,22 @@ export default {
             targets: this.box6,
             //width: this.box6.offsetWidth / 20,
             width: "20.3125vw",
-            left:'394vw',
+            left: "394vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: '396vw',
+            left: "396vw",
             duration: 500,
             easing: "easeInOutQuad",
           });
-        } 
+        }
         this.index = this.index + 1;
 
         this.yearIndex++;
       }
     },
-
-        
 
     moveLeft: function () {
       if (this.index < 1) {
@@ -1088,9 +1077,10 @@ export default {
       if (this.index >= 1) {
         anime({
           targets: this.gallery,
-          scrollLeft: this.gallery.offsetWidth * 0.527 * (this.index - 1),
+          scrollLeft:
+            (this.gallery.offsetWidth / 1920) * 1270 * (this.index - 1),
           duration: 500,
-          easing: "easeOutElastic(3, 1)",
+          easing: "easeInOutQuad",
         });
 
         if (this.index === 1) {
@@ -1098,93 +1088,99 @@ export default {
           anime({
             targets: this.box1,
             //width: this.box1.offsetWidth * 20,
-            left: "60rem",
+            left: "26.09375vw",
+            width: "65vw",
 
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
 
           anime({
             targets: this.year,
-            left: "20rem",
+            left: "6.5vw",
 
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 2) {
           this.box2.style.backgroundSize = "70%";
           anime({
             targets: this.box2,
             //width: this.box2.offsetWidth * 20,
-            left: "160rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "91.09375vw",
+            width: "65vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "120rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "71.5vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 3) {
           this.box3.style.backgroundSize = "70%";
           anime({
             targets: this.box3,
             //width: this.box3.offsetWidth * 20,
-            left: "260rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "156.09375vw",
+            width: "65vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "225rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "135.5vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 4) {
           this.box4.style.backgroundSize = "80%";
           anime({
             targets: this.box4,
             //width: this.box4.offsetWidth * 20,
-            left: "360rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "221.09375vw",
+            width: "65vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "325rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "200.5vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 5) {
           this.box5.style.backgroundSize = "70%";
           anime({
             targets: this.box5,
             //width: this.box5.offsetWidth * 20,
-            left: "460rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "286.09375vw",
+            width: "65vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "425rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "266.5vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         } else if (this.index === 6) {
           this.box6.style.backgroundSize = "60%";
           anime({
             targets: this.box6,
             //width: this.box6.offsetWidth * 20,
-            left: "560rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "351.09375vw",
+            width: "65vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
           anime({
             targets: this.year,
-            left: "525rem",
-            duration: 300,
-            easing: "easeOutElastic(3, 1)",
+            left: "332vw",
+            duration: 500,
+            easing: "easeInOutQuad",
           });
         }
 
@@ -1192,8 +1188,6 @@ export default {
         this.yearIndex--;
       }
     },
-
-    
 
     consultation: function () {
       this.selected = 1;
@@ -1655,32 +1649,32 @@ export default {
       }
 
       .year-small {
-          position: absolute;
-          left: 3rem;
-          bottom: 50rem;
-          color: var(--unnamed-color-1381ce);
-          text-align: left;
-          font: normal normal bold 2vw Source Sans Pro;
-          letter-spacing: 1.48px;
-          color: rgba(19, 129, 206, 1);
+        position: absolute;
+        left: 3rem;
+        bottom: 50rem;
+        color: var(--unnamed-color-1381ce);
+        text-align: left;
+        font: normal normal bold 2vw Source Sans Pro;
+        letter-spacing: 1.48px;
+        color: rgba(19, 129, 206, 1);
+      }
+      .year {
+        position: absolute;
+        left: 6.5vw;
+        bottom: 3rem;
+        width: 10vw;
+        color: var(--unnamed-color-1381ce);
+        text-align: left;
+
+        letter-spacing: 5.08px;
+        color: rgba(19, 129, 206, 1);
+        margin-top: 40vh;
+        div {
+          font-size: 6.5vw;
+          letter-spacing: 0.508rem;
+          line-height: 15.2rem;
         }
-        .year {
-          position: absolute;
-          left: 6.5vw;
-          bottom: 3rem;
-          width: 10vw;
-          color: var(--unnamed-color-1381ce);
-          text-align: left;
-          
-          letter-spacing: 5.08px;
-          color: rgba(19, 129, 206, 1);
-          margin-top: 40vh;
-          div{
-            font-size: 6.5vw;
-            letter-spacing: 0.508rem;
-            line-height: 15.2rem;
-          }
-        }
+      }
 
       .gallery {
         display: flex;
@@ -1695,8 +1689,7 @@ export default {
         position: relative;
         height: 100%;
         width: 100%;
-        overflow: auto;
-        
+        overflow: hidden;
 
         .box-1 {
           background-image: url("../../assets/imgs/home/Artboard_1@2x.png");
@@ -1869,7 +1862,7 @@ export default {
     .head-4 {
       margin-left: auto;
       margin-right: auto;
-      margin-top: 20.1rem;
+      //margin-top: 20.1rem;
       text-align: left;
       font: normal normal bold 4.5rem/5.3rem Raleway;
       color: rgba(31, 118, 173, 1);
@@ -1878,7 +1871,7 @@ export default {
     flex-flow: column;
     background: rgba(143, 177, 205, 0.54) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 133.8rem;
+    height: 120rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2012,7 +2005,7 @@ export default {
 
     .ID {
       margin-left: 14rem;
-      margin-top: 5.1rem;
+      margin-top: 14.9rem;
       color: var(--unnamed-color-000000);
       text-align: left;
       font: normal normal bold 4.1rem/5.3rem PT Sans;
