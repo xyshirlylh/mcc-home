@@ -321,7 +321,9 @@
 
         <div class="gallery" ref="gallery">
           <div class="year f-f-wigwag" ref="year">
-            {{ years[yearIndex] }}
+            <div>{{ years[yearIndex] }}</div>
+          
+            
           </div>
 
           <div class="box-1" ref="box1">
@@ -878,7 +880,7 @@ export default {
   },
 
   mounted() {
-    window.addEventListener("scroll", this.scrollTrigger);
+    window.addEventListener("resize", this.resizeTrigger);
     //console.log(document.height);
     //this.moveLeft = this.$refs.moveLeft;
     //this.moveRight = this.$refs.moveRight;
@@ -892,10 +894,12 @@ export default {
     this.box7 = this.$refs.box7;
 
     this.year = this.$refs.year;
+
+    
   },
 
   destroy() {
-    window.removeEventListener("scroll", this.scrollTrigger);
+    window.removeEventListener("scroll", this.resizeTrigger);
   },
 
   methods: {
@@ -915,15 +919,158 @@ export default {
       this.$router.push("/construction");
     },
 
-    scrollTrigger: function () {
-      this.scrollTop = window.scrollY;
+    resizeTrigger: function () {
+      //console.log('resize')
+      
+      anime({
+          targets: this.gallery,
+          scrollLeft:
+            (this.gallery.offsetWidth / 1920) * 1270 * (this.index),
+          duration: 500,
+          easing: "easeInOutQuad",
+        });
+        
+      
+        
+        },
 
-      if (this.scrollTop > document.body.scrollHeight * 0.13) {
-        this.$refs["img-2"].style.transform = "scale(1.5)";
-        //this.$refs["img-2"].style.margin-top = "scale(2)";
-        console.log(this.$refs["img-2"].style);
+    moveRight: function () {
+      if (this.index < 1) {
+        this.index = 0;
+      }
+      if (this.yearIndex < 1) {
+        this.yearIndex = 0;
+      }
+
+      if (this.yearIndex > 5) {
+        this.yearIndex = 6;
+      }
+
+      if (this.index > 5) {
+        this.index = 6;
+      }
+      // use anime.js
+
+      if (this.index < 6) {
+        console.log(this.gallery.offsetWidth);
+        anime({
+          targets: this.gallery,
+          scrollLeft:
+            (this.gallery.offsetWidth / 1920) * 1270 * (this.index + 1),
+          duration: 500,
+          easing: "easeInOutQuad",
+        });
+
+        if (this.index === 0) {
+          this.box1.style.backgroundSize = "0%";
+          anime({
+            targets: this.box1,
+            //width: this.box1.offsetWidth / 20,
+            width: "20.3125vw",
+            left: '69vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.year,
+            left: '71.5vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+        } else if (this.index === 1) {
+          this.box2.style.backgroundSize = "0%";
+          //console.log("123");
+          anime({
+            targets: this.box2,
+            //width: this.box2.offsetWidth / 20,
+            width: "20.3125vw",
+            left:'134vw',
+              duration: 500,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.year,
+            left:'135.5vw',
+              
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+        } else if (this.index === 2) {
+          this.box3.style.backgroundSize = "0%";
+          //console.log("123");
+          anime({
+            targets: this.box3,
+            width: "20.3125vw",
+            //width: this.box3.offsetWidth / 20,
+            left:'199vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.year,
+            left:'200.5vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+        } else if (this.index === 3) {
+          this.box4.style.backgroundSize = "0%";
+          //console.log("123");
+          anime({
+            targets: this.box4,
+            //width: this.box4.offsetWidth / 20,
+            width: "20.3125vw",
+            left:'264vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.year,
+            left:'266.5vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+        } else if (this.index === 4) {
+          this.box5.style.backgroundSize = "0%";
+          //console.log("123");
+          anime({
+            targets: this.box5,
+            //width: this.box5.offsetWidth / 20,
+            width: "20.3125vw",
+            left:'329vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.year,
+            left:'332vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+        } else if (this.index === 5) {
+          this.box6.style.backgroundSize = "0%";
+          //console.log("123");
+          anime({
+            targets: this.box6,
+            //width: this.box6.offsetWidth / 20,
+            width: "20.3125vw",
+            left:'394vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.year,
+            left: '396vw',
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+        } 
+        this.index = this.index + 1;
+
+        this.yearIndex++;
       }
     },
+
+        
 
     moveLeft: function () {
       if (this.index < 1) {
@@ -1046,181 +1193,7 @@ export default {
       }
     },
 
-    moveRight: function () {
-      if (this.index < 1) {
-        this.index = 0;
-      }
-      if (this.yearIndex < 1) {
-        this.yearIndex = 0;
-      }
-
-      if (this.yearIndex > 5) {
-        this.yearIndex = 6;
-      }
-
-      if (this.index > 5) {
-        this.index = 6;
-      }
-      // use anime.js
-
-      if (this.index < 6) {
-        console.log(this.gallery.offsetWidth);
-        anime({
-          targets: this.gallery,
-          scrollLeft:
-            (this.gallery.offsetWidth / 1920) * 1270 * (this.index + 1),
-          duration: 500,
-          easing: "easeInOutQuad",
-        });
-
-        if (this.index === 0) {
-          this.box1.style.backgroundSize = "0%";
-          anime({
-            targets: this.box1,
-            //width: this.box1.offsetWidth / 20,
-            width: "39rem",
-            left: (this.gallery.offsetWidth / 1920) * 1330,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-          anime({
-            targets: this.year,
-            left: (this.gallery.offsetWidth / 1920) * 1400,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-        } else if (this.index === 1) {
-          this.box2.style.backgroundSize = "0%";
-          //console.log("123");
-          anime({
-            targets: this.box2,
-            //width: this.box2.offsetWidth / 20,
-            width: "39rem",
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1330 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-          anime({
-            targets: this.year,
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1360 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-        } else if (this.index === 2) {
-          this.box3.style.backgroundSize = "0%";
-          //console.log("123");
-          anime({
-            targets: this.box3,
-            width: "39rem",
-            //width: this.box3.offsetWidth / 20,
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1300 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-          anime({
-            targets: this.year,
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1315 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-        } else if (this.index === 3) {
-          this.box4.style.backgroundSize = "0%";
-          //console.log("123");
-          anime({
-            targets: this.box4,
-            //width: this.box4.offsetWidth / 20,
-            width: "39rem",
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1300 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-          anime({
-            targets: this.year,
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1320 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-        } else if (this.index === 4) {
-          this.box5.style.backgroundSize = "0%";
-          //console.log("123");
-          anime({
-            targets: this.box5,
-            //width: this.box5.offsetWidth / 20,
-            width: "39rem",
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1290 * this.index,
-            duration: 300,
-            easing: "easeInOutQuad",
-          });
-          anime({
-            targets: this.year,
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1300 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-        } else if (this.index === 5) {
-          this.box6.style.backgroundSize = "0%";
-          //console.log("123");
-          anime({
-            targets: this.box6,
-            //width: this.box6.offsetWidth / 20,
-            width: "39rem",
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1280 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-          anime({
-            targets: this.year,
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1290 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-        } else if (this.index === 6) {
-          this.box7.style.backgroundSize = "0%";
-          //console.log("123");
-          anime({
-            targets: this.box7,
-            //width: this.box7.offsetWidth / 20,
-            width: "39rem",
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1330 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-          anime({
-            targets: this.year,
-            left:
-              (this.gallery.offsetWidth / 1920) * 1270 +
-              (this.gallery.offsetWidth / 1920) * 1320 * this.index,
-            duration: 500,
-            easing: "easeInOutQuad",
-          });
-        }
-        this.index = this.index + 1;
-
-        this.yearIndex++;
-      }
-    },
+    
 
     consultation: function () {
       this.selected = 1;
@@ -1681,19 +1654,7 @@ export default {
         stroke-width: 3;
       }
 
-      .gallery {
-        display: flex;
-        flex-direction: row;
-
-        $box1positionx: 50.1rem;
-        $zoomedDistance: 127rem;
-        //$normalDistance: 42.4rem;
-
-        position: relative;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        .year-small {
+      .year-small {
           position: absolute;
           left: 3rem;
           bottom: 50rem;
@@ -1705,16 +1666,37 @@ export default {
         }
         .year {
           position: absolute;
-          left: 13.4rem;
-          bottom: 10.9rem;
-          max-width: 32.8rem;
+          left: 6.5vw;
+          bottom: 3rem;
+          width: 10vw;
           color: var(--unnamed-color-1381ce);
           text-align: left;
-          font-size: 12.7rem;
+          
           letter-spacing: 5.08px;
           color: rgba(19, 129, 206, 1);
           margin-top: 40vh;
+          div{
+            font-size: 6.5vw;
+            letter-spacing: 0.508rem;
+            line-height: 15.2rem;
+          }
         }
+
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        //justify-content: space-between;
+
+        $box1positionx: 26.09375vw;
+        $zoomedDistance: 65vw;
+        //$normalDistance: 42.4rem;
+
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        
 
         .box-1 {
           background-image: url("../../assets/imgs/home/Artboard_1@2x.png");
@@ -1761,7 +1743,7 @@ export default {
           bottom: 0;
           left: $box1positionx + $zoomedDistance;
           height: 100%;
-          width: 140rem;
+          width: 66.14583vw;
         }
         .box-3 {
           background-image: url("../../assets/imgs/home/组屋-sep.jpg");
@@ -1775,7 +1757,7 @@ export default {
           bottom: 0;
           left: $box1positionx + $zoomedDistance * 2;
           height: 100%;
-          width: 140rem;
+          width: 66.14583vw;
         }
         .box-4 {
           background-image: url("../../assets/imgs/home/圣淘沙+（局部）.jpg");
