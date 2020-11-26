@@ -1660,6 +1660,7 @@ export default {
       }
       .year {
         position: absolute;
+        z-index: 2;
         left: 6.5vw;
         bottom: 3rem;
         width: 10vw;
