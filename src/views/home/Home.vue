@@ -1417,9 +1417,9 @@ export default {
         background-color: white;
         //filter: blur(12px);
 
-        background-position: center;
+        background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% auto;
       }
       .image-2-blur {
         position: relative;
@@ -1433,9 +1433,9 @@ export default {
         background-color: white;
         //filter: blur(12px);
 
-        background-position: center;
+        background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% auto;
       }
       .image-3-blur {
         position: relative;
@@ -1445,13 +1445,13 @@ export default {
         width: 100%;
 
         height: 65.7rem;
-        background-image: url("../../assets/imgs/home/blur-construction.png");
+        background-image: url("../../assets/imgs/home/blur-construction.jpg");
         background-color: white;
         //filter: blur(12px);
 
-        background-position: center;
+        background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% auto;
       }
 
       .image-1 {
@@ -1461,9 +1461,9 @@ export default {
         background-image: url("../../assets/imgs/home/scott-graham-5fNmWej4tAA-unspl@2x.png");
         background-color: white;
 
-        background-position: center;
+        background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% auto;
       }
 
       .image-2 {
@@ -1473,21 +1473,21 @@ export default {
         background-image: url("../../assets/imgs/home/realestate.png");
         background-color: white;
 
-        background-position: center;
+        background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% auto;
       }
 
       .image-3 {
         width: 100%;
 
         height: 65.7rem;
-        background-image: url("../../assets/imgs/home/construction.png");
+        background-image: url("../../assets/imgs/home/construction.jpg");
         background-color: white;
 
-        background-position: center;
+        background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% auto;
       }
 
       font-size: 2rem;
@@ -1604,13 +1604,13 @@ export default {
   }
 
   .background-3 {
-    padding: 20.1rem 0 0 0;
+    padding: 14.9rem 0 0 0;
     background-image: url("../../assets/imgs/home/标尺.png");
 
     background-position: 0% 100%;
     background-repeat: repeat-x;
     background-size: 100%;
-    height: 80rem;
+    height: 75rem;
     .block3 {
       .ID {
         margin-left: 14rem;
@@ -1726,7 +1726,7 @@ export default {
           }
         }
         .box-2 {
-          background-image: url("../../assets/imgs/home/woodlands_checkpoint-otc-6.png");
+          background-image: url("../../assets/imgs/home/wooland checkpoint.jpg");
           background-color: transparent;
           background-position: 20% 40%;
           background-repeat: no-repeat;
@@ -1739,7 +1739,7 @@ export default {
           width: 66.14583vw;
         }
         .box-3 {
-          background-image: url("../../assets/imgs/home/组屋-sep.jpg");
+          background-image: url("../../assets/imgs/home/组屋.jpg");
 
           background-position: 20% 40%;
           background-repeat: no-repeat;
@@ -1753,11 +1753,12 @@ export default {
           width: 66.14583vw;
         }
         .box-4 {
-          background-image: url("../../assets/imgs/home/圣淘沙+（局部）.jpg");
+          background-image: url("../../assets/imgs/home/sentosa zong+jubu.png");
 
           background-position: 20% 80%;
           background-repeat: no-repeat;
-          background-size: 80%;
+          background-size: 70%;
+          border: 0;
 
           position: absolute;
           bottom: 0;
@@ -1767,7 +1768,7 @@ export default {
         }
 
         .box-5 {
-          background-image: url("../../assets/imgs/home/Artboard 1.jpg");
+          background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
 
           background-position: 30% 80%;
           background-repeat: no-repeat;
@@ -2031,7 +2032,7 @@ export default {
   }
 
   .block5 {
-    padding: 21.3rem 0 0 14rem;
+    padding: 14.9rem 0 0 14rem;
     display: flex;
     flex-direction: column;
     height: 70rem;
