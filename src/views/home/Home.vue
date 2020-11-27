@@ -197,20 +197,28 @@
 
     <div class="block2">
       <div class="background">
-        <div class="ID" style="color: white">
-          <span>02</span>
+        <div class="block2-row-1">
+          <div class="column-1">
+            <div class="ID" style="color: white">
+              <span>02</span>
+            </div>
+
+            <svg class="title-underline" style="stroke: white">
+              <line x1="0" y1="0" x2="150" y2="0" />
+            </svg>
+
+            <div class="title" style="color: white">
+              <span>About us</span>
+            </div>
+          </div>
+          <div class="column-2">
+            <p class="content-head f-f-raleway">About us</p>
+          </div>
+          <div class="column-3"></div>
         </div>
 
-        <svg class="title-underline" style="stroke: white">
-          <line x1="0" y1="0" x2="150" y2="0" />
-        </svg>
-
-        <div class="title" style="color: white">
-          <span>About us</span>
-        </div>
         <div class="content">
-          <p class="content-head f-f-raleway">About us</p>
-          <p style="margin-top: 10px">
+          <p style="margin-top: 2rem; height: 17rem">
             Incorporated in 2010, MCC Land (Singapore) Limited has been actively
             involved in Singapore’s real estate scene and achieved good results.
             It has developed five development projects, co-developed two
@@ -361,7 +369,7 @@
               <line x1="0" y1="0" x2="0" y2="50rem" />
             </svg>
 
-            <div class="year-small f-f-sans">
+            <div class="year-small">
               <p v-if="yearIndex === 0">{{ years[0] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[0] }}</p>
             </div>
@@ -626,19 +634,26 @@
     </div>
 
     <div class="background-4">
-      <div class="ID">
-        <span>04</span>
-      </div>
+      <div class="block4-row-1">
+        <div class="column-1">
+          <div class="ID">
+            <span>04</span>
+          </div>
 
-      <svg class="title-underline">
-        <line x1="0" y1="0" x2="150" y2="0" />
-      </svg>
+          <svg class="title-underline">
+            <line x1="0" y1="0" x2="150" y2="0" />
+          </svg>
 
-      <div class="title">
-        <span>MCC news</span>
-      </div>
-      <div class="head-4">
-        <p>MCC News</p>
+          <div class="title">
+            <span>MCC news</span>
+          </div>
+        </div>
+        <div class="column-2">
+          <div class="head-4">
+            <p>MCC News</p>
+          </div>
+        </div>
+        <div class="column-3"></div>
       </div>
 
       <div class="container-4">
@@ -1084,7 +1099,7 @@ export default {
         });
 
         if (this.index === 1) {
-          this.box1.style.backgroundSize = "70%";
+          this.box1.style.backgroundSize = "100%";
           anime({
             targets: this.box1,
             //width: this.box1.offsetWidth * 20,
@@ -1103,7 +1118,7 @@ export default {
             easing: "easeInOutQuad",
           });
         } else if (this.index === 2) {
-          this.box2.style.backgroundSize = "70%";
+          this.box2.style.backgroundSize = "40%, 60%";
           anime({
             targets: this.box2,
             //width: this.box2.offsetWidth * 20,
@@ -1135,7 +1150,7 @@ export default {
             easing: "easeInOutQuad",
           });
         } else if (this.index === 4) {
-          this.box4.style.backgroundSize = "80%";
+          this.box4.style.backgroundSize = "95%";
           anime({
             targets: this.box4,
             //width: this.box4.offsetWidth * 20,
@@ -1151,7 +1166,7 @@ export default {
             easing: "easeInOutQuad",
           });
         } else if (this.index === 5) {
-          this.box5.style.backgroundSize = "70%";
+          this.box5.style.backgroundSize = "85%";
           anime({
             targets: this.box5,
             //width: this.box5.offsetWidth * 20,
@@ -1167,7 +1182,7 @@ export default {
             easing: "easeInOutQuad",
           });
         } else if (this.index === 6) {
-          this.box6.style.backgroundSize = "60%";
+          this.box6.style.backgroundSize = "80%";
           anime({
             targets: this.box6,
             //width: this.box6.offsetWidth * 20,
@@ -1232,9 +1247,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap");
 .home {
   width: 100%;
   //min-height: 100%;
@@ -1499,16 +1515,46 @@ export default {
     height: 87.8rem;
 
     .background {
-      .ID {
-        margin-left: 14rem;
-        margin-top: 14.9rem;
+      .block2-row-1 {
+        display: flex;
+        flex-flow: row;
+        .column-1 {
+          width: 30%;
+          flex-flow: column;
+          .ID {
+            margin-left: 14rem;
+            margin-top: 14.9rem;
+          }
+          .title-underline {
+            margin-left: 14rem;
+          }
+          .title {
+            margin-left: 18.375rem;
+          }
+        }
+        .column-2 {
+          width: 40%;
+          .content-head {
+            color: var(--unnamed-color-000000);
+            text-align: center;
+            font: normal normal bold 45px/53px Raleway;
+            position: relative;
+            margin-top: 21.6rem;
+
+            letter-spacing: 0.18rem;
+            //font: normal normal normal 3vw Source Sans Pro;
+            font-size: 4.5rem;
+            letter-spacing: 0.18rem;
+
+            color: #000000;
+            opacity: 1;
+          }
+        }
+        .column-3 {
+          width: 30%;
+        }
       }
-      .title-underline {
-        margin-left: 14rem;
-      }
-      .title {
-        margin-left: 18.375rem;
-      }
+
       //padding: 14rem 14rem 0 14rem;
       display: flex;
       flex-direction: column;
@@ -1534,31 +1580,20 @@ export default {
     }
 
     .content {
-      position: relative;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 0;
       line-height: 4.5rem;
 
-      .content-head {
-        color: var(--unnamed-color-000000);
-        text-align: center;
-        font: normal normal bold 45px/53px Raleway;
-        letter-spacing: 1.8px;
-        //font: normal normal normal 3vw Source Sans Pro;
-        font-size: 4.5rem;
-        letter-spacing: 1.8px;
+      width: 52vw;
 
-        color: #000000;
-        opacity: 1;
-      }
-
-      width: 100.1rem;
       color: var(--unnamed-color-000000);
       text-align: center;
       font: normal normal normal Source Sans Pro;
       font-size: 1.9rem;
-      letter-spacing: 1.8px;
+      letter-spacing: 0.18rem;
       letter-spacing: 0.88px;
+
       color: #000000;
       opacity: 1;
 
@@ -1576,7 +1611,7 @@ export default {
         justify-content: space-around;
 
         background-color: transparent;
-        border: 0.2rem solid black; /* Green */
+        border: 0.1rem solid black; /* Green */
 
         width: 16.4rem;
         height: 5.4rem;
@@ -1605,253 +1640,255 @@ export default {
 
   .background-3 {
     padding: 14.9rem 0 0 0;
-    background-image: url("../../assets/imgs/home/标尺.png");
 
-    background-position: 0% 100%;
-    background-repeat: repeat-x;
-    background-size: 100%;
     height: 75rem;
-    .block3 {
-      .ID {
-        margin-left: 14rem;
-        margin-top: 0;
+  }
+  .block3 {
+    .ID {
+      margin-left: 14rem;
+      margin-top: 0;
+    }
+    .title-underline {
+      margin-left: 14rem;
+    }
+    .title {
+      margin-left: 21rem;
+    }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .block-3-cercle {
+      position: absolute;
+      left: -1.6rem;
+      bottom: 3.2rem;
+      width: 3.4rem;
+      height: 50rem;
+      fill: transparent;
+      stroke: rgba(19, 129, 206, 1);
+      stroke-width: 2px;
+    }
+
+    .block-3-line {
+      position: absolute;
+      left: 0rem;
+      bottom: 0;
+      width: 33.4rem;
+      height: 50rem;
+      stroke: rgba(198, 198, 198, 1);
+      stroke-width: 3;
+    }
+
+    .year-small {
+      position: absolute;
+      left: 3rem;
+      bottom: 49rem;
+      color: var(--unnamed-color-1381ce);
+      text-align: left;
+      font: normal normal bold 3.7rem/5.3rem Source Sans Pro;
+      letter-spacing: 0.148rem;
+      color: rgba(19, 129, 206, 1);
+    }
+    .year {
+      position: absolute;
+      z-index: 2;
+      left: 6.5vw;
+      bottom: 3rem;
+      width: 10vw;
+      color: var(--unnamed-color-1381ce);
+      text-align: left;
+
+      letter-spacing: 5.08px;
+      color: rgba(19, 129, 206, 1);
+      margin-top: 40vh;
+      div {
+        font-size: 6.5vw;
+        letter-spacing: 0.508rem;
+        line-height: 15.2rem;
       }
-      .title-underline {
-        margin-left: 14rem;
-      }
-      .title {
-        margin-left: 21rem;
-      }
+    }
+
+    .gallery {
       display: flex;
       flex-direction: column;
+      flex-wrap: nowrap;
+      //justify-content: space-between;
+      background-image: url("../../assets/imgs/home/标尺.png");
+      z-index: 3;
+      background-position: 0% 100%;
+      background-repeat: repeat-x;
+      background-size: 100%;
+
+      $box1positionx: 26.09375vw;
+      $zoomedDistance: 65vw;
+      //$normalDistance: 42.4rem;
+
+      position: relative;
       height: 100%;
       width: 100%;
+      overflow: hidden;
 
-      .block-3-cercle {
+      .box-1 {
+        background-image: url("../../assets/imgs/home/Artboard_1@2x.png");
+        background-color: transparent;
+
+        background-position: 20% 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+
         position: absolute;
-        left: -1.6rem;
-        bottom: 3.2rem;
-        width: 3.4rem;
-        height: 50rem;
-        fill: transparent;
-        stroke: rgba(19, 129, 206, 1);
-        stroke-width: 2px;
-      }
-
-      .block-3-line {
-        position: absolute;
-        left: 0rem;
-        bottom: 0;
-        width: 33.4rem;
-        height: 50rem;
-        stroke: rgba(198, 198, 198, 1);
-        stroke-width: 3;
-      }
-
-      .year-small {
-        position: absolute;
-        left: 3rem;
-        bottom: 50rem;
-        color: var(--unnamed-color-1381ce);
-        text-align: left;
-        font: normal normal bold 2vw Source Sans Pro;
-        letter-spacing: 1.48px;
-        color: rgba(19, 129, 206, 1);
-      }
-      .year {
-        position: absolute;
-        z-index: 2;
-        left: 6.5vw;
-        bottom: 3rem;
-        width: 10vw;
-        color: var(--unnamed-color-1381ce);
-        text-align: left;
-
-        letter-spacing: 5.08px;
-        color: rgba(19, 129, 206, 1);
-        margin-top: 40vh;
-        div {
-          font-size: 6.5vw;
-          letter-spacing: 0.508rem;
-          line-height: 15.2rem;
-        }
-      }
-
-      .gallery {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        //justify-content: space-between;
-
-        $box1positionx: 26.09375vw;
-        $zoomedDistance: 65vw;
-        //$normalDistance: 42.4rem;
-
-        position: relative;
+        top: 0;
+        left: $box1positionx;
         height: 100%;
-        width: 100%;
-        overflow: hidden;
+        width: $zoomedDistance;
 
-        .box-1 {
-          background-image: url("../../assets/imgs/home/Artboard_1@2x.png");
-          background-color: transparent;
-
-          background-position: 20% 40%;
-          background-size: 70%;
-          background-repeat: no-repeat;
-
+        .subtitle {
           position: absolute;
-          bottom: 0;
-          left: $box1positionx;
-          height: 100%;
-          width: $zoomedDistance;
-
-          .subtitle {
-            position: absolute;
-            left: 16rem;
-            bottom: 43rem;
-            color: var(--unnamed-color-000000);
-            text-align: left;
-            font: normal normal 1.5vw Avenir;
-            //font-size: 1.5vw;
-            letter-spacing: 0px;
-            color: rgba(0, 0, 0, 1);
-          }
-          .content {
-            font-size: 2.4rem;
-            letter-spacing: 0.096rem;
-            position: absolute;
-            left: 16rem;
-            bottom: 35rem;
-            max-width: 45rem;
-          }
+          left: 16rem;
+          bottom: 43rem;
+          color: var(--unnamed-color-000000);
+          text-align: left;
+          font: normal normal 1.5vw Avenir;
+          //font-size: 1.5vw;
+          letter-spacing: 0px;
+          color: rgba(0, 0, 0, 1);
         }
-        .box-2 {
-          background-image: url("../../assets/imgs/home/wooland checkpoint.jpg");
-          background-color: transparent;
-          background-position: 20% 40%;
-          background-repeat: no-repeat;
-          background-size: 70%;
-
+        .content {
+          font-size: 2.4rem;
+          letter-spacing: 0.096rem;
           position: absolute;
-          bottom: 0;
-          left: $box1positionx + $zoomedDistance;
-          height: 100%;
-          width: 66.14583vw;
-        }
-        .box-3 {
-          background-image: url("../../assets/imgs/home/组屋.jpg");
-
-          background-position: 20% 40%;
-          background-repeat: no-repeat;
-          background-size: 70%;
-
-          position: absolute;
-
-          bottom: 0;
-          left: $box1positionx + $zoomedDistance * 2;
-          height: 100%;
-          width: 66.14583vw;
-        }
-        .box-4 {
-          background-image: url("../../assets/imgs/home/sentosa zong+jubu.png");
-
-          background-position: 20% 80%;
-          background-repeat: no-repeat;
-          background-size: 70%;
-          border: 0;
-
-          position: absolute;
-          bottom: 0;
-          left: $box1positionx + $zoomedDistance * 3;
-          height: 100%;
-          width: 140rem;
-        }
-
-        .box-5 {
-          background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
-
-          background-position: 30% 80%;
-          background-repeat: no-repeat;
-          background-size: 70%;
-
-          position: absolute;
-          bottom: 0;
-          left: $box1positionx + $zoomedDistance * 4;
-          height: 100%;
-          width: 140rem;
-        }
-
-        .box-6 {
-          background-image: url("../../assets/imgs/home/singapore-expo.jpg");
-
-          background-position: 30% 80%;
-          background-repeat: no-repeat;
-          background-size: 60%;
-
-          position: absolute;
-          bottom: 0;
-          left: $box1positionx + $zoomedDistance * 5;
-          height: 100%;
-          width: 140rem;
-        }
-
-        .box-7 {
-          background-image: url("../../assets/imgs/home/热带雨林.jpg");
-
-          background-position: 20% 80%;
-          background-repeat: no-repeat;
-          background-size: 60%;
-
-          position: absolute;
-          bottom: 0;
-          left: $box1positionx + $zoomedDistance * 6;
-          height: 100%;
-          width: 140rem;
+          left: 16rem;
+          bottom: 35rem;
+          max-width: 45rem;
         }
       }
+      .box-2 {
+        background-image: url("../../assets/imgs/home/wooland checkpoint.jpg"),
+          url("../../assets/imgs/home/singapore-expo.jpg");
+        background-color: transparent;
+        background-position: 110% 60%, 10% 90%;
+        background-repeat: no-repeat;
+        background-size: 40%, 60%;
 
-      .block3-row-1 {
+        position: absolute;
+        bottom: 0;
+        left: $box1positionx + $zoomedDistance;
+        height: 100%;
+        width: 66.14583vw;
+      }
+      .box-3 {
+        background-image: url("../../assets/imgs/home/组屋.jpg");
+
+        background-position: 60% 40%;
+        background-repeat: no-repeat;
+        background-size: 70%;
+
+        position: absolute;
+
+        bottom: 0;
+        left: $box1positionx + $zoomedDistance * 2;
+        height: 100%;
+        width: 66.14583vw;
+      }
+      .box-4 {
+        background-image: url("../../assets/imgs/home/sentosa zong+jubu.png");
+
+        background-position: 5rem -5rem;
+        background-repeat: no-repeat;
+        background-size: 85%;
+
+        position: absolute;
+        bottom: 0;
+        left: $box1positionx + $zoomedDistance * 3;
+        height: 100%;
+        width: 140rem;
+      }
+
+      .box-5 {
+        background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
+        z-index: 1;
+        background-position: 40% 60%;
+        background-repeat: no-repeat;
+        background-size: 85%;
+
+        position: absolute;
+        bottom: 0;
+        left: $box1positionx + $zoomedDistance * 4;
+        height: 100%;
+        width: 140rem;
+      }
+
+      .box-6 {
+        background-image: url("../../assets/imgs/home/dangga heights.jpg");
+
+        background-position: 20rem -3rem;
+        background-repeat: no-repeat;
+        background-size: 70%;
+
+        position: absolute;
+        bottom: 0;
+        left: $box1positionx + $zoomedDistance * 5;
+        height: 100%;
+        width: 140rem;
+      }
+
+      .box-7 {
+        background-image: url("../../assets/imgs/home/热带雨林.jpg"),
+          url("../../assets/imgs/home/hotel.jpg");
+
+        background-position: 20% 80%, 100% 60%;
+        background-repeat: no-repeat;
+        background-size: 60%, 40%;
+
+        position: absolute;
+        bottom: 0;
+        left: $box1positionx + $zoomedDistance * 6;
+        height: 100%;
+        width: 140rem;
+      }
+    }
+
+    .block3-row-1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .column-1 {
+        max-width: 50%;
+        width: 30%;
+      }
+      .column-2 {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        .column-1 {
-          max-width: 50%;
-          width: 30%;
+        justify-content: center;
+        margin-top: 7.5rem;
+        font: normal normal bold 4.5rem/5.3rem Raleway;
+        color: rgba(31, 118, 173, 1);
+        max-width: 50%;
+        width: 40%;
+      }
+      .column-3 {
+        display: flex;
+        justify-content: right;
+        max-width: 50%;
+        width: 30%;
+        margin-top: 5rem;
+
+        .button-left {
+          margin-left: 22rem;
         }
-        .column-2 {
-          display: flex;
-          justify-content: center;
-          margin-top: 13rem;
-          font: normal normal bold 4.5rem/5.3rem Raleway;
-          color: rgba(31, 118, 173, 1);
+
+        svg {
+          margin-top: 15%;
+
           max-width: 50%;
-          width: 40%;
-        }
-        .column-3 {
-          display: flex;
-          justify-content: right;
-          max-width: 50%;
-          width: 30%;
-          margin-top: 5rem;
-
-          .button-left {
-            margin-left: 22rem;
-          }
-
-          svg {
-            margin-top: 15%;
-
-            max-width: 50%;
-            max-height: 6rem;
-            margin-left: 5.5rem;
-            &:hover {
-              circle {
-                fill: #1381ce;
-              }
-              path {
-                fill: white;
-              }
+          max-height: 6rem;
+          margin-left: 5.5rem;
+          &:hover {
+            circle {
+              fill: #1381ce;
+            }
+            path {
+              fill: white;
             }
           }
         }
@@ -1861,19 +1898,36 @@ export default {
 
   .background-4 {
     //padding: 21.3rem 0 0 0;
-    .head-4 {
-      margin-left: auto;
-      margin-right: auto;
-      //margin-top: 20.1rem;
-      text-align: left;
-      font: normal normal bold 4.5rem/5.3rem Raleway;
-      color: rgba(31, 118, 173, 1);
+    .block4-row-1 {
+      display: flex;
+      flex-direction: row;
+
+      .column-1 {
+        width: 30%;
+      }
+      .column-2 {
+        width: 40%;
+        flex-direction: column;
+        margin-top: 21.5rem;
+
+        .head-4 {
+          text-align: center;
+          //margin-top: 20.1rem;
+
+          font: normal normal bold 4.5rem/5.3rem Raleway;
+          color: rgba(31, 118, 173, 1);
+        }
+      }
+      .column-3 {
+        width: 30%;
+      }
     }
+
     display: flex;
     flex-flow: column;
     background: rgba(143, 177, 205, 0.54) 0% 0% no-repeat padding-box;
     //opacity: 0.15;
-    height: 120rem;
+    height: 110rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1886,6 +1940,7 @@ export default {
         &:hover {
           circle {
             fill: #1381ce;
+            stroke: #1381ce;
           }
           path {
             fill: white;
