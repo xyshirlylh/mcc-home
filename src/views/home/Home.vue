@@ -423,6 +423,14 @@
               <p v-if="yearIndex === 1">{{ years[1] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[1] }}</p>
             </div>
+
+            <div class="subtitle" v-if="index === 1">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content f-f-avenir" v-if="index === 1">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
+            </div>
           </div>
           <div class="box-3" ref="box3">
             <svg
@@ -465,6 +473,14 @@
               <p v-if="yearIndex === 2">{{ years[2] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[2] }}</p>
             </div>
+
+            <div class="subtitle" v-if="index === 2">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content f-f-avenir" v-if="index === 2">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
+            </div>
           </div>
           <div class="box-4" ref="box4">
             <svg
@@ -504,6 +520,14 @@
             <div class="year-small">
               <p v-if="yearIndex === 3">{{ years[3] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[3] }}</p>
+            </div>
+
+            <div class="subtitle" v-if="index === 3">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content f-f-avenir" v-if="index === 3">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
             </div>
           </div>
 
@@ -546,6 +570,14 @@
               <p v-if="yearIndex === 4">{{ years[4] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[4] }}</p>
             </div>
+
+            <div class="subtitle" v-if="index === 4">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content f-f-avenir" v-if="index === 4">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
+            </div>
           </div>
 
           <div class="box-6" ref="box6">
@@ -587,6 +619,14 @@
               <p v-if="yearIndex === 5">{{ years[5] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[5] }}</p>
             </div>
+
+            <div class="subtitle" v-if="index === 5">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content f-f-avenir" v-if="index === 5">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
+            </div>
           </div>
 
           <div class="box-7" ref="box7">
@@ -627,6 +667,14 @@
             <div class="year-small">
               <p v-if="yearIndex === 6">{{ years[6] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[6] }}</p>
+            </div>
+
+            <div class="subtitle" v-if="index === 6">
+              <p>Mcc first launched</p>
+            </div>
+
+            <div class="content f-f" v-if="index === 6">
+              <p>Labour Subcontracting & Professional Subcontracting</p>
             </div>
           </div>
         </div>
@@ -1729,6 +1777,26 @@ export default {
       width: 100%;
       overflow: hidden;
 
+      .subtitle {
+        position: absolute;
+        left: 3rem;
+        bottom: 42rem;
+        color: var(--unnamed-color-000000);
+        text-align: left;
+        font: normal normal 900 3.7rem/5.1rem Avenir;
+        //font-size: 1.5vw;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 1);
+      }
+      .content {
+        font: normal normal normal 2.4rem/3.3rem Avenir;
+        letter-spacing: 0.096rem;
+        position: absolute;
+        left: 3rem;
+        bottom: 35rem;
+        max-width: 45rem;
+      }
+
       .box-1 {
         background-image: url("../../assets/imgs/home/Artboard_1@2x.png");
         background-color: transparent;
@@ -1742,26 +1810,6 @@ export default {
         left: $box1positionx;
         height: 100%;
         width: $zoomedDistance;
-
-        .subtitle {
-          position: absolute;
-          left: 16rem;
-          bottom: 43rem;
-          color: var(--unnamed-color-000000);
-          text-align: left;
-          font: normal normal 1.5vw Avenir;
-          //font-size: 1.5vw;
-          letter-spacing: 0px;
-          color: rgba(0, 0, 0, 1);
-        }
-        .content {
-          font-size: 2.4rem;
-          letter-spacing: 0.096rem;
-          position: absolute;
-          left: 16rem;
-          bottom: 35rem;
-          max-width: 45rem;
-        }
       }
       .box-2 {
         background-image: url("../../assets/imgs/home/wooland checkpoint.jpg"),
@@ -1822,7 +1870,7 @@ export default {
       .box-6 {
         background-image: url("../../assets/imgs/home/dangga heights.jpg");
 
-        background-position: 20rem -3rem;
+        background-position: 40rem -3rem;
         background-repeat: no-repeat;
         background-size: 70%;
 
