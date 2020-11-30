@@ -532,6 +532,13 @@
           </div>
 
           <div class="box-5" ref="box5">
+            <div class="sentorini" ref="sentorini">
+              <img src="../../assets/imgs/home/sentorini + canopy.jpg" alt="" />
+            </div>
+            <div class="bedok" ref="bedok">
+              <img src="../../assets/imgs/home/poiz + bedok south.jpg" alt="" />
+            </div>
+
             <svg
               class="block-3-cercle"
               style="fill: black; stroke: black"
@@ -916,6 +923,9 @@ export default {
       email: "Your email address…",
       text: "  Leave your message here…",
       years: [1992, 1997, 2006, 2008, 2010, 2017, 2020],
+      box5special: true,
+      box5LeftSpecial: true,
+      box5counter: 0,
       yearIndex: 0,
       scrollTop: 0,
       index: 0,
@@ -952,6 +962,8 @@ export default {
     this.box5 = this.$refs.box5;
     this.box6 = this.$refs.box6;
     this.box7 = this.$refs.box7;
+    this.sentorini = this.$refs.sentorini;
+    this.bedok = this.$refs.bedok;
 
     this.year = this.$refs.year;
   },
@@ -1004,8 +1016,33 @@ export default {
         this.index = 6;
       }
       // use anime.js
+      if (this.box5special === false) {
+        anime({
+          targets: this.sentorini,
 
-      if (this.index < 6) {
+          left: "-140rem",
+          duration: 500,
+          opacity: 0.3,
+          easing: "easeInOutQuad",
+        });
+        anime({
+          targets: this.bedok,
+          left: "0",
+          duration: 500,
+          easing: "easeInOutQuad",
+        });
+        this.box5counter++;
+        this.box5LeftSpecial--;
+        if (this.box5counter === 2) {
+          this.box5special = true;
+          this.index = this.index + 1;
+
+          this.yearIndex++;
+        }
+        //this.box5special = true;
+      }
+
+      if (this.index < 6 && this.box5special) {
         console.log(this.gallery.offsetWidth);
         anime({
           targets: this.gallery,
@@ -1068,6 +1105,7 @@ export default {
           });
         } else if (this.index === 3) {
           this.box4.style.backgroundSize = "0%";
+          this.box5special = false;
           //console.log("123");
           anime({
             targets: this.box4,
@@ -1094,6 +1132,22 @@ export default {
             duration: 500,
             easing: "easeInOutQuad",
           });
+
+          anime({
+            targets: this.sentorini,
+
+            left: "-280rem",
+            duration: 500,
+            opacity: 0.3,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.bedok,
+            left: "-140rem",
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+
           anime({
             targets: this.year,
             left: "332vw",
@@ -1137,7 +1191,31 @@ export default {
         this.index = 6;
       }
 
-      if (this.index >= 1) {
+      if (this.box5LeftSpecial === false) {
+        anime({
+          targets: this.sentorini,
+
+          left: "0rem",
+          duration: 500,
+          opacity: 1,
+          easing: "easeInOutQuad",
+        });
+        anime({
+          targets: this.bedok,
+          left: "140rem",
+          duration: 500,
+          easing: "easeInOutQuad",
+        });
+        this.box5counter--;
+        if (this.box5counter === 0) {
+          this.box5LeftSpecial = true;
+          this.index = this.index - 1;
+          this.yearIndex--;
+        }
+        //this.box5special = true;
+      }
+
+      if (this.index >= 1 && this.box5LeftSpecial) {
         anime({
           targets: this.gallery,
           scrollLeft:
@@ -1226,6 +1304,21 @@ export default {
           anime({
             targets: this.year,
             left: "266.5vw",
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+          this.box5LeftSpecial = false;
+          anime({
+            targets: this.sentorini,
+
+            left: "-140rem",
+            duration: 500,
+            opacity: 0.3,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.bedok,
+            left: "0rem",
             duration: 500,
             easing: "easeInOutQuad",
           });
@@ -1854,11 +1947,34 @@ export default {
       }
 
       .box-5 {
-        background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
+        //background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
         z-index: 1;
         background-position: 40% 60%;
         background-repeat: no-repeat;
         background-size: 85%;
+
+        .sentorini {
+          position: absolute;
+          left: 0;
+          height: 100%;
+          width: 140rem;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .bedok {
+          position: absolute;
+          left: 140rem;
+          top: 18rem;
+          height: 100%;
+          width: 140rem;
+          img {
+            height: auto;
+            width: 80%;
+          }
+        }
 
         position: absolute;
         bottom: 0;
