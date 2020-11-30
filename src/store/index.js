@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    showContectUs: false
   },
   mutations: {
+    flip(state) {
+      state.showContectUs = !state.showContectUs
+    }
   },
   actions: {
   },

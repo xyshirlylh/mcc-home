@@ -164,7 +164,7 @@
     <div class="flex-row justify-content-center">
       <ul class="flex-row">
         <li>
-          <img :src="imgSvg" width="55px" height="46px"/>
+          <img :src="imgSvg" width="55px" height="46px" />
         </li>
 
         <li>
@@ -196,7 +196,7 @@
 
           <gap :height="40" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">Carrer</p>
+          <p class="f-f-arial f-s-16 f-c-16 label-hover">Cereer</p>
 
           <gap :height="15" />
 
@@ -205,69 +205,98 @@
           <gap :height="15" />
 
           <p class="f-f-arial f-s-16 f-c-16 label-hover">Language</p>
+
+          <gap :height="15" />
+
+          <div
+            type="button"
+            class="contact"
+            style="cursor: pointer"
+            @click="showContactUs"
+          >
+            <p class="f-f-arial f-s-16 f-c-16 label-hover">Contact Us</p>
+          </div>
         </li>
       </ul>
     </div>
 
-    <gap :height="84"/>
+    <gap :height="84" />
 
     <p class="flex-row justify-content-center f-c-14 f-f-arial f-s-12">
-      Mcc land (S) pte. ltd. | China Jingye engineering corporation ltd (Singapore branch) | China Jingye engineering
-      corporation ltd (Singapore branch)
+      Mcc land (S) pte. ltd. | China Jingye engineering corporation ltd
+      (Singapore branch) | China Jingye engineering corporation ltd (Singapore
+      branch)
     </p>
 
-    <gap :height="20"/>
+    <gap :height="20" />
   </footer>
 </template>
 
 <script>
-  import imgSvg from '../../assets/imgs/Group 871.svg';
+import imgSvg from "../../assets/imgs/Group 871.svg";
 
-  export default {
-    name: 'Footer',
-    data() {
-      return {
-        imgSvg,
-      }
-    }
-  }
+export default {
+  name: "Footer",
+  data() {
+    return {
+      imgSvg,
+    };
+  },
+
+  methods: {
+    showContactUs: function () {
+      this.$store.commit("flip");
+      console.log(this.$store.state.showContectUs);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped type="text/scss">
-  footer {
-    width: 100%;
-    background-color: #F7F8FA;
+footer {
+  width: 100%;
+  background-color: #f7f8fa;
 
-    ul {
-      flex-direction: row;
-      padding-top: 8.8rem;
+  ul {
+    flex-direction: row;
+    padding-top: 8.8rem;
 
-      li:nth-child(2) {
-        margin-left: 6.85rem;
-      }
-
-      li:nth-child(2), li:nth-child(3), li:nth-child(4) {
-        padding: 0 6.85rem;
-        border-right: 1px solid rgba(103, 104, 111, 0.2);
-      }
-
-      li:nth-child(4) {
-        border-right: 0;
-      }
+    li:nth-child(2) {
+      margin-left: 6.85rem;
     }
 
-    @media screen and (max-width: 320px) {
-      ul {
-        li:nth-child(1) {
-          display: none;
-        }
+    li:nth-child(2),
+    li:nth-child(3),
+    li:nth-child(4) {
+      padding: 0 6.85rem;
+      border-right: 1px solid rgba(103, 104, 111, 0.2);
+    }
 
-        li:nth-child(2) {
-          margin-left: 0;
-        }
+    li:nth-child(4) {
+      border-right: 0;
+    }
+  }
+
+  .contact {
+    &:hover {
+      p {
+        text-decoration: underline;
       }
     }
   }
+
+  @media screen and (max-width: 320px) {
+    ul {
+      li:nth-child(1) {
+        display: none;
+      }
+
+      li:nth-child(2) {
+        margin-left: 0;
+      }
+    }
+  }
+}
 </style>
 <!--<style>
   #Group_825 {

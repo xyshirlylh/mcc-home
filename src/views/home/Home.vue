@@ -877,7 +877,7 @@
       </div>
     </div>
 
-    <div class="background-6">
+    <div class="background-6" v-if="this.$store.state.showContectUs">
       <div class="title-2">
         <p>CONTACT US</p>
       </div>
@@ -914,6 +914,7 @@
 
 <script>
 import anime from "animejs/lib/anime.es.js";
+
 export default {
   name: "Home",
   data: function () {
@@ -929,6 +930,7 @@ export default {
       yearIndex: 0,
       scrollTop: 0,
       index: 0,
+      showContact: this.$store.state.showContectUs,
       //moveLeft: null,
       //moveRight: null,
       gallery: null,
@@ -1017,10 +1019,11 @@ export default {
       }
       // use anime.js
       if (this.box5special === false) {
+        this.box5LeftSpecial = false;
         anime({
           targets: this.sentorini,
 
-          left: "-140rem",
+          left: "-130rem",
           duration: 500,
           opacity: 0.3,
           easing: "easeInOutQuad",
@@ -1032,12 +1035,12 @@ export default {
           easing: "easeInOutQuad",
         });
         this.box5counter++;
-        this.box5LeftSpecial--;
+
+        //this.box5LeftSpecial = false;
+
         if (this.box5counter === 2) {
           this.box5special = true;
-          this.index = this.index + 1;
-
-          this.yearIndex++;
+          this.box5LeftSpecial = true;
         }
         //this.box5special = true;
       }
@@ -1106,6 +1109,7 @@ export default {
         } else if (this.index === 3) {
           this.box4.style.backgroundSize = "0%";
           this.box5special = false;
+
           //console.log("123");
           anime({
             targets: this.box4,
@@ -1123,7 +1127,12 @@ export default {
           });
         } else if (this.index === 4) {
           this.box5.style.backgroundSize = "0%";
+
           //console.log("123");
+          //console.log(this.box5counter);
+          this.box5counter = 2;
+          this.box5LeftSpecial = true;
+
           anime({
             targets: this.box5,
             //width: this.box5.offsetWidth / 20,
@@ -1136,7 +1145,7 @@ export default {
           anime({
             targets: this.sentorini,
 
-            left: "-280rem",
+            left: "-270rem",
             duration: 500,
             opacity: 0.3,
             easing: "easeInOutQuad",
@@ -1156,9 +1165,12 @@ export default {
           });
         } else if (this.index === 5) {
           this.box6.style.backgroundSize = "0%";
+          this.box5LeftSpecial = true;
+
           //console.log("123");
           anime({
             targets: this.box6,
+
             //width: this.box6.offsetWidth / 20,
             width: "20.3125vw",
             left: "394vw",
@@ -1176,6 +1188,11 @@ export default {
 
         this.yearIndex++;
       }
+      console.log("right");
+      console.log(this.index);
+      console.log(this.box5special);
+      console.log(this.box5LeftSpecial);
+      console.log(this.box5counter);
     },
 
     moveLeft: function () {
@@ -1192,10 +1209,11 @@ export default {
       }
 
       if (this.box5LeftSpecial === false) {
+        this.box5special = false;
         anime({
           targets: this.sentorini,
 
-          left: "0rem",
+          left: "10rem",
           duration: 500,
           opacity: 1,
           easing: "easeInOutQuad",
@@ -1208,10 +1226,15 @@ export default {
         });
         this.box5counter--;
         if (this.box5counter === 0) {
-          this.box5LeftSpecial = true;
-          this.index = this.index - 1;
-          this.yearIndex--;
+          this.box5LeftSpecial = false;
+          this.box5special = false;
         }
+
+        if (this.box5counter === -1) {
+          this.box5LeftSpecial = true;
+          this.box5counter = 0;
+        }
+
         //this.box5special = true;
       }
 
@@ -1277,6 +1300,8 @@ export default {
           });
         } else if (this.index === 4) {
           this.box4.style.backgroundSize = "95%";
+          this.box5special = true;
+          this.box5LeftSpecial = true;
           anime({
             targets: this.box4,
             //width: this.box4.offsetWidth * 20,
@@ -1293,6 +1318,7 @@ export default {
           });
         } else if (this.index === 5) {
           this.box5.style.backgroundSize = "85%";
+          this.box5counter--;
           anime({
             targets: this.box5,
             //width: this.box5.offsetWidth * 20,
@@ -1301,6 +1327,22 @@ export default {
             duration: 500,
             easing: "easeInOutQuad",
           });
+
+          anime({
+            targets: this.sentorini,
+
+            left: "-130rem",
+            duration: 500,
+            opacity: 0.3,
+            easing: "easeInOutQuad",
+          });
+          anime({
+            targets: this.bedok,
+            left: "-0rem",
+            duration: 500,
+            easing: "easeInOutQuad",
+          });
+
           anime({
             targets: this.year,
             left: "266.5vw",
@@ -1311,7 +1353,7 @@ export default {
           anime({
             targets: this.sentorini,
 
-            left: "-140rem",
+            left: "-130rem",
             duration: 500,
             opacity: 0.3,
             easing: "easeInOutQuad",
@@ -1343,6 +1385,11 @@ export default {
         this.index = this.index - 1;
         this.yearIndex--;
       }
+      console.log("left");
+      console.log(this.index);
+      console.log(this.box5special);
+      console.log(this.box5LeftSpecial);
+      console.log(this.box5counter);
     },
 
     consultation: function () {
@@ -1813,6 +1860,7 @@ export default {
 
     .block-3-line {
       position: absolute;
+      z-index: 2;
       left: 0rem;
       bottom: 0;
       width: 33.4rem;
@@ -1955,17 +2003,19 @@ export default {
 
         .sentorini {
           position: absolute;
-          left: 0;
+          left: 10rem;
+          top: 12rem;
           height: 100%;
           width: 140rem;
           img {
-            height: 100%;
-            width: 100%;
+            height: auto;
+            width: 80%;
           }
         }
 
         .bedok {
           position: absolute;
+
           left: 140rem;
           top: 18rem;
           height: 100%;
