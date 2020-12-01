@@ -1569,19 +1569,20 @@ export default {
         font-size: 2rem;
         color: white;
 
-        width: 82rem;
+        width: 50%;
       }
       .button {
-        position: absolute;
-        left: 40%;
-        top: 38rem;
+        margin-left: auto;
+        margin-right: auto;
+        
+        
 
         display: flex;
         flex-direction: row;
         justify-content: space-around;
 
         background-color: rgba(74, 145, 242, 1);
-        margin-top: 2rem;
+        margin-top: 5rem;
         width: 22rem;
         height: 5.4rem;
         border: 1px solid var(--unnamed-color-000000);
@@ -1956,9 +1957,9 @@ export default {
         background-image: url("../../assets/imgs/home/wooland checkpoint.jpg"),
           url("../../assets/imgs/home/singapore-expo.jpg");
         background-color: transparent;
-        background-position: 110% 60%, 10% 90%;
+        background-position: 100% 65%, 10% 90%;
         background-repeat: no-repeat;
-        background-size: 40%, 60%;
+        background-size: 35%, 60%;
 
         position: absolute;
         bottom: 0;
@@ -2049,11 +2050,11 @@ export default {
 
       .box-7 {
         background-image: url("../../assets/imgs/home/热带雨林.jpg"),
-          url("../../assets/imgs/home/hotel.jpg");
+          url("../../assets/imgs/home/hotel.png");
 
-        background-position: 20% 80%, 100% 60%;
+        background-position: 20% 80%, 100% 65%;
         background-repeat: no-repeat;
-        background-size: 60%, 40%;
+        background-size: 55%, 35%;
 
         position: absolute;
         bottom: 0;
