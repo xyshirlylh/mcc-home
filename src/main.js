@@ -3,9 +3,6 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-/* import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css' */
-/* import ElementUI from 'element-ui' */
 import components from './components/index';
 window.$ = window.jQuery = require('jquery');
 

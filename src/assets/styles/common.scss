@@ -32,8 +32,9 @@ body, html, #app {
 
 
 /*************** z-index  *****************/
-.z-index-1000 { z-index: 1000 }
-.z-index-100  { z-index: 100  }
+.z-index-1000 { z-index: 1000;}
+.z-index-100  { z-index: 100; }
+.z-index-50   { z-index: 50;  }
 
 
 /*************** position  ****************/
@@ -55,6 +56,7 @@ body, html, #app {
 .f-f-opensans{ font-family: $font-family8; }
 .f-f-heitisc { font-family: $font-family9; }
 .f-f-wigwag  { font-family: $font-family10; }
+.f-f-Noto    { font-family: $font-family1; }
 
 
 /*************** font size ******************/
@@ -74,6 +76,7 @@ body, html, #app {
 .f-s-33 { font-size: 3.3rem; }
 .f-s-36 { font-size: 3.6rem; }
 .f-s-40 { font-size: 4rem;   }
+.f-s-50 { font-size: 5rem;   }
 .f-s-80 { font-size: 8rem;   }
 .f-s-99 { font-size: 9.9rem; }
 .f-s-100{ font-size: 10rem;  }
@@ -81,7 +84,9 @@ body, html, #app {
 
 
 /*************** font color *****************/
+.f-c-0  { color: #fff; }
 .f-c-1  { color: #000000 }
+.f-c-2  { color: #3D3D3D }
 .f-c-10 { color: #C6C6C6 }
 .f-c-11 { color: #4A91F2 }
 .f-c-12 { color: #3B7DD8 }
@@ -93,6 +98,7 @@ body, html, #app {
 
 /*************** bg color *****************/
 .bg-c-0 { background-color: #ffff; }
+.bg-c-1 { background-color: #FBFBFB; }
 
 
 /*************** border radio ************/

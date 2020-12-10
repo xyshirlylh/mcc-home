@@ -27,6 +27,10 @@ const routes = [
     name: "Loading",
     component: () => import("../views/shared/Loading.vue"),
   },
+  {
+    path: '/project-detail',
+    component: () => import("../views/real-estate/ProjectDetail.vue"),
+  }
 ];
 
 const router = new VueRouter({
