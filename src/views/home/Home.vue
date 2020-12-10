@@ -714,7 +714,7 @@
       <div class="container-4">
         <div class="block4">
           <div class="gallery">
-            <div class="left">
+            <div class="left" @click="goLeft">
               <svg type="button" width="60" height="60" viewBox="0 0 60 60">
                 <g
                   id="_929764"
@@ -743,48 +743,53 @@
                 </g>
               </svg>
             </div>
-            <div class="box-1">
-              <div>
-                <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
-              </div>
-
-              <div class="background-white">
-                <div>Title 1</div>
-              </div>
-            </div>
-            <div class="box-2">
-              <div>
-                <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
-              </div>
-
-              <div class="background-white">
-                <div>Title 2</div>
-              </div>
-              <div class="head">
-                <div class="button-1">
-                  <button>
-                    <div>
-                      <p>View more</p>
-                    </div>
-
-                    <svg class="button-arrow" viewBox="0 8 25 25">
-                      <path d="M7 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
-                    </svg>
-                  </button>
+            <carousel
+              :per-page="3"
+              :minSwipeDistance="500"
+              :paginationEnabled="false"
+              :navigateTo="this.block4status"
+            >
+              <slide>
+                <div class="block-4-img">
+                  <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
                 </div>
-              </div>
-            </div>
-            <div class="box-3">
-              <div>
-                <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
-              </div>
 
-              <div class="background-white">
-                <div class="f-f-sans">Title 3</div>
-              </div>
-            </div>
+                <div class="background-white">
+                  <div class="block-4-title f-f-sans">Title 1</div>
+                </div>
+              </slide>
+              <slide>
+                <div class="block-4-img">
+                  <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
+                </div>
 
-            <div class="right">
+                <div class="background-white">
+                  <div class="block-4-title f-f-sans">Title 2</div>
+                </div>
+                <div class="head"></div>
+              </slide>
+              <slide>
+                <div class="block-4-img">
+                  <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
+                </div>
+
+                <div class="background-white">
+                  <div class="block-4-title f-f-sans">Title 3</div>
+                </div>
+              </slide>
+
+              <slide>
+                <div class="block-4-img">
+                  <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
+                </div>
+
+                <div class="background-white">
+                  <div class="block-4-title f-f-sans">Title 3</div>
+                </div>
+              </slide>
+            </carousel>
+
+            <div class="right" @click="goRight">
               <svg
                 ref="moveRight"
                 type="button"
@@ -817,6 +822,18 @@
                 </g>
               </svg>
             </div>
+          </div>
+
+          <div class="button-1">
+            <button>
+              <div>
+                <p>View more</p>
+              </div>
+
+              <svg class="button-arrow" viewBox="0 8 25 25">
+                <path d="M7 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -914,6 +931,7 @@
 
 <script>
 import anime from "animejs/lib/anime.es.js";
+import { Carousel, Slide } from "vue-carousel";
 
 export default {
   name: "Home",
@@ -930,6 +948,7 @@ export default {
       yearIndex: 0,
       scrollTop: 0,
       index: 0,
+      block4status: 0,
       showContact: this.$store.state.showContectUs,
       //moveLeft: null,
       //moveRight: null,
@@ -943,6 +962,11 @@ export default {
       box6: null,
       box7: null,
     };
+  },
+
+  components: {
+    Carousel,
+    Slide,
   },
 
   computed: {
@@ -975,6 +999,14 @@ export default {
   },
 
   methods: {
+    goLeft: function () {
+      this.block4status--;
+    },
+
+    goRight: function () {
+      this.block4status++;
+    },
+
     blur: function () {
       this.mouseover = true;
     },
@@ -1439,6 +1471,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap");
+
 .home {
   width: 100%;
   //min-height: 100%;
@@ -1561,6 +1594,7 @@ export default {
       height: 100%;
 
       line-height: 2.8rem;
+
       p {
         margin-left: auto;
         margin-right: auto;
@@ -1569,19 +1603,19 @@ export default {
         font-size: 2rem;
         color: white;
 
-        width: 82rem;
+        width: 50%;
       }
+
       .button {
-        position: absolute;
-        left: 40%;
-        top: 38rem;
+        margin-left: auto;
+        margin-right: auto;
 
         display: flex;
         flex-direction: row;
         justify-content: space-around;
 
         background-color: rgba(74, 145, 242, 1);
-        margin-top: 2rem;
+        margin-top: 5rem;
         width: 22rem;
         height: 5.4rem;
         border: 1px solid var(--unnamed-color-000000);
@@ -1591,6 +1625,7 @@ export default {
         //font: 2.2rem/3.2rem Source Sans Pro;
         font-size: 2.2rem;
         line-height: 3.2rem;
+
         p {
           margin-left: 10%;
           width: 40%;
@@ -1598,6 +1633,7 @@ export default {
           margin-top: 5%;
           white-space: nowrap;
         }
+
         .button-arrow {
           margin-top: 6%;
           margin-left: 10%;
@@ -1625,6 +1661,7 @@ export default {
         background-repeat: no-repeat;
         background-size: 100% auto;
       }
+
       .image-2-blur {
         position: relative;
         display: flex;
@@ -1641,6 +1678,7 @@ export default {
         background-repeat: no-repeat;
         background-size: 100% auto;
       }
+
       .image-3-blur {
         position: relative;
         display: flex;
@@ -1706,22 +1744,28 @@ export default {
       .block2-row-1 {
         display: flex;
         flex-flow: row;
+
         .column-1 {
           width: 30%;
           flex-flow: column;
+
           .ID {
             margin-left: 14rem;
             margin-top: 14.9rem;
           }
+
           .title-underline {
             margin-left: 14rem;
           }
+
           .title {
             margin-left: 18.375rem;
           }
         }
+
         .column-2 {
           width: 40%;
+
           .content-head {
             color: var(--unnamed-color-000000);
             text-align: center;
@@ -1738,6 +1782,7 @@ export default {
             opacity: 1;
           }
         }
+
         .column-3 {
           width: 30%;
         }
@@ -1756,6 +1801,7 @@ export default {
       background-size: 102.6rem 19.7rem, 100% 100%;
       //position: relative;
     }
+
     .img {
       margin-top: 40rem;
       margin-left: 0rem;
@@ -1790,6 +1836,7 @@ export default {
           background-color: white;
           border-color: white;
         }
+
         margin-left: auto;
         margin-right: auto;
         margin-top: 2.4rem;
@@ -1799,7 +1846,8 @@ export default {
         justify-content: space-around;
 
         background-color: transparent;
-        border: 0.1rem solid black; /* Green */
+        border: 0.1rem solid black;
+        /* Green */
 
         width: 16.4rem;
         height: 5.4rem;
@@ -1813,6 +1861,7 @@ export default {
           white-space: nowrap;
           font: normal normal normal 1.8rem/2.5rem Source Sans Pro;
         }
+
         .button-arrow {
           margin-top: 1rem;
           margin-left: 10%;
@@ -1831,17 +1880,21 @@ export default {
 
     height: 75rem;
   }
+
   .block3 {
     .ID {
       margin-left: 14rem;
       margin-top: 0;
     }
+
     .title-underline {
       margin-left: 14rem;
     }
+
     .title {
       margin-left: 21rem;
     }
+
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1879,6 +1932,7 @@ export default {
       letter-spacing: 0.148rem;
       color: rgba(19, 129, 206, 1);
     }
+
     .year {
       position: absolute;
       z-index: 2;
@@ -1891,6 +1945,7 @@ export default {
       letter-spacing: 5.08px;
       color: rgba(19, 129, 206, 1);
       margin-top: 40vh;
+
       div {
         font-size: 6.5vw;
         letter-spacing: 0.508rem;
@@ -1929,6 +1984,7 @@ export default {
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
+
       .content {
         font: normal normal normal 2.4rem/3.3rem Avenir;
         letter-spacing: 0.096rem;
@@ -1952,13 +2008,14 @@ export default {
         height: 100%;
         width: $zoomedDistance;
       }
+
       .box-2 {
         background-image: url("../../assets/imgs/home/wooland checkpoint.jpg"),
           url("../../assets/imgs/home/singapore-expo.jpg");
         background-color: transparent;
-        background-position: 110% 60%, 10% 90%;
+        background-position: 100% 65%, 10% 90%;
         background-repeat: no-repeat;
-        background-size: 40%, 60%;
+        background-size: 35%, 60%;
 
         position: absolute;
         bottom: 0;
@@ -1966,6 +2023,7 @@ export default {
         height: 100%;
         width: 66.14583vw;
       }
+
       .box-3 {
         background-image: url("../../assets/imgs/home/组屋.jpg");
 
@@ -1980,6 +2038,7 @@ export default {
         height: 100%;
         width: 66.14583vw;
       }
+
       .box-4 {
         background-image: url("../../assets/imgs/home/sentosa zong+jubu.png");
 
@@ -2007,6 +2066,7 @@ export default {
           top: 12rem;
           height: 100%;
           width: 140rem;
+
           img {
             height: auto;
             width: 80%;
@@ -2020,6 +2080,7 @@ export default {
           top: 18rem;
           height: 100%;
           width: 140rem;
+
           img {
             height: auto;
             width: 80%;
@@ -2049,11 +2110,11 @@ export default {
 
       .box-7 {
         background-image: url("../../assets/imgs/home/热带雨林.jpg"),
-          url("../../assets/imgs/home/hotel.jpg");
+          url("../../assets/imgs/home/hotel.png");
 
-        background-position: 20% 80%, 100% 60%;
+        background-position: 20% 80%, 100% 65%;
         background-repeat: no-repeat;
-        background-size: 60%, 40%;
+        background-size: 55%, 35%;
 
         position: absolute;
         bottom: 0;
@@ -2067,10 +2128,12 @@ export default {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+
       .column-1 {
         max-width: 50%;
         width: 30%;
       }
+
       .column-2 {
         display: flex;
         justify-content: center;
@@ -2080,6 +2143,7 @@ export default {
         max-width: 50%;
         width: 40%;
       }
+
       .column-3 {
         display: flex;
         justify-content: right;
@@ -2097,10 +2161,12 @@ export default {
           max-width: 50%;
           max-height: 6rem;
           margin-left: 5.5rem;
+
           &:hover {
             circle {
               fill: #1381ce;
             }
+
             path {
               fill: white;
             }
@@ -2119,6 +2185,7 @@ export default {
       .column-1 {
         width: 30%;
       }
+
       .column-2 {
         width: 40%;
         flex-direction: column;
@@ -2132,6 +2199,7 @@ export default {
           color: rgba(31, 118, 173, 1);
         }
       }
+
       .column-3 {
         width: 30%;
       }
@@ -2145,17 +2213,20 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
     //position: relative;
     .container-4 {
       svg {
         max-width: 100%;
         max-height: 6rem;
         margin-left: 10%;
+
         &:hover {
           circle {
             fill: #1381ce;
             stroke: #1381ce;
           }
+
           path {
             fill: white;
           }
@@ -2165,6 +2236,7 @@ export default {
       .block4 {
         flex-direction: column;
         height: 10rem;
+
         .gallery {
           //font: normal normal normal 1.6rem/2.2rem Source Sans Pro;
           padding: 0 14rem 0 14rem;
@@ -2175,100 +2247,98 @@ export default {
           display: flex;
           flex-direction: row;
           justify-content: space-around;
+
           h1 {
             font-size: 3.6rem;
             letter-spacing: 0.144rem;
           }
+
           p {
             font-size: 1.6rem;
             line-height: 2.2rem;
             margin-top: 5rem;
           }
+
           margin-top: 3.5rem;
-          .background-white {
-            padding: 4.6rem 0 0 0;
-            background-color: white;
-            height: 8.2rem;
-            max-width: 45.4rem;
-          }
+
           text-align: center;
-          img {
-            width: 100%;
-            height: 100%;
-          }
+
           .left {
             margin-top: 25rem;
-            min-width: 6rem;
-
-            width: 5%;
           }
-          .box-1 {
-            max-width: 45.4rem;
-            height: 46.5rem;
-            margin-left: 2rem;
+
+          .VueCarousel {
+            width: 100vw/1920 * (454+576+454);
+            height: 100vw/1920 * (516);
           }
-          .box-2 {
-            max-width: 45.4rem;
-            height: 46.5rem;
-            margin-left: 6.1rem;
-            .head {
-              .button-1 {
-                button {
-                  margin-left: auto;
-                  margin-right: auto;
-                  display: flex;
-                  justify-content: space-around;
 
-                  border: none;
-                  width: 17.8rem;
-                  height: 5.4rem;
+          .VueCarousel-slide {
+            background-color: rgba(143, 177, 205, 0.54) 0% 0%;
+            //padding: 0 (100vw/1920 * (30)) 0 (100vw/1920 * (30));
 
-                  background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
-                  color: black;
-                  border: 1px solid #000000;
-                  border-radius: 4px;
-                  p {
-                    margin-left: 5%;
-                    max-width: 40%;
+            height: 100vw/1920 * (516);
+            .block-4-img {
+              margin-left: 100vw/1920 * (30.5);
+              width: 100vw/1920 * (454-15.25);
+            }
+            img {
+              width: 100%;
+              height: auto;
+            }
 
-                    margin-top: 0.8rem;
-                    white-space: nowrap;
-                    font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
-                  }
-                  .button-arrow {
-                    margin-top: 0.9rem;
-
-                    margin-left: 0;
-                    max-width: 25%;
-                    //margin-bottom: 90%;
-                    height: 100%;
-                    stroke: #000000;
-                    stroke-width: 0.08rem;
-                  }
-                }
-              }
-
+            .background-white {
+              padding: (100vw/1920 * (46)) 0 0 0;
+              background-color: white;
+              margin-left: 100vw/1920 * (30.5);
+              width: 100vw/1920 * (454-15.25);
+              height: 100%;
               max-width: 100%;
-              p {
-                float: left;
-                max-width: 80%;
-              }
-
-              margin-top: 10rem;
-              max-height: 6.4rem;
             }
           }
-          .box-3 {
-            max-width: 45.4rem;
-            height: 46.5rem;
-            margin-left: 6.1rem;
-          }
+
           .right {
             margin-top: 25rem;
-            margin-left: 2rem;
 
-            min-width: 6rem;
             height: 6rem;
+          }
+        }
+
+        .button-1 {
+          button {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100vw/1920 * 54;
+            display: flex;
+            justify-content: space-around;
+
+            border: none;
+            width: 17.8rem;
+            height: 5.4rem;
+
+            background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
+            color: black;
+            border: 1px solid #000000;
+            border-radius: 4px;
+
+            p {
+              margin-left: 5%;
+              max-width: 40%;
+
+              margin-top: 0.8rem;
+              white-space: nowrap;
+              font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
+            }
+
+            .button-arrow {
+              margin-top: 0.9rem;
+
+              margin-left: 0;
+              max-width: 25%;
+              //margin-bottom: 90%;
+              height: 100%;
+              stroke: #000000;
+              stroke-width: 0.08rem;
+            }
           }
         }
       }
@@ -2284,11 +2354,13 @@ export default {
       color: rgba(0, 0, 0, 1);
       opacity: 1;
     }
+
     .title-underline {
       margin-left: 14rem;
       stroke-width: 3px;
       opacity: 1;
     }
+
     .title {
       margin-left: 21rem;
       color: var(--unnamed-color-000000);
@@ -2358,6 +2430,7 @@ export default {
         letter-spacing: 0px;
         color: rgba(0, 0, 0, 1);
       }
+
       .col-1 {
         background-image: url("../../assets/imgs/home/mission.png");
         height: 35rem;
@@ -2367,6 +2440,7 @@ export default {
         background-repeat: no-repeat;
         background-size: 50%;
       }
+
       .col-2 {
         background-image: url("../../assets/imgs/home/vision.png");
 
@@ -2377,6 +2451,7 @@ export default {
         background-repeat: no-repeat;
         background-size: 50%;
       }
+
       .col-3 {
         background-image: url("../../assets/imgs/home/culture.png");
         height: 35rem;
@@ -2393,6 +2468,7 @@ export default {
     background-color: hsla(205, 37%, 87%, 1);
     height: 45.1rem;
     padding: 7.3rem 0 7.3rem 0;
+
     .title-2 {
       text-align: center;
       color: var(--unnamed-color-000000);
@@ -2400,10 +2476,12 @@ export default {
       letter-spacing: 0.164rem;
       color: rgba(0, 0, 0, 1);
     }
+
     .input {
       .email {
         display: flex;
         justify-content: space-around;
+
         input[type="text"] {
           width: 59.2rem;
           border: none;
@@ -2416,9 +2494,11 @@ export default {
           background-color: hsla(205, 37%, 87%, 1);
         }
       }
+
       .text {
         display: flex;
         justify-content: space-around;
+
         textarea {
           width: 59.2rem;
           height: 15rem;
@@ -2434,10 +2514,12 @@ export default {
         }
       }
     }
+
     .button-5-1 {
       display: flex;
       justify-content: space-around;
       margin-top: 4rem;
+
       .button-5-2 {
         text-align: center;
         font: normal normal normal 2.2rem/3.2rem Source Sans Pro;

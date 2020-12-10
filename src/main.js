@@ -5,7 +5,7 @@ import router from './router'
 import store from './store'
 import components from './components/index';
 import * as VueGoogleMaps from 'vue2-google-maps';
-
+import VueCarousel from 'vue-carousel';
 window.$ = window.jQuery = require('jquery');
 
 Vue.config.productionTip = false;
@@ -17,6 +17,7 @@ Vue.use(VueGoogleMaps, {
   },
   installComponents: true
 });
+Vue.use(VueCarousel);
 
 new Vue({
   router,
