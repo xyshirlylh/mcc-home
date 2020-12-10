@@ -72,3 +72,11 @@
     font-style: normal;
     font-display: block;
 }
+
+@font-face {
+    font-family: "Noto Sans";
+    src: local("Noto Sans"), url("NotoSans-Regular.ttf"), url("NotoSans-Bold.ttf") format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}

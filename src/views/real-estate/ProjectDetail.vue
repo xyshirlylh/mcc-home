@@ -191,6 +191,11 @@ export default {
   .icongailan { font-size: 3.5rem; margin-left: -4px; }
   .iconMaskGroup25 { font-size: 2.5rem; }
   .icon535239 { font-size: 2rem; }
+  .icon3788750 { margin-left: -8px; }
+  .icon3582873 { margin-left: -2px; }
+  .icon783192 { margin-left: -4px; }
+  .icondropoff { font-size: 16px !important; }
+
   .section-one {
     height: 71rem;
     background-size: cover;
