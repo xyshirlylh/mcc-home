@@ -7,10 +7,12 @@ import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css' */
 /* import ElementUI from 'element-ui' */
 import components from './components/index';
+import VueCarousel from 'vue-carousel';
 window.$ = window.jQuery = require('jquery');
 
 Vue.config.productionTip = false;
 Vue.use(components);
+Vue.use(VueCarousel);
 /* Vue.use(ElementUI) */
 
 new Vue({

@@ -11,6 +11,18 @@ const routes = [
     component: Home
   },
   {
+    path: '/all-news',
+    component: () => import('../views/news/AllNews.vue'),
+  },
+  {
+    path: '/news',
+    component: () => import('../views/news/News.vue'),
+  },
+  {
+    path: '/all-photos',
+    component: () => import('../views/news/AllPhotos.vue'),
+  },
+  {
     path: '/test',
     component: () => import('../views/home/Test.vue'),
   },
@@ -31,7 +43,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  scrollBehavior () {
+  scrollBehavior() {
     return { x: 0, y: 0 }
   }
 });
