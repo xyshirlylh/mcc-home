@@ -6,7 +6,7 @@
       <span class="position-absolute z-index-50 f-s-50 f-c-0 f-f-raleway font-bold">{{ projectInfo.name }}</span>
     </div>
 
-    <div class="flex-row justify-content-center section-gallery bg-c-0">
+    <div class="flex-row section-gallery bg-c-0">
       <ul class="flex-row">
         <li v-for="item in projectInfo.images" 
             :key="item.id" 
@@ -19,11 +19,17 @@
     <div class="section-infor">
       <gap :height="49" />
 
-      <ul class="row-menu flex-row">
-        <li v-for="item in operations" :key="item.id" class="f-s-18 f-f-arial font-bold cursor-pointer">
-          <i :class="item.icon" class="iconfont"></i>
-          <span>{{ item.label }}</span>
+      <ul ref='overview' class="row-menu flex-row position-relative">
+        <li v-for="item in operations" 
+            :key="item.id" 
+            class="f-f-arial font-bold cursor-pointer flex-row align-items-center" 
+            @mouseover="onHoverMenu(item)"
+            @click="onClickMenu(item)">
+          <i :class="item.icon" class="iconfont f-s-30"></i>
+          <span class="f-s-18">{{ item.label }}</span>
         </li>
+
+        <div class="menu-line position-absolute" :style="{'transform': `translateX(${translateX}rem)`}"></div>
       </ul>
 
       <gap :height="64" />
@@ -51,7 +57,7 @@
 
       <ol class="flex-row flex-wrap row-facilities">
         <template v-for="(item, i) in overview.facilities">
-          <li :key="i">
+          <li :key="i" class="flex-row align-items-center">
             <p><i :class="item.icon" class="iconfont"></i></p>
             <span class="f-s-18 f-f-arial f-c-2">{{ item.label }}</span>
           </li>
@@ -62,23 +68,48 @@
       <p class="f-s-24 font-bold f-c-2 f-f-Noto title title-site-plan">Site Plans</p>
       <gap :height="26" />
 
-      <img :src="sitePlans.imgUrl" width="921px"/>
+      <img class="site-plan-image" :src="sitePlans.imgUrl" />
 
       <gap :height="99" />
-      <p class="f-s-24 font-bold f-c-2 f-f-Noto title title-floor-plan">Floor Plans</p>
+      <p ref="floor" class="f-s-24 font-bold f-c-2 f-f-Noto title title-floor-plan">Floor Plans</p>
       <gap :height="25" />
 
-      <div style="height: 300px; background-color: green;"></div>
+      <div style="width: 92.1rem; height: 100px; background-color: green;"></div>
 
       <gap :height="57" />
-      <p class="f-s-24 font-bold f-c-2 f-f-Noto title">Location</p>
+      <p ref="location" class="f-s-24 font-bold f-c-2 f-f-Noto title">Location</p>
       <gap :height="32" />
     </div>
 
     <div class="row-map" style="background-color: purple">
-
+      <GmapMap
+          ref="mapRef"
+          :center="location"
+          :zoom="17"
+          map-type-id="roadmap"
+          style="width: 100%; height: 100%">
+          <GmapMarker
+            :position="location"
+            :clickable="true"
+          />
+      </GmapMap>
     </div>
-    <div style="background-color: green;"></div>
+
+    <div class="row-pagination bg-c-2 flex-row justify-content-center align-items-center">
+      <div class="box">
+        <div class="flex-row align-items-center">
+          <p class="flex-1 f-c-2 f-f-Noto f-s-16 flex-row align-items-center"><i class="iconfont iconarrow-left"></i><span class="cursor-pointer">Previous</span></p>
+          <p class="f-c-2 f-f-Noto f-s-16 cursor-pointer flex-row align-items-center">Next<i class="iconfont iconarrow-right"></i></p>
+        </div>
+
+        <gap :height="16" />
+
+        <div class="flex-row">
+          <p class="flex-1 f-c-2 f-s-24 f-f-Noto font-bold">The Alps Residences</p>
+          <p class="f-c-2 f-s-24 f-f-Noto font-bold">The Poiz</p>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 <script>
@@ -110,38 +141,56 @@ export default {
         ],
         description: 'In a competitive market and in an area - Alexandra - that shows all the signs of forthcoming investment, development and gentrification, Queens Park still manages to stand out from the crowd courtesy of its location directly opposite Queenstown MRT Station, and the quality of the units on offer. Just 15 – 20 minutes from Orchard Road and the CBD, Queens Park, offers single occupiers, couples and families a chance to affordably live within an easy commute of the city. 736 well designed and smartly functional units range from 1 bedroom flats up to 3, 4 and 5 bedroom apartments plus 4 very spacious penthouse suites.',
         facilities: [
-          {icon: '', label: 'Basement car park'},
-          {icon: '', label: 'Children’s Playground'},
-          {icon: '', label: 'Drop Off Point'},
-          {icon: '', label: 'Gymnasium room'},
-          {icon: '', label: 'Lift lobby'},
-          {icon: '', label: 'Swimming pool'},
-          {icon: '', label: 'Main entrance'},
-          {icon: '', label: '24 hours security'},
+          {icon: 'iconbasementcarpark', label: 'Basement car park'},
+          {icon: 'icon2971019', label: 'Children’s Playground'},
+          {icon: 'icondropoff', label: 'Drop Off Point'},
+          {icon: 'icon3788750', label: 'Gymnasium room'},
+          {icon: 'icon3582873', label: 'Lift lobby'},
+          {icon: 'icon763860', label: 'Swimming pool'},
+          {icon: 'iconXMLID_642_', label: 'Main entrance'},
+          {icon: 'icon783192', label: '24 hours security'},
         ]
       },
       sitePlans: {
         imgUrl: require("../../assets/imgs/real-estate/queens-peak-img-006_ct@2x.png"),
       },
       floorPlans: {},
-      location: {},
+      location: {
+        lat:1.2948546, lng:103.8045647
+      },
       operations: [
-        {id: 0, label: 'Overview', icon: ''},
-        {id: 1, label: 'Floor Plans', icon: ''},
-        {id: 2, label: 'Location', icon: ''},
-      ]
+        {id: 0, label: 'Overview', icon: 'icongailan', translate: 0, ref: "overview"},
+        {id: 1, label: 'Floor Plans', icon: 'iconMaskGroup25', translate: 19.8, ref: "floor"},
+        {id: 2, label: 'Location', icon: 'icon535239', translate: 40.5, ref: "location"},
+      ],
+      translateX: 0,
     };
   },
   methods: {
     onSwitchCover({id, imageSrc}) {
       this.projectInfo.current.id = id;
       this.projectInfo.current.cover = imageSrc;
+    },
+
+    onHoverMenu(item) {
+      this.translateX = item.translate;
+    },
+
+    onClickMenu(item) {
+      const $ = window.$;
+      const el = this.$refs[item.ref];
+      const h = $(el).offset().top;
+
+      $('body,html').animate({scrollTop: h - 100}, 200);
     }
   }
 };
 </script>
 <style lang="scss" scoped type="text/scss">
 .project-detail {
+  .icongailan { font-size: 3.5rem; margin-left: -4px; }
+  .iconMaskGroup25 { font-size: 2.5rem; }
+  .icon535239 { font-size: 2rem; }
   .section-one {
     height: 71rem;
     background-size: cover;
@@ -155,6 +204,7 @@ export default {
   }
 
   .section-gallery {
+    padding-left: 49.9rem;
     ul {
       padding: 1.1rem 0 2.3rem 0;
 
@@ -184,6 +234,7 @@ export default {
       li {
         color: #8B8B8B;
         margin-right: 5.5rem;
+
         i {
           padding-right: 7.74px;
         }
@@ -193,8 +244,14 @@ export default {
 
         &:hover {
           color: #000000;
-          border-bottom: 2px solid #3E3E3E;
         }
+      }
+
+      .menu-line {
+        bottom: 0;
+        width: 14rem;
+        border-bottom: 2px solid #000000;
+        transition: transform .3s cubic-bezier(.645,.045,.355,1);
       }
     }
 
@@ -236,15 +293,38 @@ export default {
       li {
         min-width: 30rem;
         margin-bottom: 2.9rem;
+
         p {
-          @include box-size-line-height(15px, 20px);
+          width: 35px;
+          i {
+            font-size: 20px;
+          }
         }
       }
+    }
+
+    .site-plan-image {
+      width: 92.1rem;
     }
   }
 
   .row-map {
     @include box-size(100%, 70.3rem);
+  }
+
+  .row-pagination {
+    @include box-size(100%, 36.6rem);
+
+    .box {
+      width: 92.1rem;
+
+      .iconarrow-left {
+        padding-right: 16px;
+      }
+      .iconarrow-right {
+        padding-left: 16px;
+      }
+    }
   }
 }
 </style>

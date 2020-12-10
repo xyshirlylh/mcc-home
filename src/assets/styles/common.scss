@@ -99,6 +99,8 @@ body, html, #app {
 /*************** bg color *****************/
 .bg-c-0 { background-color: #ffff; }
 .bg-c-1 { background-color: #FBFBFB; }
+.bg-c-2 { background-color: #EFEFEF; }
+
 
 
 /*************** border radio ************/
@@ -122,9 +124,21 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1600px) {
+  body, html {
+    font-size: 8.33px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
   body, html {
     font-size: 7.2px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  body, html {
+    font-size: 7.29px;
   }
 }
 

@@ -23,12 +23,6 @@ export default {
 
 <style lang="scss">
 @import "./assets/styles/common.scss";
-/*@import "assets/iconfont/style.css";*/
-/*@import "./assets/iconfont/iconfont.css";*/
+@import "./assets/iconfont/iconfont.css";
 @import "./assets/custom-font/custom-font.css";
-@font-face {
-  font-family: "Avenir";
-  src: local("Avenir"),
-    url(./assets/custom-font/Avenir-Roman.otf) format("truetype");
-}
 </style>
