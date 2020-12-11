@@ -1,6 +1,6 @@
 <template>
   <section class="project-detail bg-c-1">
-    <gap :height="94" />
+    <gap :height="60" />
 
     <div
       class="section-one position-relative"
