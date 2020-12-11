@@ -38,7 +38,7 @@
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
         <template v-for="item in propertiesInSG">
-          <li :key="item.id" :style="{width: boxWidth}" class="box-container">
+          <li :key="item.id" :style="{width: boxWidth}" class="box-container" @click="enterProjectDetail()">
             <ProjectImageCard :info="item"/>
           </li>
         </template>
@@ -52,7 +52,7 @@
 
       <ul class="flex-row flex-wrap">
         <template v-for="(item, i) in propertiesInInt">
-          <li :key="item.id" :style="{marginRight: i%2===0 ? '6.4rem': 0, width: boxWidth}" class="box-container">
+          <li :key="item.id" :style="{marginRight: i%2===0 ? '6.4rem': 0, width: boxWidth}" class="box-container" @click="enterProjectDetail()">
             <ProjectImageCard :info="item"/>
           </li>
         </template>
@@ -104,13 +104,17 @@
       clearTimeout(this.timer);
     },
     methods: {
+      enterProjectDetail() {
+        this.$router.push({path: '/project-detail'});
+      }, 
+
       showAllProject() {
         const $ = window.$;
         const el = this.$refs.titleOfSectionOne;
         const h = $(el).offset().top;
 
         const marginTop = $(this.$refs.contentRef).css('marginTop');
-        $('body,html').animate({scrollTop: h - parseFloat(marginTop) - 50}, 200);
+        $('body,html').animate({scrollTop: h - parseFloat(marginTop) - 40}, 200);
       },
 
       animateNumber() {
@@ -137,7 +141,7 @@
     width: calc(100% - 28rem);
     min-height: 100%;
     // padding: 14rem 14rem 0 14rem;
-    padding: 18.1rem 14rem 0 14rem;
+    padding: 17.9rem 14rem 0 14rem;
 
     .top-container {
       display: flex;

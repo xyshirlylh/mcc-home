@@ -178,7 +178,7 @@
 
   @media screen and (min-width: 1025px) {
     header {
-      @include box-size(100%, 9.4rem);
+      @include box-size(100%, 6rem);
       
       .left {
         padding-left: 14rem;
@@ -190,7 +190,8 @@
       }
 
       .box-menu {
-        @include box-size-line-height(20.3rem, 9.4rem);
+        //@include box-size-line-height(20.3rem, 9.4rem);
+        @include box-size-line-height(20.3rem, 6rem);
 
         span:first-child {
           letter-spacing: 0.96px;
@@ -210,15 +211,15 @@
           }
           .line-1 {
             width: 4.5rem;
-            margin-top: 3rem;
+            margin-top: 1.8rem;
           }
           .line-2 {
             width: 3rem;
-            margin-top: 4.5rem;
+            margin-top: 3.2rem;
           }
           .line-3 {
             width: 3.8rem;
-            margin-top: 6rem;
+            margin-top: 4.7rem;
           }
         }
 
