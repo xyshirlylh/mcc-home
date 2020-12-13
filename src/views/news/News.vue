@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="block-1">
-      <div class="button-back f-f-sans">
+      <div class="button-back f-f-sans" @click="back">
         <div class="arrow-back">
           <img src="../../assets/imgs/news/arrow-left.png" alt="" />
         </div>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div class="button-all-photo">
+      <div class="button-all-photo" @click="goAllPhotos">
         <p>Show all photos</p>
       </div>
     </div>
@@ -112,7 +112,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: function () {
+    return {};
+  },
+  methods: {
+    back: function () {
+      this.$router.go(-1);
+    },
+
+    goAllPhotos: function () {
+      this.$router.push("/all-photos");
+    },
+  },
+};
 </script>
 
 <style lang="scss">
