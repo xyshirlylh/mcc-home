@@ -3,7 +3,7 @@
     <table class="last-month">
       <tr class="text-align-center">
         <td colspan="2" class="justify-content-center font-bold">
-          {{ currentMonth - 1 }} 月
+          {{ currentMonth - 1 === 0 ? 12 : currentMonth - 1}} 月
         </td>
       </tr>
       <tr>
