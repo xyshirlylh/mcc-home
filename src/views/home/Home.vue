@@ -750,40 +750,40 @@
               :navigateTo="this.block4status"
             >
               <slide>
-                <div class="block-4-img">
+                <div class="block-4-img" @click="gonews">
                   <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
                 </div>
 
-                <div class="background-white">
+                <div class="background-white" @click="gonews">
                   <div class="block-4-title f-f-sans">Title 1</div>
                 </div>
               </slide>
               <slide>
-                <div class="block-4-img">
+                <div class="block-4-img" @click="gonews">
                   <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
                 </div>
 
-                <div class="background-white">
+                <div class="background-white" @click="gonews">
                   <div class="block-4-title f-f-sans">Title 2</div>
                 </div>
                 <div class="head"></div>
               </slide>
               <slide>
-                <div class="block-4-img">
+                <div class="block-4-img" @click="gonews">
                   <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
                 </div>
 
-                <div class="background-white">
+                <div class="background-white" @click="gonews">
                   <div class="block-4-title f-f-sans">Title 3</div>
                 </div>
               </slide>
 
               <slide>
-                <div class="block-4-img">
+                <div class="block-4-img" @click="gonews">
                   <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
                 </div>
 
-                <div class="background-white">
+                <div class="background-white" @click="gonews">
                   <div class="block-4-title f-f-sans">Title 3</div>
                 </div>
               </slide>
@@ -826,7 +826,7 @@
 
           <div class="button-1">
             <button>
-              <div @click="gonews">
+              <div @click="goAllNews">
                 <p>View more</p>
               </div>
 
@@ -1022,6 +1022,10 @@ export default {
 
     gonews: function () {
       this.$router.push("/news");
+    },
+
+    goAllNews: function () {
+      this.$router.push("/all-news");
     },
 
     goRealEstate: function () {
