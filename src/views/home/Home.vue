@@ -826,7 +826,7 @@
 
           <div class="button-1">
             <button>
-              <div>
+              <div @click="gonews">
                 <p>View more</p>
               </div>
 
@@ -949,6 +949,7 @@ export default {
       scrollTop: 0,
       index: 0,
       block4status: 0,
+      newsPageCount: 2,
       showContact: this.$store.state.showContectUs,
       //moveLeft: null,
       //moveRight: null,
@@ -1000,11 +1001,15 @@ export default {
 
   methods: {
     goLeft: function () {
-      this.block4status--;
+      if (this.block4status > 0) {
+        this.block4status--;
+      }
     },
 
     goRight: function () {
-      this.block4status++;
+      if (this.block4status < this.newsPageCount - 1) {
+        this.block4status++;
+      }
     },
 
     blur: function () {
@@ -1013,6 +1018,10 @@ export default {
 
     clear: function () {
       this.mouseover = false;
+    },
+
+    gonews: function () {
+      this.$router.push("/news");
     },
 
     goRealEstate: function () {
