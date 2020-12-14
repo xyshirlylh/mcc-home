@@ -33,6 +33,7 @@
         </div>
       </div>
       <div class="button-all-photo" @click="goAllPhotos">
+        <img src="../../assets/imgs/news/概览.png" alt="" />
         <p>Show all photos</p>
       </div>
     </div>
@@ -98,13 +99,19 @@
 
       <div class="navigations">
         <div class="privious">
-          <div class="button-left">Privious</div>
+          <div class="button-left">
+            <img src="../../assets/imgs/news/arrow-left.png" alt="" />
+            <p>Privious</p>
+          </div>
           <div class="title-left">
             A beginner’s guide to organizing a product usability testing
           </div>
         </div>
         <div class="next">
-          <div class="button-right">Next</div>
+          <div class="button-right">
+            <p>Next</p>
+            <img src="../../assets/imgs/news/arrow-right.png" alt="" />
+          </div>
           <div class="title-right">
             7 ideation techniques to supercharge your next workshop
           </div>
@@ -183,6 +190,8 @@ export default {
     margin-left: 100vw/1920 * 395;
     width: 100vw/1920 * 1129;
     height: 100vw/1920 * 462;
+    border-radius: 1rem;
+    overflow: hidden;
     .col-1 {
       width: 100vw/1920 * 565;
       height: 100vw/1920 * 462;
@@ -230,11 +239,21 @@ export default {
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 0.5rem;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    img {
+      margin-top: 100vw/1920 * 2;
+      width: 100vw/1920 * 30;
+      height: 100vw/1920 * 30;
+    }
     p {
       white-space: nowrap;
-      margin-left: 100vw/1920 * 28;
+      margin-left: 100vw/1920 * 5;
       margin-top: 100vw/1920 * 7;
-      font: normal normal normal 1.4rem/2rem Source Sans Pro;
+      width: 100vw/1920 * 101;
+      font: Source Sans Pro;
+      line-height: 100vw/1920 * 20;
+      font-size: 100vw/1920 * 14;
     }
   }
 }
@@ -349,13 +368,37 @@ export default {
     width: 100%;
     height: 100vw/1920 * 139;
     .button-left {
+      display: flex;
+      flex-direction: row;
+      img {
+        width: 100vw/1920 * 12;
+        height: 100vw/1920 * 12;
+        margin-top: 2%;
+      }
+      p {
+        margin-left: 100vw/1920 * 16;
+      }
       cursor: pointer;
       font: normal normal bold 1.6rem/2.6rem Noto Sans;
     }
+
     .button-right {
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
       cursor: pointer;
-      text-align: right;
+
       font: normal normal bold 1.6rem/2.6rem Noto Sans;
+
+      img {
+        margin-left: 100vw/1920 * 16;
+        width: 100vw/1920 * 12;
+        height: 100vw/1920 * 12;
+        margin-top: 2%;
+      }
+      p {
+        margin-left: 100vw/1920 * 300;
+      }
     }
     .title-left {
       font: normal normal bold 2.4rem/3.4rem Noto Sans;
