@@ -156,7 +156,7 @@
                 </p>
               </div>
 
-              <button class="button">
+              <button class="button" @click="goRealEstate()">
                 <p>Read More</p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
@@ -181,7 +181,7 @@
                 </p>
               </div>
 
-              <button class="button">
+              <button class="button" @click="goConstruction()">
                 <p>Read More</p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
@@ -824,9 +824,9 @@
             </div>
           </div>
 
-          <div class="button-1">
+          <div class="button-1" @click="goAllNews">
             <button>
-              <div @click="goAllNews">
+              <div>
                 <p>View more</p>
               </div>
 
@@ -2277,6 +2277,7 @@ export default {
           text-align: center;
 
           .left {
+            cursor: pointer;
             margin-top: 25rem;
           }
 
@@ -2310,6 +2311,7 @@ export default {
           }
 
           .right {
+            cursor: pointer;
             margin-top: 25rem;
 
             height: 6rem;

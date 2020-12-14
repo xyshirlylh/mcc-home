@@ -37,59 +37,47 @@
       </div>
     </div>
     <div class="block-2">
-      <div class="info"><p>Category Name | May 17, 2020</p></div>
+      <div class="info"><p>Category Name | 6 Sep 2019</p></div>
       <div class="title">
         Participate in the International Built Environment Week Exhibition
       </div>
       <div class="author"><p>Written by author name</p></div>
       <div class="content">
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergr<br /><br />en, no sea takimata sanctus
-          est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing e litr, sed diam nonumy eirmod tempor
-          invidunt ut labore et do<br /><br />lore magna aliquyam erat, sed diam
-          voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-          Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-          dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-          elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-          magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-          justo duo dolores et ea rebum. Stet clita ka sd gubergren, no sea
-          takimata sanctus est Lorem ipsum<br />
-          <br />dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam volupt ua. At vero eos et accusam et justo duo dolores
-          et ea rebu<br /><br />m. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-          labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-          et accusam et justo duo dolores et ea rebum. Stet clita kasd
-          gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolor e magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Stet clita kasd gubergren<br /><br />, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-          labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-          et accusam et justo duo dolores et ea rebum. Stet clita kasd
-          gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+          MCC Singapore was invited to participate in the 2019 Singapore
+          International Built Environment Week (IBEW), which was held on
+          September 6 at Singapore bay sands convention and exhibition centre
+          with the theme of "Leading the Transformation of the Construction
+          Industry".<br /><br />
+
+          9月3日至6日，新加坡海湾金沙会展中心举办了以 “引领建筑业转型”
+          为主题的2019年新加坡国际建筑环境周（IBEW），中冶新加坡也受邀参加了本次展会。<br /><br />
+          In this exhibition, MCC Singapore highlights two recent high-end
+          projects in Cambodia. Sky Villa, MCC's first residential development
+          in Phnom Penh, Cambodia; Another representative project is Dara Sakor
+          on the southwest coast of Cambodia. The project is a model of
+          Cambodia-China economic cooperation and a key project of "the Belt and
+          Road". With eight functional areas including smart industrial park,
+          commercial style street, cultural tourism area, overlooking the sea
+          apartment, villa resort, yacht dock resort, coastal leisure resort and
+          static sea bathing area as the core, aiming to create a new paradise
+          for world-class tourism and vacation.<br /><br />
+          在本次展览中，中冶新加坡重点展示了近期在柬埔寨的两个高端项目。一是天空别墅（Sky
+          Villa）
+          ，该项目为中冶新加坡在柬埔寨金边首个住宅开发项目；另一个代表项目，是位于柬埔寨西南海岸的七星海（Dara
+          Sakor）。
+          该项目是柬中经济合作典范、“一带一路”重点项目，以智慧产业园区、商业风情街、文旅区、瞰海公寓、别墅度假区、游艇码头度假区、滨海休闲度假酒店区、静海浴场八大功能区为核心，
+          力求缔造世界级旅行度假新天堂。<br /><br />
+          During the exhibition, the MCC Singapore booth hosted thousands of
+          visitors from different industries such as construction, water
+          conservancy and environment, and hosted the Cambodian Housing
+          Development Association and the Saudi Chamber of Commerce Council
+          members on the first and second day of the exhibition. Visitors showed
+          great interest in the development of MCC Singapore's two key projects
+          in Cambodia. The project leaders also gave detailed explanations and
+          in-depth discussions on different projects.<br /><br />
+          此次展会中，中冶新加坡展台接待了来自建筑、水利、环境等不同行业的上千名访客，并且在展会第一天和第二天分别接待了柬埔寨住房发展协会和沙特商会理事会成员。
+          访客们对中冶新加坡在柬埔寨两大重点项目开发展示出极大兴趣，各项目负责人也针对不同项目向大家进行详细地讲解和深入的讨论。
         </p>
       </div>
       <div class="functions">
@@ -105,6 +93,21 @@
         </div>
         <div class="wechat">
           <img src="../../assets/imgs/news/Wechat.png" alt="" />
+        </div>
+      </div>
+
+      <div class="navigations">
+        <div class="privious">
+          <div class="button-left">Privious</div>
+          <div class="title-left">
+            A beginner’s guide to organizing a product usability testing
+          </div>
+        </div>
+        <div class="next">
+          <div class="button-right">Next</div>
+          <div class="title-right">
+            7 ideation techniques to supercharge your next workshop
+          </div>
         </div>
       </div>
     </div>
@@ -153,6 +156,7 @@ export default {
     width: 100vw/1920 * 98.45;
     border-radius: 2.5rem;
     text-align: center;
+    cursor: pointer;
 
     .arrow-back {
       height: 100vw/1920 * 13.71;
@@ -225,6 +229,7 @@ export default {
     margin-top: 100vw/1920 * 20;
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 0.5rem;
+    cursor: pointer;
     p {
       white-space: nowrap;
       margin-left: 100vw/1920 * 28;
@@ -235,7 +240,7 @@ export default {
 }
 
 .block-2 {
-  height: 100vw/1920 * (2055);
+  //height: 100vw/1920 * (2055);
   width: 100vw- (100vw/1920 * 606) - (100vw/1920 * 583);
   padding: 0 (100vw/1920 * 606) 0 (100vw/1920 * 583);
   overflow: hidden;
@@ -264,14 +269,17 @@ export default {
 
   .content {
     width: 100vw/1920 * 712;
-    height: 100vw/1920 * 1088;
+    //height: 100vw/1920 * 1088;
+
     overflow: hidden;
     p {
       width: 100vw/1920 * 712;
-      height: 100vw/1920 * 1088;
+      //height: 100vw/1920 * 1088;
+
       font: (100vw/1920 * 16) Noto Sans;
       line-height: 2.6rem;
       color: rgba(115, 115, 115, 1);
+      text-align: justify;
     }
 
     margin-top: 100vw/1920 * 12;
@@ -283,6 +291,10 @@ export default {
     width: 100vw/1920 * 712;
     height: 100vw/1920 * 48;
     margin-top: 100vw/1920 * 80;
+    margin-bottom: 100vw/1920 * 355;
+    div {
+      cursor: pointer;
+    }
     .heart {
       height: 100vw/1920 * 48;
       width: 100vw/1920 * 48;
@@ -291,6 +303,7 @@ export default {
         width: 100%;
       }
     }
+
     .likes {
       white-space: nowrap;
       margin-left: 100vw/1920 * 19;
@@ -326,6 +339,32 @@ export default {
         height: auto;
         width: 100%;
       }
+    }
+  }
+  .navigations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 100vw/1920 * 68;
+    width: 100%;
+    height: 100vw/1920 * 139;
+    .button-left {
+      cursor: pointer;
+      font: normal normal bold 1.6rem/2.6rem Noto Sans;
+    }
+    .button-right {
+      cursor: pointer;
+      text-align: right;
+      font: normal normal bold 1.6rem/2.6rem Noto Sans;
+    }
+    .title-left {
+      font: normal normal bold 2.4rem/3.4rem Noto Sans;
+      height: 100vw/1920 * 101;
+    }
+    .title-right {
+      text-align: right;
+      height: 100vw/1920 * 101;
+      font: normal normal bold 2.4rem/3.4rem Noto Sans;
     }
   }
 }
