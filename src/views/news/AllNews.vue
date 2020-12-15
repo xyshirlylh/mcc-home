@@ -160,8 +160,8 @@ export default {
     margin-right: auto;
 
     div {
-      width: 670px;
-      height: 420px;
+      width: 67rem;
+      height: 42rem;
       background-color: white;
       display: flex;
       flex-direction: column;
@@ -186,12 +186,12 @@ export default {
 
         p {
           width: 70%;
-          height: 47px;
-          margin-top: 36px;
+          height: 4.7rem;
+          margin-top: 3.6rem;
 
           text-align: left;
           margin-left: 100px;
-          font: normal normal 600 40px/47px Raleway;
+          font: normal normal 600 4rem/4.7rem Raleway;
         }
       }
     }
@@ -202,20 +202,20 @@ export default {
     }
 
     .item1 {
-      height: 860px;
+      height: 86rem;
       .title {
-        margin-top: 50px;
-        margin-left: 100px;
-        font-size: 25px;
-        line-height: 25px;
+        margin-top: 5rem;
+        margin-left: 10rem;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
       }
       .text {
-        width: 360px;
-        height: 470px;
-        margin-left: 100px;
+        width: 36rem;
+        height: 47rem;
+        margin-left: 10rem;
         white-space: normal;
-        margin-top: 40px;
-        font: normal normal normal 20px/30px Arial;
+        margin-top: 4rem;
+        font: normal normal normal 2rem/3rem Arial;
       }
     }
   }

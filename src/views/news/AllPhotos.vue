@@ -96,8 +96,8 @@ export default {
     margin-right: auto;
 
     div {
-      width: 554px;
-      height: 390px;
+      width: 55.4rem;
+      height: 39rem;
       background-color: antiquewhite;
       display: flex;
       justify-content: center;
@@ -111,20 +111,20 @@ export default {
     }
 
     .item1 {
-      height: 462px;
+      height: 46.2rem;
     }
 
     .item2 {
-      height: 790px;
+      height: 79rem;
     }
     .item3 {
-      height: 386px;
+      height: 38.6rem;
     }
     .item4 {
-      height: 390px;
+      height: 39rem;
     }
     .item5 {
-      height: 717px;
+      height: 71.7rem;
     }
   }
 }
