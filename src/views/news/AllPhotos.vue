@@ -71,6 +71,7 @@ export default {
     width: 100vw/1920 * 98.45;
     border-radius: 2.5rem;
     text-align: center;
+    cursor: pointer;
 
     .arrow-back {
       height: 100vw/1920 * 13.71;

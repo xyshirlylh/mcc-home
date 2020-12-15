@@ -165,6 +165,7 @@ export default {
       background-color: white;
       display: flex;
       flex-direction: column;
+      cursor: pointer;
 
       border-radius: 8px;
       .image {
