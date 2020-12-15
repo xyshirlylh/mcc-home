@@ -23,10 +23,10 @@
     <ul class="flex-row flex-wrap">
       <template v-for="(item, i) in floorPlans.list">
         <li :key="i" class="cursor-pointer" @click="switchFloorPlan(item)">
-          <div class="bg-c-0">
+          <div class="bg-c-0" :style="{borderWidth: current.id === item.id ? '1px' : 0}">
             <img :src="item.imgSrc" width="100%" height="100%" />
           </div>
-          <p class="f-f-arial f-s-14 f-c-1">TYPE {{ item.type }}</p>
+          <p class="f-f-arial f-s-14" :class="{'f-c-1': current.id === item.id}">TYPE {{ item.type }}</p>
         </li>
       </template>
     </ul>
@@ -36,8 +36,15 @@
 export default {
   name: "FloorPlan",
   props: ["floorPlans"],
+  data() {
+    return {
+      current: this.floorPlans.list[0],
+    }
+  },
   methods: {
-    switchFloorPlan() {},
+    switchFloorPlan(item) {
+      this.current = item;
+    },
   },
 };
 </script>
@@ -52,6 +59,13 @@ export default {
       margin-top: 4.1rem;
     }
 
+    .iconfont {
+      color: rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        color: rgba(0, 0, 0);
+      }
+    }
     .iconarrowleft {
       left: -40px;
     }
@@ -73,6 +87,7 @@ export default {
       div {
         @include box-size(17.3rem, 10.5rem);
         margin-bottom: 9px;
+        border: 1px solid #000000;
       }
 
       p {
