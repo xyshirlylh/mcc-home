@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <div class="row-map" style="background-color: purple">
+    <div class="row-map">
       <GmapMap
         ref="mapRef"
         :center="location"
