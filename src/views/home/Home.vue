@@ -24,13 +24,13 @@
 
         <div class="subtitle-s" style="text-align: center">
           <div class="subtitle" @mouseover="consultation()">
-            <svg class="small-icon">
+            <svg class="small-icon" viewBox="0 0 7.75rem 7.75rem">
               <ellipse
                 style="stroke: #e3e3e3"
                 v-if="selected === 1"
                 id="Ellipse_179"
-                rx="4rem"
-                ry="4rem"
+                rx="3.75rem"
+                ry="3.75rem"
                 cx="4.75rem"
                 cy="4.75rem"
               ></ellipse>
@@ -133,7 +133,7 @@
               <button class="button">
                 <p>Read More</p>
 
-                <svg class="button-arrow" viewBox="0 8 25 25">
+                <svg class="button-arrow" viewBox="0 8 28 28">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
                 </svg>
               </button>
@@ -228,7 +228,7 @@
           <button class="button-2">
             <p>Read More</p>
 
-            <svg class="button-arrow" viewBox="0 8 25 25">
+            <svg class="button-arrow" viewBox="0 0 25 25">
               <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
             </svg>
           </button>
@@ -334,39 +334,41 @@
 
           <div class="box-1" ref="box1">
             <svg
+              viewBox="0 0 3.5rem 3.5rem"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 0"
             >
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" v-else>
+            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg
+              viewBox="0 0 1 51"
               class="block-3-line"
               style="fill: black; stroke: black"
               v-if="yearIndex === 0"
             >
-              <line x1="0" y1="0" x2="0" y2="50rem" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
-            <svg class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="0" y2="50rem" />
+            <svg viewBox="0 0 1 51" class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="1" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -384,39 +386,41 @@
           </div>
           <div class="box-2" ref="box2">
             <svg
+              viewBox="0 0 3.5rem 3.5rem"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 1"
             >
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" v-else>
+            <svg class="block-3-cercle" viewBox="0 0 3.5rem 3.5rem" v-else>
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg
+              viewBox="0 0 1 51"
               class="block-3-line"
               style="fill: black; stroke: black"
               v-if="yearIndex === 1"
             >
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
-            <svg class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            <svg viewBox="0 0 1 51" class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -434,14 +438,15 @@
           </div>
           <div class="box-3" ref="box3">
             <svg
+              viewBox="0 0 3.5rem 3.5rem"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 2"
             >
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
@@ -449,24 +454,26 @@
 
             <svg class="block-3-cercle" v-else>
               <ellipse
+                viewBox="0 0 3.5rem 3.5rem"
                 id="Ellipse_178_o"
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg
+              viewBox="0 0 1 51"
               class="block-3-line"
               style="fill: black; stroke: black"
               v-if="yearIndex === 2"
             >
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
-            <svg class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            <svg viewBox="0 0 1 51" class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -484,37 +491,39 @@
           </div>
           <div class="box-4" ref="box4">
             <svg
+              viewBox="0 0 3.5rem 3.5rem"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 3"
             >
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" v-else>
+            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg
+              viewBox="0 0 1 51"
               class="block-3-line"
               style="fill: black; stroke: black"
               v-if="yearIndex === 3"
             >
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
-            <svg class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            <svg viewBox="0 0 1 51" class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -540,37 +549,39 @@
             </div>
 
             <svg
+              viewBox="0 0 3.5rem 3.5rem"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 4"
             >
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" v-else>
+            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg
+              viewBox="0 0 1 51"
               class="block-3-line"
               style="fill: black; stroke: black"
               v-if="yearIndex === 4"
             >
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
-            <svg class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            <svg viewBox="0 0 1 51" class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -589,37 +600,39 @@
 
           <div class="box-6" ref="box6">
             <svg
+              viewBox="0 0 3.5rem 3.5rem"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 5"
             >
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" v-else>
+            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg
+              viewBox="0 0 1 51"
               class="block-3-line"
               style="fill: black; stroke: black"
               v-if="yearIndex === 5"
             >
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
-            <svg class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            <svg viewBox="0 0 1 51" class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -638,37 +651,39 @@
 
           <div class="box-7" ref="box7">
             <svg
+              viewBox="0 0 3.5rem 3.5rem"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 6"
             >
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" v-else>
+            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.6rem"
-                ry="1.6rem"
+                rx="1.5rem"
+                ry="1.5rem"
                 cx="1.7rem"
                 cy="1.7rem"
               ></ellipse>
             </svg>
 
             <svg
+              viewBox="0 0 1 51"
               class="block-3-line"
               style="fill: black; stroke: black"
               v-if="yearIndex === 6"
             >
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
-            <svg class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="0" y2="62.2rem" />
+            <svg viewBox="0 0 1 51" class="block-3-line" v-else>
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -826,12 +841,12 @@
 
           <div class="button-1" @click="goAllNews">
             <button>
-              <div>
+              <div class="button-1-text">
                 <p>View more</p>
               </div>
 
-              <svg class="button-arrow" viewBox="0 8 25 25">
-                <path d="M7 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
+              <svg class="button-arrow" viewBox="0 0 28 28">
+                <path d="M5 15 L25 15 M25 15 L17 22 M25 15 L17 8"></path>
               </svg>
             </button>
           </div>
@@ -1552,7 +1567,7 @@ export default {
       margin-top: 9rem;
 
       .subtitle {
-        width: 50rem;
+        width: 52rem;
         display: flex;
         flex-direction: row;
 
@@ -1581,7 +1596,7 @@ export default {
 
         span {
           font: normal normal bold 5rem/6.9rem Raleway;
-          margin-left: 1.7rem;
+          margin-left: 1.8rem;
           margin-top: 1.5rem;
         }
       }
@@ -1852,11 +1867,11 @@ export default {
 
         margin-left: auto;
         margin-right: auto;
-        margin-top: 2.4rem;
+        margin-top: 100vw/1920 * 24;
         display: flex;
 
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
 
         background-color: transparent;
         border: 0.1rem solid black;
@@ -1869,14 +1884,14 @@ export default {
         opacity: 1;
 
         p {
-          margin-top: 1.2rem;
+          margin-top: 100vw/1920 * 15;
           margin-left: 1.2rem;
           white-space: nowrap;
           font: normal normal normal 1.8rem/2.5rem Source Sans Pro;
         }
 
         .button-arrow {
-          margin-top: 1rem;
+          margin-top: 100vw/1920 * 0;
           margin-left: 10%;
           width: 30%;
           //margin-bottom: 90%;
@@ -1914,11 +1929,12 @@ export default {
     width: 100%;
 
     .block-3-cercle {
+      z-index: 3;
       position: absolute;
       left: -1.6rem;
-      bottom: 3.2rem;
+      bottom: 50.1rem;
       width: 3.4rem;
-      height: 50rem;
+      height: 3.4rem;
       fill: transparent;
       stroke: rgba(19, 129, 206, 1);
       stroke-width: 2px;
@@ -1926,13 +1942,13 @@ export default {
 
     .block-3-line {
       position: absolute;
-      z-index: 2;
-      left: 0rem;
+      z-index: 5;
+      left: 0.1rem;
       bottom: 0;
-      width: 33.4rem;
+      width: 1rem;
       height: 50rem;
       stroke: rgba(198, 198, 198, 1);
-      stroke-width: 3;
+      stroke-width: 0.3;
     }
 
     .year-small {
@@ -2163,6 +2179,7 @@ export default {
         max-width: 50%;
         width: 30%;
         margin-top: 5rem;
+        z-index: 4;
 
         .button-left {
           margin-left: 22rem;
@@ -2252,14 +2269,14 @@ export default {
 
         .gallery {
           //font: normal normal normal 1.6rem/2.2rem Source Sans Pro;
-          padding: 0 14rem 0 14rem;
+          padding: 0 15rem 0 15rem;
 
           font: normal normal normal 2.8rem/4rem Source Sans Pro;
           color: rgba(0, 0, 0, 1);
           letter-spacing: 0.112rem;
           display: flex;
           flex-direction: row;
-          justify-content: space-around;
+          justify-content: space-between;
 
           h1 {
             font-size: 3.6rem;
@@ -2279,6 +2296,10 @@ export default {
           .left {
             cursor: pointer;
             margin-top: 25rem;
+            width: 6rem;
+            height: 6rem;
+            margin-right: 0.6rem;
+            z-index: 3;
           }
 
           .VueCarousel {
@@ -2315,6 +2336,7 @@ export default {
             margin-top: 25rem;
 
             height: 6rem;
+            width: 6rem;
           }
         }
 
@@ -2322,37 +2344,42 @@ export default {
           button {
             margin-left: auto;
             margin-right: auto;
-            margin-top: 100vw/1920 * 54;
+            margin-top: 100vw/1920 * 90;
             display: flex;
-            justify-content: space-around;
+            flex-basis: row;
+            justify-content: center;
 
-            border: none;
-            width: 17.8rem;
-            height: 5.4rem;
+            width: 100vw/1920 * 185;
+            height: 100vw/1920 * 54;
 
             background: rgba(74, 145, 242, 0) 0% 0% no-repeat padding-box;
             color: black;
             border: 1px solid #000000;
             border-radius: 4px;
 
-            p {
-              margin-left: 5%;
-              max-width: 40%;
+            .button-1-text {
+              margin-left: 100vw/1920 * 0;
+              width: 100vw/1920 * 95;
+              height: 100vw/1920 * 32;
+              text-align: left;
 
-              margin-top: 0.8rem;
+              margin-top: 100vw/1920 * 11;
               white-space: nowrap;
-              font: normal normal normal 2.2rem/3.2rem Source Sans Pro;
+              font-family: Source Sans Pro;
+              font-size: 100vw/1920 * 20;
             }
 
             .button-arrow {
-              margin-top: 0.9rem;
+              width: 100vw/1920 * 25;
+              height: 100vw/1920 * 21.95;
+              margin-top: 100vw/1920 * 14;
 
-              margin-left: 0;
-              max-width: 25%;
+              margin-left: 100vw/1920 * 3;
+
               //margin-bottom: 90%;
-              height: 100%;
+
               stroke: #000000;
-              stroke-width: 0.08rem;
+              stroke-width: 0.15rem;
             }
           }
         }
