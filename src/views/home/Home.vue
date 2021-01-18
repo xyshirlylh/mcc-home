@@ -765,41 +765,77 @@
               :navigateTo="this.block4status"
             >
               <slide>
-                <div class="block-4-img" @click="gonews">
-                  <img src="../../assets/imgs/home/ID6Z2A5209@2x.png" alt="" />
+                <div class="block-4-img" @click="goNews(allNews[0])">
+                  <img
+                    :src="
+                      require('../../assets/news/' +
+                        allNews[0] +
+                        '/' +
+                        1 +
+                        '.jpg')
+                    "
+                    alt=""
+                  />
                 </div>
 
-                <div class="background-white" @click="gonews">
-                  <div class="block-4-title f-f-sans">Title 1</div>
+                <div class="background-white" @click="goNews(allNews[0])">
+                  <div class="block-4-title f-f-sans">{{ news1.title }}</div>
                 </div>
               </slide>
               <slide>
-                <div class="block-4-img" @click="gonews">
-                  <img src="../../assets/imgs/home/ID4@2x.png" alt="" />
+                <div class="block-4-img" @click="goNews(allNews[1])">
+                  <img
+                    :src="
+                      require('../../assets/news/' +
+                        allNews[1] +
+                        '/' +
+                        1 +
+                        '.jpg')
+                    "
+                    alt=""
+                  />
                 </div>
 
-                <div class="background-white" @click="gonews">
-                  <div class="block-4-title f-f-sans">Title 2</div>
+                <div class="background-white" @click="goNews(allNews[1])">
+                  <div class="block-4-title f-f-sans">{{ news2.title }}</div>
                 </div>
                 <div class="head"></div>
               </slide>
               <slide>
-                <div class="block-4-img" @click="gonews">
-                  <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
+                <div class="block-4-img" @click="goNews(allNews[2])">
+                  <img
+                    :src="
+                      require('../../assets/news/' +
+                        allNews[2] +
+                        '/' +
+                        1 +
+                        '.jpg')
+                    "
+                    alt=""
+                  />
                 </div>
 
-                <div class="background-white" @click="gonews">
-                  <div class="block-4-title f-f-sans">Title 3</div>
+                <div class="background-white" @click="goNews(allNews[2])">
+                  <div class="block-4-title f-f-sans">{{ news3.title }}</div>
                 </div>
               </slide>
 
               <slide>
-                <div class="block-4-img" @click="gonews">
-                  <img src="../../assets/imgs/home/ID3@2x.png" alt="" />
+                <div class="block-4-img" @click="goNews(allNews[3])">
+                  <img
+                    :src="
+                      require('../../assets/news/' +
+                        allNews[3] +
+                        '/' +
+                        1 +
+                        '.jpg')
+                    "
+                    alt=""
+                  />
                 </div>
 
-                <div class="background-white" @click="gonews">
-                  <div class="block-4-title f-f-sans">Title 3</div>
+                <div class="background-white" @click="goNews(allNews[3])">
+                  <div class="block-4-title f-f-sans">{{ news4.title }}</div>
                 </div>
               </slide>
             </carousel>
@@ -977,6 +1013,14 @@ export default {
       box5: null,
       box6: null,
       box7: null,
+
+      newsID: null,
+      photos: [],
+      allNews: null,
+      news1: null,
+      news2: null,
+      news3: null,
+      news4: null,
     };
   },
 
@@ -989,6 +1033,35 @@ export default {
     userStyle() {
       return {};
     },
+  },
+
+  created() {
+    this.allNews = [
+      "2_10_2020",
+      "7_9_2020",
+      "20_8_2020",
+      "23_6_2020",
+      "19_5_2020",
+      "11_4_2020",
+      "6_4_2020",
+      "27_3_2020",
+      "13_1_2020",
+      "11_10_2019",
+      "30_9_2019",
+    ];
+
+    this.news1 = require("../../assets/news/" +
+      this.allNews[0] +
+      "/content.json");
+    this.news2 = require("../../assets/news/" +
+      this.allNews[1] +
+      "/content.json");
+    this.news3 = require("../../assets/news/" +
+      this.allNews[2] +
+      "/content.json");
+    this.news4 = require("../../assets/news/" +
+      this.allNews[3] +
+      "/content.json");
   },
 
   mounted() {
@@ -1025,6 +1098,11 @@ export default {
       if (this.block4status < this.newsPageCount - 1) {
         this.block4status++;
       }
+    },
+
+    goNews: function (id) {
+      this.$router.push("/news/?id=" + id);
+      window.scrollTo(0, 0);
     },
 
     blur: function () {

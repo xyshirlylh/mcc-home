@@ -10,24 +10,39 @@
       <div class="gallery">
         <div class="col-1">
           <div class="img-1">
-            <img src="../../assets/imgs/news/news-1/4.jpg" alt="" />
+            <img
+              :src="require('../../assets/news/' + newsID + '/' + 1 + '.jpg')"
+              alt=""
+            />
           </div>
         </div>
         <div class="col-2">
           <div class="row-1">
             <div class="img-2">
-              <img src="../../assets/imgs/news/news-1/1.jpg" alt="" />
+              <img
+                :src="require('../../assets/news/' + newsID + '/' + 2 + '.jpg')"
+                alt=""
+              />
             </div>
             <div class="img-3">
-              <img src="../../assets/imgs/news/news-1/5.jpg" alt="" />
+              <img
+                :src="require('../../assets/news/' + newsID + '/' + 3 + '.jpg')"
+                alt=""
+              />
             </div>
           </div>
           <div class="row-2">
             <div class="img-4">
-              <img src="../../assets/imgs/news/news-1/6.jpg" alt="" />
+              <img
+                :src="require('../../assets/news/' + newsID + '/' + 4 + '.jpg')"
+                alt=""
+              />
             </div>
             <div class="img-5">
-              <img src="../../assets/imgs/news/news-1/2.jpg" alt="" />
+              <img
+                :src="require('../../assets/news/' + newsID + '/' + 5 + '.jpg')"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -38,48 +53,15 @@
       </div>
     </div>
     <div class="block-2">
-      <div class="info"><p>Category Name | 6 Sep 2019</p></div>
-      <div class="title">
-        Participate in the International Built Environment Week Exhibition
+      <div class="info">
+        <p>Category Name | {{ this.content.date }}</p>
       </div>
-      <div class="author"><p>Written by author name</p></div>
+      <div class="title">
+        {{ this.content.title }}
+      </div>
+      <div class="author"><p>MCC Media Department</p></div>
       <div class="content">
-        <p>
-          MCC Singapore was invited to participate in the 2019 Singapore
-          International Built Environment Week (IBEW), which was held on
-          September 6 at Singapore bay sands convention and exhibition centre
-          with the theme of "Leading the Transformation of the Construction
-          Industry".<br /><br />
-
-          9月3日至6日，新加坡海湾金沙会展中心举办了以 “引领建筑业转型”
-          为主题的2019年新加坡国际建筑环境周（IBEW），中冶新加坡也受邀参加了本次展会。<br /><br />
-          In this exhibition, MCC Singapore highlights two recent high-end
-          projects in Cambodia. Sky Villa, MCC's first residential development
-          in Phnom Penh, Cambodia; Another representative project is Dara Sakor
-          on the southwest coast of Cambodia. The project is a model of
-          Cambodia-China economic cooperation and a key project of "the Belt and
-          Road". With eight functional areas including smart industrial park,
-          commercial style street, cultural tourism area, overlooking the sea
-          apartment, villa resort, yacht dock resort, coastal leisure resort and
-          static sea bathing area as the core, aiming to create a new paradise
-          for world-class tourism and vacation.<br /><br />
-          在本次展览中，中冶新加坡重点展示了近期在柬埔寨的两个高端项目。一是天空别墅（Sky
-          Villa）
-          ，该项目为中冶新加坡在柬埔寨金边首个住宅开发项目；另一个代表项目，是位于柬埔寨西南海岸的七星海（Dara
-          Sakor）。
-          该项目是柬中经济合作典范、“一带一路”重点项目，以智慧产业园区、商业风情街、文旅区、瞰海公寓、别墅度假区、游艇码头度假区、滨海休闲度假酒店区、静海浴场八大功能区为核心，
-          力求缔造世界级旅行度假新天堂。<br /><br />
-          During the exhibition, the MCC Singapore booth hosted thousands of
-          visitors from different industries such as construction, water
-          conservancy and environment, and hosted the Cambodian Housing
-          Development Association and the Saudi Chamber of Commerce Council
-          members on the first and second day of the exhibition. Visitors showed
-          great interest in the development of MCC Singapore's two key projects
-          in Cambodia. The project leaders also gave detailed explanations and
-          in-depth discussions on different projects.<br /><br />
-          此次展会中，中冶新加坡展台接待了来自建筑、水利、环境等不同行业的上千名访客，并且在展会第一天和第二天分别接待了柬埔寨住房发展协会和沙特商会理事会成员。
-          访客们对中冶新加坡在柬埔寨两大重点项目开发展示出极大兴趣，各项目负责人也针对不同项目向大家进行详细地讲解和深入的讨论。
-        </p>
+        <p style="white-space: pre-line">{{ this.content.content }}</p>
       </div>
       <div class="functions">
         <div class="heart">
@@ -124,7 +106,12 @@
 <script>
 export default {
   data: function () {
-    return {};
+    return {
+      newsID: null,
+      photos: [],
+      allNews: null,
+      popularNews: [],
+    };
   },
   methods: {
     back: function () {
@@ -134,6 +121,28 @@ export default {
     goAllPhotos: function () {
       this.$router.push("/all-photos");
     },
+  },
+
+  created() {
+    const urlParams = new URLSearchParams(window.location.search);
+    this.newsID = urlParams.get("id");
+    this.content = require("../../assets/news/" +
+      this.newsID +
+      "/content.json");
+
+    this.allNews = [
+      "2_10_2020",
+      "7_9_2020",
+      "20_8_2020",
+      "23_6_2020",
+      "19_5_2020",
+      "11_4_2020",
+      "6_4_2020",
+      "27_3_2020",
+      "13_1_2020",
+      "11_10_2019",
+      "30_9_2019",
+    ];
   },
 };
 </script>
@@ -274,12 +283,13 @@ export default {
   .title {
     margin-top: 100vw/1920 * 16;
     width: 100vw/1920 * 731;
-    height: 100vw/1920 * 117;
+    //height: 100vw/1920 * 117;
     font: normal normal bold (100vw/1920 * 40) Noto Sans;
     line-height: 5rem;
     overflow-wrap: break-word;
   }
   .author {
+    margin-top: 100vw/1920 * 20;
     width: 100vw/1920 * 248;
     height: 100vw/1920 * 22;
     font: normal normal 600 1.6rem/2.2rem Noto Sans;
@@ -290,7 +300,7 @@ export default {
     width: 100vw/1920 * 712;
     //height: 100vw/1920 * 1088;
 
-    overflow: hidden;
+    //overflow: hidden;
     p {
       width: 100vw/1920 * 712;
       //height: 100vw/1920 * 1088;
