@@ -165,6 +165,8 @@ export default {
   data() {
     return {
       id: "Queens Peak",
+      projectID: null,
+      projectDetails: null,
       projectInfo: {
         name: "Queens Peak",
         current: {
@@ -188,7 +190,7 @@ export default {
       },
       overview: {
         details: [
-          { title: "Project Name", label: "Queens Peak" },
+          { title: "Project Name", label: this.content },
           { title: "Project Type", label: "Condominium For Sale" },
           { title: "Developer", label: "MCC Land" },
           { title: "Tenure", label: "99-year Leasehold" },
@@ -269,6 +271,11 @@ export default {
       ],
       translateX: 0,
     };
+  },
+  created() {
+    const urlParams = new URLSearchParams(window.location.search);
+    this.projectID = urlParams.get("id");
+    this.content = require("../../assets/homepage/content.json");
   },
   methods: {
     onSwitchCover({ id, imageSrc }) {

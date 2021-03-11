@@ -149,10 +149,7 @@
             >
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum.
+                  {{ this.content.realEstate.shortDescription }}
                 </p>
               </div>
 
@@ -174,10 +171,7 @@
             >
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum.
+                  {{ this.content.construction.shortDescription }}
                 </p>
               </div>
 
@@ -219,12 +213,10 @@
 
         <div class="content">
           <p style="margin-top: 2rem; height: 17rem">
-            Incorporated in 2010, MCC Land (Singapore) Limited has been actively
-            involved in Singapore’s real estate scene and achieved good results.
-            It has developed five development projects, co-developed two
-            development projects and managed five development projects. The
-            company has been
+            {{ this.content.about }}
           </p>
+
+          <!--
           <button class="button-2">
             <p>Read More</p>
 
@@ -232,6 +224,8 @@
               <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
             </svg>
           </button>
+
+          -->
         </div>
       </div>
     </div>
@@ -375,14 +369,21 @@
               <p v-if="yearIndex === 0">{{ years[0] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[0] }}</p>
             </div>
+            <transition name="fade">
+              <div class="subtitle" v-if="index === 0">
+                <p></p>
+              </div>
+            </transition>
 
-            <div class="subtitle" v-if="index === 0">
-              <p>Mcc first launched</p>
-            </div>
-
-            <div class="content f-f-avenir" v-if="index === 0">
-              <p>Labour Subcontracting & Professional Subcontracting</p>
-            </div>
+            <transition name="fade">
+              <div
+                style="bottom: 42rem"
+                class="content f-f-avenir"
+                v-if="index === 0"
+              >
+                <p>{{ this.content.history[0].content }}</p>
+              </div>
+            </transition>
           </div>
           <div class="box-2" ref="box2">
             <svg
@@ -429,12 +430,18 @@
             </div>
 
             <div class="subtitle" v-if="index === 1">
-              <p>Mcc first launched</p>
+              <p></p>
             </div>
 
-            <div class="content f-f-avenir" v-if="index === 1">
-              <p>Labour Subcontracting & Professional Subcontracting</p>
-            </div>
+            <transition name="fade">
+              <div
+                style="bottom: 32rem"
+                class="content f-f-avenir"
+                v-if="index === 1"
+              >
+                <p>{{ this.content.history[1].content }}</p>
+              </div>
+            </transition>
           </div>
           <div class="box-3" ref="box3">
             <svg
@@ -482,12 +489,18 @@
             </div>
 
             <div class="subtitle" v-if="index === 2">
-              <p>Mcc first launched</p>
+              <p></p>
             </div>
 
-            <div class="content f-f-avenir" v-if="index === 2">
-              <p>Labour Subcontracting & Professional Subcontracting</p>
-            </div>
+            <transition name="fade">
+              <div
+                style="bottom: 32rem"
+                class="content f-f-avenir"
+                v-if="index === 2"
+              >
+                <p>{{ this.content.history[2].content }}</p>
+              </div>
+            </transition>
           </div>
           <div class="box-4" ref="box4">
             <svg
@@ -532,12 +545,18 @@
             </div>
 
             <div class="subtitle" v-if="index === 3">
-              <p>Mcc first launched</p>
+              <p></p>
             </div>
 
-            <div class="content f-f-avenir" v-if="index === 3">
-              <p>Labour Subcontracting & Professional Subcontracting</p>
-            </div>
+            <transition name="fade">
+              <div
+                style="bottom: 35rem; background: rgba(255, 255, 255, 0.3)"
+                class="content f-f-avenir"
+                v-if="index === 3"
+              >
+                <p>{{ this.content.history[3].content }}</p>
+              </div>
+            </transition>
           </div>
 
           <div class="box-5" ref="box5">
@@ -590,12 +609,18 @@
             </div>
 
             <div class="subtitle" v-if="index === 4">
-              <p>Mcc first launched</p>
+              <p></p>
             </div>
 
-            <div class="content f-f-avenir" v-if="index === 4">
-              <p>Labour Subcontracting & Professional Subcontracting</p>
-            </div>
+            <transition name="fade">
+              <div
+                style="bottom: 30rem; max-width: 60rem"
+                class="content f-f-avenir"
+                v-if="index === 4"
+              >
+                <p>{{ this.content.history[5].content }}</p>
+              </div>
+            </transition>
           </div>
 
           <div class="box-6" ref="box6">
@@ -641,12 +666,18 @@
             </div>
 
             <div class="subtitle" v-if="index === 5">
-              <p>Mcc first launched</p>
+              <p></p>
             </div>
 
-            <div class="content f-f-avenir" v-if="index === 5">
-              <p>Labour Subcontracting & Professional Subcontracting</p>
-            </div>
+            <transition name="fade">
+              <div
+                style="bottom: 10rem; max-width: 50rem"
+                class="content f-f-avenir"
+                v-if="index === 5"
+              >
+                <p>{{ this.content.history[6].content }}</p>
+              </div>
+            </transition>
           </div>
 
           <div class="box-7" ref="box7">
@@ -692,12 +723,14 @@
             </div>
 
             <div class="subtitle" v-if="index === 6">
-              <p>Mcc first launched</p>
+              <p></p>
             </div>
 
-            <div class="content f-f" v-if="index === 6">
-              <p>Labour Subcontracting & Professional Subcontracting</p>
-            </div>
+            <transition name="fade">
+              <div class="content f-f" v-if="index === 6">
+                <p>{{ this.content.history[7].content }}</p>
+              </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -933,12 +966,12 @@
             <svg class="line-5">
               <line x1="0" y1="0" x2="2.5rem" y2="0" />
             </svg>
-            <p class="title-5 font-bold">Culture</p>
+            <p class="title-5 font-bold">Core Values</p>
           </div>
           <div class="content-5">
             <p>
-              Make a difference. Creativity. Cooperation. Sincerity.
-              Goal-oriented
+              Make a difference, Creativity, Cooperation, Sincerity,
+              Goal-oriented.
             </p>
           </div>
         </div>
@@ -965,6 +998,7 @@
         <gap :height="63" />
         <div class="text">
           <textarea
+            st
             type="input"
             v-model="text"
             @focus="clearContent('text')"
@@ -988,6 +1022,7 @@ export default {
   name: "Home",
   data: function () {
     return {
+      content: "",
       selected: 1,
       mouseover: false,
       email: "Your email address…",
@@ -1049,6 +1084,8 @@ export default {
       "11_10_2019",
       "30_9_2019",
     ];
+
+    this.content = require("../../assets/homepage/content.json");
 
     this.news1 = require("../../assets/news/" +
       this.allNews[0] +
@@ -1583,6 +1620,15 @@ export default {
   //min-height: 100%;
   //padding: 14rem 14rem 0 14rem;
 
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s;
+    transition-delay: 100ms;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
   .block1 {
     padding: 21.3rem 14rem 0 14rem;
 
@@ -1759,13 +1805,17 @@ export default {
         width: 100%;
 
         height: 65.7rem;
-        background-image: url("../../assets/imgs/home/blur-scott-graham-5fNmWej4tAA-unspl@2x.png");
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+          ),
+          url("../../assets/imgs/home/blur-scott-graham-5fNmWej4tAA-unspl@2x.png");
         background-color: white;
         //filter: blur(12px);
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-size: 100% 100%;
       }
 
       .image-2-blur {
@@ -1776,13 +1826,17 @@ export default {
         width: 100%;
 
         height: 65.7rem;
-        background-image: url("../../assets/imgs/home/blur-realestate.png");
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+          ),
+          url("../../assets/imgs/home/blur-realestate.png");
         background-color: white;
         //filter: blur(12px);
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-size: 100% 100%;
       }
 
       .image-3-blur {
@@ -1799,7 +1853,7 @@ export default {
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-size: 100% 100%;
       }
 
       .image-1 {
@@ -1811,7 +1865,7 @@ export default {
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-size: 100% 100%;
       }
 
       .image-2 {
@@ -1823,7 +1877,7 @@ export default {
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-size: 100% 100%;
       }
 
       .image-3 {
@@ -1835,7 +1889,7 @@ export default {
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-size: 100% 100%;
       }
 
       font-size: 2rem;
@@ -2099,6 +2153,7 @@ export default {
         left: 3rem;
         bottom: 35rem;
         max-width: 45rem;
+        text-align: justify;
       }
 
       .box-1 {
