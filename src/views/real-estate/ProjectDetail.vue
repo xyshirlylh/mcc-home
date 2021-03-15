@@ -305,7 +305,10 @@ export default {
           title: "Completion Year",
           label: this.content["realEstate"][this.projectID]["top"],
         },
-        { title: "Total Units", label: "" },
+        {
+          title: "Total Units",
+          label: this.content["realEstate"][this.projectID]["unitNum"],
+        },
       ],
       description: this.content["realEstate"][this.projectID]["description"],
       facilities: [
@@ -319,6 +322,23 @@ export default {
         { icon: "icon783192", label: "24 hours security" },
       ],
     };
+
+    this.projectInfo.images = [];
+    for (
+      let i = 0;
+      i < this.content["realEstate"][this.projectID]["numOfPics"];
+      i++
+    ) {
+      this.projectInfo.images.push({
+        id: i,
+        imageSrc: require("../../assets/imgs/real-estate/" +
+          this.content["realEstate"][this.projectID]["name"] +
+          "/" +
+          (i + 1) +
+          ".jpg"),
+      });
+    }
+    this.projectInfo.current.cover = this.projectInfo.images[0].imageSrc;
   },
   methods: {
     onSwitchCover({ id, imageSrc }) {

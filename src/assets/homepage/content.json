@@ -1,6 +1,6 @@
 {
     "id": "10/3/2021",
-    "about": "Incorporated in 2010, MCC Land (Singapore) Limited has been actively involved in Singapore’s real estate scene and achieved good results. It has developed five development projects, co-developed two development projects and managed five development projects. The company has been ranked Singapore’s top 10 real estate developers for three consecutive years and won the “Asia’s Top Influential Brands” award.",
+    "about": "\"The city makes life better, \nwe will continue to contribute to the development of the city, \nand while actively integrating into the world, we will also strive to\n transform lives and inspire society.\"\n\nIn response to the national Going Global Strategy, we entered the Singapore market in 1992. Over the past twenty years, MCC Singapore has undergone many trials and tribulations. Progressing from a small company to the big enterprise of today, we have become stronger and have also steadily reached new heights. Our business has undergone several transformations and upgrades, from the initial labor subcontracting to professional subcontracting, general contracting, and real estate development. Currently, we are promoting the transformation and upgrade from a real estate developer to an integrated urban operator, diversifying and digitalizing our business. We are striving to realize our vision of being an efficient, innovative, and the world’s leading integrated urban operator.",
     "history": [
         {
             "year": 1992,
@@ -49,29 +49,34 @@
         }
     ],
     "realEstate": {
-        "description": "MCC Land (Singapore) was set up in 2010 and is committed to be one of the premier property developers in Singapore. Its motto is to strive to offer Singapore residents a superior lifestyle and better choice of homes. Its portfolio of luxury residential projects includes The Canopy, Canberra Residences, One Canberra, The Santorini, TRE Residences and the upcoming mixed-use development at Meyappa Chettiar Road comprising The POIZ Residences (residential) and The POIZ Centre (commercial). It is also the project manager for The Nautical, Forestville and Sea Horizon. As at October 2015, MCC Singapore has launched a total of 3,821 private condominium and executive condominium units*, on top of 2,451 units* in the pipeline that will be put to market in the next 12 months.\n\nWith its strong presence and a good understanding of the local market needs, MCC Singapore shares the public’s aspiration for better home and better lives.\n\n(Mcc Land) Real Estate Projects",
-        "shortDescription": "MCC Land (Singapore) was set up in 2010 and is committed to be one of the premier property developers in Singapore. Its motto is to strive to offer Singapore residents a superior lifestyle and better choice of homes...",
+        "description": "In 2010, MCC Land (Singapore) Pte Ltd was established to undertake real estate development in Singapore and the surrounding regions for China Metallurgical Group Corporation. As the representative for the group's joint-stock company, it is also responsible for the business activities in Singapore. The company has been ranked among the Top Ten Property Developers in Singapore for four consecutive years and has received Asia’s Top Influential Brand Award as well as Singapore Prestige Brand Award (SPBA) Global Brands Award.\n\nMCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
+        "shortDescription": "MCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
         "queensPeak": {
             "name": "Queens Peak",
+            "numOfPics": 4,
             "type": "Condominium For Sale",
             "tenure": "99-year Leasehold",
             "developer": "Mcc Land",
             "furnishing": "Partially Furnished",
             "top": "2020",
+            "unitNum": 736,
             "description": "Queen's Peak is a New Launch Luxury Condominium, located at Queenstown, Singapore. Developed by renowned developer HY Realty (Dundee) Pte. Ltd, and managed by MCC Land (S) Pte. Ltd, Queens Peak Condo comprises of twin towers, with a total of 736 luxurious residential units, complete with a Childcare Centre."
         },
         "theAlpsResidences": {
             "name": "The Alps Residences",
+            "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1066",
             "tenure": "99-year Leasehold",
             "developer": "MCC Land (Tampines) Pte Ltd",
             "furnishing": "Partially Furnished",
             "top": "2019",
+            "unitNum": 626,
             "description": "Inspired by the Swiss Alps, the iconic skyline of The Alps Residences cascades downward with lush green terraces. Located along Tampines Street 86, The Alps Residences comprises 626 units of 1 to 4 bedroom types as well as single level penthouses. It is well connected via KPE/PIE to downtown, or even SLE to Seletar Aerospace Park as the journeys only require 15 minutes. Situated near Our Tampines Hub, an exciting new integrated lifestyle hub opening in 2016/17, it will bring a host of retail, 24/7 gym, F&B offerings, recreation, sporting and 6 swimming pools all under one roof. The Alps Residences will also have easy access to Tampines Regional Centre where numerous malls such as Tampines Mall, Century Square and Tampines One will bring rich retail offerings. Leisure shoppers will also enjoy the retail warehousing activities of Ikea, Courts and Giant. Residents with school going children will enjoy proximity to St. Hilda’s Primary School, Poi Ching School, UWC(SEA) as well as Overseas Family School. Investors looking at growth of Changi Business Park as well as employment opportunities that will arise out of Singapore Changi Airport Terminal 4 & 5’s expansion as well as Project Jewel, will bound to see higher occupancy in the East, especially to a project that is well connected. The Alps Residences, with its sophisticated yet minimalist design will offer a unparalleled lifestyle through the pinnacle of architectural design and is set to be the most iconic landmark in its precinct."
         },
         "northwave": {
             "name": "Northwave",
+            "numOfPics": 5,
             "type": "Executive Condominium For Sale",
             "floorSize": "753",
             "tenure": "99-year Leasehold",
@@ -79,10 +84,12 @@
             "psf": "S$ 1,035.86 ",
             "furnishing": "Unfurnished",
             "top": "2019",
+            "unitNum": 358,
             "description": "A warm welcome to your new home at NorthWave, the chic new Executive Condominium. Discover wondrous delights all around. Dive into the wet and wild side of life. Have your wishes come true here at Northwave. Be close to Admiralty MRT station and the upcoming Thomson Line. Connect to the new and transformed Woodlands Regional Centre. Get around fast via the future North-South Expressway. Surround yourself in sophisticated and contemporary designs. Live in a space that speaks volumes. Enjoy the luxury of choice to choose versatile layouts to fit your lifestyle."
         },
         "thePoiz": {
             "name": "The Poiz",
+            "numOfPics": 5,
             "type": "Condominium For Sale",
             "floorSize": "753",
             "tenure": "99-year Leasehold",
@@ -90,10 +97,12 @@
             "psf": "S$ 1,035.86 ",
             "furnishing": "Partially Furnished",
             "top": "2018",
+            "unitNum": "731 Units (residential) / 84 Units (Retail)",
             "description": "The Poiz Residences is a 99-year leasehold condominium development located at 10 Meyappa Chettiar Road in District 13. Expected to be completed in 2019 it stands 18 storeys tall and comprises a total of 731 units. It is within walking distance to MRT stations Potong Pasir, Woodleigh which provide residents easy access to other areas of Singapore. Condo facilities at The Poiz Residences includes pool deck, fitness corner, swimming pool, bbq, parking, security. For young couples or families with children, The Poiz Residences is also close to schools like St. Andrew's Secondary School, St. Andrew's Junior School. If you're wondering about what you can do around the area, residents can head to nearby supermarkets like FairPrice - Potong Pasir Community Club for groceries and household products. Never worry about your health emergencies or regular health checkups with access to nearby clinics such as The Family Practice - Potong Pasir, Ban Kok Clinic & Surgery. If you require post office services, you can head to Potong Pasir Post Office, Macpherson Road Post Office. Also, if you need banking services, you can head to POSB - Potong Pasir Branch . In addition, The Poiz Residences is within driving distance to Orchard Road, Singapore's popular shopping area, is a 10 mins drive away."
         },
         "theSantorini": {
             "name": "The Santorini",
+            "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1119",
             "tenure": "99-year Leasehold",
@@ -101,10 +110,12 @@
             "psf": "",
             "furnishing": "",
             "top": "2018",
+            "unitNum": 597,
             "description": "Proposed Condominium Housing Development Comprising 7 Blocks of 15 Storey Residential Buildings( Total:597 units) with Swimming Pool, Ancillary Facilitiesand 2 Level of Landscape Deck Car Park at Tampines AVE 10, Singapore. Land Area: 17, 102.9m² GFA: 47, 889m²"
         },
         "seaHorizon": {
             "name": "Sea Horizon",
+            "numOfPics": 4,
             "type": "Executive Condominium For Sale",
             "floorSize": "1109",
             "tenure": "99-year Leasehold",
@@ -113,10 +124,12 @@
             "furnishing": "Partially Furnished",
             "top": "2017",
             "gfa": "58,086",
+            "unitNum": 495,
             "description": "Proposed Executive Condominium Housing Development Comprising 4 Blocks of 9 Storey, 3 Blocks of 10 Storey, 2 Blocks of 11 Storey and 3 Blocks of 12 Storey ( Total:495 units) with Environmental Deck carpark, Swimming Pool and Communal Facilities at Pasir Ris Drive 3/Pasir Ris Rise."
         },
         "forestville": {
             "name": "Forestville",
+            "numOfPics": 6,
             "type": "Executive Condominium For Sale",
             "floorSize": "1033",
             "tenure": "99-year Leasehold",
@@ -125,22 +138,26 @@
             "furnishing": "Fully Furnished",
             "top": "2016",
             "gfa": "",
+            "unitNum": 653,
             "description": "Proposed Executive Condominium Housing Development Comprising 14 Blocks of 13 Storey Residential Buildings with Penthouse( Total:653 units), Basement/Podium carpark, Clubhouse, Tennis Court, Swimming Pool and ESS/BC at Woodlands AVE 5/Drive 16. Land Area: 25,800m² GFA: 71,346m² TOP: 01/04/2016"
         },
         "oneCanberra": {
             "name": "One Canberra",
+            "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1054",
             "tenure": "99-year Leasehold",
-            "developer": "",
+            "developer": "MCC Land (Singapore) Pte. Ltd.",
             "psf": "",
             "furnishing": "Fully Furnished",
             "top": "2015",
             "gfa": "67,883.75",
+            "unitNum": 665,
             "description": "Proposed Executive Condominium Housing Development Comprising 11 Blocks of 13 Storey Residential Buildings and 3 Blocks of 12 Storey Residential Buildings( Total:696 units) with Basement carpark, Swimming Pool and Communal Facilities at Canberra Drive/Yishun AVE 7, Singapore."
         },
         "theNautical": {
             "name": "The Nautical",
+            "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1054",
             "tenure": "99-year Leasehold",
@@ -149,10 +166,12 @@
             "furnishing": "Fully Furnished",
             "top": "2015",
             "gfa": "67,883.75",
+            "unitNum": 435,
             "description": "Proposed Condominium Housing Development Comprising 4 Blocks of 5 Storey Residential Buildings with ATTIC( Total:435 units) with Basement Carpark, Club House Facilities, Tennis Court, Swimming Pool and ESS/DC at Sendudok/Sembawang Road/Jalan Serengam."
         },
         "canberraResidences": {
             "name": "Canberra Residences",
+            "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "904",
             "tenure": "99-year Leasehold",
@@ -161,10 +180,12 @@
             "furnishing": "Fully Furnished",
             "top": "2013",
             "gfa": "",
+            "unitNum": 320,
             "description": "Proposed Condominium Housing Development Comprising 13 Blocks of 5 Storey Residential Buildings( Total:320 units) with Attic, Basement carpark, Swimming Pool and Clubhouse Facilities on Lot 3209X MK19 at Canberra Drive, Singapore."
         },
         "theCanopy": {
             "name": "The Canopy",
+            "numOfPics": 4,
             "type": "Executive Condominium For Sale",
             "floorSize": "1173",
             "tenure": "99-year Leasehold",
@@ -173,21 +194,44 @@
             "furnishing": "",
             "top": "2014",
             "gfa": "42,207.76",
+            "unitNum": 406,
             "description": "Proposed Executive Condominium Housing Development Comprising 8 Blocks of 12 Storey Residential Buildings with Penthouse( Total:406 units), Basement carpark, Swimming Pool and Communal Facilities at Yishun AVE 11, Singapore."
         },
         "daraSakor": {
-            "name": "Dara sakor",
+            "name": "Dara Sakor",
+            "numOfPics": 3,
             "type": "International property projects",
             "description": "Dara Sakor was listed twice in 2016 and 2019 under the List of Key Projects for the Production Capacity and Investment Cooperation between Cambodia and China in the MOUs signed between the Council of the Development of Cambodia of the Kingdom of Cambodia and the National Development and Reform Commission of the People's Republic of China."
         },
         "skyVilla": {
             "name": "Sky Villa",
+            "numOfPics": 4,
             "type": "International property projects",
             "description": "Sky Villa comprises two 35-storey towers of luxury residential apartments in the prime district of central Phnom Penh. The property features 256 units ideal for personal or multi-generational family living.\n\nWith generous residential spaces that range from 272sqm to 509sqm, this is living large at its finest. Beyond expansive spaces, each unit is thoughtfully designed to ensure that you get to enjoy expansive views of the city and its stunning surroundings.\n\nSky Villa’s value is poised to grow alongside Phnom Penh’s significant development, making it a prime investment for the future.\n\nAs Cambodia progresses further with global integration and continues its transformation into a digital economy, this will bring in greater investors and various organisations targeting the new growth potential of the country and its thriving capital."
+        },
+        "resortsWorldSentosa": {
+            "name": "Resorts World Sentosa",
+            "numOfPics": 3,
+            "description": "Crossed over into large-scale integrated entertainment projects. As the EPC contractor for the Universal Studios Singapore project, the company created a miracle in the history of the world's A-class theme park construction in 18 months. It was awarded the Singapore \"BCA Green Mark GoldPlus Award\" and \"China Architecture Media Luban Award."
+        },
+        "woodlandsCheckpoint": {
+            "name": "Woodlands Checkpoint",
+            "numOfPics": 4,
+            "description": "The Johor–Singapore Causeway (Malay: Tambak Johor–Singapura) is a 1,056-metre causeway that links the city of Johor Bahru in Malaysia across the Straits of Johor to the town of Woodlands in Singapore. It serves as a road and rail link, as well as a water pipeline between the two countries.\n\nIt is one of the busiest border crossings in the region with 350,000 travellers daily,[1][2] handled by immigration authorities of both countries at the Southern Integrated Gateway (Malaysia) and Woodlands Checkpoint (Singapore)."
+        },
+        "singaporeExpo": {
+            "name": "Singapore Expo",
+            "numOfPics": 1,
+            "description": "Singapore EXPO Convention and Exhibition Center is the largest meetings, incentives, conferencing, exhibitions (MICE) venue in Singapore and is one of the largest and most completely equipped centre in the whole of Asia. There are ten large multipurpose halls, each being 10,000 square metres in size, giving a total floor space of over 100,000 square metres. All available spaces are interconnected, column-free and on the ground level."
+        },
+        "T311MrtStation": {
+            "name": "T311 MRT Station",
+            "numOfPics": 2,
+            "description": ""
         }
     },
     "construction": {
-        "shortDescription": "China Jingye Engineering Corporation Limited (Singapore Branch) is the only state-owned enterprise in Singapore to obtain the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories issued by the Building and Construction Authority of Singapore (BCA)...",
-        "description": "China Jingye Engineering Corporation Limited (Singapore Branch) is the only state-owned enterprise in Singapore to obtain the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories issued by the Building and Construction Authority of Singapore (BCA).\n\nChina Jingye have attained the ISO 9001, ISO 14001, OHSAS 18001 and bizSAFE Star certifications and have accumulated a wealth of engineering and excellent performance in Singapore. It built a considerable number of Singapore's landmark projects such as Universal Studios Singapore, Maritime Experiential Museum, Singapore Expo and Keppel Distripark.\n\nChina Jingye has 20 years of development experience in Singapore. It has amassed comprehensive main contractor and engineering performance works and extensive experience in turnkey projects. It also has specialised contracting, supply and subcontracting works to add to the foray of portfolio. China Jingye builds on the core strengths of MCC Group in the design, fabrication and installation of steel structures. It is certified as a structural steel plant by BCA and Singapore Structural Steel Society (SSSS). The company is a corporate member of SSSS.\n\nIn the construction sector for public housing, China Jingye has been actively involved in the construction of numerous Housing and Development Board (HDB) projects in Singapore including lifts upgrading programmes. It is also responsible for the specialised structural steelworks of Singapore Expo, Keppel Distripark, Woodlands Checkpoint, terminals of the Port of Singapore Authority, Khoo Teck Puat Hospital and other large scale engineering projects.\n\nIn the construction sector for private properties, China Jingye's noteworthy turnkey projects include Universal Studios Singapore, Maritime Experiential Museum (Resorts World Sentosa) and the civil engineering work of Sentosa Adventure Cove Waterpark. The company is also responsible for the engineering, procurement and construction of 12 property development projects under MCC Land (Singapore) Limited. It is the appointed subcontractor for the 24,000-tonne structural steelworks of all famous attractions in Sentosa as well as the subcontractor for various projects including the large-scale oil terminal Universal Terminal, the large-scale food factory Gourmet East Kitchen, a large number of HDB flats and private condominiums, and MRT engineering works."
+        "shortDescription": "MCC Singapore has obtained the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories from the Building and Construction Authority of Singapore (BCA), as well as L6 grade in Plumbing & Sanitary Works (ME12) and Electrical engineering (ME05). Several completed projects have been recognized and awarded by BCA and other related agencies in the safety and design categories, and the company's engineering and technical capabilities have been widely recognized by the Singapore industry.",
+        "description": "China Jingye Engineering Corporation Limited (Singapore Branch) is a registered contractor with the Building and Construction Authority of Singapore (BCA) and the only State-owned enterprise in Singapore to obtain the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories. The company is influential in Singapore with excellent performance in both public and private construction sectors. The company is the main contractor for Singapore’s iconic landmark projects – Universal Studios Singapore and Maritime Experiential Museum, Resorts World, Sentosa.\n\nChina Jingye Construction Engineering (Singapore) Private Limited has extensive experience in the private civil engineering sector. As the general main contractor for MCC Land, it is responsible for most of its property development projects. The company has been part of MCC Singapore since its inception in 1996. It has accumulated comprehensive engineering performance and experiences in turnkey, specialized contracting, supply and subcontracting works."
     }
 }

@@ -1806,7 +1806,7 @@ export default {
       p {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 24.7rem;
+        margin-top: 19rem;
         text-align: center;
         font-size: 2rem;
         color: white;
@@ -2030,12 +2030,16 @@ export default {
     }
 
     .content {
+      padding: 0 1rem 0 1rem;
       margin-left: auto;
       margin-right: auto;
+      white-space: pre-line;
+      overflow-y: scroll;
       margin-top: 0;
       line-height: 4.5rem;
 
       width: 52vw;
+      height: 39%;
 
       color: var(--unnamed-color-000000);
       text-align: center;
@@ -2503,15 +2507,23 @@ export default {
 
             height: 100vw/1920 * (516);
             .block-4-img {
+              cursor: pointer;
               margin-left: 100vw/1920 * (30.5);
               width: 100vw/1920 * (454-15.25);
             }
+            .block-4-title {
+              cursor: pointer;
+              padding: 0 1.5rem 0 1.5rem;
+              font-size: 2rem;
+            }
             img {
+              cursor: pointer;
               width: 100%;
               height: auto;
             }
 
             .background-white {
+              cursor: pointer;
               padding: (100vw/1920 * (46)) 0 0 0;
               background-color: white;
               margin-left: 100vw/1920 * (30.5);

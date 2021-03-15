@@ -61,7 +61,7 @@
             :key="item.id"
             :style="{ width: boxWidth }"
             class="box-container"
-            @click="enterProjectDetail()"
+            @click="goProjectDetail(item.id)"
           >
             <ProjectImageCard :info="item" />
           </li>
@@ -83,7 +83,7 @@
               width: boxWidth,
             }"
             class="box-container"
-            @click="enterProjectDetail()"
+            @click="goProjectDetail(item.id)"
           >
             <ProjectImageCard :info="item" />
           </li>
@@ -134,7 +134,7 @@ export default {
       ],
       propertiesInSG: [
         {
-          id: "0",
+          id: "resortsWorldSentosa",
           imageSrc: require("../../assets/imgs/construction/sentosa-006@2x.png"),
           type: "Residential property",
           year: "2018",
@@ -142,7 +142,7 @@ export default {
           location: "Central, Singapore",
         },
         {
-          id: "1",
+          id: "woodlandsCheckpoint",
           imageSrc: require("../../assets/imgs/construction/woodlands-checkpoint-002@2x.png"),
           type: "Residential property",
           year: "2018",
@@ -150,7 +150,7 @@ export default {
           location: "Central, Singapore",
         },
         {
-          id: "2",
+          id: "singaporeExpo",
           imageSrc: require("../../assets/imgs/construction/singapore-expo-001@2x.png"),
           type: "Residential property",
           year: "2018",
@@ -158,7 +158,15 @@ export default {
           location: "Central, Singapore",
         },
         {
-          id: "3",
+          id: "T311MrtStation",
+          imageSrc: require("../../assets/imgs/real-estate/T311 MRT Station/1.jpg"),
+          type: "Residential property",
+          year: "2018",
+          name: "T311 MRT Station",
+          location: "Central, Singapore",
+        },
+        {
+          id: "sunshineGarden",
           imageSrc: require("../../assets/imgs/construction/sunshine-garden-img-006@2x.png"),
           type: "Residential property",
           year: "2018",
@@ -166,7 +174,7 @@ export default {
           location: "Central, Singapore",
         },
         {
-          id: "4",
+          id: "emerald",
           imageSrc: require("../../assets/imgs/construction/emerald-img-001@2x.png"),
           type: "Residential property",
           year: "2018",
@@ -174,7 +182,7 @@ export default {
           location: "Central, Singapore",
         },
         {
-          id: "5",
+          id: "anchorvaleHorizon",
           imageSrc: require("../../assets/imgs/construction/anchorvale-horizon-img-006@2x.png"),
           type: "Residential property",
           year: "2018",
@@ -184,7 +192,7 @@ export default {
       ],
       propertiesInInt: [
         {
-          id: "0",
+          id: "daraSakor",
           imageSrc: require("../../assets/imgs/construction/Dara-Sakor-Slider-5@2x.png"),
           type: "Residential property",
           year: "2018",
@@ -196,6 +204,7 @@ export default {
   },
   created() {
     this.content = require("../../assets/homepage/content.json");
+
     setTimeout(() => {
       const width = this.$refs.contentRef.clientWidth;
       this.boxWidth = `${(width - 50) / 2}px`;
@@ -209,6 +218,11 @@ export default {
   methods: {
     enterProjectDetail() {
       this.$router.push({ path: "/project-detail" });
+    },
+
+    goProjectDetail: function (id) {
+      this.$router.push("/project-detail/?id=" + id);
+      window.scrollTo(0, 0);
     },
 
     showAllProject() {
