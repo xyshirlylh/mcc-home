@@ -81,7 +81,7 @@
               width: boxWidth,
             }"
             class="box-container"
-            @click="enterProjectDetail()"
+            @click="goProjectDetail(projectList[11 + i])"
           >
             <ProjectImageCard :info="item" />
           </li>

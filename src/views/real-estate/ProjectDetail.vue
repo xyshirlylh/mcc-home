@@ -8,7 +8,7 @@
     >
       <span
         class="position-absolute z-index-50 f-s-50 f-c-0 f-f-raleway font-bold"
-        >{{ projectInfo.name }}</span
+        >{{ this.content["realEstate"][this.projectID]["name"] }}</span
       >
     </div>
 
@@ -69,8 +69,10 @@
         <gap :height="48" />
 
         <p class="f-s-16 f-f-arial row-description">
-          {{ overview.description
-          }}<span class="f-c-12 f-s-16">Read more...</span>
+          {{ overview.description }}
+          <!--
+             <span class="f-c-12 f-s-16">Read more...</span>
+          -->
         </p>
 
         <gap :height="83" />
@@ -190,7 +192,7 @@ export default {
       },
       overview: {
         details: [
-          { title: "Project Name", label: this.content },
+          { title: "Project Name", label: "Queens Peak" },
           { title: "Project Type", label: "Condominium For Sale" },
           { title: "Developer", label: "MCC Land" },
           { title: "Tenure", label: "99-year Leasehold" },
@@ -276,6 +278,47 @@ export default {
     const urlParams = new URLSearchParams(window.location.search);
     this.projectID = urlParams.get("id");
     this.content = require("../../assets/homepage/content.json");
+
+    this.overview = {
+      details: [
+        {
+          title: "Project Name",
+          label: this.content["realEstate"][this.projectID]["name"],
+        },
+        {
+          title: "Project Type",
+          label: this.content["realEstate"][this.projectID]["type"],
+        },
+        {
+          title: "Developer",
+          label: this.content["realEstate"][this.projectID]["developer"],
+        },
+        {
+          title: "Tenure",
+          label: this.content["realEstate"][this.projectID]["tenure"],
+        },
+        {
+          title: "PSF",
+          label: this.content["realEstate"][this.projectID]["psf"],
+        },
+        {
+          title: "Completion Year",
+          label: this.content["realEstate"][this.projectID]["top"],
+        },
+        { title: "Total Units", label: "" },
+      ],
+      description: this.content["realEstate"][this.projectID]["description"],
+      facilities: [
+        { icon: "iconbasementcarpark", label: "Basement car park" },
+        { icon: "icon2971019", label: "Children’s Playground" },
+        { icon: "icondropoff", label: "Drop Off Point" },
+        { icon: "icon3788750", label: "Gymnasium room" },
+        { icon: "icon3582873", label: "Lift lobby" },
+        { icon: "icon763860", label: "Swimming pool" },
+        { icon: "iconXMLID_642_", label: "Main entrance" },
+        { icon: "icon783192", label: "24 hours security" },
+      ],
+    };
   },
   methods: {
     onSwitchCover({ id, imageSrc }) {
@@ -411,13 +454,18 @@ export default {
         p:last-child {
           margin-top: 1.175rem;
           margin-bottom: 1.45rem;
-          line-height: 5rem;
+          //line-height: 5rem;
+          line-height: 3rem;
           color: #3d3d3d;
         }
       }
     }
 
     .row-description {
+      padding: 0 1rem 0 0;
+      white-space: pre-line;
+      overflow-y: scroll;
+      text-align: justify;
       max-width: 92rem;
       max-height: 16.1rem;
       line-height: 2.6rem;

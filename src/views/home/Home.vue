@@ -371,13 +371,13 @@
             </div>
             <transition name="fade">
               <div class="subtitle" v-if="index === 0">
-                <p></p>
+                <p>{{ this.content.history[0].title }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 42rem"
+                style="bottom: 26.5rem"
                 class="content f-f-avenir"
                 v-if="index === 0"
               >
@@ -429,13 +429,15 @@
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[1] }}</p>
             </div>
 
-            <div class="subtitle" v-if="index === 1">
-              <p></p>
-            </div>
+            <transition name="fade">
+              <div class="subtitle" v-if="index === 1">
+                <p>{{ this.content.history[1].title }}</p>
+              </div>
+            </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 32rem"
+                style="bottom: 30rem; min-width: 60rem"
                 class="content f-f-avenir"
                 v-if="index === 1"
               >
@@ -488,13 +490,15 @@
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[2] }}</p>
             </div>
 
-            <div class="subtitle" v-if="index === 2">
-              <p></p>
-            </div>
+            <transition name="fade">
+              <div class="subtitle" v-if="index === 2">
+                <p>{{ this.content.history[2].title }}</p>
+              </div>
+            </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 32rem"
+                style="bottom: 23rem; width: 34rem"
                 class="content f-f-avenir"
                 v-if="index === 2"
               >
@@ -544,17 +548,19 @@
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[3] }}</p>
             </div>
 
-            <div class="subtitle" v-if="index === 3">
-              <p></p>
-            </div>
+            <transition name="fade">
+              <div class="subtitle" v-if="index === 3">
+                <p>{{ this.content.history[4].title }}</p>
+              </div>
+            </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 35rem; background: rgba(255, 255, 255, 0.3)"
+                style="bottom: 27.5rem; background: rgba(255, 255, 255, 0.7)"
                 class="content f-f-avenir"
                 v-if="index === 3"
               >
-                <p>{{ this.content.history[3].content }}</p>
+                <p>{{ this.content.history[4].content }}</p>
               </div>
             </transition>
           </div>
@@ -608,17 +614,39 @@
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[4] }}</p>
             </div>
 
-            <div class="subtitle" v-if="index === 4">
-              <p></p>
-            </div>
+            <transition name="fade">
+              <div class="subtitle" v-if="index === 4">
+                <p>{{ this.content.history[5].title2 }}</p>
+              </div>
+            </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 30rem; max-width: 60rem"
+                style="
+                  bottom: 27rem;
+                  max-width: 70rem;
+                  background-color: rgba(255, 255, 255, 0);
+                "
                 class="content f-f-avenir"
-                v-if="index === 4"
+                v-if="index === 4 && index2010 === 0"
               >
-                <p>{{ this.content.history[5].content }}</p>
+                <p v-if="index2010 === 0">
+                  {{ this.content.history[5].content2 }}
+                </p>
+              </div>
+
+              <div
+                style="
+                  bottom: 33rem;
+                  max-width: 70rem;
+                  background-color: rgba(255, 255, 255, 0);
+                "
+                class="content f-f-avenir"
+                v-if="index === 4 && index2010 === 1"
+              >
+                <p>
+                  {{ this.content.history[5].content3 }}
+                </p>
               </div>
             </transition>
           </div>
@@ -665,17 +693,19 @@
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[5] }}</p>
             </div>
 
-            <div class="subtitle" v-if="index === 5">
-              <p></p>
-            </div>
+            <transition name="fade">
+              <div class="subtitle" v-if="index === 5">
+                <p>{{ this.content.history[6].title }}</p>
+              </div>
+            </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 10rem; max-width: 50rem"
+                style="bottom: 23rem; max-width: 50rem"
                 class="content f-f-avenir"
                 v-if="index === 5"
               >
-                <p>{{ this.content.history[6].content }}</p>
+                <p>{{ this.content.history[6].content2 }}</p>
               </div>
             </transition>
           </div>
@@ -722,12 +752,22 @@
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[6] }}</p>
             </div>
 
-            <div class="subtitle" v-if="index === 6">
-              <p></p>
-            </div>
+            <transition name="fade">
+              <div class="subtitle" v-if="index === 6">
+                <p>{{ this.content.history[7].title }}</p>
+              </div>
+            </transition>
 
             <transition name="fade">
-              <div class="content f-f" v-if="index === 6">
+              <div
+                style="
+                  bottom: 13rem;
+                  width: 35rem;
+                  background-color: rgba(255, 255, 255, 0.7);
+                "
+                class="content f-f"
+                v-if="index === 6"
+              >
                 <p>{{ this.content.history[7].content }}</p>
               </div>
             </transition>
@@ -1034,6 +1074,7 @@ export default {
       yearIndex: 0,
       scrollTop: 0,
       index: 0,
+      index2010: 0,
       block4status: 0,
       newsPageCount: 2,
       showContact: this.$store.state.showContectUs,
@@ -1195,6 +1236,10 @@ export default {
       // use anime.js
       if (this.box5special === false) {
         this.box5LeftSpecial = false;
+        if (this.index2010 < 1) {
+          this.index2010++;
+        }
+
         anime({
           targets: this.sentorini,
 
@@ -1303,7 +1348,8 @@ export default {
         } else if (this.index === 4) {
           this.box5.style.backgroundSize = "0%";
 
-          //console.log("123");
+          //this.index2010 = this.index2010 + 1;
+
           //console.log(this.box5counter);
           this.box5counter = 2;
           this.box5LeftSpecial = true;
@@ -1385,6 +1431,11 @@ export default {
 
       if (this.box5LeftSpecial === false) {
         this.box5special = false;
+        if (this.index2010 > 0) {
+          this.index2010--;
+        }
+
+        console.log("hahaha" + this.index2010);
         anime({
           targets: this.sentorini,
 
@@ -1477,6 +1528,7 @@ export default {
           this.box4.style.backgroundSize = "95%";
           this.box5special = true;
           this.box5LeftSpecial = true;
+
           anime({
             targets: this.box4,
             //width: this.box4.offsetWidth * 20,
@@ -1494,6 +1546,7 @@ export default {
         } else if (this.index === 5) {
           this.box5.style.backgroundSize = "85%";
           this.box5counter--;
+
           anime({
             targets: this.box5,
             //width: this.box5.offsetWidth * 20,
@@ -1620,7 +1673,10 @@ export default {
   //min-height: 100%;
   //padding: 14rem 14rem 0 14rem;
 
-  .fade-enter-active,
+  .fade-enter-active {
+    transition: opacity 0.3s;
+    transition-delay: 200ms;
+  }
   .fade-leave-active {
     transition: opacity 0.3s;
     transition-delay: 100ms;
@@ -2137,7 +2193,7 @@ export default {
       .subtitle {
         position: absolute;
         left: 3rem;
-        bottom: 42rem;
+        bottom: 44rem;
         color: var(--unnamed-color-000000);
         text-align: left;
         font: normal normal 900 3.7rem/5.1rem Avenir;
@@ -2153,7 +2209,8 @@ export default {
         left: 3rem;
         bottom: 35rem;
         max-width: 45rem;
-        text-align: justify;
+        text-align: left;
+        white-space: pre-line;
       }
 
       .box-1 {
