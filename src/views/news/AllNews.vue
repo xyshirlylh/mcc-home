@@ -11,59 +11,25 @@
     </div>
     <div class="box"></div>
     <div class="gallery">
-      <div class="item1">
+      <div
+        class="item1"
+        v-for="(item, index) in this.allNews"
+        :key="index"
+        @click="goNews(item)"
+      >
         <div class="image">
-          <img src="../../assets/imgs/news/all-news/2.jpg" alt="" />
+          <img :src="require('../../assets/news/' + item + '/1.jpg')" />
         </div>
         <div class="content">
           <p class="title">
-            MCC Singapore Was Invited to Participate in the International Built
-            Environment Week Exhibition
+            {{ require("../../assets/news/" + item + "/content.json").title }}
           </p>
-          <p class="text">
+          <!--
+            <p class="text">
             9月3日至6日，新加坡海湾金沙会展中心举办了以 “引领建筑业转型”
             为主题的2019年新加坡国际建筑环境周（IBEW）
           </p>
-        </div>
-      </div>
-      <div class="item2" @click="goNews">
-        <div class="image">
-          <img src="../../assets/imgs/news/all-news/1.jpg" alt="" />
-        </div>
-        <div class="content">
-          <p>Big Title</p>
-        </div>
-      </div>
-      <div class="item3">
-        <div class="image">
-          <img src="../../assets/imgs/news/all-news/5.jpg" alt="" />
-        </div>
-        <div class="content">
-          <p>Big Title</p>
-        </div>
-      </div>
-      <div class="item4">
-        <div class="image">
-          <img src="../../assets/imgs/news/all-news/6.jpg" alt="" />
-        </div>
-        <div class="content">
-          <p>Big Title</p>
-        </div>
-      </div>
-      <div class="item5">
-        <div class="image">
-          <img src="../../assets/imgs/news/all-news/4.jpg" alt="" />
-        </div>
-        <div class="content">
-          <p>Big Title</p>
-        </div>
-      </div>
-      <div class="item6">
-        <div class="image">
-          <img src="../../assets/imgs/news/all-news/3.jpg" alt="" />
-        </div>
-        <div class="content">
-          <p>Big Title</p>
+          -->
         </div>
       </div>
     </div>
@@ -75,7 +41,25 @@ import MagicGrid from "magic-grid";
 export default {
   name: "all-news",
   data: function () {
-    return {};
+    return {
+      allNews: [],
+    };
+  },
+
+  created() {
+    this.allNews = [
+      "2_10_2020",
+      "7_9_2020",
+      "20_8_2020",
+      "23_6_2020",
+      "19_5_2020",
+      "11_4_2020",
+      "6_4_2020",
+      "27_3_2020",
+      "13_1_2020",
+      "11_10_2019",
+      "30_9_2019",
+    ];
   },
 
   mounted() {
@@ -98,8 +82,9 @@ export default {
       this.$router.go(-1);
     },
 
-    goNews: function () {
-      this.$router.push("/news");
+    goNews: function (id) {
+      this.$router.push("/news/?id=" + id);
+      window.scrollTo(0, 0);
     },
   },
 };
@@ -161,60 +146,53 @@ export default {
 
     div {
       width: 67rem;
-      height: 42rem;
+      //height: 42rem;
       background-color: white;
       display: flex;
       flex-direction: column;
       cursor: pointer;
 
-      border-radius: 8px;
+      //border-radius: 8px;
       .image {
-        width: 100%;
+        width: auto;
         height: 71.5%;
       }
       .content {
         display: flex;
         flex-direction: column;
-        justify-content: left;
-        align-items: left;
-        width: 99.7%;
+        padding: 0 3rem 0 3rem;
+        //align-items: left;
+        justify-content: center;
+        width: 60.71rem;
         height: 28.5%;
         border: 1px;
+
+        border: solid rgb(0, 0, 0, 0.5);
         border-top: 0;
-        border-style: solid;
-        border-radius: 0%;
+        //border-radius: 0%;
 
         p {
-          width: 70%;
-          height: 4.7rem;
-          margin-top: 3.6rem;
-
-          text-align: left;
-          margin-left: 100px;
+          text-align: center;
           font: normal normal 600 4rem/4.7rem Raleway;
         }
       }
     }
 
     img {
-      width: 100%;
-      height: 100%;
+      width: auto;
+      height: auto;
+      border: solid rgb(0, 0, 0, 0.5);
+      border-width: 1px;
     }
 
     .item1 {
-      height: 86rem;
+      height: 50rem;
       .title {
-        margin-top: 5rem;
-        margin-left: 10rem;
         font-size: 2.5rem;
-        line-height: 2.5rem;
+        line-height: 3rem;
       }
       .text {
-        width: 36rem;
-        height: 47rem;
-        margin-left: 10rem;
         white-space: normal;
-        margin-top: 4rem;
         font: normal normal normal 2rem/3rem Arial;
       }
     }
