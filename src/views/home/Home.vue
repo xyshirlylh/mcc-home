@@ -2030,11 +2030,10 @@ export default {
     }
 
     .content {
-      padding: 0 1rem 0 1rem;
       margin-left: auto;
       margin-right: auto;
       white-space: pre-line;
-      overflow-y: scroll;
+
       margin-top: 0;
       line-height: 4.5rem;
 

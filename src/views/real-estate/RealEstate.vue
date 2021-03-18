@@ -326,6 +326,7 @@ export default {
       line-height: 3.6rem;
     }
     .title {
+      white-space: nowrap;
       letter-spacing: 4px;
       height: 14.2rem;
       line-height: 14.2rem;
