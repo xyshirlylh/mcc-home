@@ -279,8 +279,8 @@ export default {
     .content {
       white-space: pre-line;
       padding: 0rem 1rem 1rem 1rem;
-      overflow-y: scroll;
-      height: 50rem;
+      //overflow-y: scroll;
+      //height: 50rem;
       text-align: justify;
       line-height: 3.6rem;
     }

@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    showContectUs: false
+    showContectUs: false,
+    lang: 'english'
   },
   mutations: {
     flip(state) {

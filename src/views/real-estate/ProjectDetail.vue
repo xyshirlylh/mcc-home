@@ -484,10 +484,10 @@ export default {
     .row-description {
       padding: 0 1rem 0 0;
       white-space: pre-line;
-      overflow-y: scroll;
+
       text-align: justify;
       max-width: 92rem;
-      max-height: 16.1rem;
+      //max-height: 16.1rem;
       line-height: 2.6rem;
     }
 

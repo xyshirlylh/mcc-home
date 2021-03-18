@@ -332,8 +332,8 @@ export default {
       line-height: 14.2rem;
     }
     .content {
-      overflow-y: scroll;
-      height: 50rem;
+      //overflow-y: scroll;
+      //height: 50rem;
       padding: 0 1rem 1rem 1rem;
       white-space: pre-line;
       text-align: justify;

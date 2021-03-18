@@ -12,7 +12,7 @@
     <div class="box"></div>
     <div class="gallery">
       <div
-        class="item1"
+        class="item"
         v-for="(item, index) in this.allNews"
         :key="index"
         @click="goNews(item)"
@@ -146,54 +146,30 @@ export default {
 
     div {
       width: 67rem;
-      //height: 42rem;
+      //height: 60rem;
       background-color: white;
       display: flex;
       flex-direction: column;
       cursor: pointer;
 
       //border-radius: 8px;
-      .image {
-        width: auto;
-        height: 71.5%;
-      }
-      .content {
-        display: flex;
-        flex-direction: column;
-        padding: 0 3rem 0 3rem;
-        //align-items: left;
-        justify-content: center;
-        width: 60.71rem;
-        height: 28.5%;
-        border: 1px;
-
-        border: solid rgb(0, 0, 0, 0.5);
-        border-top: 0;
-        //border-radius: 0%;
-
-        p {
-          text-align: center;
-          font: normal normal 600 4rem/4.7rem Raleway;
-        }
-      }
     }
 
-    img {
-      width: auto;
-      height: auto;
-      border: solid rgb(0, 0, 0, 0.5);
+    .item {
+      height: 60rem;
+      border: solid rgba(188, 188, 188, 1);
       border-width: 1px;
-    }
 
-    .item1 {
-      height: 50rem;
-      .title {
-        font-size: 2.5rem;
-        line-height: 3rem;
+      img {
+        max-height: 45rem;
+        width: auto;
+        height: auto;
       }
-      .text {
-        white-space: normal;
-        font: normal normal normal 2rem/3rem Arial;
+      .title {
+        padding: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        font: normal normal 600 2rem Raleway;
       }
     }
   }
