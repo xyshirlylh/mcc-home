@@ -214,6 +214,12 @@
         <div class="content">
           <p style="margin-top: 2rem; height: 17rem">
             {{ this.content.about }}
+            <span
+              class="read-more"
+              @click="goto('about-us')"
+              style="color: rgb(6, 69, 173); cursor: pointer"
+              >Read More</span
+            >
           </p>
 
           <!--
@@ -1207,6 +1213,10 @@ export default {
       this.$router.push("/construction");
     },
 
+    goto(where) {
+      this.$router.push("/" + where);
+    },
+
     resizeTrigger: function () {
       //console.log('resize')
 
@@ -2049,6 +2059,11 @@ export default {
 
       color: #000000;
       opacity: 1;
+      .read-more {
+        &:hover {
+          border-bottom: solid;
+        }
+      }
 
       .button-2 {
         &:hover {

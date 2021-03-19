@@ -37,8 +37,16 @@
             @mouseover="onHoverMenu(item)"
             @click="onClickMenu(item)"
           >
-            <i :class="item.icon" class="iconfont f-s-30"></i>
-            <span class="f-s-18">{{ item.label }}</span>
+            <i
+              :style="{ color: item.id === currentLabel ? 'black' : 'grey' }"
+              :class="item.icon"
+              class="iconfont f-s-30"
+            ></i>
+            <span
+              class="f-s-18"
+              :style="{ color: item.id === currentLabel ? 'black' : 'grey' }"
+              >{{ item.label }}</span
+            >
           </li>
 
           <div
@@ -91,7 +99,10 @@
         </ol>
 
         <gap :height="54" />
-        <p class="f-s-24 font-bold f-c-2 f-f-Noto title title-site-plan">
+
+        <!--
+          暂时隐藏site plan和floor plan
+          <p class="f-s-24 font-bold f-c-2 f-f-Noto title title-site-plan">
           Site Plans
         </p>
         <gap :height="26" />
@@ -108,6 +119,8 @@
         <gap :height="25" />
 
         <floor-plan :floorPlans="floorPlans" />
+
+        -->
 
         <gap :height="57" />
         <p ref="location" class="f-s-24 font-bold f-c-2 f-f-Noto title">
@@ -158,17 +171,18 @@
   </section>
 </template>
 <script>
-import FloorPlan from "./components/FloorPlans";
+//import FloorPlan from "./components/FloorPlans";
 
 export default {
   components: {
-    FloorPlan,
+    //FloorPlan,
   },
   data() {
     return {
       id: "Queens Peak",
       projectID: null,
       projectDetails: null,
+      currentLabel: 0,
       projectInfo: {
         name: "Queens Peak",
         current: {
@@ -323,6 +337,9 @@ export default {
       ],
     };
 
+    this.location.lat = this.content["realEstate"][this.projectID]["lat"];
+    this.location.lng = this.content["realEstate"][this.projectID]["lng"];
+
     this.projectInfo.images = [];
     for (
       let i = 0;
@@ -358,6 +375,9 @@ export default {
       const $ = window.$;
       const el = this.$refs[item.ref];
       const h = $(el).offset().top;
+      this.currentLabel = item.id;
+      console.log(item.id);
+      console.log(this.currentLabel);
 
       $("body,html").animate({ scrollTop: h - 100 }, 200);
     },
