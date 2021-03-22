@@ -8,10 +8,12 @@ import * as VueGoogleMaps from 'vue2-google-maps';
 import VueCarousel from 'vue-carousel';
 import messages from './i18n/index';
 import VueI18n from 'vue-i18n';
+import VueSocialSharing from 'vue-social-sharing'
 window.$ = window.jQuery = require('jquery');
 
 Vue.config.productionTip = false;
 Vue.use(components);
+Vue.use(VueSocialSharing);
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDqaMato3Fx8Svy8pK66oBpJYHnOLkMGgE',

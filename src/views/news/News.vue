@@ -7,7 +7,7 @@
         </div>
         <div class="div"><p>Back</p></div>
       </div>
-      <div class="gallery">
+      <div class="gallery" v-if="hasPhoto === true">
         <div class="col-1">
           <div class="img-1">
             <img
@@ -24,23 +24,11 @@
                 alt=""
               />
             </div>
-            <div class="img-3">
-              <img
-                :src="require('../../assets/news/' + newsID + '/' + 3 + '.jpg')"
-                alt=""
-              />
-            </div>
           </div>
           <div class="row-2">
             <div class="img-4">
               <img
-                :src="require('../../assets/news/' + newsID + '/' + 4 + '.jpg')"
-                alt=""
-              />
-            </div>
-            <div class="img-5">
-              <img
-                :src="require('../../assets/news/' + newsID + '/' + 5 + '.jpg')"
+                :src="require('../../assets/news/' + newsID + '/' + 3 + '.jpg')"
                 alt=""
               />
             </div>
@@ -59,7 +47,13 @@
       <div class="title">
         {{ this.content.title }}
       </div>
-      <div class="author"><p>MCC Media Department</p></div>
+      <div class="author" v-if="this.content.author === null">
+        <p>MCC Media Department</p>
+      </div>
+      <div class="author" v-else>
+        <p>{{ this.content.author }}</p>
+      </div>
+
       <div class="content">
         <p style="white-space: pre-line">{{ this.content.content }}</p>
       </div>
@@ -68,15 +62,34 @@
           <img src="../../assets/imgs/news/heart.png" alt="" />
         </div>
         <div class="likes">128 Likes</div>
-        <div class="facebook">
-          <img src="../../assets/imgs/news/facebook.png" alt="" />
-        </div>
-        <div class="twitter">
-          <img src="../../assets/imgs/news/tweeter.png" alt="" />
-        </div>
-        <div class="wechat">
-          <img src="../../assets/imgs/news/Wechat.png" alt="" />
-        </div>
+
+        <ShareNetwork
+          network="facebook"
+          title="I'd like to share this news with you."
+          :url="currentUrl"
+        >
+          <div class="facebook">
+            <img src="../../assets/imgs/news/facebook.png" alt="" />
+          </div>
+        </ShareNetwork>
+        <ShareNetwork
+          network="twitter"
+          title="I'd like to share this news with you."
+          :url="currentUrl"
+        >
+          <div class="twitter">
+            <img src="../../assets/imgs/news/tweeter.png" alt="" />
+          </div>
+        </ShareNetwork>
+        <ShareNetwork
+          network="weibo"
+          title="I'd like to share this news with you."
+          :url="currentUrl"
+        >
+          <div class="wechat">
+            <img src="../../assets/imgs/news/Wechat.png" alt="" />
+          </div>
+        </ShareNetwork>
       </div>
 
       <div class="navigations">
@@ -108,9 +121,11 @@ export default {
   data: function () {
     return {
       newsID: null,
-      photos: [],
+      hasPhoto: true,
       allNews: null,
       popularNews: [],
+      currentUrl: "",
+      content: null,
     };
   },
   methods: {
@@ -119,12 +134,14 @@ export default {
     },
 
     goAllPhotos: function () {
-      this.$router.push("/all-photos");
+      this.$router.push("/all-photos/?id=" + this.newsID);
     },
   },
 
   created() {
     const urlParams = new URLSearchParams(window.location.search);
+    //this.currentUrl = window.location.href;
+    //console.log(this.currentUrl);
     this.newsID = urlParams.get("id");
     this.content = require("../../assets/news/" +
       this.newsID +
@@ -140,6 +157,7 @@ export default {
       "6_4_2020",
       "27_3_2020",
       "13_1_2020",
+      "3_11_2019",
       "11_10_2019",
       "30_9_2019",
     ];
@@ -196,28 +214,36 @@ export default {
     display: flex;
     flex-direction: row;
     background-color: white;
-    margin-left: 100vw/1920 * 395;
-    width: 100vw/1920 * 1129;
-    height: 100vw/1920 * 462;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw/1366 * 680;
+    height: 100vw/1366 * 300;
     border-radius: 1rem;
+    //border: solid black 1px;
     overflow: hidden;
     .col-1 {
-      width: 100vw/1920 * 565;
-      height: 100vw/1920 * 462;
+      //width: 100vw/1920 * 565;
+
+      height: 100vw/1366 * 300;
+
       img {
-        width: 100vw/1920 * 565;
-        height: 100vw/1920 * 462;
+        //width: 100vw/1920 * 565;
+        height: 100vw/1366 * 300;
+        min-width: 100vw/1366 * 400;
       }
     }
     .col-2 {
       display: flex;
       flex-direction: column;
       margin-left: 100vw/1920 * 8;
-      width: 100vw/1920 * 564;
+      //background-color: red;
+      //width: 100vw/1920 * 564;
+
       height: 100vw/1920 * 462;
       img {
-        width: 100vw/1920 * 274;
-        height: 100vw/1920 * 232;
+        //width: 100%;
+        //min-width: 100vw/1366 * 400;
+        height: 100vw/1366 * 150;
       }
       .row-1 {
         display: flex;
@@ -230,9 +256,7 @@ export default {
         display: flex;
         flex-direction: row;
         margin-top: 100vw/1920 * 7;
-        img {
-          height: 100vw/1920 * 223;
-        }
+
         .img-5 {
           margin-left: 100vw/1920 * 8;
         }
@@ -243,7 +267,7 @@ export default {
   .button-all-photo {
     height: 100vw/1920 * 34;
     width: 100vw/1920 * 141;
-    margin-left: 100vw/1920 * 1383;
+    margin-left: 100vw/1920 * 1290;
     margin-top: 100vw/1920 * 20;
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 0.5rem;

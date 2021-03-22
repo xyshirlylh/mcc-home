@@ -188,7 +188,13 @@
         <li>
           <p class="f-f-arial f-s-12 f-c-15 font-bold">STUFF PAGE</p>
           <gap :height="36" />
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">Employee Operations</p>
+          <a
+            href="http://www.mcc.sg/employee-operations.html"
+            style="text-decoration: none"
+            class="f-f-arial f-s-16 f-c-16 label-hover operations"
+          >
+            <p>Employee Operations</p>
+          </a>
         </li>
 
         <li>
@@ -258,6 +264,13 @@ footer {
   background-color: #f7f8fa;
 
   ul {
+    a {
+      p {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
     flex-direction: row;
     padding-top: 8.8rem;
 

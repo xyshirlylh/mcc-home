@@ -7,23 +7,13 @@
       <div class="div"><p>Back</p></div>
     </div>
     <div class="gallery">
-      <div class="item1">
-        <img src="../../assets/imgs/news/news-1/1.jpg" alt="" />
-      </div>
-      <div class="item2">
-        <img src="../../assets/imgs/news/news-1/2.jpg" alt="" />
-      </div>
-      <div class="item3">
-        <img src="../../assets/imgs/news/news-1/5.jpg" alt="" />
-      </div>
-      <div class="item4">
-        <img src="../../assets/imgs/news/news-1/6.jpg" alt="" />
-      </div>
-      <div class="item5">
-        <img src="../../assets/imgs/news/news-1/4.jpg" alt="" />
-      </div>
-      <div class="item6">
-        <img src="../../assets/imgs/news/news-1/3.jpg" alt="" />
+      <div class="item1" v-for="(item, index) in allPhotos" :key="index">
+        <img
+          :src="
+            require('../../assets/news/' + newsID + '/' + (index + 1) + '.jpg')
+          "
+          alt=""
+        />
       </div>
     </div>
   </div>
@@ -34,7 +24,22 @@ import MagicGrid from "magic-grid";
 export default {
   name: "all-photos",
   data: function () {
-    return {};
+    return {
+      newsID: "",
+      content: "",
+      allPhotos: [],
+    };
+  },
+
+  created() {
+    const urlParams = new URLSearchParams(window.location.search);
+    //this.currentUrl = window.location.href;
+    //console.log(this.currentUrl);
+    this.newsID = urlParams.get("id");
+    this.content = require("../../assets/news/" +
+      this.newsID +
+      "/content.json");
+    this.allPhotos = new Array(this.content.photocount);
   },
 
   mounted() {
@@ -96,8 +101,9 @@ export default {
     margin-right: auto;
 
     div {
-      width: 55.4rem;
-      height: 39rem;
+      //width: 100vw/1920 * 554;
+      //height: 39rem;
+      width: 500px;
       background-color: antiquewhite;
       display: flex;
       justify-content: center;
@@ -107,24 +113,11 @@ export default {
 
     img {
       width: 100%;
-      height: 100%;
+      //height: 100%;
     }
 
     .item1 {
-      height: 46.2rem;
-    }
-
-    .item2 {
-      height: 79rem;
-    }
-    .item3 {
-      height: 38.6rem;
-    }
-    .item4 {
-      height: 39rem;
-    }
-    .item5 {
-      height: 71.7rem;
+      //height: 46.2rem;
     }
   }
 }

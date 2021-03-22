@@ -115,14 +115,14 @@
 
       <div class="container-1-right">
         <div class="content">
-          <div v-if="selected === 1">
+          <div v-if="selected === 1" style="height: 100%">
             <div
               v-if="mouseover === true"
               @mouseleave="clear"
               class="image-1-blur"
             >
               <div>
-                <p>
+                <p style="margin-top: 22rem">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -141,7 +141,7 @@
             <div v-else class="image-1" @mouseover="blur"></div>
           </div>
 
-          <div v-else-if="this.selected === 2">
+          <div v-else-if="this.selected === 2" style="height: 100%">
             <div
               v-if="mouseover === true"
               @mouseleave="clear"
@@ -163,7 +163,7 @@
             </div>
             <div v-else class="image-2" @mouseover="blur"></div>
           </div>
-          <div v-else-if="selected === 3">
+          <div v-else-if="selected === 3" style="height: 100%">
             <div
               v-if="mouseover === true"
               @mouseleave="clear"
@@ -1700,7 +1700,7 @@ export default {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    //justify-content: space-around;
   }
 
   .ID {
@@ -1802,13 +1802,18 @@ export default {
   .container-1-right {
     display: flex;
     flex-direction: column;
-    width: 110.9rem;
-    height: 65.7rem;
+
+    width: 100vw/1920 * 1109;
+
+    //height: 100%;
+    //height: 65.7rem;
 
     .content {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      position: relative;
+
+      width: auto;
       height: 100%;
 
       line-height: 2.8rem;
@@ -1816,7 +1821,7 @@ export default {
       p {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 19rem;
+        margin-top: 100vw/1920 * 150;
         text-align: center;
         font-size: 2rem;
         color: white;
@@ -1868,20 +1873,20 @@ export default {
         display: flex;
         flex-direction: column;
 
-        width: 100%;
+        width: auto;
 
-        height: 65.7rem;
+        height: 96%;
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.25),
             rgba(0, 0, 0, 0.25)
           ),
-          url("../../assets/imgs/home/blur-scott-graham-5fNmWej4tAA-unspl@2x.png");
+          url("../../assets/imgs/home/consultation.jpg");
         background-color: white;
         //filter: blur(12px);
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: auto 100%;
       }
 
       .image-2-blur {
@@ -1889,20 +1894,20 @@ export default {
         display: flex;
         flex-direction: column;
 
-        width: 100%;
+        width: auto;
 
-        height: 65.7rem;
+        height: 96%;
         background-image: linear-gradient(
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.25)
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
           ),
-          url("../../assets/imgs/home/blur-realestate.png");
+          url("../../assets/imgs/home/realestate.jpg");
         background-color: white;
         //filter: blur(12px);
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: auto 100%;
       }
 
       .image-3-blur {
@@ -1910,52 +1915,57 @@ export default {
         display: flex;
         flex-direction: column;
 
-        width: 100%;
+        width: auto;
 
-        height: 65.7rem;
-        background-image: url("../../assets/imgs/home/blur-construction.jpg");
+        height: 96%;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("../../assets/imgs/home/construction.jpg");
         background-color: white;
         //filter: blur(12px);
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: auto 100%;
       }
 
       .image-1 {
-        width: 100%;
+        width: auto;
 
-        height: 65.7rem;
-        background-image: url("../../assets/imgs/home/scott-graham-5fNmWej4tAA-unspl@2x.png");
+        height: 96%;
+
+        background-image: url("../../assets/imgs/home/consultation.jpg");
         background-color: white;
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: auto 100%;
       }
 
       .image-2 {
-        width: 100%;
+        width: auto;
 
-        height: 65.7rem;
-        background-image: url("../../assets/imgs/home/realestate.png");
+        height: 96%;
+        background-image: url("../../assets/imgs/home/realestate.jpg");
         background-color: white;
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: auto 100%;
       }
 
       .image-3 {
         width: 100%;
 
-        height: 65.7rem;
+        height: 96%;
         background-image: url("../../assets/imgs/home/construction.jpg");
         background-color: white;
 
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: auto 100%;
       }
 
       font-size: 2rem;
@@ -2524,6 +2534,8 @@ export default {
               cursor: pointer;
               margin-left: 100vw/1920 * (30.5);
               width: 100vw/1920 * (454-15.25);
+              height: 55%;
+              overflow: hidden;
             }
             .block-4-title {
               cursor: pointer;

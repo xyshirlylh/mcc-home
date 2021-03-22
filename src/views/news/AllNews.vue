@@ -57,6 +57,7 @@ export default {
       "6_4_2020",
       "27_3_2020",
       "13_1_2020",
+      "3_11_2019",
       "11_10_2019",
       "30_9_2019",
     ];
@@ -69,7 +70,7 @@ export default {
       animate: true,
       static: true,
       gutter: 20,
-      maxColumns: 5,
+      maxColumns: 2,
 
       useMin: true,
     });
@@ -145,7 +146,7 @@ export default {
     margin-right: auto;
 
     div {
-      width: 67rem;
+      width: 450px;
       //height: 60rem;
       background-color: white;
       display: flex;
@@ -156,20 +157,21 @@ export default {
     }
 
     .item {
-      height: 60rem;
+      //height: 420px;
       border: solid rgba(188, 188, 188, 1);
       border-width: 1px;
 
       img {
-        max-height: 45rem;
+        //max-height: 45rem;
         width: auto;
         height: auto;
       }
       .title {
         padding: 3rem;
         line-height: 3rem;
+
         text-align: center;
-        font: normal normal 600 2rem Raleway;
+        font: normal normal 600 20px Raleway;
       }
     }
   }

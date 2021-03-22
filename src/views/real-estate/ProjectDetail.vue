@@ -8,6 +8,7 @@
     >
       <span
         class="position-absolute z-index-50 f-s-50 f-c-0 f-f-raleway font-bold"
+        style="background-color: rgba(1, 1, 1, 0.3); padding: 1rem"
         >{{ this.content["realEstate"][this.projectID]["name"] }}</span
       >
     </div>
