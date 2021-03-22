@@ -45,11 +45,11 @@ export default {
   mounted() {
     let magicGrid = new MagicGrid({
       container: ".gallery",
-      items: 10,
+      items: 20,
       animate: true,
       static: true,
       gutter: 14,
-      maxColumns: 5,
+      maxColumns: 2,
 
       useMin: true,
     });

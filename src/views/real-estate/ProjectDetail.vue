@@ -56,13 +56,25 @@
           ></div>
         </ul>
 
-        <gap :height="64" />
-        <p class="f-s-24 font-bold title title-detail f-c-2 f-f-Noto">
+        <p
+          class="f-s-24 font-bold title title-detail f-c-2 f-f-Noto"
+          v-if="
+            this.content['realEstate'][this.projectID]['type'] !==
+            'construction'
+          "
+        >
+          <gap :height="64" />
           Details
+          <gap :height="14.25" />
         </p>
-        <gap :height="14.25" />
 
-        <ul class="flex-row flex-wrap row-detail">
+        <ul
+          class="flex-row flex-wrap row-detail"
+          v-if="
+            this.content['realEstate'][this.projectID]['type'] !==
+            'construction'
+          "
+        >
           <template v-for="(item, i) in overview.details">
             <li :key="i">
               <p class="f-s-14 f-f-sans">{{ item.title }}</p>
@@ -84,13 +96,25 @@
           -->
         </p>
 
-        <gap :height="83" />
-        <p class="f-s-24 font-bold f-c-2 f-f-Noto title title-facilities">
+        <p
+          class="f-s-24 font-bold f-c-2 f-f-Noto title title-facilities"
+          v-if="
+            this.content['realEstate'][this.projectID]['type'] !==
+            'construction'
+          "
+        >
+          <gap :height="83" />
           Facilities & Amenities
+          <gap :height="70" />
         </p>
-        <gap :height="70" />
 
-        <ol class="flex-row flex-wrap row-facilities">
+        <ol
+          class="flex-row flex-wrap row-facilities"
+          v-if="
+            this.content['realEstate'][this.projectID]['type'] !==
+            'construction'
+          "
+        >
           <template v-for="(item, i) in overview.facilities">
             <li :key="i" class="flex-row align-items-center">
               <p><i :class="item.icon" class="iconfont"></i></p>
@@ -100,6 +124,12 @@
         </ol>
 
         <gap :height="54" />
+
+        <div class="external">
+          <a :href="this.content['realEstate'][this.projectID]['externalLink']">
+            <p>Project Website</p>
+          </a>
+        </div>
 
         <!--
           暂时隐藏site plan和floor plan
@@ -271,6 +301,7 @@ export default {
           translate: 0,
           ref: "overview",
         },
+        /*
         {
           id: 1,
           label: "Floor Plans",
@@ -278,11 +309,15 @@ export default {
           translate: 19,
           ref: "floor",
         },
+        
+        */
+
         {
-          id: 2,
+          id: 1,
           label: "Location",
           icon: "icon535239",
-          translate: 39,
+          //translate: 39,
+          translate: 19,
           ref: "location",
         },
       ],
@@ -530,6 +565,25 @@ export default {
 
     .site-plan-image {
       width: 92.1rem;
+    }
+    .external {
+      //border: solid black;
+      a {
+        text-decoration: none;
+      }
+      cursor: pointer;
+      border-radius: 1rem;
+      width: 100vw/1366 * 157;
+      height: 100vw/1366 * 43;
+      background-color: rgba(74, 145, 242, 1);
+
+      p {
+        text-align: center;
+        color: white;
+        line-height: 100vw/1366 * 43;
+        white-space: nowrap;
+        font-size: 100vw/1366 * 14;
+      }
     }
   }
 

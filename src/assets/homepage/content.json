@@ -55,6 +55,7 @@
         "shortDescription": "MCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
         "queensPeak": {
             "name": "Queens Peak",
+            "externalLink": "http://queenspeak.com.sg/",
             "numOfPics": 4,
             "type": "Condominium For Sale",
             "tenure": "99-year Leasehold",
@@ -68,6 +69,7 @@
         },
         "theAlpsResidences": {
             "name": "The Alps Residences",
+            "externalLink": "http://thealpsresidences.com.sg/",
             "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1066",
@@ -82,6 +84,7 @@
         },
         "northwave": {
             "name": "Northwave",
+            "externalLink": "http://www.northwave.com.sg/",
             "numOfPics": 5,
             "type": "Executive Condominium For Sale",
             "floorSize": "753",
@@ -97,6 +100,7 @@
         },
         "thePoiz": {
             "name": "The Poiz",
+            "externalLink": "http://www.thepoizresidences.com.sg/",
             "numOfPics": 5,
             "type": "Condominium For Sale",
             "floorSize": "753",
@@ -112,6 +116,7 @@
         },
         "theSantorini": {
             "name": "The Santorini",
+            "externalLink": "http://www.thesantorini.sg/",
             "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1119",
@@ -127,6 +132,7 @@
         },
         "seaHorizon": {
             "name": "Sea Horizon",
+            "externalLink": "",
             "numOfPics": 4,
             "type": "Executive Condominium For Sale",
             "floorSize": "1109",
@@ -143,6 +149,7 @@
         },
         "forestville": {
             "name": "Forestville",
+            "externalLink": "http://www.forestville.sg/",
             "numOfPics": 6,
             "type": "Executive Condominium For Sale",
             "floorSize": "1033",
@@ -159,6 +166,7 @@
         },
         "oneCanberra": {
             "name": "One Canberra",
+            "externalLink": "",
             "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1054",
@@ -175,6 +183,7 @@
         },
         "theNautical": {
             "name": "The Nautical",
+            "externalLink": "",
             "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "1054",
@@ -191,6 +200,7 @@
         },
         "canberraResidences": {
             "name": "Canberra Residences",
+            "externalLink": "",
             "numOfPics": 4,
             "type": "Condominium For Sale",
             "floorSize": "904",
@@ -207,6 +217,7 @@
         },
         "theCanopy": {
             "name": "The Canopy",
+            "externalLink": "",
             "numOfPics": 4,
             "type": "Executive Condominium For Sale",
             "floorSize": "1173",
@@ -224,26 +235,28 @@
         "daraSakor": {
             "name": "Dara Sakor",
             "numOfPics": 3,
-            "type": "International property projects",
+            "type": "construction",
             "lat": 10.882636696430144,
             "lng": 103.15366494686302,
             "description": "Dara Sakor was listed twice in 2016 and 2019 under the List of Key Projects for the Production Capacity and Investment Cooperation between Cambodia and China in the MOUs signed between the Council of the Development of Cambodia of the Kingdom of Cambodia and the National Development and Reform Commission of the People's Republic of China."
         },
         "skyVilla": {
             "name": "Sky Villa",
+            "type": "construction",
             "numOfPics": 4,
-            "type": "International property projects",
-            "description": "Sky Villa comprises two 35-storey towers of luxury residential apartments in the prime district of central Phnom Penh. The property features 256 units ideal for personal or multi-generational family living.\n\nWith generous residential spaces that range from 272sqm to 509sqm, this is living large at its finest. Beyond expansive spaces, each unit is thoughtfully designed to ensure that you get to enjoy expansive views of the city and its stunning surroundings.\n\nSky Villa’s value is poised to grow alongside Phnom Penh’s significant development, making it a prime investment for the future.\n\nAs Cambodia progresses further with global integration and continues its transformation into a digital economy, this will bring in greater investors and various organisations targeting the new growth potential of the country and its thriving capital."
+            "description": "Sky Villa comprises two 35-storey towers of luxury residential apartments in the prime district of central Phnom Penh. The property features 256 units ideal for personal or multi-generational family living.\n\nWith generous residential spaces that range from 272sqm to 509sqm, this is living large at its finest. Beyond expansive spaces, each unit is thoughtfully designed to ensure that you get to enjoy expansive views of the city and its stunning surroundings.\n\nSky Villa’s value is poised to grow alongside Phnom Penh’s significant development, making it a prime investment for the future.\n\nAs Cambodia progresses further with global integration and continues its transformation into a digital economy, this will bring in greater investors and various organisations targeting the new growth potential of the country and its thriving capital. \n\nThe project is located at the intersection of Sihanoukville and 163 on the southeast side of the Olympic Stadium in Phnom Penh, Cambodia, the location is excellent. The project consists of two 35-story towers (A and B buildings) with a height of 138.6 meters and a 15-story building (C building) with a height of 63.6 meters and a total construction area of 120,000 square meters, the construction period is 22 months. The project plan is a large-scale five-star luxury house with a large-sized design, each household area is between 300 square meters and 450 square meters."
         },
         "resortsWorldSentosa": {
             "name": "Resorts World Sentosa",
             "numOfPics": 3,
+            "type": "construction",
             "lat": 1.2557553066888083,
             "lng": 103.82610261624923,
-            "description": "Crossed over into large-scale integrated entertainment projects. As the EPC contractor for the Universal Studios Singapore project, the company created a miracle in the history of the world's A-class theme park construction in 18 months. It was awarded the Singapore \"BCA Green Mark GoldPlus Award\" and \"China Architecture Media Luban Award."
+            "description": "Universal Studios Singapore is an integrated entertainment theme park catering to entertainment, leisure and tourism. It is the world’s fourth Universal Studios theme park. The other three theme parks are in Las Vegas and Orlando of the United States and Osaka of Japan. \n\nMCC Singapore was awarded the S$800 million (RMB$4,000 million) turnkey contract of the Universal Studios Singapore project. The company made history in the construction of world-class theme parks. It took less than 18 months to complete the project as compared to the other three theme parks which took an average of four to five years to build. It is the largest civil construction project undertaken by a Chinese contractor in Singapore and is also the first large-scale overseas integrated entertainment civil construction project by a Chinese enterprise. \n\nThe Universal Studios Singapore received several accolades. It won the Green Mark GoldPlus award by the Building and Construction Authority of Singapore, the “Outstanding Engineering Quality” award by the MCC Group, the “Metallurgical Industry Quality” award, and the “Luban Award” by the Ministry of Construction and the China Construction Industry Association. It has filed 18 patents."
         },
         "woodlandsCheckpoint": {
             "name": "Woodlands Checkpoint",
+            "type": "construction",
             "numOfPics": 4,
             "lat": 1.4461140327450084,
             "lng": 103.76961148277697,
@@ -251,6 +264,7 @@
         },
         "singaporeExpo": {
             "name": "Singapore Expo",
+            "type": "construction",
             "numOfPics": 1,
             "lat": 1.3338790546900967,
             "lng": 103.96013781219327,
@@ -258,10 +272,38 @@
         },
         "T311MrtStation": {
             "name": "T311 MRT Station",
+            "type": "construction",
             "numOfPics": 2,
             "lat": 1.317414657055561,
             "lng": 103.95157827170797,
-            "description": ""
+            "description": "Work Scope: Underground MRT Station and TBM Tunnels 270m"
+        },
+        "sunshineGarden": {
+            "name": "Sunshine Garden",
+            "type": "construction",
+            "numOfPics": 4,
+            "lat": 1.3767096224811073,
+            "lng": 103.74107557441089,
+            "descriptionCN": "1座12层、5座13层、6座14层、3座1 5层住宅楼、2座多层停车场及屋顶花园，共17座, 1,528个单位",
+            "description": "1 block of 12 storey residential flats, 5 blocks of 13 storey residential flats, 6 blocks of 14 storey residential flats, 3 blocks of 15 storey residential flats, 2 blocks of multi-storey carparks and roof top gardens， a total of 17 blocks with 1,528 dwelling units"
+        },
+        "emerald": {
+            "name": "Emerald",
+            "type": "construction",
+            "numOfPics": 4,
+            "lat": 1.4061890622922788,
+            "lng": 103.89928247210993,
+            "descriptionCN": "9座17层住宅建筑，共856个单位",
+            "description": "9 blocks of 17 storey residential flats with a total of 856 dwelling units"
+        },
+        "anchorvaleHorizon": {
+            "name": "Anchorvale Horizon",
+            "type": "construction",
+            "numOfPics": 4,
+            "lat": 1.3959371333938806,
+            "lng": 103.88875119657924,
+            "descriptionCN": "7座16层住宅建筑，共745个单位",
+            "description": "7 blocks of 16 storey residential flats with a total of 745 dwelling units"
         }
     },
     "construction": {

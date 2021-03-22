@@ -47,7 +47,7 @@
       <div class="title">
         {{ this.content.title }}
       </div>
-      <div class="author" v-if="this.content.author === null">
+      <div class="author" v-if="this.content.author === undefined">
         <p>MCC Media Department</p>
       </div>
       <div class="author" v-else>
