@@ -6,15 +6,16 @@
       </div>
       <div class="div"><p>Back</p></div>
     </div>
-    <div class="gallery">
-      <div class="item1" v-for="(item, index) in allPhotos" :key="index">
-        <img
-          :src="
-            require('../../assets/news/' + newsID + '/' + (index + 1) + '.jpg')
-          "
-          alt=""
-        />
-      </div>
+    <div class="gallery" ref="gallery">
+      <img
+        class="item1"
+        v-for="(item, index) in allPhotos"
+        :key="index"
+        :src="
+          require('../../assets/news/' + newsID + '/' + (index + 1) + '.jpg')
+        "
+        alt=""
+      />
     </div>
   </div>
 </template>
@@ -43,22 +44,31 @@ export default {
   },
 
   mounted() {
-    let magicGrid = new MagicGrid({
-      container: ".gallery",
-      items: 20,
-      animate: true,
-      static: true,
-      gutter: 14,
-      maxColumns: 2,
-
-      useMin: true,
-    });
-
-    magicGrid.listen();
+    this.loadImgs();
+    document.onreadystatechange = () => {
+      if (document.readyState == "complete") {
+        this.loadImgs();
+      }
+    };
   },
   methods: {
     back: function () {
       this.$router.go(-1);
+    },
+
+    loadImgs: function () {
+      let magicGrid = new MagicGrid({
+        container: this.$refs["gallery"],
+        items: this.content.photocount,
+        animate: true,
+        static: false,
+        gutter: 20,
+        maxColumns: 2,
+
+        useMin: true,
+      });
+
+      magicGrid.listen();
     },
   },
 };
@@ -66,12 +76,14 @@ export default {
 
 <style lang="scss">
 .all-photos {
-  padding: (100vw/1920 * 118) 0 (100vw/1920 * 167) 0;
+  padding: (118px) 0 (167px) 0;
   .button-back {
+    position: fixed;
+    left: 100vw/1920 * 42;
     display: flex;
     flex-direction: row;
-    padding: 0.2% 0 0 0;
-    margin-left: 100vw/1920 * 42;
+    padding: 0 0 0 0;
+    //margin-left: 100vw/1920 * 42;
     height: 100vw/1920 * 34;
     width: 100vw/1920 * 98.45;
     border-radius: 2.5rem;
@@ -97,24 +109,26 @@ export default {
   }
   .gallery {
     width: 70vw;
+
     margin-left: auto;
     margin-right: auto;
 
-    div {
-      //width: 100vw/1920 * 554;
-      //height: 39rem;
+    img {
       width: 500px;
-      background-color: antiquewhite;
+      height: 300px;
+      object-fit: cover;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 8px;
+
+      //width: 500px;
+      background-color: white;
     }
 
-    img {
-      width: 100%;
-      //height: 100%;
-    }
+    //img {
+    //  width: 100%;
+    // }
 
     .item1 {
       //height: 46.2rem;

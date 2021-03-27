@@ -10,7 +10,7 @@
       <p>Latest News</p>
     </div>
     <div class="box"></div>
-    <div class="gallery">
+    <div class="gallery" ref="gallery">
       <div
         class="item"
         v-for="(item, index) in this.allNews"
@@ -65,12 +65,12 @@ export default {
 
   mounted() {
     let magicGrid = new MagicGrid({
-      container: ".gallery",
-      items: 10,
-      animate: true,
-      static: true,
+      container: this.$refs["gallery"],
+      items: this.allNews.length,
+      animate: false,
+      static: false,
       gutter: 20,
-      maxColumns: 2,
+      maxColumns: 1,
 
       useMin: true,
     });
@@ -146,11 +146,13 @@ export default {
     margin-right: auto;
 
     div {
-      width: 450px;
-      //height: 60rem;
-      background-color: white;
+      width: 100rem;
+      height: 20rem;
+      //background-color: red;
+      //background-color: white;
+      //border: solid rgba(188, 188, 188, 1);
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       cursor: pointer;
 
       //border-radius: 8px;
@@ -159,19 +161,33 @@ export default {
     .item {
       //height: 420px;
       border: solid rgba(188, 188, 188, 1);
+      //border: solid black;
       border-width: 1px;
+      //background-color: green;
 
-      img {
-        //max-height: 45rem;
-        width: auto;
-        height: auto;
+      .image {
+        width: 30%;
+        img {
+          //max-height: 45rem;
+          //width: 100%;
+
+          width: 100%;
+          object-fit: cover;
+        }
       }
-      .title {
-        padding: 3rem;
-        line-height: 3rem;
-
+      .content {
+        width: 70%;
+        padding-left: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        //background-color: red;
         text-align: center;
-        font: normal normal 600 20px Raleway;
+        font: normal normal 600 2.5rem Raleway;
+        p {
+          //background-color: green;
+          width: 70%;
+        }
       }
     }
   }
