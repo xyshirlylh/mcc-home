@@ -29,6 +29,9 @@ const routes = [
   {
     path: '/test',
     component: () => import('../views/home/Test.vue'),
+  },{
+    path: '/consultation',
+    component: () => import('../views/consultation/Consultation')
   },
   {
     path: '/real-estate',

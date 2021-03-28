@@ -43,7 +43,7 @@
                 cy="4.75rem"
               ></ellipse>
             </svg>
-            <span v-if="selected === 1" style="color: black; cursor: pointer"
+            <span @click="goto('consultation')" v-if="selected === 1" style="color: black; cursor: pointer"
               >Consultation</span
             >
             <span v-else>Consultation</span>
