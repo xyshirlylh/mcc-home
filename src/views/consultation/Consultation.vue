@@ -1,5 +1,5 @@
 <template>
-  <div class="real-estate">
+  <div class="consultation">
     <section class="top-container">
       <div class="flex-2">
         <p class="f-s-25 f-c-10 subtitle">MCC Land</p>
@@ -18,12 +18,17 @@
 
         <gap :height="100" />
 
-        <p
+        <!--
+
+           <p
           class="f-s-24 f-c-11 font-bold cursor-pointer"
           @click="showAllProject"
         >
           See all projects
         </p>
+
+
+        -->
       </div>
 
       <gap :width="124" />
@@ -35,7 +40,11 @@
           :style="{ borderBottomWidth: item.count ? 1 : 0 }"
         >
           <div class="f-c-12 flex-row">
-            <p class="f-s-129 f-f-rubik" :ref="'countRef' + i">
+            <p
+              class="f-s-100 f-f-rubik"
+              :ref="'countRef' + i"
+              style="white-space: nowrap"
+            >
               {{ item.count }}
             </p>
             <p class="f-s-99 flex-row align-items-center">{{ item.unit }}</p>
@@ -48,56 +57,37 @@
 
     <gap :height="150" />
 
-    <section>
-      <label ref="titleOfSectionOne" class="f-s-36"
-        >Singapore property projects</label
-      >
+    <div class="services">
+      <div class="services-title">
+        <p class="f-f-sans">Services</p>
+      </div>
 
-      <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
-        <template v-for="(item, index) in propertiesInSG">
+      <div class="services-row-1 flex-row">
+        <ul>
           <li
+            v-for="(item, index) in this.content.consultation.services"
             :key="index"
-            :style="{ width: boxWidth }"
-            class="box-container"
-            @click="goProjectDetail(projectList[index])"
+            class="f-f-sans"
           >
-            <ProjectImageCard :info="item" />
+            {{ item }}
           </li>
-        </template>
-      </ul>
-    </section>
-
-    <gap :height="100" />
-
-    <section>
-      <label class="f-s-36">International property projects</label>
-
-      <ul class="flex-row flex-wrap">
-        <template v-for="(item, i) in propertiesInInt">
-          <li
-            :key="item.id"
-            :style="{
-              marginRight: i % 2 === 0 ? '6.4rem' : 0,
-              width: boxWidth,
-            }"
-            class="box-container"
-            @click="goProjectDetail(projectList[11 + i])"
-          >
-            <ProjectImageCard :info="item" />
-          </li>
-        </template>
-      </ul>
-    </section>
+        </ul>
+        <div class="pic">
+          <img src="../../assets/imgs/consultation/consultation.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <gap :height="50" />
   </div>
 </template>
 
 <script>
 import anime from "animejs/lib/anime.es.js";
-import ProjectImageCard from "../../components/card/ProjectImageCard";
+//import ProjectImageCard from "../../components/card/ProjectImageCard";
 
 export default {
   name: "RealEstate",
-  components: { ProjectImageCard },
+  //components: { ProjectImageCard },
   data() {
     return {
       content: null,
@@ -116,12 +106,17 @@ export default {
           unit: "",
           label: "Ongoing projects",
         },
-        { id: "2", count: "4", unit: "", label: "Countries: Singapore, Malaysia, Cambodia, China" },
+        {
+          id: "2",
+          count: "4",
+          unit: "",
+          label: "Countries: Singapore, Malaysia, Cambodia, China",
+        },
         {
           id: "3",
           count: "0 - 360",
           unit: "",
-          label: "km2  ",
+          label: "Square kilometre In terms of project size",
         },
         {
           id: "4",
@@ -312,7 +307,7 @@ export default {
 </script>
 
 <style scoped lang="scss" type="text/scss">
-.real-estate {
+.consultation {
   width: calc(100% - 28rem);
   min-height: 100%;
   padding: 17.9rem 14rem 0 14rem;
@@ -394,6 +389,30 @@ export default {
           width: 100% !important;
         }
       }
+    }
+  }
+
+  .services {
+    .services-title {
+      font-size: 5rem;
+      font-weight: 700;
+    }
+    ul {
+      margin-top: 30px;
+      width: 40%;
+    }
+    .pic {
+      width: 60%;
+      img {
+        width: 100%;
+        margin-left: 10%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    li {
+      font-size: 2.7rem;
+      margin-bottom: 3rem;
     }
   }
 }

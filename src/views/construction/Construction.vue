@@ -51,12 +51,10 @@
     <gap :height="200" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36"
-        >Singapore construction projects</label
-      >
+      <label ref="titleOfSectionOne" class="f-s-36">Building Endless Joy</label>
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
-        <template v-for="item in propertiesInSG">
+        <template v-for="item in buildingEndlessJoy">
           <li
             :key="item.id"
             :style="{ width: boxWidth }"
@@ -72,7 +70,45 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label class="f-s-36">International construction projects</label>
+      <label ref="titleOfSectionOne" class="f-s-36">Building Our Home</label>
+
+      <ul class="flex-row flex-wrap justify-content-between">
+        <template v-for="item in buildingOurHome">
+          <li
+            :key="item.id"
+            :style="{ width: boxWidth }"
+            class="box-container"
+            @click="goProjectDetail(item.id)"
+          >
+            <ProjectImageCard :info="item" />
+          </li>
+        </template>
+      </ul>
+    </section>
+
+    <gap :height="100" />
+
+    <section class="image-list">
+      <label ref="titleOfSectionOne" class="f-s-36">Building Our City</label>
+
+      <ul class="flex-row flex-wrap justify-content-between">
+        <template v-for="item in buildingOurCity">
+          <li
+            :key="item.id"
+            :style="{ width: boxWidth }"
+            class="box-container"
+            @click="goProjectDetail(item.id)"
+          >
+            <ProjectImageCard :info="item" />
+          </li>
+        </template>
+      </ul>
+    </section>
+
+    <gap :height="100" />
+
+    <section class="image-list">
+      <label class="f-s-36">Building Our World</label>
 
       <ul class="flex-row flex-wrap">
         <template v-for="(item, i) in propertiesInInt">
@@ -132,15 +168,46 @@ export default {
           label: "Year of First International Acquisition",
         },
       ],
-      propertiesInSG: [
+
+      propertiesInInt: [
         {
-          id: "resortsWorldSentosa",
-          imageSrc: require("../../assets/imgs/construction/sentosa-006@2x.png"),
+          id: "daraSakor",
+          imageSrc: require("../../assets/imgs/construction/Dara-Sakor-Slider-5@2x.png"),
           type: "Residential property",
-          year: "2018",
-          name: "Resorts World Sentosa",
+          year: "2019",
+          name: "Dara Sakor",
           location: "Central, Singapore",
         },
+      ],
+
+      buildingOurHome: [
+        {
+          id: "sunshineGarden",
+          imageSrc: require("../../assets/imgs/construction/sunshine-garden-img-006@2x.png"),
+          type: "Residential property",
+          year: "2001",
+          name: "Sunshine Garden",
+          location: "Central, Singapore",
+        },
+        {
+          id: "emerald",
+          imageSrc: require("../../assets/imgs/construction/emerald-img-001@2x.png"),
+          type: "Residential property",
+          year: "2014",
+          name: "Emerald",
+          location: "Central, Singapore",
+        },
+        {
+          id: "anchorvaleHorizon",
+          imageSrc: require("../../assets/imgs/construction/anchorvale-horizon-img-006@2x.png"),
+          type: "Residential property",
+          year: "2010",
+          name: "Anchorvale Horizon",
+          location: "Central, Singapore",
+        },
+      ],
+
+      buildingOurCity: [
         {
           id: "woodlandsCheckpoint",
           imageSrc: require("../../assets/imgs/construction/woodlands-checkpoint-002@2x.png"),
@@ -150,53 +217,30 @@ export default {
           location: "Central, Singapore",
         },
         {
-          id: "singaporeExpo",
-          imageSrc: require("../../assets/imgs/construction/singapore-expo-001@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "Singapore Expo",
-          location: "Central, Singapore",
-        },
-        {
           id: "T311MrtStation",
           imageSrc: require("../../assets/imgs/real-estate/T311 MRT Station/1.jpg"),
           type: "Residential property",
-          year: "2018",
+          year: "2024",
           name: "T311 MRT Station",
           location: "Central, Singapore",
         },
-        {
-          id: "sunshineGarden",
-          imageSrc: require("../../assets/imgs/construction/sunshine-garden-img-006@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "Sunshine Garden",
-          location: "Central, Singapore",
-        },
-        {
-          id: "emerald",
-          imageSrc: require("../../assets/imgs/construction/emerald-img-001@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "Emerald",
-          location: "Central, Singapore",
-        },
-        {
-          id: "anchorvaleHorizon",
-          imageSrc: require("../../assets/imgs/construction/anchorvale-horizon-img-006@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "Anchorvale Horizon",
-          location: "Central, Singapore",
-        },
       ],
-      propertiesInInt: [
+
+      buildingEndlessJoy: [
         {
-          id: "daraSakor",
-          imageSrc: require("../../assets/imgs/construction/Dara-Sakor-Slider-5@2x.png"),
+          id: "resortsWorldSentosa",
+          imageSrc: require("../../assets/imgs/construction/sentosa-006@2x.png"),
           type: "Residential property",
-          year: "2018",
-          name: "Dara Sakor",
+          year: "2010",
+          name: "Resorts World Sentosa",
+          location: "Central, Singapore",
+        },
+        {
+          id: "singaporeExpo",
+          imageSrc: require("../../assets/imgs/construction/singapore-expo-001@2x.png"),
+          type: "Residential property",
+          year: "1999",
+          name: "Singapore Expo",
           location: "Central, Singapore",
         },
       ],

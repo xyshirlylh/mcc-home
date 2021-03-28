@@ -15,6 +15,10 @@ const routes = [
     component: () => import('../views/home/About.vue'),
   },
   {
+    path: '/history',
+    component: () => import('../views/home/History.vue'),
+  },
+  {
     path: '/all-news',
     component: () => import('../views/news/AllNews.vue'),
   },
@@ -29,7 +33,7 @@ const routes = [
   {
     path: '/test',
     component: () => import('../views/home/Test.vue'),
-  },{
+  }, {
     path: '/consultation',
     component: () => import('../views/consultation/Consultation')
   },

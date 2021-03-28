@@ -56,6 +56,7 @@
         <div @click="goto('real-estate')">Real Estate</div>
         <div @click="goto('construction')">Construction</div>
         <div @click="goto('about-us')">About Us</div>
+        <div @click="goto('history')">History</div>
         <div @click="goto('all-news')">MCC News</div>
       </div>
     </div>
