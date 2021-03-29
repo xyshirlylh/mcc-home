@@ -189,7 +189,7 @@
           <p class="f-f-arial f-s-12 f-c-15 font-bold">STUFF PAGE</p>
           <gap :height="36" />
           <a
-            href="http://www.mcc.sg/employee-operations.html"
+            @click="goto('employee-operation')"
             style="text-decoration: none"
             class="f-f-arial f-s-16 f-c-16 label-hover operations"
           >
@@ -254,6 +254,11 @@ export default {
       this.$store.commit("flip");
       console.log(this.$store.state.showContectUs);
     },
+
+    goto:function(where){
+      this.$router.push('/'+where)
+
+    }
   },
 };
 </script>

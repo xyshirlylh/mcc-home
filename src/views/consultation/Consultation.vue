@@ -41,7 +41,7 @@
         >
           <div class="f-c-12 flex-row">
             <p
-              class="f-s-100 f-f-rubik"
+              class="f-s-80 f-f-rubik"
               :ref="'countRef' + i"
               style="white-space: nowrap"
             >
@@ -256,8 +256,8 @@ export default {
     ];
 
     this.timer = setTimeout(() => {
-      const width = this.$refs.contentRef.clientWidth;
-      this.boxWidth = `${(width - 50) / 2}px`;
+      //const width = this.$refs.contentRef.clientWidth;
+      //this.boxWidth = `${(width - 50) / 2}px`;
 
       this.animateNumber();
     }, 100);
