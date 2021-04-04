@@ -28,9 +28,12 @@
       :style="{ width: showMenuList ? '413px' : 0 }"
       ref="sideMenu"
       tabindex="0"
-      @blur="showMenuList = false"
     >
-      <div v-if="showMenuList" class="row-icon flex-row">
+      <div
+        v-if="showMenuList"
+        class="row-icon flex-row"
+        @blur="showMenuList = false"
+      >
         <!--
            <p
           class="flex-1 flex-row align-items-center"
@@ -58,6 +61,13 @@
         <div @click="goto('about-us')">About Us</div>
         <div @click="goto('history')">History</div>
         <div @click="goto('all-news')">MCC News</div>
+        <div>
+          <select v-model="$i18n.locale" @click="showMenuList = true">
+            <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">
+              {{ lang }}
+            </option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -111,6 +121,7 @@ export default {
       imgSvg,
       showMenuList: false,
       timer: null,
+      langs: ["en", "zh"],
     };
   },
   destroyed() {

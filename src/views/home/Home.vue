@@ -43,7 +43,10 @@
                 cy="4.75rem"
               ></ellipse>
             </svg>
-            <span @click="goto('consultation')" v-if="selected === 1" style="color: black; cursor: pointer"
+            <span
+              @click="goto('consultation')"
+              v-if="selected === 1"
+              style="color: black; cursor: pointer"
               >Consultation</span
             >
             <span v-else>Consultation</span>
@@ -149,7 +152,7 @@
             >
               <div>
                 <p>
-                  {{ this.content.realEstate.shortDescription }}
+                  {{ $t("message.realEstate.shortDescription") }}
                 </p>
               </div>
 
@@ -171,7 +174,7 @@
             >
               <div>
                 <p>
-                  {{ this.content.construction.shortDescription }}
+                  {{ $t("message.construction.shortDescription") }}
                 </p>
               </div>
 
@@ -202,18 +205,20 @@
             </svg>
 
             <div class="title" style="color: white">
-              <span>About us</span>
+              <span>{{ $t("message.about-title") }}</span>
             </div>
           </div>
           <div class="column-2">
-            <p class="content-head f-f-raleway">About us</p>
+            <p class="content-head f-f-raleway">
+              {{ $t("message.about-title") }}
+            </p>
           </div>
           <div class="column-3"></div>
         </div>
 
         <div class="content">
           <p style="margin-top: 2rem; height: 17rem">
-            {{ this.content.about }}
+            {{ $t("message.about") }}
             <span
               class="read-more"
               @click="goto('about-us')"
@@ -377,17 +382,17 @@
             </div>
             <transition name="fade">
               <div class="subtitle" v-if="index === 0">
-                <p>{{ this.content.history[0].title }}</p>
+                <p>{{ $t("message.history[0].title") }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 26.5rem"
+                style="top: 13rem"
                 class="content f-f-avenir"
                 v-if="index === 0"
               >
-                <p>{{ this.content.history[0].content }}</p>
+                <p>{{ $t("message.history[0].content") }}</p>
               </div>
             </transition>
           </div>
@@ -437,17 +442,17 @@
 
             <transition name="fade">
               <div class="subtitle" v-if="index === 1">
-                <p>{{ this.content.history[1].title }}</p>
+                <p>{{ $t("message.history[1].title") }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 30rem; min-width: 60rem"
+                style="top: 13rem; min-width: 60rem"
                 class="content f-f-avenir"
                 v-if="index === 1"
               >
-                <p>{{ this.content.history[1].content }}</p>
+                <p>{{ $t("message.history[0].content") }}</p>
               </div>
             </transition>
           </div>
@@ -498,17 +503,17 @@
 
             <transition name="fade">
               <div class="subtitle" v-if="index === 2">
-                <p>{{ this.content.history[2].title }}</p>
+                <p>{{ $t("message.history[2].title") }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 23rem; width: 34rem"
+                style="top: 13rem; width: 34rem"
                 class="content f-f-avenir"
                 v-if="index === 2"
               >
-                <p>{{ this.content.history[2].content }}</p>
+                <p>{{ $t("message.history[2].content") }}</p>
               </div>
             </transition>
           </div>
@@ -556,17 +561,17 @@
 
             <transition name="fade">
               <div class="subtitle" v-if="index === 3">
-                <p>{{ this.content.history[4].title }}</p>
+                <p>{{ $t("message.history[4].title") }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 27.5rem; background: rgba(255, 255, 255, 0.7)"
+                style="top: 13rem; background-color: rgba(255, 255, 255, 0.8)"
                 class="content f-f-avenir"
                 v-if="index === 3"
               >
-                <p>{{ this.content.history[4].content }}</p>
+                <p>{{ $t("message.history[4].content") }}</p>
               </div>
             </transition>
           </div>
@@ -622,14 +627,14 @@
 
             <transition name="fade">
               <div class="subtitle" v-if="index === 4">
-                <p>{{ this.content.history[5].title2 }}</p>
+                <p>{{ $t("message.history[5].title") }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
                 style="
-                  bottom: 27rem;
+                  top: 13rem;
                   max-width: 70rem;
                   background-color: rgba(255, 255, 255, 0);
                 "
@@ -637,13 +642,13 @@
                 v-if="index === 4 && index2010 === 0"
               >
                 <p v-if="index2010 === 0">
-                  {{ this.content.history[5].content2 }}
+                  {{ $t("message.history[5].content2") }}
                 </p>
               </div>
 
               <div
                 style="
-                  bottom: 33rem;
+                  top: 13rem;
                   max-width: 70rem;
                   background-color: rgba(255, 255, 255, 0);
                 "
@@ -651,7 +656,7 @@
                 v-if="index === 4 && index2010 === 1"
               >
                 <p>
-                  {{ this.content.history[5].content3 }}
+                  {{ $t("message.history[5].content3") }}
                 </p>
               </div>
             </transition>
@@ -701,17 +706,17 @@
 
             <transition name="fade">
               <div class="subtitle" v-if="index === 5">
-                <p>{{ this.content.history[6].title }}</p>
+                <p>{{ $t("message.history[6].title") }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
-                style="bottom: 23rem; max-width: 50rem"
+                style="top: 13rem; max-width: 50rem"
                 class="content f-f-avenir"
                 v-if="index === 5"
               >
-                <p>{{ this.content.history[6].content2 }}</p>
+                <p>{{ $t("message.history[6].content2") }}</p>
               </div>
             </transition>
           </div>
@@ -760,21 +765,21 @@
 
             <transition name="fade">
               <div class="subtitle" v-if="index === 6">
-                <p>{{ this.content.history[7].title }}</p>
+                <p>{{ $t("message.history[7].title") }}</p>
               </div>
             </transition>
 
             <transition name="fade">
               <div
                 style="
-                  bottom: 13rem;
-                  width: 35rem;
-                  background-color: rgba(255, 255, 255, 0.7);
+                  top: 12.5rem;
+                  width: 44rem;
+                  background-color: rgba(255, 255, 255, 0);
                 "
                 class="content f-f"
                 v-if="index === 6"
               >
-                <p>{{ this.content.history[7].content }}</p>
+                <p>{{ $t("message.history[7].content") }}</p>
               </div>
             </transition>
           </div>
@@ -2057,7 +2062,7 @@ export default {
       margin-top: 0;
       line-height: 4.5rem;
 
-      width: 52vw;
+      width: 51vw;
       height: 39%;
 
       color: var(--unnamed-color-000000);
@@ -2235,7 +2240,7 @@ export default {
         letter-spacing: 0.096rem;
         position: absolute;
         left: 3rem;
-        bottom: 35rem;
+        //bottom: 35rem;
         max-width: 45rem;
         text-align: left;
         white-space: pre-line;
