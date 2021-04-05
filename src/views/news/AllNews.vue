@@ -176,17 +176,20 @@ export default {
         }
       }
       .content {
-        width: 70%;
-        padding-left: 15%;
+        width: 90%;
+        padding-left: 5%;
+        padding-top: 3%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: left;
+        
         //background-color: red;
-        text-align: center;
-        font: normal normal 600 2.5rem Raleway;
+        text-align: left;
+        font: normal normal  2.5rem Raleway; 
         p {
           //background-color: green;
-          width: 70%;
+          width: 90%;
+          line-height:4rem;
         }
       }
     }

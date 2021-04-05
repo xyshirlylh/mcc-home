@@ -3,11 +3,10 @@
     <div class="block1">
       <div class="container-1-left">
         <div class="block-1-message">
-          <p>Hello,</p>
-          <br />
-          <p>Welcome to MCC Singapore!</p>
+         
+          <p>{{$t('message.welcome')}}</p>  
         </div>
-
+ 
         <div>
           <div class="ID">
             <p class="f-f-ptsans">01</p>
@@ -18,7 +17,7 @@
           </svg>
 
           <div class="title">
-            <p>What we do</p>
+            <p>{{$t('message.intro-title')}}</p> 
           </div>
         </div>
 
@@ -47,9 +46,9 @@
               @click="goto('consultation')"
               v-if="selected === 1"
               style="color: black; cursor: pointer"
-              >Consultation</span
+              >{{$t('message.intro-subtitle-1')}}</span
             >
-            <span v-else>Consultation</span>
+            <span v-else>{{$t('message.intro-subtitle-1')}}</span>
           </div>
 
           <div class="subtitle" @mousemove="realestate()">
@@ -77,10 +76,10 @@
               v-if="selected === 2"
               style="color: black; cursor: pointer"
               @click="goRealEstate()"
-              >Real Estate</span
-            >
+              >{{$t('message.intro-subtitle-2')}}</span
+            > 
 
-            <span v-else>Real Estate</span>
+            <span v-else>{{$t('message.intro-subtitle-2')}}</span>
           </div>
 
           <div class="subtitle" @mouseover="construction()">
@@ -108,10 +107,10 @@
               style="color: black; cursor: pointer"
               v-if="selected === 3"
               @click="goConstruction()"
-              >Construction</span
+              >{{$t('message.intro-subtitle-3')}}</span
             >
 
-            <span v-else>Construction</span>
+            <span v-else>{{$t('message.intro-subtitle-3')}}</span>
           </div>
         </div>
       </div>
@@ -126,10 +125,7 @@
             >
               <div>
                 <p style="margin-top: 22rem">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum.
+                  {{$t('message.consultation.shortDescription')}}
                 </p>
               </div>
 
@@ -1753,6 +1749,7 @@ export default {
 
     .block-1-message {
       font-size: 2rem;
+      white-space: pre-line;
     }
 
     .subtitle-s {

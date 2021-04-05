@@ -10,6 +10,11 @@ export default {
 
 
   "id": "10/3/2021",
+  "welcome": "Hello,\n Welcome to MCC Singapore!",
+  "intro-title":"What we do",
+  "intro-subtitle-1": "Consultation",
+  "intro-subtitle-2":"Real Estate",
+  "intro-subtitle-3":"Construction",
   "about-title": "About Us",
   "about": "In response to the national Going Global Strategy, we entered the Singapore market in 1992. Over the past twenty years, MCC Singapore has undergone many trials and tribulations. Progressing from a small company to the big enterprise of today, we have become stronger and have also steadily reached new heights. Our business has undergone several transformations and upgrades, from the initial labor subcontracting to professional subcontracting, general contracting, and real estate development. Currently, we are promoting the transformation and upgrade from a real estate developer to an integrated urban operator, diversifying and digitalizing our business. We are striving to realize our vision of being an efficient, innovative, and the world’s leading integrated urban operator...",
   "about-full": "MCC Singapore is the overseas branch of MCC Central Research Institute of Building and Construction (MCC CRIBC), a wholly-owned subsidiary of China Metallurgical Group Corporation (MCC Group). As an overseas regional company of the MCC Group, MCC Singapore represents the Group to carry out regional business activities in Singapore and is mainly engaged in urban planning, project planning, urban and property development, project management, general contracting of construction engineering and foundation engineering, as well as contracting of steel structure engineering. The company has made significant breakthroughs and achieved remarkable results in steel structure professional engineering, large-scale integrated entertainment projects, real estate development and project management, as well as public infrastructure projects. It has been awarded the Top Ten Successful Chinese Enterprises Entering into ASEAN for three consecutive years.\n\nAfter more than two decades of development since it first set foot in Southeast Asia, the blue mark of MCC has spread to all corners of Singapore and is also gradually extending to other countries and regions. In the process of overseas development, MCC Singapore has always adhered to the concept of green, sustainable, and smart development. With urban planning and project planning as the guide, and international first-class engineering contracting as the basis to promote the sustainable, stable, and healthy development of the company’s business, MCC Singapore strives to become an influential and innovative urban developer and operator in the region.\n\nSince 2006, all three companies of MCC Singapore have been certified by ISO9001, ISO14001 and ISO18001, bizSAFE Star and bizSAFE Partner in Singapore, and have been awarded the Green Mark Platinum and GoldPlus Awards, Green and Gracious Builders Award, and Construction Productivity Gold Award – Best Practices and Innovations Award by the Building and Construction Authority (BCA), the 2012 Construction Safety Award, 2012 Construction Award and 2013 Certification of Merit (Construction) by the Housing and Development Board (HDB), Workplace Safety and Health Award by the Ministry of Manpower (MOM), and the Structural Steel Design Awards by the Singapore Structural Steel Society (SSSS).\n\n",
@@ -63,6 +68,18 @@ export default {
   ],
   "consultation": {
     "description": "With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management. MCC Land has been venturing into different type and scale of development as well as expanding from Singapore to other Southeast Asian countries, Australia and the United Kingdom. With the extensive knowledge and experience of China and Singapore in urban planning, urban governance, and industrial development, etc., MCC Land is committed to creating a sustainable, resilient, smart and high-quality of life.",
+    "shortDescription":"With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management.",
+    "title-1":"MCC Singapore",
+    "title-2":"Consultation",
+    "title-3":"Services",
+    "count-1":"Full",
+    "label-1": "Urban planning and design capabilities",
+    "label-2":"Ongoing projects",
+    "label-3":"Singapore, Malaysia, Cambodia and China",
+    "label-4":"In terms of project size",
+    "label-5":"US $ investments",
+    "unit-1":"Countries",
+    "unit-2":"Millions",
     "services": [
       "Feasibility Study",
       "Urban Planning",
@@ -79,24 +96,8 @@ export default {
       "Gas Supply Planning Design",
       "Sitewide Utilities Strategy and Planning Design",
       "Solidwaste Strategy and Management"
-    ],
-    "servicesCN": [
-      "可行性研究",
-      "城市规划",
-      "城市设计",
-      "建筑设计",
-      "可持续环境规划",
-      "运输/交通/道路规划",
-      "水资源战略与管理",
-      "给水系统规划",
-      "废水管理规划",
-      "雨洪管理规划",
-      "排水系统规划",
-      "电力规划",
-      "燃气规划",
-      "公用事业策略和规划",
-      "固体废弃物管理策略"
-    ]
+    ], 
+
   },
   "realEstate": {
     "description": "In 2010, MCC Land (Singapore) Pte Ltd was established to undertake real estate development in Singapore and the surrounding regions for China Metallurgical Group Corporation. As the representative for the group's joint-stock company, it is also responsible for the business activities in Singapore. The company has been ranked among the Top Ten Property Developers in Singapore for four consecutive years and has received Asia’s Top Influential Brand Award as well as Singapore Prestige Brand Award (SPBA) Global Brands Award.\n\nMCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",

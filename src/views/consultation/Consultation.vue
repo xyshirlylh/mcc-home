@@ -2,18 +2,20 @@
   <div class="consultation">
     <section class="top-container">
       <div class="flex-2">
-        <p class="f-s-25 f-c-10 subtitle">MCC Land</p>
+        <p class="f-s-25 f-c-10 subtitle">
+          {{ $t("message.consultation.title-1") }}
+        </p>
 
         <!-- <gap :height="30"/> -->
 
         <p class="f-s-100 f-c-1 font-bold title" style="letter-spacing: 4px">
-          Consultation
+          {{ $t("message.consultation.title-2") }}
         </p>
 
         <gap :height="50" />
 
         <p class="f-s-25 f-c-1 content">
-          {{ this.content.consultation.description }}
+          {{ $t("message.consultation.description") }}
         </p>
 
         <gap :height="100" />
@@ -33,7 +35,7 @@
 
       <gap :width="124" />
 
-      <ul class="flex-3 flex-row flex-wrap justify-content-between">
+      <ul class="flex-3 flex-row flex-wrap justify-content-between" ref="numbers" :key="componentKey">
         <li
           v-for="(item, i) in numbers"
           :key="item.id"
@@ -43,11 +45,19 @@
             <p
               class="f-s-80 f-f-rubik"
               :ref="'countRef' + i"
-              style="white-space: nowrap"
+              style="white-space: nowrap; overflow: hidden"
+              :style="{ 'font-size': i === 4 || i === 5 ? '4rem' : '8rem' }"
             >
               {{ item.count }}
             </p>
-            <p class="f-s-99 flex-row align-items-center">{{ item.unit }}</p>
+            <p class="f-s-30 flex-row align-items-center">
+              {{ item.unit
+              }}<sup
+                v-show="i === 4"
+                style="vertical-align: super; font-size: 3rem"
+                >2</sup
+              >
+            </p>
           </div>
 
           <p class="f-c-13 f-f-sans f-s-25 label-comment">{{ item.label }}</p>
@@ -59,7 +69,7 @@
 
     <div class="services">
       <div class="services-title">
-        <p class="f-f-sans">Services</p>
+        <p class="f-f-sans">{{ $t("message.consultation.title-3") }}</p>
       </div>
 
       <div class="services-row-1 flex-row">
@@ -69,7 +79,7 @@
             :key="index"
             class="f-f-sans"
           >
-            {{ item }}
+            {{ $t("message.consultation.services." + index) }}
           </li>
         </ul>
         <div class="pic">
@@ -78,6 +88,8 @@
       </div>
     </div>
     <gap :height="50" />
+    <button @click="updateDom"></button>
+
   </div>
 </template>
 
@@ -91,40 +103,10 @@ export default {
   data() {
     return {
       content: null,
+      locale: this.$store.state.locale, 
       boxWidth: 0,
-      numbers: [
-        { id: "5", count: "", unit: "", label: "" },
-        {
-          id: "0",
-          count: "13",
-          unit: "",
-          label: "Total No. of completed projects",
-        },
-        {
-          id: "1",
-          count: "8",
-          unit: "",
-          label: "Ongoing projects",
-        },
-        {
-          id: "2",
-          count: "4",
-          unit: "",
-          label: "Countries: Singapore, Malaysia, Cambodia, China",
-        },
-        {
-          id: "3",
-          count: "0 - 360",
-          unit: "",
-          label: "Square kilometre In terms of project size",
-        },
-        {
-          id: "4",
-          count: "0.2 - 2",
-          unit: "",
-          label: "billion US $ Investment",
-        },
-      ],
+      componentKey : 0,
+      numbers:[],
       projectList: null,
       propertiesInSG: [
         {
@@ -237,23 +219,15 @@ export default {
       timer: null,
     };
   },
+
+
+
+
+
   created() {
     this.content = require("../../assets/homepage/content.json");
-    this.projectList = [
-      "queensPeak",
-      "theAlpsResidences",
-      "northwave",
-      "thePoiz",
-      "theSantorini",
-      "seaHorizon",
-      "forestville",
-      "oneCanberra",
-      "theNautical",
-      "canberraResidences",
-      "theCanopy",
-      "daraSakor",
-      "skyVilla",
-    ];
+    this.locale = this.$store.state.lang
+
 
     this.timer = setTimeout(() => {
       //const width = this.$refs.contentRef.clientWidth;
@@ -261,7 +235,51 @@ export default {
 
       this.animateNumber();
     }, 100);
+
+     this.numbers=[
+        { id: "5", count: "", unit: "", label: "" },
+        {
+          id: "0",
+          count: this.$i18n.t("message.consultation.count-1"),
+          unit: "",
+          label: this.$i18n.t("message.consultation.label-1"),
+        },
+        {
+          id: "1",
+          count: "8",
+          unit: "",
+          label: this.$i18n.t("message.consultation.label-2"),
+        },
+        {
+          id: "2",
+          count: "4",
+          unit: this.$i18n.t("message.consultation.unit-1"),
+          label: this.$i18n.t("message.consultation.label-3"),
+        },
+        {
+          id: "3",
+          count: "0 - 360",
+          unit: "KM",
+          label: this.$i18n.t("message.consultation.label-4"),
+        },
+        {
+          id: "4",
+          count: "200 - 2000",
+          unit: this.$i18n.t("message.consultation.unit-2"),
+          label: this.$i18n.t("message.consultation.label-5"),
+        },
+      ]
+
+    
   },
+
+  mounted(){
+    if(this.$store.state === "zh"){
+      this.updateDom
+    }
+  },
+
+
   destroyed() {
     clearTimeout(this.timer);
   },
@@ -270,6 +288,46 @@ export default {
       this.$router.push("/project-detail/?id=" + id);
       window.scrollTo(0, 0);
     },
+
+    updateDom:function(){
+      console.log(this.locale)
+      this.numbers = [
+        { id: "5", count: "", unit: "", label: "" },
+        {
+          id: "0",
+          count: this.$i18n.t("message.consultation.count-1"),
+          unit: "",
+          label: this.$i18n.t("message.consultation.label-1"),
+        },
+        {
+          id: "1",
+          count: "8",
+          unit: "",
+          label: this.$i18n.t("message.consultation.label-2"),
+        },
+        {
+          id: "2",
+          count: "4",
+          unit: this.$i18n.t("message.consultation.unit-1"),
+          label: this.$i18n.t("message.consultation.label-3"),
+        },
+        {
+          id: "3",
+          count: "0 - 360",
+          unit: "KM",
+          label: this.$i18n.t("message.consultation.label-4"),
+        },
+        {
+          id: "4",
+          count: "200 - 2000",
+          unit: this.$i18n.t("message.consultation.unit-2"),
+          label: this.$i18n.t("message.consultation.label-5"),
+        },
+      ]
+    },
+
+    
+
 
     enterProjectDetail() {
       this.$router.push({ path: "/project-detail" });
@@ -288,7 +346,7 @@ export default {
     },
 
     animateNumber() {
-      for (let i = 0; i < this.numbers.length; i++) {
+      for (let i = 2; i < this.numbers.length; i++) {
         const item = this.numbers[i];
         const el = this.$refs[`countRef${i}`];
 

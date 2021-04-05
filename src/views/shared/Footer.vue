@@ -190,7 +190,7 @@
           <gap :height="36" />
           <a
             @click="goto('employee-operation')"
-            style="text-decoration: none"
+            style="text-decoration: none;cursor:pointer"
             class="f-f-arial f-s-16 f-c-16 label-hover operations"
           >
             <p>Employee Operations</p>
@@ -210,7 +210,17 @@
 
           <gap :height="15" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">Language</p>
+          <div class="flex-row">
+             <p class="f-f-arial f-s-16 f-c-16 label-hover">Language :  </p>
+           <select v-model="$i18n.locale" @click="showMenuList = true" style="position:relative;margin-left: 1rem;top:-0.5rem">
+            <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang[1]" @click="changeLang(lang[1])">
+              {{ lang[0] }}
+            </option>
+          </select>
+
+          </div>
+
+         
 
           <gap :height="15" />
 
@@ -246,13 +256,18 @@ export default {
   data() {
     return {
       imgSvg,
+      langs: [["English","en"], ["中文","zh"]],
     };
   },
 
   methods: {
     showContactUs: function () {
       this.$store.commit("flip");
-      console.log(this.$store.state.showContectUs);
+      console.log(this.$store.state.showContectUs); 
+    },
+
+    changeLang:function(what){
+      this.$store.commit('changeLang', what)
     },
 
     goto:function(where){
