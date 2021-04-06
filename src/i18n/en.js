@@ -8,17 +8,53 @@ export default {
   'label-caculate': 'Caculate',
   'label-total-salary': 'Total salary in {month} {year}:',
 
+  "header": {
+    "home": "Home",
+    "consultation": "Consultation",
+    "real-estate": "Real Estate",
+    "construction": "Construction",
+    "about-us": "About Us",
+    "history": "MCC History",
+    "mcc-news": "MCC News",
+    "language": "Language: ",
+
+  },
+
+  "footer":{
+    "development":"DEVELOPMENT",
+    "construction":"CONSTRUCTION",
+    "staff":"STAFF PAGE",
+    "employee":"Employee Operations",
+    "other":"OTHER",
+    "career":"Career",
+    "privacy":"Privacy",
+    "language":"Language",
+    "contact":"Contact Us",
+
+  },
+
+  "culture": {
+    'title': 'Our Culture',
+    "mission": "Mission",
+    "vision": "Vision",
+    "culture": "Core Values",
+    'content-1': "Transforming lives, inspiring society",
+    'content-2': "To be a global leading urbanisation enterprise",
+    'content-3': "Make a difference, Creativity, Cooperation, Sincerity, Goal-oriented",
+  },
+
 
   "id": "10/3/2021",
   "welcome": "Hello,\n Welcome to MCC Singapore!",
-  "intro-title":"What we do",
+  "intro-title": "What we do",
   "intro-subtitle-1": "Consultation",
-  "intro-subtitle-2":"Real Estate",
-  "intro-subtitle-3":"Construction",
+  "intro-subtitle-2": "Real Estate",
+  "intro-subtitle-3": "Construction",
   "about-title": "About Us",
-  "about": "In response to the national Going Global Strategy, we entered the Singapore market in 1992. Over the past twenty years, MCC Singapore has undergone many trials and tribulations. Progressing from a small company to the big enterprise of today, we have become stronger and have also steadily reached new heights. Our business has undergone several transformations and upgrades, from the initial labor subcontracting to professional subcontracting, general contracting, and real estate development. Currently, we are promoting the transformation and upgrade from a real estate developer to an integrated urban operator, diversifying and digitalizing our business. We are striving to realize our vision of being an efficient, innovative, and the world’s leading integrated urban operator...",
+  "about": "In response to the national Going Global Strategy, we entered the Singapore market in 1992. Over the past twenty years, MCC Singapore has undergone many trials and tribulations. Progressing from a small company to the big enterprise of today, we have become stronger and have also steadily reached new heights. Our business has undergone several transformations and upgrades, from the initial labor subcontracting to professional subcontracting, general contracting, and real estate development. Currently, we are promoting the transformation and upgrade from a real estate developer to an integrated urban operator, diversifying and digitalizing our business. We are striving to realize our vision of being an efficient, innovative, and the world’s leading integrated urban operator.",
+  "about-poetry": "“The city makes life better,\nwe will continue to contribute to the development of the city, \nand while actively integrating into the world, we will also strive to\n transform lives and inspire society.”\n\n",
   "about-full": "MCC Singapore is the overseas branch of MCC Central Research Institute of Building and Construction (MCC CRIBC), a wholly-owned subsidiary of China Metallurgical Group Corporation (MCC Group). As an overseas regional company of the MCC Group, MCC Singapore represents the Group to carry out regional business activities in Singapore and is mainly engaged in urban planning, project planning, urban and property development, project management, general contracting of construction engineering and foundation engineering, as well as contracting of steel structure engineering. The company has made significant breakthroughs and achieved remarkable results in steel structure professional engineering, large-scale integrated entertainment projects, real estate development and project management, as well as public infrastructure projects. It has been awarded the Top Ten Successful Chinese Enterprises Entering into ASEAN for three consecutive years.\n\nAfter more than two decades of development since it first set foot in Southeast Asia, the blue mark of MCC has spread to all corners of Singapore and is also gradually extending to other countries and regions. In the process of overseas development, MCC Singapore has always adhered to the concept of green, sustainable, and smart development. With urban planning and project planning as the guide, and international first-class engineering contracting as the basis to promote the sustainable, stable, and healthy development of the company’s business, MCC Singapore strives to become an influential and innovative urban developer and operator in the region.\n\nSince 2006, all three companies of MCC Singapore have been certified by ISO9001, ISO14001 and ISO18001, bizSAFE Star and bizSAFE Partner in Singapore, and have been awarded the Green Mark Platinum and GoldPlus Awards, Green and Gracious Builders Award, and Construction Productivity Gold Award – Best Practices and Innovations Award by the Building and Construction Authority (BCA), the 2012 Construction Safety Award, 2012 Construction Award and 2013 Certification of Merit (Construction) by the Housing and Development Board (HDB), Workplace Safety and Health Award by the Ministry of Manpower (MOM), and the Structural Steel Design Awards by the Singapore Structural Steel Society (SSSS).\n\n",
-
+  "read-more": "Read More",
   "history": [
     {
       "year": 1992,
@@ -68,18 +104,18 @@ export default {
   ],
   "consultation": {
     "description": "With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management. MCC Land has been venturing into different type and scale of development as well as expanding from Singapore to other Southeast Asian countries, Australia and the United Kingdom. With the extensive knowledge and experience of China and Singapore in urban planning, urban governance, and industrial development, etc., MCC Land is committed to creating a sustainable, resilient, smart and high-quality of life.",
-    "shortDescription":"With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management.",
-    "title-1":"MCC Singapore",
-    "title-2":"Consultation",
-    "title-3":"Services",
-    "count-1":"Full",
+    "shortDescription": "With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management.",
+    "title-1": "MCC Singapore",
+    "title-2": "Consultation",
+    "title-3": "Services",
+    "count-1": "Full",
     "label-1": "Urban planning and design capabilities",
-    "label-2":"Ongoing projects",
-    "label-3":"Singapore, Malaysia, Cambodia and China",
-    "label-4":"In terms of project size",
-    "label-5":"US $ investments",
-    "unit-1":"Countries",
-    "unit-2":"Millions",
+    "label-2": "Ongoing projects",
+    "label-3": "Singapore, Malaysia, Cambodia and China",
+    "label-4": "In terms of project size",
+    "label-5": "US $ investments",
+    "unit-1": "Countries",
+    "unit-2": "Millions",
     "services": [
       "Feasibility Study",
       "Urban Planning",
@@ -96,7 +132,7 @@ export default {
       "Gas Supply Planning Design",
       "Sitewide Utilities Strategy and Planning Design",
       "Solidwaste Strategy and Management"
-    ], 
+    ],
 
   },
   "realEstate": {

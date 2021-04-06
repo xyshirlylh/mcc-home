@@ -35,7 +35,11 @@
 
       <gap :width="124" />
 
-      <ul class="flex-3 flex-row flex-wrap justify-content-between" ref="numbers" :key="componentKey">
+      <ul
+        class="flex-3 flex-row flex-wrap justify-content-between"
+        ref="numbers"
+        :key="componentKey"
+      >
         <li
           v-for="(item, i) in numbers"
           :key="item.id"
@@ -88,13 +92,12 @@
       </div>
     </div>
     <gap :height="50" />
-    <button @click="updateDom"></button>
-
   </div>
 </template>
 
 <script>
 import anime from "animejs/lib/anime.es.js";
+import { mapState } from "vuex";
 //import ProjectImageCard from "../../components/card/ProjectImageCard";
 
 export default {
@@ -103,10 +106,10 @@ export default {
   data() {
     return {
       content: null,
-      locale: this.$store.state.locale, 
+      locale: this.$store.state.locale,
       boxWidth: 0,
-      componentKey : 0,
-      numbers:[],
+      componentKey: 0,
+      numbers: [],
       projectList: null,
       propertiesInSG: [
         {
@@ -220,14 +223,9 @@ export default {
     };
   },
 
-
-
-
-
   created() {
     this.content = require("../../assets/homepage/content.json");
-    this.locale = this.$store.state.lang
-
+    this.locale = this.$store.state.lang;
 
     this.timer = setTimeout(() => {
       //const width = this.$refs.contentRef.clientWidth;
@@ -236,49 +234,25 @@ export default {
       this.animateNumber();
     }, 100);
 
-     this.numbers=[
-        { id: "5", count: "", unit: "", label: "" },
-        {
-          id: "0",
-          count: this.$i18n.t("message.consultation.count-1"),
-          unit: "",
-          label: this.$i18n.t("message.consultation.label-1"),
-        },
-        {
-          id: "1",
-          count: "8",
-          unit: "",
-          label: this.$i18n.t("message.consultation.label-2"),
-        },
-        {
-          id: "2",
-          count: "4",
-          unit: this.$i18n.t("message.consultation.unit-1"),
-          label: this.$i18n.t("message.consultation.label-3"),
-        },
-        {
-          id: "3",
-          count: "0 - 360",
-          unit: "KM",
-          label: this.$i18n.t("message.consultation.label-4"),
-        },
-        {
-          id: "4",
-          count: "200 - 2000",
-          unit: this.$i18n.t("message.consultation.unit-2"),
-          label: this.$i18n.t("message.consultation.label-5"),
-        },
-      ]
-
-    
+    this.updateDom();
+  },
+  computed: {
+    ...mapState(["lang"]),
   },
 
-  mounted(){
-    if(this.$store.state === "zh"){
-      this.updateDom
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
+  },
+
+  mounted() {
+    if (this.$store.state === "zh") {
+      this.updateDom;
     }
   },
-
 
   destroyed() {
     clearTimeout(this.timer);
@@ -289,8 +263,8 @@ export default {
       window.scrollTo(0, 0);
     },
 
-    updateDom:function(){
-      console.log(this.locale)
+    updateDom: function () {
+      //console.log(this.locale)
       this.numbers = [
         { id: "5", count: "", unit: "", label: "" },
         {
@@ -323,11 +297,8 @@ export default {
           unit: this.$i18n.t("message.consultation.unit-2"),
           label: this.$i18n.t("message.consultation.label-5"),
         },
-      ]
+      ];
     },
-
-    
-
 
     enterProjectDetail() {
       this.$router.push({ path: "/project-detail" });
@@ -456,21 +427,29 @@ export default {
       font-weight: 700;
     }
     ul {
-      margin-top: 30px;
+      padding-left: 2%;
+      margin-top: 50px;
       width: 40%;
+      //background-color: red;
+      column-count: 2;
     }
     .pic {
       width: 60%;
       img {
         width: 100%;
-        margin-left: 10%;
+        margin-top: 10%;
+        margin-left: 5%;
         height: auto;
         object-fit: cover;
       }
     }
     li {
+      //background-color: red;
+      margin-right: 2rem;
       font-size: 2.7rem;
       margin-bottom: 3rem;
+      list-style-type: circle;
+      //max-width: 280px;
     }
   }
 }

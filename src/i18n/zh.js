@@ -9,14 +9,51 @@ export default {
   'label-total-salary': '{year}年{month}月工资总计：',
 
   "id": "10/3/2021",
-  "welcome": "您好,\n 欢迎来到中冶新加坡!", 
+  "welcome": "您好,\n 欢迎来到中冶新加坡!",
   "about-title": "关于我们",
-  "intro-title":"我们的业务",
+  "intro-title": "我们的业务",
   "intro-subtitle-1": "咨询",
-  "intro-subtitle-2":"房地产",
-  "intro-subtitle-3":"工程建筑",
-  "about": "响应国家“走出去”号召，我们在1992年进入新加坡市场。\n二十多年来，中冶新加坡经历重重考验，从小到大、由弱而强，一步步迈上新的台阶。公司业务历经劳务分包、专业分包、工程总承包、房地产发展商等几次转型升级，目前正在推进从“房地产开发商”到“城市综合运营商”的转型升级，实现公司业务的多元化与数字化，向高效创新、全球领先的城市综合运营商这一公司愿景而奋斗...",
+  "intro-subtitle-2": "房地产",
+  "intro-subtitle-3": "工程建筑",
+  "about-poetry":"“城市让生活更加美好，我们将不断为城市发展助力，\n\n 在积极融入世界的同时，\n\n也以涓滴之力改变世界面貌，\n\n 创造无限生活。”",
+  "about": "响应国家“走出去”号召，我们在1992年进入新加坡市场。\n二十多年来，中冶新加坡经历重重考验，从小到大、由弱而强，一步步迈上新的台阶。公司业务历经劳务分包、专业分包、工程总承包、房地产发展商等几次转型升级，目前正在推进从“房地产开发商”到“城市综合运营商”的转型升级，实现公司业务的多元化与数字化，向高效创新、全球领先的城市综合运营商这一公司愿景而奋斗。",
   "about-full": "中国中冶新加坡（MCC SINGAPORE）是中国冶金科工集团有限公司（简称中冶集团）旗下全资子公司中冶建筑研究总院有限公司的海外分公司。中国中冶新加坡（MCC SINGAPORE）作为中冶集团的海外区域性公司，代表中冶集团在新加坡开展区域性经营活动，主要从事城市规划、项目策划、城市及地产开发、项目管理、建筑工程及基础工程总承包、钢结构专业工程承包等业务。公司先后在钢结构专业工程、大型综合娱乐项目、房地产开发以及项目管理、公共基础设施项目等领域取得重大突破和显著成效，连续三年被评为“中国企业走进东盟十大成功企业奖”。\n\n1992年扬帆南洋，经过二十多年的发展，中冶蓝已遍布新加坡全岛的各个角落，并逐步向其他国家和地区延伸。在海外的发展过程中，中冶新加坡始终坚持绿色、可持续、智慧型的发展理念，以城市规划及项目策划为先导，以国际一流的工程承包为基础，推动公司业务持续、稳定、健康发展，力争成为区域有影响力的创新型城市发展与运营商。\n\n自2006年起，中国中冶新加坡公司的三间公司均在新加坡陆续通过ISO9001、ISO14001和ISO18001、bizSAFE Star和bizSAFE Partner认证，并陆续获得新加坡建设局颁发的绿色建筑白金奖和超金奖、绿色文明施工企业杰出奖、建筑业生产力实践与创新金奖、新加坡建屋发展局颁发的2012年安全大奖、2012年优质工程奖、2013年优质工程奖、新加坡人力部颁发的企业安全奖、新加坡钢结构协会颁发的钢结构设计大奖等殊荣。城市让生活更加美好，我们将不断为城市发展助力，在积极融入世界的同时，也以涓滴之力改变世界面貌，创造无限生活。",
+  "read-more":"了解更多",
+
+  "header":{
+    "home":"首页",
+    "consultation":"咨询业务",
+    "real-estate":"房地产",
+    "construction":"工程建筑",
+    "about-us":"关于我们",
+    "history":"MCC发展史",
+    "mcc-news":"MCC新闻",
+    "language":"语言: ",
+
+  },
+
+  "footer":{
+    "development":"开发",
+    "construction":"工程",
+    "staff":"员工页面",
+    "employee":"员工中心",
+    "other":"其它",
+    "career":"工作机会",
+    "privacy":"隐私",
+    "language":"语言",
+    "contact":"联系我们",
+
+  },
+
+  "culture":{
+    'title':'我们的文化',
+    "mission":"我们的使命",
+    "vision":"我们的愿景",
+    "culture":"企业文化",
+    'content-1': "改变生活, 启发社会",
+    'content-2': "成为世界领先的城市发展与运营商",
+    'content-3': "与众不同, 勇于创新, 合作共赢, 诚信如一, 目标导向",
+  },
 
   "history": [
     {
@@ -67,18 +104,18 @@ export default {
   ],
   "consultation": {
     "description": "作为新加坡地产业的领跑者，中冶新加坡公司凭借自身丰富的城市规划、开发建设与运营管理经验，不断丰富项目类型和规模，并将发展市场由新加坡拓展到东南亚其他国家和澳大利亚、英国等国际市场。\n\n公司在地产项目的基础上，充分借鉴中新两国在城市发展、城市治理、产业导入、社区营造，以及智能化建设和智慧型管理等方面的广泛知识和经验，提出创新的城市社区解决方案，通过精心设计的城市生活模块，为不同尺度的发展项目提供更灵活、立体的业态和居住模式组合。",
-    "shortDescription":"作为新加坡地产业的领跑者，中冶新加坡公司凭借自身丰富的城市规划、开发建设与运营管理经验，不断丰富项目类型和规模，并将发展市场由新加坡拓展到东南亚其他国家和澳大利亚、英国等国际市场。",
-    "title-1":"中冶新加坡",
-    "title-2":"咨询业务",
-    "title-3":"业务种类",
-    "count-1":"全过程",
+    "shortDescription": "作为新加坡地产业的领跑者，中冶新加坡公司凭借自身丰富的城市规划、开发建设与运营管理经验，不断丰富项目类型和规模，并将发展市场由新加坡拓展到东南亚其他国家和澳大利亚、英国等国际市场。",
+    "title-1": "中冶新加坡",
+    "title-2": "咨询业务",
+    "title-3": "业务种类",
+    "count-1": "全过程",
     "label-1": "城市规划和设计解决方案",
-    "label-2":"正在进行的项目",
-    "label-3":"新加坡、马来西亚、柬埔寨和中国",  
-    "label-4":"项目规模",
-    "label-5":"投资规模",
-    "unit-1":"个国家",
-    "unit-2":"百万美金", 
+    "label-2": "正在进行的项目",
+    "label-3": "新加坡、马来西亚、柬埔寨和中国",
+    "label-4": "项目规模",
+    "label-5": "投资规模",
+    "unit-1": "个国家",
+    "unit-2": "百万美金",
     "services": [
       "可行性研究",
       "城市规划",
@@ -96,11 +133,11 @@ export default {
       "公用事业策略和规划",
       "固体废弃物管理策略"
     ],
-    
+
   },
   "realEstate": {
-    "description": "In 2010, MCC Land (Singapore) Pte Ltd was established to undertake real estate development in Singapore and the surrounding regions for China Metallurgical Group Corporation. As the representative for the group's joint-stock company, it is also responsible for the business activities in Singapore. The company has been ranked among the Top Ten Property Developers in Singapore for four consecutive years and has received Asia’s Top Influential Brand Award as well as Singapore Prestige Brand Award (SPBA) Global Brands Award.\n\nMCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
-    "shortDescription": "MCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
+    "description": "2010年，中冶置业（新加坡）有限公司在新加坡注册成立，负责中冶集团在新加坡及周边地区的房地产开发业务，同时作为股份公司的海外区域性公司，代表股份公司在新加坡开展经营活动。公司连续四年跻身新加坡“十大房地产开发商” 之列，并获得 “亚洲顶尖影响力品牌奖” 以及 “新加坡金字品牌奖全球奖项” 。\n\n中冶置业（新加坡）有限公司已在新加坡独资、合资及管理开发了15个商住综合、私人公寓、执行共管公寓等房地产项目，包括8000余个住宅单位，可售总面积达60多万平方米，在有限的空间里为千万业主“创造无限生活”。",
+    "shortDescription": "中冶置业（新加坡）有限公司已在新加坡独资、合资及管理开发了15个商住综合、私人公寓、执行共管公寓等房地产项目，包括8000余个住宅单位，可售总面积达60多万平方米，在有限的空间里为千万业主“创造无限生活”。",
     "queensPeak": {
       "name": "Queens Peak",
       "externalLink": "http://queenspeak.com.sg/",
@@ -328,7 +365,7 @@ export default {
     },
     "sunshineGarden": {
       "name": "Sunshine Garden",
-      "type": "construction",
+      "type": "construction",  
       "numOfPics": 4,
       "lat": 1.3767096224811073,
       "lng": 103.74107557441089,
@@ -349,13 +386,13 @@ export default {
       "type": "construction",
       "numOfPics": 4,
       "lat": 1.3959371333938806,
-      "lng": 103.88875119657924,
+      "lng": 103.88875119657924, 
       "descriptionCN": "7座16层住宅建筑，共745个单位",
       "description": "7 blocks of 16 storey residential flats with a total of 745 dwelling units"
     }
   },
   "construction": {
-    "shortDescription": "MCC Singapore has obtained the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories from the Building and Construction Authority of Singapore (BCA), as well as L6 grade in Plumbing & Sanitary Works (ME12) and Electrical engineering (ME05). Several completed projects have been recognized and awarded by BCA and other related agencies in the safety and design categories, and the company's engineering and technical capabilities have been widely recognized by the Singapore industry.",
-    "description": "China Jingye Engineering Corporation Limited (Singapore Branch) is a registered contractor with the Building and Construction Authority of Singapore (BCA) and the only State-owned enterprise in Singapore to obtain the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories. The company is influential in Singapore with excellent performance in both public and private construction sectors. The company is the main contractor for Singapore’s iconic landmark projects – Universal Studios Singapore and Maritime Experiential Museum, Resorts World, Sentosa.\n\nChina Jingye Construction Engineering (Singapore) Private Limited has extensive experience in the private civil engineering sector. As the general main contractor for MCC Land, it is responsible for most of its property development projects. The company has been part of MCC Singapore since its inception in 1996. It has accumulated comprehensive engineering performance and experiences in turnkey, specialized contracting, supply and subcontracting works."
+    "shortDescription": "中冶新加坡在房屋建筑、基础设施工程双领域均达到新加坡建设局A1最高级别，并拥有排水、机电双L6资质，多个完工项目获得新加坡建设局及其他有关机构多项安全、设计类奖项肯定，工程技术实力得到新加坡业界广泛认同。",
+    "description": "中国京冶工程技术有限公司（新加坡分公司），在建筑工程CW01和基础工程CW02两个序列都达到了新加坡建设局的最高级别A1，是新加坡市场唯一拥有双A1级别的中资企业。中国京冶工程技术有限公司（新加坡分公司）是新加坡本地有影响力的顶级承包商，在新加坡的公共建设领域及私人工程领域都有优秀的工程业绩，也是新加坡的地标性建筑——新加坡环球影城及海事博物馆的总承包商。\n\n中国京冶建设工程（新加坡）有限公司拥有丰富的私人工程领域的业绩，也是中冶置业（新加坡）有限公司绝大部分房地产开发项目的总承包商。自1996年中冶新加坡在新加坡本地立足以来，中国京冶建设工程（新加坡）有限公司作为中冶新加坡在本地历史最长的商业平台，积累了从劳务分包、专业承包商到总承包商等全面的工程经验和工程业绩。"
   }
 }

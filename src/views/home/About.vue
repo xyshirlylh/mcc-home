@@ -4,7 +4,11 @@
       <p>{{ $t("message.about-title") }}</p>
     </div>
     <div class="content">
-      <p v-if="this.$store.state.lang === 'english'" class="f-f-sans">
+      <p style="text-align:center;padding-bottom:20px;padding-top:20px; line-height:25px;font-style: italic;">
+        {{ $t("message.about-poetry") }}
+      </p>
+      <p  class="f-f-sans">
+        
         {{ $t("message.about-full") }}
       </p>
     </div>
@@ -46,6 +50,7 @@ export default {
   }
   .content {
     p {
+      //background-color: red;
       white-space: pre-line;
       padding: 0 0 30rem 0;
       text-align: justify;

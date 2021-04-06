@@ -168,7 +168,7 @@
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">DEVELOPMENT</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.development')}}</p>
           <gap :height="18" />
           <p class="f-f-arial f-s-16 f-c-16">T: 0065 6508 2288</p>
           <gap :height="10" />
@@ -176,7 +176,7 @@
 
           <gap :height="38" />
 
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">CONSTRUCTION</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.construction')}}</p>
           <gap :height="18" />
           <p class="f-f-arial f-s-16 f-c-16">T: 0065 6766 6883</p>
           <gap :height="10" />
@@ -186,41 +186,48 @@
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">STUFF PAGE</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.staff')}}</p>
           <gap :height="36" />
           <a
             @click="goto('employee-operation')"
-            style="text-decoration: none;cursor:pointer"
+            style="text-decoration: none; cursor: pointer"
             class="f-f-arial f-s-16 f-c-16 label-hover operations"
           >
-            <p>Employee Operations</p>
+            <p>{{$t('message.footer.employee')}}</p>
           </a>
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">OTHER</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.other')}}</p>
 
           <gap :height="40" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">Cereer</p>
+          <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.career')}}</p>
 
           <gap :height="15" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">Privacy</p>
+          <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.privacy')}}</p>
 
           <gap :height="15" />
 
           <div class="flex-row">
-             <p class="f-f-arial f-s-16 f-c-16 label-hover">Language :  </p>
-           <select v-model="$i18n.locale" @click="showMenuList = true" style="position:relative;margin-left: 1rem;top:-0.5rem">
-            <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang[1]" @click="changeLang(lang[1])">
-              {{ lang[0] }}
-            </option>
-          </select>
-
+            <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.language')}} :</p>
+            <select
+              v-model="$i18n.locale"
+              @click="showMenuList = true"
+              @change="changeLang($i18n.locale)" 
+              style="position: relative; margin-left: 1rem; top: -0.5rem"
+            >
+              <option
+                v-for="(lang, i) in langs"
+                :key="`Lang${i}`"
+                :value="lang[1]"
+                
+              >
+                {{ lang[0] }}
+              </option>
+            </select>
           </div>
-
-         
 
           <gap :height="15" />
 
@@ -230,7 +237,7 @@
             style="cursor: pointer"
             @click="showContactUs"
           >
-            <p class="f-f-arial f-s-16 f-c-16 label-hover">Contact Us</p>
+            <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.contact')}}</p>
           </div>
         </li>
       </ul>
@@ -256,24 +263,27 @@ export default {
   data() {
     return {
       imgSvg,
-      langs: [["English","en"], ["中文","zh"]],
+      langs: [
+        ["English", "en"],
+        ["中文", "zh"],
+      ],
     };
   },
 
   methods: {
     showContactUs: function () {
       this.$store.commit("flip");
-      console.log(this.$store.state.showContectUs); 
+      console.log(this.$store.state.showContectUs);
     },
 
-    changeLang:function(what){
-      this.$store.commit('changeLang', what)
+    changeLang: function (what) {
+      this.$store.commit("changeLang", what);
+      //console.log(what)
     },
 
-    goto:function(where){
-      this.$router.push('/'+where)
-
-    }
+    goto: function (where) {
+      this.$router.push("/" + where);
+    },
   },
 };
 </script>

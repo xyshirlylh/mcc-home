@@ -32,7 +32,7 @@
       <div
         v-if="showMenuList"
         class="row-icon flex-row"
-        @blur="showMenuList = false"
+        @blur="showMenuList = false" 
       >
         <!--
            <p
@@ -54,17 +54,29 @@
       </div>
 
       <div class="links flex-column">
-        <div @click="goto('')">Home</div>
-        <div @click="goto(consultation)">Consultation</div>
-        <div @click="goto('real-estate')">Real Estate</div>
-        <div @click="goto('construction')">Construction</div>
-        <div @click="goto('about-us')">About Us</div>
-        <div @click="goto('history')">History</div>
-        <div @click="goto('all-news')">MCC News</div>
-        <div>
-          <select v-model="$i18n.locale" @click="showMenuList = true">
-            <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">
-              {{ lang }}
+        <div @click="goto('')">{{$t('message.header.home')}}</div>
+        <div @click="goto(consultation)">{{$t('message.header.consultation')}}</div>
+        <div @click="goto('real-estate')">{{$t('message.header.real-estate')}}</div>
+        <div @click="goto('construction')">{{$t('message.header.construction')}}</div>
+        <div @click="goto('about-us')">{{$t('message.header.about-us')}}</div>
+        <div @click="goto('history')">{{$t('message.header.history')}}</div>
+        <div @click="goto('all-news')">{{$t('message.header.mcc-news')}}</div>
+        <div> 
+          {{$t('message.header.language')}}
+          <select
+            v-model="$i18n.locale"
+            @click="showMenuList = true"
+            @change="changeLang($i18n.locale)"
+            style="margin-left:1rem"
+            
+            
+          >
+            <option
+              v-for="(lang, i) in langs"
+              :key="`Lang${i}`"
+              :value="lang[1]"
+            >
+              {{ lang[0] }}
             </option>
           </select>
         </div>
@@ -121,16 +133,25 @@ export default {
       imgSvg,
       showMenuList: false,
       timer: null,
-      langs: ["en", "zh"],
+      langs: [
+        ["English", "en"],
+        ["中文", "zh"],
+      ],
     };
   },
   destroyed() {
     clearTimeout(this.timer);
   },
   methods: {
+    changeLang: function (what) {
+      this.showMenuList = false;
+      this.$store.commit("changeLang", what);
+      
+      //console.log(what);
+    },
     onClickMenu() {
       const el = this.$refs.boxMenu;
-      this.$refs.sideMenu.focus();
+      this.$refs.sideMenu.focus(); 
 
       anime({
         targets: el,

@@ -3,10 +3,9 @@
     <div class="block1">
       <div class="container-1-left">
         <div class="block-1-message">
-         
-          <p>{{$t('message.welcome')}}</p>  
+          <p>{{ $t("message.welcome") }}</p>
         </div>
- 
+
         <div>
           <div class="ID">
             <p class="f-f-ptsans">01</p>
@@ -17,7 +16,7 @@
           </svg>
 
           <div class="title">
-            <p>{{$t('message.intro-title')}}</p> 
+            <p>{{ $t("message.intro-title") }}</p>
           </div>
         </div>
 
@@ -46,9 +45,9 @@
               @click="goto('consultation')"
               v-if="selected === 1"
               style="color: black; cursor: pointer"
-              >{{$t('message.intro-subtitle-1')}}</span
+              >{{ $t("message.intro-subtitle-1") }}</span
             >
-            <span v-else>{{$t('message.intro-subtitle-1')}}</span>
+            <span v-else>{{ $t("message.intro-subtitle-1") }}</span>
           </div>
 
           <div class="subtitle" @mousemove="realestate()">
@@ -76,10 +75,10 @@
               v-if="selected === 2"
               style="color: black; cursor: pointer"
               @click="goRealEstate()"
-              >{{$t('message.intro-subtitle-2')}}</span
-            > 
+              >{{ $t("message.intro-subtitle-2") }}</span
+            >
 
-            <span v-else>{{$t('message.intro-subtitle-2')}}</span>
+            <span v-else>{{ $t("message.intro-subtitle-2") }}</span>
           </div>
 
           <div class="subtitle" @mouseover="construction()">
@@ -107,10 +106,10 @@
               style="color: black; cursor: pointer"
               v-if="selected === 3"
               @click="goConstruction()"
-              >{{$t('message.intro-subtitle-3')}}</span
+              >{{ $t("message.intro-subtitle-3") }}</span
             >
 
-            <span v-else>{{$t('message.intro-subtitle-3')}}</span>
+            <span v-else>{{ $t("message.intro-subtitle-3") }}</span>
           </div>
         </div>
       </div>
@@ -125,12 +124,12 @@
             >
               <div>
                 <p style="margin-top: 22rem">
-                  {{$t('message.consultation.shortDescription')}}
+                  {{ $t("message.consultation.shortDescription") }}
                 </p>
               </div>
 
-              <button class="button">
-                <p>Read More</p>
+              <button class="button" @click="goto('consultation')">
+                <p>{{$t('message.read-more')}}</p>
 
                 <svg class="button-arrow" viewBox="0 8 28 28">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -153,7 +152,7 @@
               </div>
 
               <button class="button" @click="goRealEstate()">
-                <p>Read More</p>
+                <p>{{$t('message.read-more')}}</p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -175,7 +174,7 @@
               </div>
 
               <button class="button" @click="goConstruction()">
-                <p>Read More</p>
+                <p>{{$t('message.read-more')}}</p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -219,12 +218,12 @@
               class="read-more"
               @click="goto('about-us')"
               style="color: rgb(6, 69, 173); cursor: pointer"
-              >Read More</span
+              >{{$t('message.read-more')}}...</span
             >
           </p>
 
           <!--
-          <button class="button-2">
+          <button class="button-2"> 
             <p>Read More</p>
 
             <svg class="button-arrow" viewBox="0 0 25 25">
@@ -980,7 +979,7 @@
       </svg>
 
       <div class="title">
-        <span>Our culture</span>
+        <span>{{$t('message.culture.title')}}</span>
       </div>
 
       <div class="row-1">
@@ -990,11 +989,11 @@
               <svg class="line-5">
                 <line x1="0" y1="0" x2="2.5rem" y2="0" />
               </svg>
-              <p class="title-5 font-bold">Mission</p>
+              <p class="title-5 font-bold">{{$t('message.culture.mission')}}</p>
             </div>
           </div>
           <div class="f-f-sans f-s-25 content-5">
-            <p>Transforming lives, inspiring society</p>
+            <p>{{$t('message.culture.content-1')}}</p>
           </div>
         </div>
         <div class="col-2">
@@ -1002,23 +1001,22 @@
             <svg class="line-5">
               <line x1="0" y1="0" x2="2.5rem" y2="0" />
             </svg>
-            <p class="title-5 font-bold">Vision</p>
+            <p class="title-5 font-bold">{{$t('message.culture.vision')}}</p>
           </div>
           <div class="content-5">
-            <p>To be a global leading urbanisation enterprise</p>
+            <p>{{$t('message.culture.content-2')}}</p>
           </div>
         </div>
         <div class="col-3">
           <div class="container-5">
             <svg class="line-5">
-              <line x1="0" y1="0" x2="2.5rem" y2="0" />
+              <line x1="0" y1="0" x2="2.5rem" y2="0" /> 
             </svg>
-            <p class="title-5 font-bold">Core Values</p>
+            <p class="title-5 font-bold">{{$t('message.culture.culture')}}</p>
           </div>
           <div class="content-5">
             <p>
-              Make a difference, Creativity, Cooperation, Sincerity,
-              Goal-oriented.
+              {{$t('message.culture.content-3')}}
             </p>
           </div>
         </div>
@@ -2059,7 +2057,7 @@ export default {
       margin-top: 0;
       line-height: 4.5rem;
 
-      width: 51vw;
+      width: 50vw;
       height: 39%;
 
       color: var(--unnamed-color-000000);

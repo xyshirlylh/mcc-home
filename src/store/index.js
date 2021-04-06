@@ -6,14 +6,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     showContectUs: false,
-    lang: 'zh',
+    lang: 'en',
  
   },
   mutations: {
     flip(state) {
       state.showContectUs = !state.showContectUs
     },
-    changeLang(state,what) {
+    changeLang(state,what ) {
       state.lang = what
     }
   },
