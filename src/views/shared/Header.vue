@@ -32,7 +32,7 @@
       <div
         v-if="showMenuList"
         class="row-icon flex-row"
-        @blur="showMenuList = false" 
+        @blur="showMenuList = false"
       >
         <!--
            <p
@@ -54,22 +54,34 @@
       </div>
 
       <div class="links flex-column">
-        <div @click="goto('')">{{$t('message.header.home')}}</div>
-        <div @click="goto(consultation)">{{$t('message.header.consultation')}}</div>
-        <div @click="goto('real-estate')">{{$t('message.header.real-estate')}}</div>
-        <div @click="goto('construction')">{{$t('message.header.construction')}}</div>
-        <div @click="goto('about-us')">{{$t('message.header.about-us')}}</div>
-        <div @click="goto('history')">{{$t('message.header.history')}}</div>
-        <div @click="goto('all-news')">{{$t('message.header.mcc-news')}}</div>
-        <div> 
-          {{$t('message.header.language')}}
+        <div class="item" @click="goto('')">
+          {{ $t("message.header.home") }}
+        </div>
+        <div class="item" @click="goto('consultation')">
+          {{ $t("message.header.consultation") }}
+        </div>
+        <div class="item" @click="goto('real-estate')">
+          {{ $t("message.header.real-estate") }}
+        </div>
+        <div class="item" @click="goto('construction')">
+          {{ $t("message.header.construction") }}
+        </div>
+        <div class="item" @click="goto('about-us')">
+          {{ $t("message.header.about-us") }}
+        </div>
+        <div class="item" @click="goto('history')">
+          {{ $t("message.header.history") }}
+        </div>
+        <div class="item" @click="goto('all-news')">
+          {{ $t("message.header.mcc-news") }}
+        </div>
+        <div>
+          {{ $t("message.header.language") }}
           <select
             v-model="$i18n.locale"
             @click="showMenuList = true"
             @change="changeLang($i18n.locale)"
-            style="margin-left:1rem"
-            
-            
+            style="margin-left: 1rem"
           >
             <option
               v-for="(lang, i) in langs"
@@ -146,12 +158,12 @@ export default {
     changeLang: function (what) {
       this.showMenuList = false;
       this.$store.commit("changeLang", what);
-      
+
       //console.log(what);
     },
     onClickMenu() {
       const el = this.$refs.boxMenu;
-      this.$refs.sideMenu.focus(); 
+      this.$refs.sideMenu.focus();
 
       anime({
         targets: el,
@@ -247,7 +259,12 @@ header {
       }
       .links {
         padding: 56.79px 0 0 58px;
+
         div {
+          &:hover {
+            text-decoration: underline;
+          }
+
           width: fit-content;
           cursor: pointer;
           margin-bottom: 28px;
@@ -333,6 +350,9 @@ header {
       .links {
         padding: 56.79px 0 0 58px;
         div {
+          &:hover {
+            text-decoration: underline;
+          }
           width: fit-content;
           cursor: pointer;
           margin-bottom: 28px;

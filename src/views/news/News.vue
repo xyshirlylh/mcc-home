@@ -5,7 +5,9 @@
         <div class="arrow-back">
           <img src="../../assets/imgs/news/arrow-left.png" alt="" />
         </div>
-        <div class="div"><p>Back</p></div>
+        <div class="div">
+          <p>{{ $t("message.news.back") }}</p>
+        </div>
       </div>
       <div class="gallery" v-if="hasPhoto === true">
         <div class="col-1">
@@ -37,18 +39,18 @@
       </div>
       <div class="button-all-photo" @click="goAllPhotos">
         <img src="../../assets/imgs/news/概览.png" alt="" />
-        <p>Show all photos</p>
+        <p>{{ $t("message.news.show-all") }}</p>
       </div>
     </div>
     <div class="block-2">
       <div class="info">
-        <p>Category Name | {{ this.content.date }}</p>
+        <p> {{ this.content.date }}</p>
       </div>
       <div class="title">
         {{ this.content.title }}
       </div>
       <div class="author" v-if="this.content.author === undefined">
-        <p>MCC Media Department</p>
+        <p>{{$t('message.news.author')}}</p> 
       </div>
       <div class="author" v-else>
         <p>{{ this.content.author }}</p>
@@ -117,6 +119,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data: function () {
     return {
@@ -129,6 +132,10 @@ export default {
     };
   },
   methods: {
+    updateDom: function () {
+      this.content = this.$i18n.t("message.news." + this.newsID);
+    },
+
     back: function () {
       this.$router.go(-1);
     },
@@ -143,9 +150,8 @@ export default {
     //this.currentUrl = window.location.href;
     //console.log(this.currentUrl);
     this.newsID = urlParams.get("id");
-    this.content = require("../../assets/news/" +
-      this.newsID +
-      "/content.json");
+
+    this.content = this.$i18n.t("message.news." + this.newsID);
 
     this.allNews = [
       "2_10_2020",
@@ -161,6 +167,18 @@ export default {
       "11_10_2019",
       "30_9_2019",
     ];
+  },
+
+  computed: {
+    ...mapState(["lang"]),
+  },
+
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
   },
 };
 </script>

@@ -129,7 +129,7 @@
               </div>
 
               <button class="button" @click="goto('consultation')">
-                <p>{{$t('message.read-more')}}</p>
+                <p>{{ $t("message.read-more") }}</p>
 
                 <svg class="button-arrow" viewBox="0 8 28 28">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -152,7 +152,7 @@
               </div>
 
               <button class="button" @click="goRealEstate()">
-                <p>{{$t('message.read-more')}}</p>
+                <p>{{ $t("message.read-more") }}</p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -174,7 +174,7 @@
               </div>
 
               <button class="button" @click="goConstruction()">
-                <p>{{$t('message.read-more')}}</p>
+                <p>{{ $t("message.read-more") }}</p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -218,7 +218,7 @@
               class="read-more"
               @click="goto('about-us')"
               style="color: rgb(6, 69, 173); cursor: pointer"
-              >{{$t('message.read-more')}}...</span
+              >{{ $t("message.read-more") }}...</span
             >
           </p>
 
@@ -249,10 +249,10 @@
             </svg>
 
             <div class="title">
-              <span>MCC history</span>
+              <span>{{ $t("message.mcc-history") }}</span>
             </div>
           </div>
-          <div class="column-2">MCC Singapore History</div>
+          <div class="column-2">{{ $t("message.history-title") }}</div>
           <div class="column-3">
             <svg
               class="button-left"
@@ -794,12 +794,12 @@
           </svg>
 
           <div class="title">
-            <span>MCC news</span>
+            <span>{{$t('message.news.title')}}</span>
           </div>
         </div>
         <div class="column-2">
           <div class="head-4">
-            <p>MCC News</p>
+            <p>{{$t('message.news.title')}}</p>
           </div>
         </div>
         <div class="column-3"></div>
@@ -957,7 +957,7 @@
           <div class="button-1" @click="goAllNews">
             <button>
               <div class="button-1-text">
-                <p>View more</p>
+                <p>{{$t('message.news.view-more')}}</p> 
               </div>
 
               <svg class="button-arrow" viewBox="0 0 28 28">
@@ -979,7 +979,7 @@
       </svg>
 
       <div class="title">
-        <span>{{$t('message.culture.title')}}</span>
+        <span>{{ $t("message.culture.title") }}</span>
       </div>
 
       <div class="row-1">
@@ -989,11 +989,13 @@
               <svg class="line-5">
                 <line x1="0" y1="0" x2="2.5rem" y2="0" />
               </svg>
-              <p class="title-5 font-bold">{{$t('message.culture.mission')}}</p>
+              <p class="title-5 font-bold">
+                {{ $t("message.culture.mission") }}
+              </p>
             </div>
           </div>
           <div class="f-f-sans f-s-25 content-5">
-            <p>{{$t('message.culture.content-1')}}</p>
+            <p>{{ $t("message.culture.content-1") }}</p>
           </div>
         </div>
         <div class="col-2">
@@ -1001,22 +1003,22 @@
             <svg class="line-5">
               <line x1="0" y1="0" x2="2.5rem" y2="0" />
             </svg>
-            <p class="title-5 font-bold">{{$t('message.culture.vision')}}</p>
+            <p class="title-5 font-bold">{{ $t("message.culture.vision") }}</p>
           </div>
           <div class="content-5">
-            <p>{{$t('message.culture.content-2')}}</p>
+            <p>{{ $t("message.culture.content-2") }}</p>
           </div>
         </div>
         <div class="col-3">
           <div class="container-5">
             <svg class="line-5">
-              <line x1="0" y1="0" x2="2.5rem" y2="0" /> 
+              <line x1="0" y1="0" x2="2.5rem" y2="0" />
             </svg>
-            <p class="title-5 font-bold">{{$t('message.culture.culture')}}</p>
+            <p class="title-5 font-bold">{{ $t("message.culture.culture") }}</p>
           </div>
           <div class="content-5">
             <p>
-              {{$t('message.culture.content-3')}}
+              {{ $t("message.culture.content-3") }}
             </p>
           </div>
         </div>
@@ -1062,6 +1064,7 @@
 <script>
 import anime from "animejs/lib/anime.es.js";
 import { Carousel, Slide } from "vue-carousel";
+import { mapState } from "vuex";
 
 export default {
   name: "Home",
@@ -1114,6 +1117,16 @@ export default {
     userStyle() {
       return {};
     },
+
+    ...mapState(["lang"]),
+  },
+
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
   },
 
   created() {
@@ -1133,18 +1146,10 @@ export default {
 
     this.content = require("../../assets/homepage/content.json");
 
-    this.news1 = require("../../assets/news/" +
-      this.allNews[0] +
-      "/content.json");
-    this.news2 = require("../../assets/news/" +
-      this.allNews[1] +
-      "/content.json");
-    this.news3 = require("../../assets/news/" +
-      this.allNews[2] +
-      "/content.json");
-    this.news4 = require("../../assets/news/" +
-      this.allNews[3] +
-      "/content.json");
+    this.news1 = this.$i18n.t("message.news." + this.allNews[0]);
+    this.news2 = this.$i18n.t("message.news." + this.allNews[1]);
+    this.news3 = this.$i18n.t("message.news." + this.allNews[2]);
+    this.news4 = this.$i18n.t("message.news." + this.allNews[3]);
   },
 
   mounted() {
@@ -1171,6 +1176,13 @@ export default {
   },
 
   methods: {
+    updateDom: function () {
+      this.news1 = this.$i18n.t("message.news." + this.allNews[0]);
+      this.news2 = this.$i18n.t("message.news." + this.allNews[1]);
+      this.news3 = this.$i18n.t("message.news." + this.allNews[2]);
+      this.news4 = this.$i18n.t("message.news." + this.allNews[3]);
+    },
+
     goLeft: function () {
       if (this.block4status > 0) {
         this.block4status--;

@@ -1,13 +1,13 @@
 <template>
   <div class="all-news">
-    <div class="button-back f-f-sans" @click="back">
+    <div class="button-back f-f-sans" @click="back" style="cursor:pointer">
       <div class="arrow-back">
         <img src="../../assets/imgs/news/arrow-left.png" alt="" />
       </div>
-      <div class="div"><p>Back</p></div>
+      <div class="div"><p>{{$t('message.news.back')}}</p></div>
     </div>
     <div class="head">
-      <p>Latest News</p>
+      <p>{{$t('message.news.latest-news')}}</p>  
     </div>
     <div class="box"></div>
     <div class="gallery" ref="gallery">
@@ -22,7 +22,8 @@
         </div>
         <div class="content">
           <p class="title">
-            {{ require("../../assets/news/" + item + "/content.json").title }}
+          
+            {{$t('message.news.'+item+".title") }}
           </p>
           <!--
             <p class="text">
