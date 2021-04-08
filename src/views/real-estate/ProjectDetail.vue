@@ -9,7 +9,10 @@
       <span
         class="position-absolute z-index-50 f-s-50 f-c-0 f-f-raleway font-bold"
         style="background-color: rgba(1, 1, 1, 0.3); padding: 1rem"
-        >{{ this.content["realEstate"][this.projectID]["name"] }}</span
+        >
+         
+        {{$t('message.realEstate.'+this.projectID+".name")}} 
+        </span
       >
     </div>
 
@@ -203,7 +206,7 @@
 </template>
 <script>
 //import FloorPlan from "./components/FloorPlans";
-
+import { mapState } from "vuex";
 export default {
   components: {
     //FloorPlan,
@@ -329,49 +332,7 @@ export default {
     this.projectID = urlParams.get("id");
     this.content = require("../../assets/homepage/content.json");
 
-    this.overview = {
-      details: [
-        {
-          title: "Project Name",
-          label: this.content["realEstate"][this.projectID]["name"],
-        },
-        {
-          title: "Project Type",
-          label: this.content["realEstate"][this.projectID]["type"],
-        },
-        {
-          title: "Developer",
-          label: this.content["realEstate"][this.projectID]["developer"],
-        },
-        {
-          title: "Tenure",
-          label: this.content["realEstate"][this.projectID]["tenure"],
-        },
-        {
-          title: "PSF",
-          label: this.content["realEstate"][this.projectID]["psf"],
-        },
-        {
-          title: "Completion Year",
-          label: this.content["realEstate"][this.projectID]["top"],
-        },
-        {
-          title: "Total Units",
-          label: this.content["realEstate"][this.projectID]["unitNum"],
-        },
-      ],
-      description: this.content["realEstate"][this.projectID]["description"],
-      facilities: [
-        { icon: "iconbasementcarpark", label: "Basement car park" },
-        { icon: "icon2971019", label: "Children’s Playground" },
-        { icon: "icondropoff", label: "Drop Off Point" },
-        { icon: "icon3788750", label: "Gymnasium room" },
-        { icon: "icon3582873", label: "Lift lobby" },
-        { icon: "icon763860", label: "Swimming pool" },
-        { icon: "iconXMLID_642_", label: "Main entrance" },
-        { icon: "icon783192", label: "24 hours security" },
-      ],
-    };
+    this.updateDom();
 
     this.location.lat = this.content["realEstate"][this.projectID]["lat"];
     this.location.lng = this.content["realEstate"][this.projectID]["lng"];
@@ -393,7 +354,69 @@ export default {
     }
     this.projectInfo.current.cover = this.projectInfo.images[0].imageSrc;
   },
+
+  computed: {
+ 
+    ...mapState(["lang"]),
+  },
+
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
+  },
+
   methods: {
+    updateDom: function () {
+      this.overview = {
+      details: [
+        {
+          title: "Project Name",
+        
+          label: this.$i18n.t("message.realEstate."+this.projectID+'.name'),  
+        },
+        {
+          title: "Project Type",
+          label: this.$i18n.t("message.realEstate."+this.projectID+'.type'),  
+        },
+        {
+          title: "Developer",
+         label: this.$i18n.t("message.realEstate."+this.projectID+'.developer'),  
+        },
+        {
+          title: "Tenure",
+          label: this.$i18n.t("message.realEstate."+this.projectID+'.tenure'),  
+        },
+        {
+          title: "PSF",
+          label: this.$i18n.t("message.realEstate."+this.projectID+'.psf'),  
+        },
+        {
+          title: "Completion Year",
+          label: this.$i18n.t("message.realEstate."+this.projectID+'.top'),  
+        },
+        {
+          title: "Total Units",
+          label: this.$i18n.t("message.realEstate."+this.projectID+'.unitNum'),  
+        },
+      ],
+      description: this.$i18n.t("message.realEstate."+this.projectID+'.description'),  
+      facilities: [
+        { icon: "iconbasementcarpark", label: this.$i18n.t("message.realEstate.facilities.carpark") },
+        { icon: "icon2971019", label: this.$i18n.t("message.realEstate.facilities.playground") },
+        { icon: "icondropoff", label:this.$i18n.t("message.realEstate.facilities.drop-off") },
+        { icon: "icon3788750", label: this.$i18n.t("message.realEstate.facilities.gym") },
+        { icon: "icon3582873", label: this.$i18n.t("message.realEstate.facilities.lift")},
+        { icon: "icon763860", label: this.$i18n.t("message.realEstate.facilities.swim") },
+        { icon: "iconXMLID_642_", label: this.$i18n.t("message.realEstate.facilities.entrance") },
+        { icon: "icon783192", label: this.$i18n.t("message.realEstate.facilities.security") },
+      ],
+    };
+
+    },
+
     onSwitchCover({ id, imageSrc }) {
       this.projectInfo.current.id = id;
       this.projectInfo.current.cover = imageSrc;

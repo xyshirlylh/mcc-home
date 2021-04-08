@@ -2,18 +2,18 @@
   <div class="real-estate">
     <section class="top-container">
       <div class="flex-2">
-        <p class="f-s-25 f-c-10 subtitle">MCC Land</p>
+        <p class="f-s-25 f-c-10 subtitle">{{$t('message.consultation.title-1')}}</p>
 
         <!-- <gap :height="30"/> -->
 
         <p class="f-s-100 f-c-1 font-bold title" style="letter-spacing: 4px">
-          Real estate
+          {{$t('message.intro-subtitle-2')}}
         </p>
 
         <gap :height="50" />
 
         <p class="f-s-25 f-c-1 content">
-          {{ this.content.realEstate.description }}
+          {{ $t('message.realEstate.description') }} 
         </p>
 
         <gap :height="100" />
@@ -21,8 +21,8 @@
         <p
           class="f-s-24 f-c-11 font-bold cursor-pointer"
           @click="showAllProject"
-        >
-          See all projects
+        > 
+         {{$t('message.realEstate.see-all')}} 
         </p>
       </div>
 
@@ -50,7 +50,7 @@
 
     <section>
       <label ref="titleOfSectionOne" class="f-s-36"
-        >Singapore property projects</label
+        >{{$t('message.realEstate.singapore-projects')}}</label
       >
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
@@ -70,7 +70,7 @@
     <gap :height="100" />
 
     <section>
-      <label class="f-s-36">International property projects</label>
+      <label class="f-s-36">{{$t('message.realEstate.international-projects')}}</label>
 
       <ul class="flex-row flex-wrap">
         <template v-for="(item, i) in propertiesInInt">
@@ -94,9 +94,10 @@
 <script>
 import anime from "animejs/lib/anime.es.js";
 import ProjectImageCard from "../../components/card/ProjectImageCard";
+import { mapState } from "vuex";
 
 export default {
-  name: "RealEstate",
+  name: "RealEstate", 
   components: { ProjectImageCard },
   data() {
     return {
@@ -131,117 +132,24 @@ export default {
         },
       ],
       projectList: null,
-      propertiesInSG: [
-        {
-          id: "0",
-          imageSrc: require("../../assets/imgs/real-estate/queens-peak-img-006_ct@2x.png"),
-          type: "Residential property",
-          year: "2020",
-          name: "Queens Peak",
-          location: "Central, Singapore",
-        },
-        {
-          id: "1",
-          imageSrc: require("../../assets/imgs/real-estate/alps-residences-img-001@2x.png"),
-          type: "Residential property",
-          year: "2019",
-          name: "The Alps Residences",
-          location: "East, Singapore",
-        },
-        {
-          id: "2",
-          imageSrc: require("../../assets/imgs/real-estate/northwave-img-002@2x.png"),
-          type: "Residential property",
-          year: "2019",
-          name: "Northwave",
-          location: "North, Singapore",
-        },
-        {
-          id: "3",
-          imageSrc: require("../../assets/imgs/real-estate/poiz-img-002@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "The Poiz",
-          location: "Central, Singapore",
-        },
-        {
-          id: "4",
-          imageSrc: require("../../assets/imgs/real-estate/santorini-img-002@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "The Santorini",
-          location: "East, Singapore",
-        },
-        {
-          id: "5",
-          imageSrc: require("../../assets/imgs/real-estate/sea-horizon-img-003@2x.png"),
-          type: "Residential property",
-          year: "2017",
-          name: "Sea Horizon",
-          location: "East, Singapore",
-        },
-        {
-          id: "6",
-          imageSrc: require("../../assets/imgs/real-estate/forestville-img-008@2x.png"),
-          type: "Residential property",
-          year: "2016",
-          name: "Forestville",
-          location: "North, Singapore",
-        },
-        {
-          id: "7",
-          imageSrc: require("../../assets/imgs/real-estate/one-canberra-img-004@2x.png"),
-          type: "Residential property",
-          year: "2015",
-          name: "One Canberra",
-          location: "North, Singapore",
-        },
-        {
-          id: "8",
-          imageSrc: require("../../assets/imgs/real-estate/nautical-img-001@2x.png"),
-          type: "Residential property",
-          year: "2015",
-          name: "The Nautical",
-          location: "North, Singapore",
-        },
-        {
-          id: "9",
-          imageSrc: require("../../assets/imgs/real-estate/canberra-residences-img-007@2x.png"),
-          type: "Residential property",
-          year: "2013",
-          name: "Canberra Residences",
-          location: "North, Singapore",
-        },
-        {
-          id: "10",
-          imageSrc: require("../../assets/imgs/real-estate/canopy-img-001@2x.png"),
-          type: "Residential property",
-          year: "2014",
-          name: "The Canopy",
-          location: "Central, Singapore",
-        },
-      ],
-      propertiesInInt: [
-        {
-          id: "0",
-          imageSrc: require("../../assets/imgs/real-estate/Dara-Sakor-Slider-5@2x.png"),
-          type: "Residential property",
-          year: "2019",
-          name: "Dara Sakor",
-          location: "South, Cambodia",
-        },
-        {
-          id: "1",
-          imageSrc: require("../../assets/imgs/real-estate/skyvilla-img-002@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "Sky Villa",
-          location: "Central, Cambodia",
-        },
-      ],
+      propertiesInSG: [],
+      propertiesInInt: [],
       timer: null,
     };
   },
+  computed: {
+ 
+    ...mapState(["lang"]),
+  },
+
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
+  },
+
   created() {
     this.content = require("../../assets/homepage/content.json");
     this.projectList = [
@@ -259,6 +167,8 @@ export default {
       "daraSakor",
       "skyVilla",
     ];
+ 
+    this.updateDom();
 
     this.timer = setTimeout(() => {
       const width = this.$refs.contentRef.clientWidth;
@@ -271,6 +181,120 @@ export default {
     clearTimeout(this.timer);
   },
   methods: {
+    updateDom: function () {
+      this.propertiesInSG = [
+        {
+          id: "0",
+          imageSrc: require("../../assets/imgs/real-estate/queens-peak-img-006_ct@2x.png"),
+          type: this.$i18n.t('message.realEstate.queensPeak.type') ,
+          year: "2020",
+          name: this.$i18n.t('message.realEstate.queensPeak.name') ,
+          location: this.$i18n.t('message.realEstate.queensPeak.location'), 
+        },
+        {
+          id: "1",
+          imageSrc: require("../../assets/imgs/real-estate/alps-residences-img-001@2x.png"),
+          type: this.$i18n.t('message.realEstate.theAlpsResidences.type'),
+          year: "2019",
+          name: this.$i18n.t('message.realEstate.theAlpsResidences.name'),
+          location: this.$i18n.t('message.realEstate.theAlpsResidences.location'),
+        },
+        {
+          id: "2",
+          imageSrc: require("../../assets/imgs/real-estate/northwave-img-002@2x.png"),
+          type: this.$i18n.t('message.realEstate.northwave.type'),
+          year: "2019",
+          name: this.$i18n.t('message.realEstate.northwave.name'),
+          location: this.$i18n.t('message.realEstate.northwave.location'),
+        },
+        {
+          id: "3",
+          imageSrc: require("../../assets/imgs/real-estate/poiz-img-002@2x.png"),
+          type: this.$i18n.t('message.realEstate.thePoiz.type'),
+          year: "2018",
+          name: this.$i18n.t('message.realEstate.thePoiz.name'),
+          location: this.$i18n.t('message.realEstate.thePoiz.location'),
+        },
+        {
+          id: "4",
+          imageSrc: require("../../assets/imgs/real-estate/santorini-img-002@2x.png"),
+          type: this.$i18n.t('message.realEstate.theSantorini.type'),
+          year: "2018",
+          name: this.$i18n.t('message.realEstate.theSantorini.name'),
+          location: this.$i18n.t('message.realEstate.theSantorini.location'),
+        },
+        {
+          id: "5",
+          imageSrc: require("../../assets/imgs/real-estate/sea-horizon-img-003@2x.png"),
+          type: this.$i18n.t('message.realEstate.seaHorizon.type'),
+          year: "2017",
+          name: this.$i18n.t('message.realEstate.seaHorizon.name'),
+          location: this.$i18n.t('message.realEstate.seaHorizon.location'),
+        },
+        {
+          id: "6",
+          imageSrc: require("../../assets/imgs/real-estate/forestville-img-008@2x.png"),
+          type: "Residential property",
+          year: "2016",
+          name: "Forestville",
+          location: this.$i18n.t('message.realEstate.forestville.location'),
+          
+        },
+        {
+          id: "7",
+          imageSrc: require("../../assets/imgs/real-estate/one-canberra-img-004@2x.png"),
+          type: "Residential property",
+          year: "2015",
+          name: "One Canberra",
+          location: this.$i18n.t('message.realEstate.oneCanberra.location'),
+        },
+        {
+          id: "8",
+          imageSrc: require("../../assets/imgs/real-estate/nautical-img-001@2x.png"),
+          type: "Residential property",
+          year: "2015",
+          name: "The Nautical",
+          location: this.$i18n.t('message.realEstate.theNautical.location'),
+        },
+        {
+          id: "9",
+          imageSrc: require("../../assets/imgs/real-estate/canberra-residences-img-007@2x.png"),
+          type: "Residential property",
+          year: "2013",
+          name: "Canberra Residences",
+          location: this.$i18n.t('message.realEstate.canberraResidences.location'),
+        },
+        {
+          id: "10",
+          imageSrc: require("../../assets/imgs/real-estate/canopy-img-001@2x.png"),
+          type: "Residential property",
+          year: "2014",
+          name: "The Canopy",
+          location: this.$i18n.t('message.realEstate.theCanopy.location'),
+        },
+      ],
+
+      this.propertiesInInt = [
+        {
+          id: "0",
+          imageSrc: require("../../assets/imgs/real-estate/Dara-Sakor-Slider-5@2x.png"),
+          type: this.$i18n.t('message.realEstate.daraSakor.type'),
+          year: "2019",
+          name: this.$i18n.t('message.realEstate.daraSakor.name'),
+          location: this.$i18n.t('message.realEstate.daraSakor.location'),
+        },
+        {
+          id: "1",
+          imageSrc: require("../../assets/imgs/real-estate/skyvilla-img-002@2x.png"),
+          type: this.$i18n.t('message.realEstate.skyVilla.type'),
+          year: "2018",
+          name: this.$i18n.t('message.realEstate.skyVilla.name'),
+          location: this.$i18n.t('message.realEstate.skyVilla.location'),
+        },
+      ]
+      
+    },
+
     goProjectDetail: function (id) {
       this.$router.push("/project-detail/?id=" + id);
       window.scrollTo(0, 0);

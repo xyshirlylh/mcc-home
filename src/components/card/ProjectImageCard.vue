@@ -9,7 +9,7 @@
     <div class="flex-row">
       <p class="flex-1 f-s-25 f-c-10">{{ info.type }}</p>
       <label class="f-s-25 f-c-10"
-        >Year of completion <span class="f-c-1">{{ info.year }}</span></label
+        >{{$t('message.realEstate.completion')}} <span class="f-c-1">{{ info.year }}</span></label
       >
     </div>
 
