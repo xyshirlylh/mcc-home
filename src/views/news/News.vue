@@ -44,13 +44,13 @@
     </div>
     <div class="block-2">
       <div class="info">
-        <p> {{ this.content.date }}</p>
+        <p>{{ this.content.date }}</p>
       </div>
       <div class="title">
         {{ this.content.title }}
       </div>
       <div class="author" v-if="this.content.author === undefined">
-        <p>{{$t('message.news.author')}}</p> 
+        <p>{{ $t("message.news.author") }}</p>
       </div>
       <div class="author" v-else>
         <p>{{ this.content.author }}</p>
@@ -95,22 +95,25 @@
       </div>
 
       <div class="navigations">
-        <div class="privious">
-          <div class="button-left">
+        <div class="privious" >
+          <div class="button-left" @click="goto(previousID)">
             <img src="../../assets/imgs/news/arrow-left.png" alt="" />
-            <p>Privious</p>
+            <p>{{$t('message.news.previous')}}</p>
           </div>
-          <div class="title-left">
-            A beginner’s guide to organizing a product usability testing
-          </div>
+          <div class="title-left" v-if="this.allNews.indexOf(this.newsID)!==0">
+            {{$t('message.news.'+this.previousID+'.title')}}
+          </div> 
+          <div class="title-left" v-else>
+            
+          </div> 
         </div>
         <div class="next">
-          <div class="button-right">
-            <p>Next</p>
+          <div class="button-right" @click="goto(nextID)">
+            <p>{{$t('message.news.next')}}</p>
             <img src="../../assets/imgs/news/arrow-right.png" alt="" />
           </div>
           <div class="title-right">
-            7 ideation techniques to supercharge your next workshop
+           {{$t('message.news.'+this.nextID+'.title')}} 
           </div>
         </div>
       </div>
@@ -124,6 +127,8 @@ export default {
   data: function () {
     return {
       newsID: null,
+      previousID: null,
+      nextID: null,
       hasPhoto: true,
       allNews: null,
       popularNews: [],
@@ -138,6 +143,11 @@ export default {
 
     back: function () {
       this.$router.go(-1);
+    },
+
+     goto(where) {
+      this.$router.push("/news/?id=" + where);
+      location.reload()
     },
 
     goAllPhotos: function () {
@@ -167,6 +177,9 @@ export default {
       "11_10_2019",
       "30_9_2019",
     ];
+
+    this.previousID = this.allNews[this.allNews.indexOf(this.newsID) - 1];
+    this.nextID = this.allNews[this.allNews.indexOf(this.newsID) + 1];
   },
 
   computed: {
@@ -449,17 +462,26 @@ export default {
         margin-top: 2%;
       }
       p {
-        margin-left: 100vw/1920 * 300;
+        
+        margin-left: 100vw/1920 * 280;
+        width: 5rem;
       }
     }
     .title-left {
-      font: normal normal bold 2.4rem/3.4rem Noto Sans;
+      font: normal normal bold 2rem/3.4rem Noto Sans;
       height: 100vw/1920 * 101;
+      width:37rem;
+      padding-right: 1rem;
+      //background-color: red;
+   
     }
     .title-right {
       text-align: right;
       height: 100vw/1920 * 101;
-      font: normal normal bold 2.4rem/3.4rem Noto Sans;
+      //background-color: green;
+      padding-left: 1rem;
+
+      font: normal normal bold 2rem/3.4rem Noto Sans;
     }
   }
 }

@@ -142,6 +142,25 @@ export default {
     "description": "In 2010, MCC Land (Singapore) Pte Ltd was established to undertake real estate development in Singapore and the surrounding regions for China Metallurgical Group Corporation. As the representative for the group's joint-stock company, it is also responsible for the business activities in Singapore. The company has been ranked among the Top Ten Property Developers in Singapore for four consecutive years and has received Asia’s Top Influential Brand Award as well as Singapore Prestige Brand Award (SPBA) Global Brands Award.\n\nMCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
     "shortDescription": "MCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
     "see-all":"See all projects",
+
+    "overview": "Overview",
+    "location":"Location",
+    'details':"Details",
+    'project-name':"Project Name",
+    'project-type':"Project Type",
+    'developer':"Developer",
+    'tenure':"Tenure",
+    'psf':"PSF",
+    'completion-year':"Completion Year",
+    'total-units':"Total Units",
+    "project-description":"Description",
+    "project-facilities":"Facilities & Amenities",
+    "website":"Project Website",
+    "project-location":"Location",
+
+
+
+
     "singapore-projects":"Singapore property projects",
     "international-projects":"International property projects",
     "completion" :"Year of completion",
@@ -354,6 +373,7 @@ export default {
       "name": "Dara Sakor",
       "numOfPics": 3,
       "type": "construction",
+    
       'location': "South, Cambodia",
       "lat": 10.882636696430144,
       "lng": 103.15366494686302,
@@ -370,6 +390,7 @@ export default {
       "name": "Resorts World Sentosa",
       "numOfPics": 3,
       "type": "construction",
+      'location': "Central, Singapore",
       "lat": 1.2557553066888083,
       "lng": 103.82610261624923,
       "description": "Universal Studios Singapore is an integrated entertainment theme park catering to entertainment, leisure and tourism. It is the world’s fourth Universal Studios theme park. The other three theme parks are in Las Vegas and Orlando of the United States and Osaka of Japan. \n\nMCC Singapore was awarded the S$800 million (RMB$4,000 million) turnkey contract of the Universal Studios Singapore project. The company made history in the construction of world-class theme parks. It took less than 18 months to complete the project as compared to the other three theme parks which took an average of four to five years to build. It is the largest civil construction project undertaken by a Chinese contractor in Singapore and is also the first large-scale overseas integrated entertainment civil construction project by a Chinese enterprise. \n\nThe Universal Studios Singapore received several accolades. It won the Green Mark GoldPlus award by the Building and Construction Authority of Singapore, the “Outstanding Engineering Quality” award by the MCC Group, the “Metallurgical Industry Quality” award, and the “Luban Award” by the Ministry of Construction and the China Construction Industry Association. It has filed 18 patents."
@@ -378,6 +399,7 @@ export default {
       "name": "Woodlands Checkpoint",
       "type": "construction",
       "numOfPics": 4,
+      'location': "Central, Singapore",
       "lat": 1.4461140327450084,
       "lng": 103.76961148277697,
       "description": "The Johor–Singapore Causeway (Malay: Tambak Johor–Singapura) is a 1,056-metre causeway that links the city of Johor Bahru in Malaysia across the Straits of Johor to the town of Woodlands in Singapore. It serves as a road and rail link, as well as a water pipeline between the two countries.\n\nIt is one of the busiest border crossings in the region with 350,000 travellers daily,[1][2] handled by immigration authorities of both countries at the Southern Integrated Gateway (Malaysia) and Woodlands Checkpoint (Singapore)."
@@ -386,6 +408,7 @@ export default {
       "name": "Singapore Expo",
       "type": "construction",
       "numOfPics": 1,
+      'location': "Central, Singapore",
       "lat": 1.3338790546900967,
       "lng": 103.96013781219327,
       "description": "Singapore EXPO Convention and Exhibition Center is the largest meetings, incentives, conferencing, exhibitions (MICE) venue in Singapore and is one of the largest and most completely equipped centre in the whole of Asia. There are ten large multipurpose halls, each being 10,000 square metres in size, giving a total floor space of over 100,000 square metres. All available spaces are interconnected, column-free and on the ground level."
@@ -393,6 +416,7 @@ export default {
     "T311MrtStation": {
       "name": "T311 MRT Station",
       "type": "construction",
+      'location': "Central, Singapore",
       "numOfPics": 2,
       "lat": 1.317414657055561,
       "lng": 103.95157827170797,
@@ -401,6 +425,7 @@ export default {
     "sunshineGarden": {
       "name": "Sunshine Garden",
       "type": "construction",
+      'location': "Central, Singapore",
       "numOfPics": 4,
       "lat": 1.3767096224811073,
       "lng": 103.74107557441089,
@@ -410,15 +435,18 @@ export default {
     "emerald": {
       "name": "Emerald",
       "type": "construction",
+      'location': "Central, Singapore",
       "numOfPics": 4,
       "lat": 1.4061890622922788,
       "lng": 103.89928247210993,
       "descriptionCN": "9座17层住宅建筑，共856个单位",
       "description": "9 blocks of 17 storey residential flats with a total of 856 dwelling units"
     },
+    
     "anchorvaleHorizon": {
       "name": "Anchorvale Horizon",
       "type": "construction",
+      'location': "Central, Singapore",
       "numOfPics": 4,
       "lat": 1.3959371333938806,
       "lng": 103.88875119657924,
@@ -428,7 +456,11 @@ export default {
   },
   "construction": {
     "shortDescription": "MCC Singapore has obtained the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories from the Building and Construction Authority of Singapore (BCA), as well as L6 grade in Plumbing & Sanitary Works (ME12) and Electrical engineering (ME05). Several completed projects have been recognized and awarded by BCA and other related agencies in the safety and design categories, and the company's engineering and technical capabilities have been widely recognized by the Singapore industry.",
-    "description": "China Jingye Engineering Corporation Limited (Singapore Branch) is a registered contractor with the Building and Construction Authority of Singapore (BCA) and the only State-owned enterprise in Singapore to obtain the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories. The company is influential in Singapore with excellent performance in both public and private construction sectors. The company is the main contractor for Singapore’s iconic landmark projects – Universal Studios Singapore and Maritime Experiential Museum, Resorts World, Sentosa.\n\nChina Jingye Construction Engineering (Singapore) Private Limited has extensive experience in the private civil engineering sector. As the general main contractor for MCC Land, it is responsible for most of its property development projects. The company has been part of MCC Singapore since its inception in 1996. It has accumulated comprehensive engineering performance and experiences in turnkey, specialized contracting, supply and subcontracting works."
+    "description": "China Jingye Engineering Corporation Limited (Singapore Branch) is a registered contractor with the Building and Construction Authority of Singapore (BCA) and the only State-owned enterprise in Singapore to obtain the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories. The company is influential in Singapore with excellent performance in both public and private construction sectors. The company is the main contractor for Singapore’s iconic landmark projects – Universal Studios Singapore and Maritime Experiential Museum, Resorts World, Sentosa.\n\nChina Jingye Construction Engineering (Singapore) Private Limited has extensive experience in the private civil engineering sector. As the general main contractor for MCC Land, it is responsible for most of its property development projects. The company has been part of MCC Singapore since its inception in 1996. It has accumulated comprehensive engineering performance and experiences in turnkey, specialized contracting, supply and subcontracting works.",
+    "class-2":"Building Our Home",
+    "class-3":"Building Our City",
+    "class-1":"Building Endless Joy",
+    "class-4":"Building Our World",
   },
 
   "news": {
@@ -439,6 +471,10 @@ export default {
     "back":"Back",
     "show-all" :"Show All Photos",
     "author":"MCC Media Department",
+    "previous":"previous",
+    "next":"next",
+
+
     "2_10_2020": {
       "id": "2_10_2020",
       "photocount": 8,

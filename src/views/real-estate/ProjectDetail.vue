@@ -9,11 +9,9 @@
       <span
         class="position-absolute z-index-50 f-s-50 f-c-0 f-f-raleway font-bold"
         style="background-color: rgba(1, 1, 1, 0.3); padding: 1rem"
-        >
-         
-        {{$t('message.realEstate.'+this.projectID+".name")}} 
-        </span
       >
+        {{ $t("message.realEstate." + this.projectID + ".name") }}
+      </span>
     </div>
 
     <div class="flex-row section-gallery bg-c-0">
@@ -67,7 +65,7 @@
           "
         >
           <gap :height="64" />
-          Details
+          {{$t('message.realEstate.details')}}
           <gap :height="14.25" />
         </p>
 
@@ -88,7 +86,7 @@
 
         <gap :height="70.75" />
         <p class="f-s-24 font-bold f-c-2 f-f-Noto title title-description">
-          Description
+          {{$t('message.realEstate.project-description')}}
         </p>
         <gap :height="48" />
 
@@ -107,7 +105,7 @@
           "
         >
           <gap :height="83" />
-          Facilities & Amenities
+          {{$t('message.realEstate.project-facilities')}}
           <gap :height="70" />
         </p>
 
@@ -130,7 +128,7 @@
 
         <div class="external">
           <a :href="this.content['realEstate'][this.projectID]['externalLink']">
-            <p>Project Website</p>
+            <p>{{$t('message.realEstate.website')}}</p>
           </a>
         </div>
 
@@ -158,7 +156,7 @@
 
         <gap :height="57" />
         <p ref="location" class="f-s-24 font-bold f-c-2 f-f-Noto title">
-          Location
+          {{$t('message.realEstate.project-location')}}
         </p>
         <gap :height="32" />
       </div>
@@ -240,7 +238,7 @@ export default {
       },
       overview: {
         details: [
-          { title: "Project Name", label: "Queens Peak" },
+          { title: this.$i18n.t('message.realEstate.project-name'), label: "Queens Peak" },
           { title: "Project Type", label: "Condominium For Sale" },
           { title: "Developer", label: "MCC Land" },
           { title: "Tenure", label: "99-year Leasehold" },
@@ -296,34 +294,7 @@ export default {
         lat: 1.2948546,
         lng: 103.8045647,
       },
-      operations: [
-        {
-          id: 0,
-          label: "Overview",
-          icon: "icongailan",
-          translate: 0,
-          ref: "overview",
-        },
-        /*
-        {
-          id: 1,
-          label: "Floor Plans",
-          icon: "iconMaskGroup25",
-          translate: 19,
-          ref: "floor",
-        },
-        
-        */
-
-        {
-          id: 1,
-          label: "Location",
-          icon: "icon535239",
-          //translate: 39,
-          translate: 19,
-          ref: "location",
-        },
-      ],
+      operations: [],
       translateX: 0,
     };
   },
@@ -356,7 +327,6 @@ export default {
   },
 
   computed: {
- 
     ...mapState(["lang"]),
   },
 
@@ -371,50 +341,118 @@ export default {
   methods: {
     updateDom: function () {
       this.overview = {
-      details: [
-        {
-          title: "Project Name",
-        
-          label: this.$i18n.t("message.realEstate."+this.projectID+'.name'),  
-        },
-        {
-          title: "Project Type",
-          label: this.$i18n.t("message.realEstate."+this.projectID+'.type'),  
-        },
-        {
-          title: "Developer",
-         label: this.$i18n.t("message.realEstate."+this.projectID+'.developer'),  
-        },
-        {
-          title: "Tenure",
-          label: this.$i18n.t("message.realEstate."+this.projectID+'.tenure'),  
-        },
-        {
-          title: "PSF",
-          label: this.$i18n.t("message.realEstate."+this.projectID+'.psf'),  
-        },
-        {
-          title: "Completion Year",
-          label: this.$i18n.t("message.realEstate."+this.projectID+'.top'),  
-        },
-        {
-          title: "Total Units",
-          label: this.$i18n.t("message.realEstate."+this.projectID+'.unitNum'),  
-        },
-      ],
-      description: this.$i18n.t("message.realEstate."+this.projectID+'.description'),  
-      facilities: [
-        { icon: "iconbasementcarpark", label: this.$i18n.t("message.realEstate.facilities.carpark") },
-        { icon: "icon2971019", label: this.$i18n.t("message.realEstate.facilities.playground") },
-        { icon: "icondropoff", label:this.$i18n.t("message.realEstate.facilities.drop-off") },
-        { icon: "icon3788750", label: this.$i18n.t("message.realEstate.facilities.gym") },
-        { icon: "icon3582873", label: this.$i18n.t("message.realEstate.facilities.lift")},
-        { icon: "icon763860", label: this.$i18n.t("message.realEstate.facilities.swim") },
-        { icon: "iconXMLID_642_", label: this.$i18n.t("message.realEstate.facilities.entrance") },
-        { icon: "icon783192", label: this.$i18n.t("message.realEstate.facilities.security") },
-      ],
-    };
+        details: [
+          {
+            title: this.$i18n.t('message.realEstate.project-name'),
 
+            label: this.$i18n.t(
+              "message.realEstate." + this.projectID + ".name"
+            ),
+          },
+          {
+            title: this.$i18n.t('message.realEstate.project-type'),
+            label: this.$i18n.t(
+              "message.realEstate." + this.projectID + ".type"
+            ),
+          },
+          {
+            title: this.$i18n.t('message.realEstate.developer'),
+            label: this.$i18n.t(
+              "message.realEstate." + this.projectID + ".developer"
+            ),
+          },
+          {
+            title: this.$i18n.t('message.realEstate.tenure'),
+            label: this.$i18n.t(
+              "message.realEstate." + this.projectID + ".tenure"
+            ),
+          },
+          {
+            title: this.$i18n.t('message.realEstate.psf'),
+            label: this.$i18n.t(
+              "message.realEstate." + this.projectID + ".psf"
+            ),
+          },
+          {
+            title: this.$i18n.t('message.realEstate.completion-year'),
+            label: this.$i18n.t(
+              "message.realEstate." + this.projectID + ".top"
+            ),
+          },
+          {
+            title: this.$i18n.t('message.realEstate.total-units'),
+            label: this.$i18n.t(
+              "message.realEstate." + this.projectID + ".unitNum"
+            ),
+          },
+        ],
+        description: this.$i18n.t(
+          "message.realEstate." + this.projectID + ".description"
+        ),
+        facilities: [
+          {
+            icon: "iconbasementcarpark",
+            label: this.$i18n.t("message.realEstate.facilities.carpark"),
+          },
+          {
+            icon: "icon2971019",
+            label: this.$i18n.t("message.realEstate.facilities.playground"),
+          },
+          {
+            icon: "icondropoff",
+            label: this.$i18n.t("message.realEstate.facilities.drop-off"),
+          },
+          {
+            icon: "icon3788750",
+            label: this.$i18n.t("message.realEstate.facilities.gym"),
+          },
+          {
+            icon: "icon3582873",
+            label: this.$i18n.t("message.realEstate.facilities.lift"),
+          },
+          {
+            icon: "icon763860",
+            label: this.$i18n.t("message.realEstate.facilities.swim"),
+          },
+          {
+            icon: "iconXMLID_642_",
+            label: this.$i18n.t("message.realEstate.facilities.entrance"),
+          },
+          {
+            icon: "icon783192",
+            label: this.$i18n.t("message.realEstate.facilities.security"),
+          },
+        ],
+      };
+
+      this.operations = [
+        {
+          id: 0,
+          label: this.$i18n.t("message.realEstate.overview"),
+          icon: "icongailan",
+          translate: 0,
+          ref: "overview",
+        },
+        /*
+        {
+          id: 1,
+          label: "Floor Plans",
+          icon: "iconMaskGroup25",
+          translate: 19,
+          ref: "floor",
+        },
+        
+        */
+
+        {
+          id: 1,
+          label: this.$i18n.t("message.realEstate.location"), 
+          icon: "icon535239",
+          //translate: 39,
+          translate: 19,
+          ref: "location",
+        },
+      ]
     },
 
     onSwitchCover({ id, imageSrc }) {

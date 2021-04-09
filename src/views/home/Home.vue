@@ -126,15 +126,15 @@
                 <p style="margin-top: 22rem">
                   {{ $t("message.consultation.shortDescription") }}
                 </p>
+
+                <button class="button" @click="goto('consultation')">
+                  <p :style="{  'margin-left': lang==='zh'? '17%': '13%'}">{{ $t("message.read-more") }}</p>
+
+                  <svg class="button-arrow" viewBox="0 8 28 28">
+                    <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
+                  </svg>
+                </button>
               </div>
-
-              <button class="button" @click="goto('consultation')">
-                <p>{{ $t("message.read-more") }}</p>
-
-                <svg class="button-arrow" viewBox="0 8 28 28">
-                  <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
-                </svg>
-              </button>
             </div>
             <div v-else class="image-1" @mouseover="blur"></div>
           </div>
@@ -145,19 +145,19 @@
               @mouseleave="clear"
               class="image-2-blur"
             >
-              <div>
-                <p>
+              <div style="height:100%" class="flex-column">
+                <p :style="{  'margin-top': lang==='zh'? '20%': '15%'}">
                   {{ $t("message.realEstate.shortDescription") }}
                 </p>
+
+                <div class="button"  @click="goRealEstate()" >
+                  <p :style="{  'margin-left': lang==='zh'? '17%': '13%'}">{{ $t("message.read-more") }}</p>
+
+                  <svg class="button-arrow" viewBox="0 8 25 25">
+                    <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
+                  </svg>
+                </div>
               </div>
-
-              <button class="button" @click="goRealEstate()">
-                <p>{{ $t("message.read-more") }}</p>
-
-                <svg class="button-arrow" viewBox="0 8 25 25">
-                  <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
-                </svg>
-              </button>
             </div>
             <div v-else class="image-2" @mouseover="blur"></div>
           </div>
@@ -168,13 +168,13 @@
               class="image-3-blur"
             >
               <div>
-                <p>
+                <p :style="{  'margin-top': lang==='zh'? '20%': '15%'}">
                   {{ $t("message.construction.shortDescription") }}
                 </p>
               </div>
 
-              <button class="button" @click="goConstruction()">
-                <p>{{ $t("message.read-more") }}</p>
+              <button class="button" @click="goConstruction()" >
+                <p :style="{  'margin-left': lang==='zh'? '17%': '13%'}">{{ $t("message.read-more") }}</p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -794,12 +794,12 @@
           </svg>
 
           <div class="title">
-            <span>{{$t('message.news.title')}}</span>
+            <span>{{ $t("message.news.title") }}</span>
           </div>
         </div>
         <div class="column-2">
           <div class="head-4">
-            <p>{{$t('message.news.title')}}</p>
+            <p>{{ $t("message.news.title") }}</p>
           </div>
         </div>
         <div class="column-3"></div>
@@ -957,7 +957,7 @@
           <div class="button-1" @click="goAllNews">
             <button>
               <div class="button-1-text">
-                <p>{{$t('message.news.view-more')}}</p> 
+                <p>{{ $t("message.news.view-more") }}</p>
               </div>
 
               <svg class="button-arrow" viewBox="0 0 28 28">
@@ -1760,6 +1760,7 @@ export default {
     .block-1-message {
       font-size: 2rem;
       white-space: pre-line;
+      line-height: 3rem;
     }
 
     .subtitle-s {
@@ -1902,11 +1903,11 @@ export default {
       }
 
       .image-2-blur {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-
+        //position: relative;
+        //display: flex;
+        
         width: auto;
+        
 
         height: 96%;
         background-image: linear-gradient(

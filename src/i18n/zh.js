@@ -144,6 +144,20 @@ export default {
     "shortDescription": "中冶置业（新加坡）有限公司已在新加坡独资、合资及管理开发了15个商住综合、私人公寓、执行共管公寓等房地产项目，包括8000余个住宅单位，可售总面积达60多万平方米，在有限的空间里为千万业主“创造无限生活”。",
     "see-all":"所有项目",
     "completion" :"竣工时间",
+    "overview": "概况",
+    "location":"位置",
+    'details':"详细信息",
+    'project-name':"项目名称",
+    'project-type':"项目类型",
+    'developer':"开发商",
+    'tenure':"产权",
+    'psf':"PSF",
+    'completion-year':"竣工时间",
+    'total-units':"单位数量",
+    "project-description":"项目简介",
+    "project-facilities":"设施",
+    "website":"项目网站",
+    "project-location":"位置",
 
     "singapore-projects":"新加坡项目",
     "international-projects":"国际项目",
@@ -358,6 +372,7 @@ export default {
       "numOfPics": 3,
       "type": "住房",
       'location': "柬埔寨南部",
+ 
       "lat": 10.882636696430144,
       "lng": 103.15366494686302,
       "description": "Dara Sakor was listed twice in 2016 and 2019 under the List of Key Projects for the Production Capacity and Investment Cooperation between Cambodia and China in the MOUs signed between the Council of the Development of Cambodia of the Kingdom of Cambodia and the National Development and Reform Commission of the People's Republic of China."
@@ -370,41 +385,46 @@ export default {
       "description": "Sky Villa comprises two 35-storey towers of luxury residential apartments in the prime district of central Phnom Penh. The property features 256 units ideal for personal or multi-generational family living.\n\nWith generous residential spaces that range from 272sqm to 509sqm, this is living large at its finest. Beyond expansive spaces, each unit is thoughtfully designed to ensure that you get to enjoy expansive views of the city and its stunning surroundings.\n\nSky Villa’s value is poised to grow alongside Phnom Penh’s significant development, making it a prime investment for the future.\n\nAs Cambodia progresses further with global integration and continues its transformation into a digital economy, this will bring in greater investors and various organisations targeting the new growth potential of the country and its thriving capital. \n\nThe project is located at the intersection of Sihanoukville and 163 on the southeast side of the Olympic Stadium in Phnom Penh, Cambodia, the location is excellent. The project consists of two 35-story towers (A and B buildings) with a height of 138.6 meters and a 15-story building (C building) with a height of 63.6 meters and a total construction area of 120,000 square meters, the construction period is 22 months. The project plan is a large-scale five-star luxury house with a large-sized design, each household area is between 300 square meters and 450 square meters."
     },
     "resortsWorldSentosa": {
-      "name": "Resorts World Sentosa",
+      "name": "圣淘沙",
       "numOfPics": 3,
-      "type": "construction",
-    
+      "type": "工程建筑",
+      'location': "中部",
       "lat": 1.2557553066888083,
       "lng": 103.82610261624923,
-      "description": "Universal Studios Singapore is an integrated entertainment theme park catering to entertainment, leisure and tourism. It is the world’s fourth Universal Studios theme park. The other three theme parks are in Las Vegas and Orlando of the United States and Osaka of Japan. \n\nMCC Singapore was awarded the S$800 million (RMB$4,000 million) turnkey contract of the Universal Studios Singapore project. The company made history in the construction of world-class theme parks. It took less than 18 months to complete the project as compared to the other three theme parks which took an average of four to five years to build. It is the largest civil construction project undertaken by a Chinese contractor in Singapore and is also the first large-scale overseas integrated entertainment civil construction project by a Chinese enterprise. \n\nThe Universal Studios Singapore received several accolades. It won the Green Mark GoldPlus award by the Building and Construction Authority of Singapore, the “Outstanding Engineering Quality” award by the MCC Group, the “Metallurgical Industry Quality” award, and the “Luban Award” by the Ministry of Construction and the China Construction Industry Association. It has filed 18 patents."
+      "description": "新加坡环球影城（Universal Studios Singapore）位于新加坡圣淘沙岛上，是全世界第四座环球影城，也是东南亚首个和唯一的环球影城主题公园，已于2010年初正式对外开放。新加坡环球影城包括未来水世界、失落世界、古埃及、科幻城、梦幻世界、纽约城、好莱坞、人工湖等八个主题区和一个8万平方米地下设备间和停车场，共设有24个主题游乐项目，其中18个是美国环球影城公司专为新加坡设计或修改的。另外该环球影城项目还包括21个餐饮和零售店，4万5千平方米的景观装饰、园林及道路等。整个项目共有36个主要单体，占地面积约25万平方米，建筑面积约20万平方米，项目总造价超过68亿人民币，施工总承包额超过42亿人民币。\n\n新加坡环球影城项目由云顶集团圣淘沙名胜世界私人有限公司投资开发，通过公开投标由MCC中国京冶工程技术有限公司承接施工总承包任务。中国京冶工程技术有限公司用不足一年半的时间完成了美国、日本要用4至5年才能完成的工程，创造了世界A级主题公园建设史上的奇迹，同时也是中资公司在新加坡施工总承包的最大公共建筑工程。"
     },
     "woodlandsCheckpoint": {
-      "name": "Woodlands Checkpoint",
-      "type": "construction",
+      "name": "兀兰关口",
+      "type": "工程建筑",
       "numOfPics": 4,
+      'location': "中部",
       "lat": 1.4461140327450084,
       "lng": 103.76961148277697,
       "description": "The Johor–Singapore Causeway (Malay: Tambak Johor–Singapura) is a 1,056-metre causeway that links the city of Johor Bahru in Malaysia across the Straits of Johor to the town of Woodlands in Singapore. It serves as a road and rail link, as well as a water pipeline between the two countries.\n\nIt is one of the busiest border crossings in the region with 350,000 travellers daily,[1][2] handled by immigration authorities of both countries at the Southern Integrated Gateway (Malaysia) and Woodlands Checkpoint (Singapore)."
     },
     "singaporeExpo": {
-      "name": "Singapore Expo",
-      "type": "construction",
+      "name": "新加坡世博", 
+      "type": "工程建筑",
       "numOfPics": 1,
+      'location': "中部",
+
       "lat": 1.3338790546900967,
       "lng": 103.96013781219327,
       "description": "Singapore EXPO Convention and Exhibition Center is the largest meetings, incentives, conferencing, exhibitions (MICE) venue in Singapore and is one of the largest and most completely equipped centre in the whole of Asia. There are ten large multipurpose halls, each being 10,000 square metres in size, giving a total floor space of over 100,000 square metres. All available spaces are interconnected, column-free and on the ground level."
     },
     "T311MrtStation": {
-      "name": "T311 MRT Station",
-      "type": "construction",
+      "name": "T311地铁站",
+      "type": "工程建筑",
+      'location': "中部",
       "numOfPics": 2,
       "lat": 1.317414657055561,
       "lng": 103.95157827170797,
       "description": "Work Scope: Underground MRT Station and TBM Tunnels 270m"
     },
     "sunshineGarden": {
-      "name": "Sunshine Garden",
-      "type": "construction",
+      "name": "阳光花园",
+      "type": "工程建筑",
+      'location': "中部",
       "numOfPics": 4,
       "lat": 1.3767096224811073,
       "lng": 103.74107557441089,
@@ -413,7 +433,8 @@ export default {
     },
     "emerald": {
       "name": "Emerald",
-      "type": "construction",
+      "type": "工程建筑",
+      'location': "中部",
       "numOfPics": 4,
       "lat": 1.4061890622922788,
       "lng": 103.89928247210993,
@@ -422,7 +443,8 @@ export default {
     },
     "anchorvaleHorizon": {
       "name": "Anchorvale Horizon",
-      "type": "construction",
+      "type": "工程建筑",
+      'location': "中部",
       "numOfPics": 4,
       "lat": 1.3959371333938806,
       "lng": 103.88875119657924,
@@ -432,16 +454,24 @@ export default {
   },
   "construction": {
     "shortDescription": "中冶新加坡在房屋建筑、基础设施工程双领域均达到新加坡建设局A1最高级别，并拥有排水、机电双L6资质，多个完工项目获得新加坡建设局及其他有关机构多项安全、设计类奖项肯定，工程技术实力得到新加坡业界广泛认同。",
-    "description": "中国京冶工程技术有限公司（新加坡分公司），在建筑工程CW01和基础工程CW02两个序列都达到了新加坡建设局的最高级别A1，是新加坡市场唯一拥有双A1级别的中资企业。中国京冶工程技术有限公司（新加坡分公司）是新加坡本地有影响力的顶级承包商，在新加坡的公共建设领域及私人工程领域都有优秀的工程业绩，也是新加坡的地标性建筑——新加坡环球影城及海事博物馆的总承包商。\n\n中国京冶建设工程（新加坡）有限公司拥有丰富的私人工程领域的业绩，也是中冶置业（新加坡）有限公司绝大部分房地产开发项目的总承包商。自1996年中冶新加坡在新加坡本地立足以来，中国京冶建设工程（新加坡）有限公司作为中冶新加坡在本地历史最长的商业平台，积累了从劳务分包、专业承包商到总承包商等全面的工程经验和工程业绩。"
+    "description": "中国京冶工程技术有限公司（新加坡分公司），在建筑工程CW01和基础工程CW02两个序列都达到了新加坡建设局的最高级别A1，是新加坡市场唯一拥有双A1级别的中资企业。中国京冶工程技术有限公司（新加坡分公司）是新加坡本地有影响力的顶级承包商，在新加坡的公共建设领域及私人工程领域都有优秀的工程业绩，也是新加坡的地标性建筑——新加坡环球影城及海事博物馆的总承包商。\n\n中国京冶建设工程（新加坡）有限公司拥有丰富的私人工程领域的业绩，也是中冶置业（新加坡）有限公司绝大部分房地产开发项目的总承包商。自1996年中冶新加坡在新加坡本地立足以来，中国京冶建设工程（新加坡）有限公司作为中冶新加坡在本地历史最长的商业平台，积累了从劳务分包、专业承包商到总承包商等全面的工程经验和工程业绩。",
+    "class-2":"建造万家灯火",
+    "class-3":"建造城市未来",
+    "class-1":"建造阖家欢乐",
+    "class-4":"共塑全球视野",
+    
   },
 
   "news": {
     "title": "MCC 新闻",
-    "view-more":"查看更多",
+    "view-more":"查看更多", 
     "latest-news":"最新新闻",
     "back":"返回",
     "show-all" :"所有照片",
     "author":"中冶媒体部",
+
+    "previous":"上一个",
+    "next":"下一个",
 
     "2_10_2020": {
       "id": "2_10_2020",

@@ -2,14 +2,14 @@
   <div class="real-estate">
     <section class="top-container">
       <div class="flex-2">
-        <p class="f-s-25 f-c-10 subtitle">MCC Singapore</p>
+        <p class="f-s-25 f-c-10 subtitle">{{$t('message.consultation.title-1')}}</p>
 
-        <p class="f-s-100 f-c-1 font-bold title">Construction</p>
+        <p class="f-s-100 f-c-1 font-bold title">{{$t('message.header.construction')}}</p>
 
         <gap :height="21" />
 
         <p class="f-s-25 f-c-1 content">
-          {{ this.content.construction.description }}
+          {{ $t('message.consultation.description') }}
         </p>
 
         <gap :height="89" />
@@ -18,7 +18,7 @@
           class="f-s-24 f-c-11 font-bold cursor-pointer"
           @click="showAllProject"
         >
-          See all projects
+          {{$t('message.realEstate.see-all')}}
         </p>
 
         <img
@@ -51,7 +51,7 @@
     <gap :height="200" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">Building Endless Joy</label>
+      <label ref="titleOfSectionOne" class="f-s-36">{{$t('message.construction.class-1')}}</label>
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
         <template v-for="item in buildingEndlessJoy">
@@ -70,7 +70,7 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">Building Our Home</label>
+      <label ref="titleOfSectionOne" class="f-s-36">{{$t('message.construction.class-2')}}</label>
 
       <ul class="flex-row flex-wrap justify-content-between">
         <template v-for="item in buildingOurHome">
@@ -89,7 +89,7 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">Building Our City</label>
+      <label ref="titleOfSectionOne" class="f-s-36">{{$t('message.construction.class-3')}}</label>
 
       <ul class="flex-row flex-wrap justify-content-between">
         <template v-for="item in buildingOurCity">
@@ -108,10 +108,10 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label class="f-s-36">Building Our World</label>
+      <label class="f-s-36">{{$t('message.construction.class-4')}}</label>
 
       <ul class="flex-row flex-wrap">
-        <template v-for="(item, i) in propertiesInInt">
+        <template v-for="(item, i) in buildingOurWorld">
           <li
             :key="item.id"
             :style="{
@@ -132,6 +132,7 @@
 <script>
 import ProjectImageCard from "../../components/card/ProjectImageCard";
 import anime from "animejs";
+import { mapState } from "vuex";
 
 export default {
   name: "Construction",
@@ -169,85 +170,18 @@ export default {
         },
       ],
 
-      propertiesInInt: [
-        {
-          id: "daraSakor",
-          imageSrc: require("../../assets/imgs/construction/Dara-Sakor-Slider-5@2x.png"),
-          type: "Residential property",
-          year: "2019",
-          name: "Dara Sakor",
-          location: "Central, Singapore",
-        },
-      ],
+      buildingOurWorld: '',
 
-      buildingOurHome: [
-        {
-          id: "sunshineGarden",
-          imageSrc: require("../../assets/imgs/construction/sunshine-garden-img-006@2x.png"),
-          type: "Residential property",
-          year: "2001",
-          name: "Sunshine Garden",
-          location: "Central, Singapore",
-        },
-        {
-          id: "emerald",
-          imageSrc: require("../../assets/imgs/construction/emerald-img-001@2x.png"),
-          type: "Residential property",
-          year: "2014",
-          name: "Emerald",
-          location: "Central, Singapore",
-        },
-        {
-          id: "anchorvaleHorizon",
-          imageSrc: require("../../assets/imgs/construction/anchorvale-horizon-img-006@2x.png"),
-          type: "Residential property",
-          year: "2010",
-          name: "Anchorvale Horizon",
-          location: "Central, Singapore",
-        },
-      ],
+      buildingOurHome: '',
 
-      buildingOurCity: [
-        {
-          id: "woodlandsCheckpoint",
-          imageSrc: require("../../assets/imgs/construction/woodlands-checkpoint-002@2x.png"),
-          type: "Residential property",
-          year: "2018",
-          name: "Woodlands Checkpoint",
-          location: "Central, Singapore",
-        },
-        {
-          id: "T311MrtStation",
-          imageSrc: require("../../assets/imgs/real-estate/T311 MRT Station/1.jpg"),
-          type: "Residential property",
-          year: "2024",
-          name: "T311 MRT Station",
-          location: "Central, Singapore",
-        },
-      ],
+      buildingOurCity: '',
 
-      buildingEndlessJoy: [
-        {
-          id: "resortsWorldSentosa",
-          imageSrc: require("../../assets/imgs/construction/sentosa-006@2x.png"),
-          type: "Residential property",
-          year: "2010",
-          name: "Resorts World Sentosa",
-          location: "Central, Singapore",
-        },
-        {
-          id: "singaporeExpo",
-          imageSrc: require("../../assets/imgs/construction/singapore-expo-001@2x.png"),
-          type: "Residential property",
-          year: "1999",
-          name: "Singapore Expo",
-          location: "Central, Singapore",
-        },
-      ],
+      buildingEndlessJoy: '',
     };
   },
   created() {
     this.content = require("../../assets/homepage/content.json");
+    this.updateDom(); 
 
     setTimeout(() => {
       const width = this.$refs.contentRef.clientWidth;
@@ -256,10 +190,100 @@ export default {
       this.animateNumber();
     }, 100);
   },
+
+  computed: {
+ 
+    ...mapState(["lang"]),
+  },
+
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
+  },
+
   destroyed() {
     clearTimeout(this.timer);
   },
   methods: {
+    updateDom:function(){
+      this.buildingOurWorld = [
+        {
+          id: "daraSakor",
+          imageSrc: require("../../assets/imgs/construction/Dara-Sakor-Slider-5@2x.png"),
+          type: this.$i18n.t("message.realEstate.daraSakor.type"),
+          year: "2019",
+          name: this.$i18n.t("message.realEstate.daraSakor.name"),
+          location: this.$i18n.t("message.realEstate.daraSakor.location"),
+        },
+      ]
+      this.buildingOurHome =[
+        {
+          id: "sunshineGarden",
+          imageSrc: require("../../assets/imgs/construction/sunshine-garden-img-006@2x.png"),
+          type: this.$i18n.t("message.realEstate.sunshineGarden.type"),
+          year: "2001",
+          name: this.$i18n.t("message.realEstate.sunshineGarden.name"),
+          location: this.$i18n.t("message.realEstate.sunshineGarden.location"),
+        },
+        {
+          id: "emerald",
+          imageSrc: require("../../assets/imgs/construction/emerald-img-001@2x.png"),
+          type: this.$i18n.t("message.realEstate.emerald.type"),
+          year: "2014",
+          name: this.$i18n.t("message.realEstate.emerald.name"),
+          location: this.$i18n.t("message.realEstate.emerald.location"),
+        },
+        {
+          id: "anchorvaleHorizon",
+          imageSrc: require("../../assets/imgs/construction/anchorvale-horizon-img-006@2x.png"),
+          type: this.$i18n.t("message.realEstate.anchorvaleHorizon.type"),
+          year: "2010",
+          name: this.$i18n.t("message.realEstate.anchorvaleHorizon.name"),
+          location: this.$i18n.t("message.realEstate.anchorvaleHorizon.location"),
+        },
+      ]
+      this.buildingOurCity = [
+        {
+          id: "woodlandsCheckpoint",
+          imageSrc: require("../../assets/imgs/construction/woodlands-checkpoint-002@2x.png"),
+          type: this.$i18n.t("message.realEstate.woodlandsCheckpoint.type"),
+          year: "2018",
+          name: this.$i18n.t("message.realEstate.woodlandsCheckpoint.name"),
+          location: this.$i18n.t("message.realEstate.woodlandsCheckpoint.location"),
+        },
+        {
+          id: "T311MrtStation",
+          imageSrc: require("../../assets/imgs/real-estate/T311 MRT Station/1.jpg"),
+          type: this.$i18n.t("message.realEstate.T311MrtStation.type"),
+          year: "2024",
+          name: this.$i18n.t("message.realEstate.T311MrtStation.name"),
+          location: this.$i18n.t("message.realEstate.T311MrtStation.location"),
+        },
+      ]
+      this.buildingEndlessJoy = [
+        {
+          id: "resortsWorldSentosa",
+          imageSrc: require("../../assets/imgs/construction/sentosa-006@2x.png"),
+          type: this.$i18n.t("message.realEstate.resortsWorldSentosa.type"),
+          year: "2010",
+          name: this.$i18n.t("message.realEstate.resortsWorldSentosa.name"),
+          location: this.$i18n.t("message.realEstate.resortsWorldSentosa.location"),
+        },
+        {
+          id: "singaporeExpo",
+          imageSrc: require("../../assets/imgs/construction/singapore-expo-001@2x.png"),
+          type: this.$i18n.t("message.realEstate.singaporeExpo.type"),
+          year: "1999",
+          name: this.$i18n.t("message.realEstate.singaporeExpo.name"),
+          location: this.$i18n.t("message.realEstate.singaporeExpo.location"),
+        },
+      ] 
+     
+    },
+
     enterProjectDetail() {
       this.$router.push({ path: "/project-detail" });
     },
