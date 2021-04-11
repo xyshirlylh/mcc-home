@@ -95,25 +95,26 @@
       </div>
 
       <div class="navigations">
-        <div class="privious" >
+        <div class="privious">
           <div class="button-left" @click="goto(previousID)">
             <img src="../../assets/imgs/news/arrow-left.png" alt="" />
-            <p>{{$t('message.news.previous')}}</p>
+            <p>{{ $t("message.news.previous") }}</p>
           </div>
-          <div class="title-left" v-if="this.allNews.indexOf(this.newsID)!==0">
-            {{$t('message.news.'+this.previousID+'.title')}}
-          </div> 
-          <div class="title-left" v-else>
-            
-          </div> 
+          <div
+            class="title-left"
+            v-if="this.allNews.indexOf(this.newsID) !== 0"
+          >
+            {{ $t("message.news." + this.previousID + ".title") }}
+          </div>
+          <div class="title-left" v-else></div>
         </div>
         <div class="next">
           <div class="button-right" @click="goto(nextID)">
-            <p>{{$t('message.news.next')}}</p>
+            <p>{{ $t("message.news.next") }}</p>
             <img src="../../assets/imgs/news/arrow-right.png" alt="" />
           </div>
           <div class="title-right">
-           {{$t('message.news.'+this.nextID+'.title')}} 
+            {{ $t("message.news." + this.nextID + ".title") }}
           </div>
         </div>
       </div>
@@ -145,9 +146,32 @@ export default {
       this.$router.go(-1);
     },
 
-     goto(where) {
+    goto(where) {
       this.$router.push("/news/?id=" + where);
-      location.reload()
+      const urlParams = new URLSearchParams(window.location.search);
+      //this.currentUrl = window.location.href;
+      //console.log(this.currentUrl);
+      this.newsID = urlParams.get("id");
+
+      this.content = this.$i18n.t("message.news." + this.newsID);
+
+      this.allNews = [
+        "2_10_2020",
+        "7_9_2020",
+        "20_8_2020",
+        "23_6_2020",
+        "19_5_2020",
+        "11_4_2020",
+        "6_4_2020",
+        "27_3_2020",
+        "13_1_2020",
+        "3_11_2019",
+        "11_10_2019",
+        "30_9_2019",
+      ];
+
+      this.previousID = this.allNews[this.allNews.indexOf(this.newsID) - 1];
+      this.nextID = this.allNews[this.allNews.indexOf(this.newsID) + 1];
     },
 
     goAllPhotos: function () {
@@ -462,7 +486,6 @@ export default {
         margin-top: 2%;
       }
       p {
-        
         margin-left: 100vw/1920 * 280;
         width: 5rem;
       }
@@ -470,10 +493,9 @@ export default {
     .title-left {
       font: normal normal bold 2rem/3.4rem Noto Sans;
       height: 100vw/1920 * 101;
-      width:37rem;
+      width: 37rem;
       padding-right: 1rem;
       //background-color: red;
-   
     }
     .title-right {
       text-align: right;

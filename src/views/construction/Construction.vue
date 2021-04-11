@@ -1,15 +1,19 @@
 <template>
   <div class="real-estate">
     <section class="top-container">
-      <div class="flex-2">
-        <p class="f-s-25 f-c-10 subtitle">{{$t('message.consultation.title-1')}}</p>
+      <div class="flex-4">
+        <p class="f-s-25 f-c-10 subtitle">
+          {{ $t("message.consultation.title-1") }}
+        </p>
 
-        <p class="f-s-100 f-c-1 font-bold title">{{$t('message.header.construction')}}</p>
+        <p class="f-s-100 f-c-1 font-bold title">
+          {{ $t("message.header.construction") }}
+        </p>
 
         <gap :height="21" />
 
         <p class="f-s-25 f-c-1 content">
-          {{ $t('message.consultation.description') }}
+          {{ $t("message.consultation.description") }}
         </p>
 
         <gap :height="89" />
@@ -18,7 +22,7 @@
           class="f-s-24 f-c-11 font-bold cursor-pointer"
           @click="showAllProject"
         >
-          {{$t('message.realEstate.see-all')}}
+          {{ $t("message.realEstate.see-all") }}
         </p>
 
         <img
@@ -29,8 +33,11 @@
 
       <gap :width="39" />
 
-      <ul class="flex-row flex-3 flex-wrap justify-content-between">
-        <li v-for="(item, i) in numbers" :key="item.id">
+      <div
+        class="flex-column flex-2 flex-wrap justify-content-between top-right-container"
+      >
+        <!--
+          <li v-for="(item, i) in numbers" :key="item.id">
           <div class="f-c-12 flex-row">
             <p class="f-s-129 f-f-rubik" :ref="'countRef' + i">
               {{ item.count }}
@@ -45,13 +52,49 @@
             {{ item.label }}
           </p>
         </li>
-      </ul>
+
+        -->
+        <div class="title-right">
+          <p class="f-f-Raleway">Qualified Construction</p>
+        </div>
+
+        <div class="awards flex-column">
+          <div
+            class="row-1 flex-row"
+            style="justify-content: space-around; margin-top: 10%"
+          >
+            <div class="award flex-column">
+              <p class="award-title">A1</p>
+              <p class="award-content">General Building CW01</p>
+            </div>
+            <div class="award flex-column">
+              <p class="award-title">A1</p>
+              <p class="award-content">General Building CW01</p>
+            </div>
+          </div>
+          <div
+            class="row-2 flex-row"
+            style="justify-content: space-around; margin-top: 10%"
+          >
+            <div class="award flex-column">
+              <p class="award-title">L6</p>
+              <p class="award-content">Electrical Engineering ME05</p>
+            </div>
+            <div class="award flex-column">
+              <p class="award-title">L6</p>
+              <p class="award-content">Plumbing &amp; Sanitary Works ME12</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <gap :height="200" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">{{$t('message.construction.class-1')}}</label>
+      <label ref="titleOfSectionOne" class="f-s-36">{{
+        $t("message.construction.class-1")
+      }}</label>
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
         <template v-for="item in buildingEndlessJoy">
@@ -70,7 +113,9 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">{{$t('message.construction.class-2')}}</label>
+      <label ref="titleOfSectionOne" class="f-s-36">{{
+        $t("message.construction.class-2")
+      }}</label>
 
       <ul class="flex-row flex-wrap justify-content-between">
         <template v-for="item in buildingOurHome">
@@ -89,7 +134,9 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">{{$t('message.construction.class-3')}}</label>
+      <label ref="titleOfSectionOne" class="f-s-36">{{
+        $t("message.construction.class-3")
+      }}</label>
 
       <ul class="flex-row flex-wrap justify-content-between">
         <template v-for="item in buildingOurCity">
@@ -108,7 +155,7 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label class="f-s-36">{{$t('message.construction.class-4')}}</label>
+      <label class="f-s-36">{{ $t("message.construction.class-4") }}</label>
 
       <ul class="flex-row flex-wrap">
         <template v-for="(item, i) in buildingOurWorld">
@@ -170,18 +217,18 @@ export default {
         },
       ],
 
-      buildingOurWorld: '',
+      buildingOurWorld: "",
 
-      buildingOurHome: '',
+      buildingOurHome: "",
 
-      buildingOurCity: '',
+      buildingOurCity: "",
 
-      buildingEndlessJoy: '',
+      buildingEndlessJoy: "",
     };
   },
   created() {
     this.content = require("../../assets/homepage/content.json");
-    this.updateDom(); 
+    this.updateDom();
 
     setTimeout(() => {
       const width = this.$refs.contentRef.clientWidth;
@@ -192,7 +239,6 @@ export default {
   },
 
   computed: {
- 
     ...mapState(["lang"]),
   },
 
@@ -208,7 +254,7 @@ export default {
     clearTimeout(this.timer);
   },
   methods: {
-    updateDom:function(){
+    updateDom: function () {
       this.buildingOurWorld = [
         {
           id: "daraSakor",
@@ -218,8 +264,8 @@ export default {
           name: this.$i18n.t("message.realEstate.daraSakor.name"),
           location: this.$i18n.t("message.realEstate.daraSakor.location"),
         },
-      ]
-      this.buildingOurHome =[
+      ];
+      this.buildingOurHome = [
         {
           id: "sunshineGarden",
           imageSrc: require("../../assets/imgs/construction/sunshine-garden-img-006@2x.png"),
@@ -242,9 +288,11 @@ export default {
           type: this.$i18n.t("message.realEstate.anchorvaleHorizon.type"),
           year: "2010",
           name: this.$i18n.t("message.realEstate.anchorvaleHorizon.name"),
-          location: this.$i18n.t("message.realEstate.anchorvaleHorizon.location"),
+          location: this.$i18n.t(
+            "message.realEstate.anchorvaleHorizon.location"
+          ),
         },
-      ]
+      ];
       this.buildingOurCity = [
         {
           id: "woodlandsCheckpoint",
@@ -252,7 +300,9 @@ export default {
           type: this.$i18n.t("message.realEstate.woodlandsCheckpoint.type"),
           year: "2018",
           name: this.$i18n.t("message.realEstate.woodlandsCheckpoint.name"),
-          location: this.$i18n.t("message.realEstate.woodlandsCheckpoint.location"),
+          location: this.$i18n.t(
+            "message.realEstate.woodlandsCheckpoint.location"
+          ),
         },
         {
           id: "T311MrtStation",
@@ -262,7 +312,7 @@ export default {
           name: this.$i18n.t("message.realEstate.T311MrtStation.name"),
           location: this.$i18n.t("message.realEstate.T311MrtStation.location"),
         },
-      ]
+      ];
       this.buildingEndlessJoy = [
         {
           id: "resortsWorldSentosa",
@@ -270,7 +320,9 @@ export default {
           type: this.$i18n.t("message.realEstate.resortsWorldSentosa.type"),
           year: "2010",
           name: this.$i18n.t("message.realEstate.resortsWorldSentosa.name"),
-          location: this.$i18n.t("message.realEstate.resortsWorldSentosa.location"),
+          location: this.$i18n.t(
+            "message.realEstate.resortsWorldSentosa.location"
+          ),
         },
         {
           id: "singaporeExpo",
@@ -280,8 +332,7 @@ export default {
           name: this.$i18n.t("message.realEstate.singaporeExpo.name"),
           location: this.$i18n.t("message.realEstate.singaporeExpo.location"),
         },
-      ] 
-     
+      ];
     },
 
     enterProjectDetail() {
@@ -325,6 +376,7 @@ export default {
 </script>
 
 <style scoped lang="scss" type="text/scss">
+$unit-size: 100vw/1366;
 .real-estate {
   width: calc(100% - 28rem);
   min-height: 100%;
@@ -351,6 +403,50 @@ export default {
       //height: 50rem;
       text-align: justify;
       line-height: 3.6rem;
+    }
+
+    .top-right-container {
+      //background-color: red;
+      height: 60%;
+      .title-right {
+        margin-top: 7rem;
+        font-size: 100vw/1366 * 16;
+        white-space: nowrap;
+        font-weight: 500;
+        border-bottom: solid rgba(112, 112, 112, 0.5);
+        line-height: 100vw/1366 * (13.5 * 2+19);
+      }
+
+      .awards {
+        //margin-bottom: 125%;
+        //background-color: yellow;
+
+        .award {
+          width: $unit-size * 114.32;
+          height: $unit-size * 123.98;
+          //background-color: green;
+          background-image: url("../../assets/imgs/home/建筑叶子.svg");
+          background-size: 80% 50%;
+          background-repeat: no-repeat;
+          background-position: center top;
+
+          .award-title {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 700;
+            font-size: $unit-size * 27;
+            text-align: center;
+            margin-top: 10%;
+          }
+
+          .award-content {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: $unit-size * 15;
+            font-size: $unit-size * 10;
+            text-align: center;
+            margin-top: 50%;
+          }
+        }
+      }
     }
   }
 

@@ -1,19 +1,21 @@
 <template>
   <div class="real-estate">
     <section class="top-container">
-      <div class="flex-2">
-        <p class="f-s-25 f-c-10 subtitle">{{$t('message.consultation.title-1')}}</p>
+      <div class="flex-3">
+        <p class="f-s-25 f-c-10 subtitle">
+          {{ $t("message.consultation.title-1") }}
+        </p>
 
         <!-- <gap :height="30"/> -->
 
         <p class="f-s-100 f-c-1 font-bold title" style="letter-spacing: 4px">
-          {{$t('message.intro-subtitle-2')}}
+          {{ $t("message.intro-subtitle-2") }}
         </p>
 
         <gap :height="50" />
 
         <p class="f-s-25 f-c-1 content">
-          {{ $t('message.realEstate.description') }} 
+          {{ $t("message.realEstate.description") }}
         </p>
 
         <gap :height="100" />
@@ -21,14 +23,16 @@
         <p
           class="f-s-24 f-c-11 font-bold cursor-pointer"
           @click="showAllProject"
-        > 
-         {{$t('message.realEstate.see-all')}} 
+        >
+          {{ $t("message.realEstate.see-all") }}
         </p>
       </div>
 
       <gap :width="124" />
 
-      <ul class="flex-3 flex-row flex-wrap justify-content-between">
+      <!--
+
+         <ul class="flex-3 flex-row flex-wrap justify-content-between">
         <li
           v-for="(item, i) in numbers"
           :key="item.id"
@@ -44,14 +48,143 @@
           <p class="f-c-13 f-f-sans f-s-25 label-comment">{{ item.label }}</p>
         </li>
       </ul>
+      -->
+
+      <div
+        class="flex-column flex-3 flex-wrap justify-content-between top-right-container"
+      >
+        <div class="title-right">
+          <p class="f-f-Raleway">Awards</p>
+        </div>
+
+        <div class="awards flex-column">
+          <div
+            class="row-1 flex-row"
+            style="justify-content: space-around; margin-top: 10%"
+          >
+            <div class="award flex-column">
+              <p class="award-title">
+                2010 <br />
+                BCA Green Mark
+              </p>
+              <p class="award-content f-f-Raleway">
+                Gold Plus <br />
+                Award
+              </p>
+            </div>
+            <div class="award flex-column">
+              <p class="award-title">
+                2010 <br />
+                BCA Green Mark
+              </p>
+              <p class="award-content f-f-Raleway">
+                Platinum <br />
+                AWARD
+              </p>
+            </div>
+            <div class="award flex-column">
+              <p class="award-title">
+                2010 <br />
+                BCA Green Mark
+              </p>
+              <p
+                class="award-content f-f-Raleway"
+                style="
+                  margin-top: -0.1rem;
+                  font-size: 1.3rem;
+                  line-height: 1.3rem;
+                "
+              >
+                Top 10 <br />
+                Developers <br />
+                AWARD
+              </p>
+            </div>
+          </div>
+          <div
+            class="row-2 flex-row"
+            style="justify-content: space-around; margin-top: 10%"
+          >
+            <div class="award flex-column">
+              <p class="award-title">
+                2010 <br />
+                BCA Green Mark
+              </p>
+              <p
+                class="award-content f-f-Raleway"
+                style="
+                  margin-top: -0.1rem;
+                  font-size: 1.3rem;
+                  line-height: 1.3rem;
+                "
+              >
+                Top 10 <br />
+                Developers <br />
+                AWARD
+              </p>
+            </div>
+            <div class="award flex-column">
+              <p class="award-title">
+                2010 <br />
+                BCA Green Mark
+              </p>
+              <p
+                class="award-content f-f-Raleway"
+                style="
+                  margin-top: -0.1rem;
+                  font-size: 1.3rem;
+                  line-height: 1.3rem;
+                "
+              >
+                Top 10 <br />
+                Developers <br />
+                AWARD
+              </p>
+            </div>
+            <div class="award flex-column">
+              <p class="award-title">
+                2010 <br />
+                BCA Green Mark
+              </p>
+              <p
+                class="award-content f-f-Raleway"
+                style="
+                  margin-top: -0.1rem;
+                  font-size: 1.3rem;
+                  line-height: 1.3rem;
+                "
+              >
+                Top 10 <br />
+                Developers <br />
+                AWARD
+              </p>
+            </div>
+          </div>
+          <div
+            class="row-3 flex-row"
+            style="justify-content: space-around; margin-top: 10%"
+          >
+            <div class="award flex-column">
+              <p class="award-title">
+                2010 <br />
+                BCA Green Mark
+              </p>
+              <p class="award-content f-f-Raleway">
+                Gold Plus <br />
+                Award
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <gap :height="150" />
+    <gap :height="350" />
 
     <section>
-      <label ref="titleOfSectionOne" class="f-s-36"
-        >{{$t('message.realEstate.singapore-projects')}}</label
-      >
+      <label ref="titleOfSectionOne" class="f-s-36">{{
+        $t("message.realEstate.singapore-projects")
+      }}</label>
 
       <ul ref="contentRef" class="flex-row flex-wrap justify-content-between">
         <template v-for="(item, index) in propertiesInSG">
@@ -70,7 +203,9 @@
     <gap :height="100" />
 
     <section>
-      <label class="f-s-36">{{$t('message.realEstate.international-projects')}}</label>
+      <label class="f-s-36">{{
+        $t("message.realEstate.international-projects")
+      }}</label>
 
       <ul class="flex-row flex-wrap">
         <template v-for="(item, i) in propertiesInInt">
@@ -97,7 +232,7 @@ import ProjectImageCard from "../../components/card/ProjectImageCard";
 import { mapState } from "vuex";
 
 export default {
-  name: "RealEstate", 
+  name: "RealEstate",
   components: { ProjectImageCard },
   data() {
     return {
@@ -138,7 +273,6 @@ export default {
     };
   },
   computed: {
- 
     ...mapState(["lang"]),
   },
 
@@ -167,7 +301,7 @@ export default {
       "daraSakor",
       "skyVilla",
     ];
- 
+
     this.updateDom();
 
     this.timer = setTimeout(() => {
@@ -182,54 +316,56 @@ export default {
   },
   methods: {
     updateDom: function () {
-      this.propertiesInSG = [
+      (this.propertiesInSG = [
         {
           id: "0",
           imageSrc: require("../../assets/imgs/real-estate/queens-peak-img-006_ct@2x.png"),
-          type: this.$i18n.t('message.realEstate.queensPeak.type') ,
+          type: this.$i18n.t("message.realEstate.queensPeak.type"),
           year: "2020",
-          name: this.$i18n.t('message.realEstate.queensPeak.name') ,
-          location: this.$i18n.t('message.realEstate.queensPeak.location'), 
+          name: this.$i18n.t("message.realEstate.queensPeak.name"),
+          location: this.$i18n.t("message.realEstate.queensPeak.location"),
         },
         {
           id: "1",
           imageSrc: require("../../assets/imgs/real-estate/alps-residences-img-001@2x.png"),
-          type: this.$i18n.t('message.realEstate.theAlpsResidences.type'),
+          type: this.$i18n.t("message.realEstate.theAlpsResidences.type"),
           year: "2019",
-          name: this.$i18n.t('message.realEstate.theAlpsResidences.name'),
-          location: this.$i18n.t('message.realEstate.theAlpsResidences.location'),
+          name: this.$i18n.t("message.realEstate.theAlpsResidences.name"),
+          location: this.$i18n.t(
+            "message.realEstate.theAlpsResidences.location"
+          ),
         },
         {
           id: "2",
           imageSrc: require("../../assets/imgs/real-estate/northwave-img-002@2x.png"),
-          type: this.$i18n.t('message.realEstate.northwave.type'),
+          type: this.$i18n.t("message.realEstate.northwave.type"),
           year: "2019",
-          name: this.$i18n.t('message.realEstate.northwave.name'),
-          location: this.$i18n.t('message.realEstate.northwave.location'),
+          name: this.$i18n.t("message.realEstate.northwave.name"),
+          location: this.$i18n.t("message.realEstate.northwave.location"),
         },
         {
           id: "3",
           imageSrc: require("../../assets/imgs/real-estate/poiz-img-002@2x.png"),
-          type: this.$i18n.t('message.realEstate.thePoiz.type'),
+          type: this.$i18n.t("message.realEstate.thePoiz.type"),
           year: "2018",
-          name: this.$i18n.t('message.realEstate.thePoiz.name'),
-          location: this.$i18n.t('message.realEstate.thePoiz.location'),
+          name: this.$i18n.t("message.realEstate.thePoiz.name"),
+          location: this.$i18n.t("message.realEstate.thePoiz.location"),
         },
         {
           id: "4",
           imageSrc: require("../../assets/imgs/real-estate/santorini-img-002@2x.png"),
-          type: this.$i18n.t('message.realEstate.theSantorini.type'),
+          type: this.$i18n.t("message.realEstate.theSantorini.type"),
           year: "2018",
-          name: this.$i18n.t('message.realEstate.theSantorini.name'),
-          location: this.$i18n.t('message.realEstate.theSantorini.location'),
+          name: this.$i18n.t("message.realEstate.theSantorini.name"),
+          location: this.$i18n.t("message.realEstate.theSantorini.location"),
         },
         {
           id: "5",
           imageSrc: require("../../assets/imgs/real-estate/sea-horizon-img-003@2x.png"),
-          type: this.$i18n.t('message.realEstate.seaHorizon.type'),
+          type: this.$i18n.t("message.realEstate.seaHorizon.type"),
           year: "2017",
-          name: this.$i18n.t('message.realEstate.seaHorizon.name'),
-          location: this.$i18n.t('message.realEstate.seaHorizon.location'),
+          name: this.$i18n.t("message.realEstate.seaHorizon.name"),
+          location: this.$i18n.t("message.realEstate.seaHorizon.location"),
         },
         {
           id: "6",
@@ -237,8 +373,7 @@ export default {
           type: "Residential property",
           year: "2016",
           name: "Forestville",
-          location: this.$i18n.t('message.realEstate.forestville.location'),
-          
+          location: this.$i18n.t("message.realEstate.forestville.location"),
         },
         {
           id: "7",
@@ -246,7 +381,7 @@ export default {
           type: "Residential property",
           year: "2015",
           name: "One Canberra",
-          location: this.$i18n.t('message.realEstate.oneCanberra.location'),
+          location: this.$i18n.t("message.realEstate.oneCanberra.location"),
         },
         {
           id: "8",
@@ -254,7 +389,7 @@ export default {
           type: "Residential property",
           year: "2015",
           name: "The Nautical",
-          location: this.$i18n.t('message.realEstate.theNautical.location'),
+          location: this.$i18n.t("message.realEstate.theNautical.location"),
         },
         {
           id: "9",
@@ -262,7 +397,9 @@ export default {
           type: "Residential property",
           year: "2013",
           name: "Canberra Residences",
-          location: this.$i18n.t('message.realEstate.canberraResidences.location'),
+          location: this.$i18n.t(
+            "message.realEstate.canberraResidences.location"
+          ),
         },
         {
           id: "10",
@@ -270,29 +407,27 @@ export default {
           type: "Residential property",
           year: "2014",
           name: "The Canopy",
-          location: this.$i18n.t('message.realEstate.theCanopy.location'),
+          location: this.$i18n.t("message.realEstate.theCanopy.location"),
         },
-      ],
-
-      this.propertiesInInt = [
-        {
-          id: "0",
-          imageSrc: require("../../assets/imgs/real-estate/Dara-Sakor-Slider-5@2x.png"),
-          type: this.$i18n.t('message.realEstate.daraSakor.type'),
-          year: "2019",
-          name: this.$i18n.t('message.realEstate.daraSakor.name'),
-          location: this.$i18n.t('message.realEstate.daraSakor.location'),
-        },
-        {
-          id: "1",
-          imageSrc: require("../../assets/imgs/real-estate/skyvilla-img-002@2x.png"),
-          type: this.$i18n.t('message.realEstate.skyVilla.type'),
-          year: "2018",
-          name: this.$i18n.t('message.realEstate.skyVilla.name'),
-          location: this.$i18n.t('message.realEstate.skyVilla.location'),
-        },
-      ]
-      
+      ]),
+        (this.propertiesInInt = [
+          {
+            id: "0",
+            imageSrc: require("../../assets/imgs/real-estate/Dara-Sakor-Slider-5@2x.png"),
+            type: this.$i18n.t("message.realEstate.daraSakor.type"),
+            year: "2019",
+            name: this.$i18n.t("message.realEstate.daraSakor.name"),
+            location: this.$i18n.t("message.realEstate.daraSakor.location"),
+          },
+          {
+            id: "1",
+            imageSrc: require("../../assets/imgs/real-estate/skyvilla-img-002@2x.png"),
+            type: this.$i18n.t("message.realEstate.skyVilla.type"),
+            year: "2018",
+            name: this.$i18n.t("message.realEstate.skyVilla.name"),
+            location: this.$i18n.t("message.realEstate.skyVilla.location"),
+          },
+        ]);
     },
 
     goProjectDetail: function (id) {
@@ -336,6 +471,7 @@ export default {
 </script>
 
 <style scoped lang="scss" type="text/scss">
+$unit-size: 100vw/1366;
 .real-estate {
   width: calc(100% - 28rem);
   min-height: 100%;
@@ -362,6 +498,51 @@ export default {
       white-space: pre-line;
       text-align: justify;
       line-height: 3.6rem;
+    }
+
+    .top-right-container {
+      //background-color: red;
+      height: 60%;
+      .title-right {
+        margin-top: 7rem;
+        font-size: 100vw/1366 * 16;
+        white-space: nowrap;
+        font-weight: 500;
+        border-bottom: solid rgba(112, 112, 112, 0.5);
+        line-height: 100vw/1366 * (13.5 * 2+19);
+      }
+
+      .awards {
+        //margin-bottom: 125%;
+        //background-color: yellow;
+
+        .award {
+          width: $unit-size * 101.51;
+          height: $unit-size * 79.09;
+          //background-color: green;
+          background-image: url("../../assets/imgs/home/房产叶子.svg");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          background-position: center top;
+
+          .award-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: $unit-size * 10;
+            line-height: $unit-size * 12;
+            text-align: center;
+            margin-top: 10%;
+          }
+
+          .award-content {
+            line-height: $unit-size * 12;
+            font-size: $unit-size * 11;
+            text-align: center;
+            margin-top: 0%;
+            font-weight: 700;
+          }
+        }
+      }
     }
   }
 
