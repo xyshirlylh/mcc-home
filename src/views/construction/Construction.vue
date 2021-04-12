@@ -1,34 +1,33 @@
 <template>
   <div class="real-estate">
     <section class="top-container">
-      <div class="flex-4">
-        <p class="f-s-25 f-c-10 subtitle">
+      <div class="flex-3">
+        <p class="f-c-10 subtitle">
           {{ $t("message.consultation.title-1") }}
         </p>
 
-        <p class="f-s-100 f-c-1 font-bold title">
+        <p class="f-c-1 f-f-Raleway font-bold title">
           {{ $t("message.header.construction") }}
         </p>
 
-        <gap :height="21" />
-
-        <p class="f-s-25 f-c-1 content">
+        <p class="f-f-sans f-s-25 f-c-1 content">
           {{ $t("message.consultation.description") }}
         </p>
 
-        <gap :height="89" />
+        <gap :height="16" />
 
+        <img
+          src="../../assets/imgs/construction/Screenshot_2020-08-17_at_15073@2x.png"
+          style="width: 21.0835vw"
+        />
+
+        <gap :height="50" />
         <p
           class="f-s-24 f-c-11 font-bold cursor-pointer"
           @click="showAllProject"
         >
           {{ $t("message.realEstate.see-all") }}
         </p>
-
-        <img
-          src="../../assets/imgs/construction/Screenshot_2020-08-17_at_15073@2x.png"
-          width="100%"
-        />
       </div>
 
       <gap :width="39" />
@@ -89,10 +88,10 @@
       </div>
     </section>
 
-    <gap :height="200" />
+    <gap :height="206.03" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">{{
+      <label ref="titleOfSectionOne" >{{
         $t("message.construction.class-1")
       }}</label>
 
@@ -113,7 +112,7 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">{{
+      <label ref="titleOfSectionOne" >{{
         $t("message.construction.class-2")
       }}</label>
 
@@ -134,7 +133,7 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" class="f-s-36">{{
+      <label ref="titleOfSectionOne" >{{
         $t("message.construction.class-3")
       }}</label>
 
@@ -381,39 +380,49 @@ $unit-size: 100vw/1366;
   width: calc(100% - 28rem);
   min-height: 100%;
   // padding: 14rem 14rem 0 14rem;
-  padding: 17.9rem 14rem 0 14rem;
+  padding: 132px 14rem 0 14rem;
 
   .top-container {
     display: flex;
     flex-direction: row;
 
     .subtitle {
-      height: 3.6rem;
-      line-height: 3.6rem;
+      height: $unit-size * 20;
+      line-height: $unit-size * 20;
+      font-size: $unit-size * 14;
     }
     .title {
       letter-spacing: 4px;
-      height: 14.2rem;
-      line-height: 14.2rem;
+      height: $unit-size * 29;
+      line-height: $unit-size * 29;
+      font-size: $unit-size * 24;
+      letter-spacing: 0;
     }
     .content {
+      
       white-space: pre-line;
-      padding: 0rem 1rem 1rem 1rem;
+      //padding: 0rem 1rem 1rem 1rem;
       //overflow-y: scroll;
       //height: 50rem;
       text-align: justify;
-      line-height: 3.6rem;
+      line-height: $unit-size*20;
+      margin-top: 14px;
+      font-size: $unit-size*12;
     }
 
     .top-right-container {
       //background-color: red;
       height: 60%;
       .title-right {
-        margin-top: 7rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3rem;
         font-size: 100vw/1366 * 16;
+        width: $unit-size*344;
         white-space: nowrap;
         font-weight: 500;
         border-bottom: solid rgba(112, 112, 112, 0.5);
+        border-width: 1px;
         line-height: 100vw/1366 * (13.5 * 2+19);
       }
 
@@ -426,7 +435,7 @@ $unit-size: 100vw/1366;
           height: $unit-size * 123.98;
           //background-color: green;
           background-image: url("../../assets/imgs/home/建筑叶子.svg");
-          background-size: 80% 50%;
+          background-size: 100% 70%;
           background-repeat: no-repeat;
           background-position: center top;
 
@@ -491,6 +500,7 @@ $unit-size: 100vw/1366;
     label {
       line-height: 5.1rem;
       color: rgba(0, 0, 0, 0.5);
+      font-size: $unit-size*15;
     }
 
     ul {

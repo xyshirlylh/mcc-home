@@ -60,6 +60,7 @@ body, html, #app {
 
 
 /*************** font size ******************/
+
 .f-s-10 { font-size: 1rem;   }
 .f-s-11 { font-size: 1.1rem; }
 .f-s-12 { font-size: 1.2rem; }
@@ -160,12 +161,14 @@ a:hover {
 @media screen and (max-width: 1400px) {
   body, html {
     font-size: 7.29px;
+    //font-size: 10px;
   }
 }
 
 @media screen and (max-width: 1366px) {
   body, html {
     font-size: 7.11px;
+    //font-size: 10px;
   }
 }
 
