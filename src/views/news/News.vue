@@ -96,7 +96,7 @@
 
       <div class="navigations">
         <div class="privious">
-          <div class="button-left" @click="goto(previousID)">
+          <div class="button-left" @click="goto(previousID)" v-if="this.allNews.indexOf(this.newsID) !== 0">
             <img src="../../assets/imgs/news/arrow-left.png" alt="" />
             <p>{{ $t("message.news.previous") }}</p>
           </div>
@@ -109,11 +109,11 @@
           <div class="title-left" v-else></div>
         </div>
         <div class="next">
-          <div class="button-right" @click="goto(nextID)">
+          <div class="button-right" @click="goto(nextID)" v-if="this.allNews.indexOf(this.newsID) !== (allNews.length-1)">
             <p>{{ $t("message.news.next") }}</p>
             <img src="../../assets/imgs/news/arrow-right.png" alt="" />
           </div>
-          <div class="title-right">
+          <div class="title-right" v-if="this.allNews.indexOf(this.newsID) !== (allNews.length-1)">
             {{ $t("message.news." + this.nextID + ".title") }}
           </div>
         </div>
@@ -143,7 +143,7 @@ export default {
     },
 
     back: function () {
-      this.$router.go(-1);
+      this.$router.push("/all-news");
     },
 
     goto(where) {
@@ -235,17 +235,23 @@ export default {
 .block-1 {
   height: 100vw/1920 * (660+60-120.5);
   max-width: 100vw;
-  padding: (100vw/1920 * 120.5) 0 0 0;
+  padding: (118px) 0 0 0;
   .button-back {
+    position: fixed;
+    left: 100vw/1920 * 42;
     display: flex;
     flex-direction: row;
-    padding: 0.2% 0 0 0;
-    margin-left: 100vw/1920 * 42;
+    padding: 0 0 0 0;
+    //margin-left: 100vw/1920 * 42;
     height: 100vw/1920 * 34;
     width: 100vw/1920 * 98.45;
     border-radius: 2.5rem;
     text-align: center;
     cursor: pointer;
+
+    p {
+      line-height: 100vw/1920 * 34;
+    }
 
     .arrow-back {
       height: 100vw/1920 * 13.71;
@@ -254,6 +260,7 @@ export default {
       margin-right: 10%;
 
       img {
+        margin-top: 0.5rem;
         width: 100%;
         height: 100%;
       }

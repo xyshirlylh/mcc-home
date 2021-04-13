@@ -128,7 +128,9 @@
                 </p>
 
                 <button class="button" @click="goto('consultation')">
-                  <p :style="{  'margin-left': lang==='zh'? '17%': '13%'}">{{ $t("message.read-more") }}</p>
+                  <p :style="{ 'margin-left': lang === 'zh' ? '17%' : '13%' }">
+                    {{ $t("message.read-more") }}
+                  </p>
 
                   <svg class="button-arrow" viewBox="0 8 28 28">
                     <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -145,13 +147,15 @@
               @mouseleave="clear"
               class="image-2-blur"
             >
-              <div style="height:100%" class="flex-column">
-                <p :style="{  'margin-top': lang==='zh'? '20%': '15%'}">
+              <div style="height: 100%" class="flex-column">
+                <p :style="{ 'margin-top': lang === 'zh' ? '20%' : '15%' }">
                   {{ $t("message.realEstate.shortDescription") }}
                 </p>
 
-                <div class="button"  @click="goRealEstate()" >
-                  <p :style="{  'margin-left': lang==='zh'? '17%': '13%'}">{{ $t("message.read-more") }}</p>
+                <div class="button" @click="goRealEstate()">
+                  <p :style="{ 'margin-left': lang === 'zh' ? '17%' : '13%' }">
+                    {{ $t("message.read-more") }}
+                  </p>
 
                   <svg class="button-arrow" viewBox="0 8 25 25">
                     <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -168,13 +172,15 @@
               class="image-3-blur"
             >
               <div>
-                <p :style="{  'margin-top': lang==='zh'? '20%': '15%'}">
+                <p :style="{ 'margin-top': lang === 'zh' ? '20%' : '15%' }">
                   {{ $t("message.construction.shortDescription") }}
                 </p>
               </div>
 
-              <button class="button" @click="goConstruction()" >
-                <p :style="{  'margin-left': lang==='zh'? '17%': '13%'}">{{ $t("message.read-more") }}</p>
+              <button class="button" @click="goConstruction()">
+                <p :style="{ 'margin-left': lang === 'zh' ? '17%' : '13%' }">
+                  {{ $t("message.read-more") }}
+                </p>
 
                 <svg class="button-arrow" viewBox="0 8 25 25">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
@@ -1688,7 +1694,10 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap");
-
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/custom-font/Avenir Book.ttf");
+}
 .home {
   width: 100%;
   //min-height: 100%;
@@ -1905,9 +1914,8 @@ export default {
       .image-2-blur {
         //position: relative;
         //display: flex;
-        
+
         width: auto;
-        
 
         height: 96%;
         background-image: linear-gradient(
@@ -2244,7 +2252,9 @@ export default {
       }
 
       .content {
-        font: normal normal normal 2.4rem/3.3rem Avenir;
+        font-family: Avenir;
+        font-size: 2.4rem;
+        line-height: 3.3rem;
         letter-spacing: 0.096rem;
         position: absolute;
         left: 3rem;

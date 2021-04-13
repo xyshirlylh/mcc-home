@@ -90,6 +90,10 @@ export default {
     text-align: center;
     cursor: pointer;
 
+    p {
+      line-height: 100vw/1920 * 34;
+    }
+
     .arrow-back {
       height: 100vw/1920 * 13.71;
       width: 100vw/1920 * 9;
@@ -97,6 +101,7 @@ export default {
       margin-right: 10%;
 
       img {
+        margin-top: 0.5rem;
         width: 100%;
         height: 100%;
       }

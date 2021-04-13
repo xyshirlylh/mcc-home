@@ -1,29 +1,32 @@
 <template>
   <div class="real-estate">
     <section class="top-container">
-      <div class="flex-3">
-        <p class="f-s-25 f-c-10 subtitle">
+      <div class="top-left-container">
+        <p class="f-c-10 subtitle">
           {{ $t("message.consultation.title-1") }}
         </p>
 
         <!-- <gap :height="30"/> -->
 
-        <p class="f-s-100 f-c-1 font-bold title" style="letter-spacing: 4px">
+        <p class="f-c-1 font-bold title f-f-Raleway">
           {{ $t("message.intro-subtitle-2") }}
         </p>
 
-        <gap :height="50" />
+        <gap :height="13" />
 
-        <p class="f-s-25 f-c-1 content">
+        <p class="f-c-1 content">
           {{ $t("message.realEstate.description") }}
         </p>
 
-        <gap :height="100" />
+        <img
+          class="top-left-img"
+          src="@/assets/imgs/home/sentorini + canopy.jpg"
+          alt=""
+        />
 
-        <p
-          class="f-s-24 f-c-11 font-bold cursor-pointer"
-          @click="showAllProject"
-        >
+        <gap :height="10" />
+
+        <p class="f-c-11 font-bold cursor-pointer" @click="showAllProject">
           {{ $t("message.realEstate.see-all") }}
         </p>
       </div>
@@ -51,7 +54,7 @@
       -->
 
       <div
-        class="flex-column flex-3 flex-wrap justify-content-between top-right-container"
+        class="flex-column top-right-container" style=" justify-content: left;"
       >
         <div class="title-right">
           <p class="f-f-Raleway">Awards</p>
@@ -60,7 +63,7 @@
         <div class="awards flex-column">
           <div
             class="row-1 flex-row"
-            style="justify-content: space-around; margin-top: 10%"
+            style="justify-content: space-between; margin-top: 10%"
           >
             <div class="award flex-column">
               <p class="award-title">
@@ -103,7 +106,7 @@
           </div>
           <div
             class="row-2 flex-row"
-            style="justify-content: space-around; margin-top: 10%"
+            style="justify-content: space-between; margin-top: 10%"
           >
             <div class="award flex-column">
               <p class="award-title">
@@ -162,7 +165,7 @@
           </div>
           <div
             class="row-3 flex-row"
-            style="justify-content: space-around; margin-top: 10%"
+            style="justify-content: space-between; margin-top: 10%"
           >
             <div class="award flex-column">
               <p class="award-title">
@@ -179,10 +182,10 @@
       </div>
     </section>
 
-    <gap :height="350" />
+    <gap :height="81.17" />
 
     <section>
-      <label ref="titleOfSectionOne" class="f-s-36">{{
+      <label ref="titleOfSectionOne" >{{
         $t("message.realEstate.singapore-projects")
       }}</label>
 
@@ -200,10 +203,10 @@
       </ul>
     </section>
 
-    <gap :height="100" />
+    <gap :height="81.17" />
 
     <section>
-      <label class="f-s-36">{{
+      <label >{{
         $t("message.realEstate.international-projects")
       }}</label>
 
@@ -475,49 +478,75 @@ $unit-size: 100vw/1366;
 .real-estate {
   width: calc(100% - 28rem);
   min-height: 100%;
-  padding: 17.9rem 14rem 0 14rem;
+  padding: 132px 14rem 0 14rem;
+
+  label{
+    font-size: 15*$unit-size;;
+  }
 
   .top-container {
     display: flex;
     flex-direction: row;
+   
 
-    .subtitle {
-      height: 3.6rem;
-      line-height: 3.6rem;
-    }
-    .title {
-      white-space: nowrap;
-      letter-spacing: 4px;
-      height: 14.2rem;
-      line-height: 14.2rem;
-    }
-    .content {
-      //overflow-y: scroll;
-      //height: 50rem;
-      padding: 0 1rem 1rem 1rem;
-      white-space: pre-line;
-      text-align: justify;
-      line-height: 3.6rem;
+    .top-left-container {
+      flex: 694*$unit-size;
+      max-height: 500*$unit-size;
+
+      .subtitle {
+        height: 3.6rem;
+        line-height: 3.6rem;
+        font-size: $unit-size * 14;
+      }
+      .title {
+        white-space: nowrap;
+        height: $unit-size * 29;
+        line-height: $unit-size * 29;
+        font-size: $unit-size * 24;
+        letter-spacing: 0px;
+      }
+      .content {
+        //overflow-y: scroll;
+        //height: 50rem;
+        //padding: 0 1rem 1rem 1rem;
+        white-space: pre-line;
+        text-align: justify;
+        line-height: $unit-size * 20;
+        font-size: $unit-size * 12;
+        letter-spacing: 0;
+      }
+
+      .top-left-img {
+        width: 459 * $unit-size;
+      }
     }
 
     .top-right-container {
       //background-color: red;
-      height: 60%;
+      flex: 416*$unit-size;
+      margin-top: 20*$unit-size;
+
+
+      
       .title-right {
-        margin-top: 7rem;
+        //margin-top: 6rem;
         font-size: 100vw/1366 * 16;
         white-space: nowrap;
         font-weight: 500;
         border-bottom: solid rgba(112, 112, 112, 0.5);
+        border-width: 1px;
         line-height: 100vw/1366 * (13.5 * 2+19);
       }
 
       .awards {
         //margin-bottom: 125%;
         //background-color: yellow;
+        margin-top: 0px;
+     
 
         .award {
           width: $unit-size * 101.51;
+         
           height: $unit-size * 79.09;
           //background-color: green;
           background-image: url("../../assets/imgs/home/房产叶子.svg");

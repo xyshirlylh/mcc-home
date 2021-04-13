@@ -2,23 +2,19 @@
   <div class="consultation">
     <section class="top-container">
       <div class="flex-2">
-        <p class="f-s-25 f-c-10 subtitle">
+        <p class="f-c-10 subtitle">
           {{ $t("message.consultation.title-1") }}
         </p>
 
         <!-- <gap :height="30"/> -->
 
-        <p class="f-s-100 f-c-1 font-bold title" style="letter-spacing: 4px">
+        <p class="f-c-1 font-bold title">
           {{ $t("message.consultation.title-2") }}
         </p>
 
-        <gap :height="50" />
-
-        <p class="f-s-25 f-c-1 content">
+        <p class="f-c-1 content">
           {{ $t("message.consultation.description") }}
         </p>
-
-        <gap :height="100" />
 
         <!--
 
@@ -336,24 +332,25 @@ export default {
 </script>
 
 <style scoped lang="scss" type="text/scss">
+$unit-size: 100vw/1366;
 .consultation {
   width: calc(100% - 28rem);
   min-height: 100%;
-  padding: 17.9rem 14rem 0 14rem;
+  padding: 132px 14rem 0 14rem;
 
   .top-container {
     display: flex;
     flex-direction: row;
 
     .subtitle {
-      height: 3.6rem;
-      line-height: 3.6rem;
+      font-size: $unit-size * 14;
     }
     .title {
       white-space: nowrap;
-      letter-spacing: 4px;
-      height: 14.2rem;
-      line-height: 14.2rem;
+      margin-top: 15 * $unit-size;
+      height: 29 * $unit-size;
+      line-height: 29 * $unit-size;
+      font-size: $unit-size * 24;
     }
     .content {
       //overflow-y: scroll;
@@ -362,6 +359,8 @@ export default {
       white-space: pre-line;
       text-align: justify;
       line-height: 3.6rem;
+      font-size: $unit-size * 12;
+      margin-top: 15 * $unit-size;
     }
   }
 

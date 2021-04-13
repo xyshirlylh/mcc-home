@@ -1,7 +1,7 @@
 <template>
   <div class="real-estate">
     <section class="top-container">
-      <div class="flex-3">
+      <div class="top-left-container">
         <p class="f-c-10 subtitle">
           {{ $t("message.consultation.title-1") }}
         </p>
@@ -11,14 +11,14 @@
         </p>
 
         <p class="f-f-sans f-s-25 f-c-1 content">
-          {{ $t("message.consultation.description") }}
+          {{ $t("message.construction.description") }}
         </p>
 
         <gap :height="16" />
 
-        <img
+        <img class="top-left-img"
           src="../../assets/imgs/construction/Screenshot_2020-08-17_at_15073@2x.png"
-          style="width: 21.0835vw"
+          
         />
 
         <gap :height="50" />
@@ -33,7 +33,7 @@
       <gap :width="39" />
 
       <div
-        class="flex-column flex-2 flex-wrap justify-content-between top-right-container"
+        class="flex-column  justify-content-between top-right-container"
       >
         <!--
           <li v-for="(item, i) in numbers" :key="item.id">
@@ -59,21 +59,21 @@
 
         <div class="awards flex-column">
           <div
-            class="row-1 flex-row"
-            style="justify-content: space-around; margin-top: 10%"
+            class="row-1 justify-content-between flex-row"
+            style=" margin-top: 10%"
           >
             <div class="award flex-column">
               <p class="award-title">A1</p>
-              <p class="award-content">General Building CW01</p>
+              <p class="award-content">General Building <br> CW01</p>
             </div>
             <div class="award flex-column">
               <p class="award-title">A1</p>
-              <p class="award-content">General Building CW01</p>
+              <p class="award-content">General Building <br> CW01</p>
             </div>
           </div>
           <div
-            class="row-2 flex-row"
-            style="justify-content: space-around; margin-top: 10%"
+            class="row-2 justify-content-between flex-row"
+            style=" margin-top: 10%"
           >
             <div class="award flex-column">
               <p class="award-title">L6</p>
@@ -91,7 +91,7 @@
     <gap :height="206.03" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" >{{
+      <label ref="titleOfSectionOne">{{
         $t("message.construction.class-1")
       }}</label>
 
@@ -112,7 +112,7 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" >{{
+      <label ref="titleOfSectionOne">{{
         $t("message.construction.class-2")
       }}</label>
 
@@ -133,7 +133,7 @@
     <gap :height="100" />
 
     <section class="image-list">
-      <label ref="titleOfSectionOne" >{{
+      <label ref="titleOfSectionOne">{{
         $t("message.construction.class-3")
       }}</label>
 
@@ -386,39 +386,50 @@ $unit-size: 100vw/1366;
     display: flex;
     flex-direction: row;
 
-    .subtitle {
-      height: $unit-size * 20;
-      line-height: $unit-size * 20;
-      font-size: $unit-size * 14;
+   
+    .top-left-container {
+      max-height: $unit-size*400;
+      flex: 790 * $unit-size;
+
+       .top-left-img{
+      width: 288*$unit-size;
     }
-    .title {
-      letter-spacing: 4px;
-      height: $unit-size * 29;
-      line-height: $unit-size * 29;
-      font-size: $unit-size * 24;
-      letter-spacing: 0;
-    }
-    .content {
-      
-      white-space: pre-line;
-      //padding: 0rem 1rem 1rem 1rem;
-      //overflow-y: scroll;
-      //height: 50rem;
-      text-align: justify;
-      line-height: $unit-size*20;
-      margin-top: 14px;
-      font-size: $unit-size*12;
+
+      .subtitle {
+        height: $unit-size * 20;
+        line-height: $unit-size * 20;
+        font-size: $unit-size * 14;
+      }
+      .title {
+        letter-spacing: 4px;
+        height: $unit-size * 29;
+        line-height: $unit-size * 29;
+        font-size: $unit-size * 24;
+        letter-spacing: 0;
+      }
+      .content {
+        white-space: pre-line;
+        //padding: 0rem 1rem 1rem 1rem;
+        //overflow-y: scroll;
+        //height: 50rem;
+        text-align: justify;
+        line-height: $unit-size * 20;
+        margin-top: 14px;
+        font-size: $unit-size * 12;
+      }
     }
 
     .top-right-container {
       //background-color: red;
+      flex: $unit-size * 344;
       height: 60%;
       .title-right {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 3rem;
+        
         font-size: 100vw/1366 * 16;
-        width: $unit-size*344;
+        width: 100%;
+        
         white-space: nowrap;
         font-weight: 500;
         border-bottom: solid rgba(112, 112, 112, 0.5);
@@ -463,11 +474,28 @@ $unit-size: 100vw/1366;
     .top-container {
       flex-direction: column;
     }
+    .awards{
+      .row-1{
+        justify-content: space-around;
+      }
+      .row-2{
+        justify-content: space-around;
+      }
+    }
   }
 
   @media screen and (max-width: 768px) {
     .box-container {
       width: 100% !important;
+
+      .awards{
+      .row-1{
+        justify-content: space-around;
+      }
+      .row-2{
+        justify-content: space-around;
+      }
+    }
     }
   }
 
@@ -500,7 +528,7 @@ $unit-size: 100vw/1366;
     label {
       line-height: 5.1rem;
       color: rgba(0, 0, 0, 0.5);
-      font-size: $unit-size*15;
+      font-size: $unit-size * 17;
     }
 
     ul {

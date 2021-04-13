@@ -94,16 +94,23 @@ export default {
 
 <style lang="scss">
 .all-news {
-  padding: (100vw/1920 * 126) 0 (100vw/1920 * 119) 0;
+  padding: (118px) 0 (100vw/1920 * 119) 0;
   .button-back {
+    position: fixed;
+    left: 100vw/1920 * 42;
     display: flex;
     flex-direction: row;
-    padding: 0.2% 0 0 0;
-    margin-left: 100vw/1920 * 42;
+    padding: 0 0 0 0;
+    //margin-left: 100vw/1920 * 42;
     height: 100vw/1920 * 34;
     width: 100vw/1920 * 98.45;
     border-radius: 2.5rem;
     text-align: center;
+    cursor: pointer;
+
+    p {
+      line-height: 100vw/1920 * 34;
+    }
 
     .arrow-back {
       height: 100vw/1920 * 13.71;
@@ -112,6 +119,7 @@ export default {
       margin-right: 10%;
 
       img {
+        margin-top: 0.5rem;
         width: 100%;
         height: 100%;
       }
@@ -122,7 +130,6 @@ export default {
     }
     font: normal normal normal 2rem/2.8rem Source Sans Pro;
   }
-
   .head {
     margin-left: 100vw/1920 * 268;
     margin-bottom: 100vw/1920 * 12.5;
