@@ -351,15 +351,16 @@ $unit-size: 100vw/1366;
       height: 29 * $unit-size;
       line-height: 29 * $unit-size;
       font-size: $unit-size * 24;
+      font-family: 'Raleway';
     }
     .content {
       //overflow-y: scroll;
       //height: 50rem;
-      padding: 0 1rem 1rem 1rem;
+  
       white-space: pre-line;
       text-align: justify;
-      line-height: 3.6rem;
-      font-size: $unit-size * 12;
+      line-height: 20*$unit-size;
+      font-size: $unit-size * 14;
       margin-top: 15 * $unit-size;
     }
   }

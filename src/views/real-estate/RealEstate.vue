@@ -8,8 +8,8 @@
 
         <!-- <gap :height="30"/> -->
 
-        <p class="f-c-1 font-bold title f-f-Raleway">
-          {{ $t("message.intro-subtitle-2") }}
+        <p class="f-c-1 font-bold title">
+          {{ $t("message.intro-subtitle-2") }} 
         </p>
 
         <gap :height="13" />
@@ -77,7 +77,7 @@
             </div>
             <div class="award flex-column">
               <p class="award-title">
-                2010 <br />
+                2011 <br />
                 BCA Green Mark
               </p>
               <p class="award-content f-f-Raleway">
@@ -87,7 +87,7 @@
             </div>
             <div class="award flex-column">
               <p class="award-title">
-                2010 <br />
+                2014 <br />
                 BCA Green Mark
               </p>
               <p
@@ -110,7 +110,7 @@
           >
             <div class="award flex-column">
               <p class="award-title">
-                2010 <br />
+                2015 <br />
                 BCA Green Mark
               </p>
               <p
@@ -128,7 +128,7 @@
             </div>
             <div class="award flex-column">
               <p class="award-title">
-                2010 <br />
+                2016 <br />
                 BCA Green Mark
               </p>
               <p
@@ -146,7 +146,7 @@
             </div>
             <div class="award flex-column">
               <p class="award-title">
-                2010 <br />
+                2017 <br />
                 BCA Green Mark
               </p>
               <p
@@ -169,7 +169,7 @@
           >
             <div class="award flex-column">
               <p class="award-title">
-                2010 <br />
+                2018 <br />
                 BCA Green Mark
               </p>
               <p class="award-content f-f-Raleway">
@@ -473,7 +473,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" type="text/scss">
+<style scoped lang="scss" type="text/scss"> 
+
 $unit-size: 100vw/1366;
 .real-estate {
   width: calc(100% - 28rem);
@@ -504,6 +505,7 @@ $unit-size: 100vw/1366;
         line-height: $unit-size * 29;
         font-size: $unit-size * 24;
         letter-spacing: 0px;
+        font-family: 'Raleway';
       }
       .content {
         //overflow-y: scroll;
@@ -512,7 +514,7 @@ $unit-size: 100vw/1366;
         white-space: pre-line;
         text-align: justify;
         line-height: $unit-size * 20;
-        font-size: $unit-size * 12;
+        font-size: $unit-size * 14;
         letter-spacing: 0;
       }
 

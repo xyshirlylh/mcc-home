@@ -406,6 +406,7 @@ $unit-size: 100vw/1366;
         line-height: $unit-size * 29;
         font-size: $unit-size * 24;
         letter-spacing: 0;
+        font-family: 'Raleway';
       }
       .content {
         white-space: pre-line;
@@ -415,7 +416,7 @@ $unit-size: 100vw/1366;
         text-align: justify;
         line-height: $unit-size * 20;
         margin-top: 14px;
-        font-size: $unit-size * 12;
+        font-size: $unit-size * 14;
       }
     }
 
