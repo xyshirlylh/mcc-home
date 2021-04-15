@@ -65,7 +65,7 @@
           "
         >
           <gap :height="64" />
-          {{$t('message.realEstate.details')}}
+          {{ $t("message.realEstate.details") }}
           <gap :height="14.25" />
         </p>
 
@@ -86,7 +86,7 @@
 
         <gap :height="70.75" />
         <p class="f-s-24 font-bold f-c-2 f-f-Noto title title-description">
-          {{$t('message.realEstate.project-description')}}
+          {{ $t("message.realEstate.project-description") }}
         </p>
         <gap :height="48" />
 
@@ -105,7 +105,7 @@
           "
         >
           <gap :height="83" />
-          {{$t('message.realEstate.project-facilities')}}
+          {{ $t("message.realEstate.project-facilities") }}
           <gap :height="70" />
         </p>
 
@@ -128,7 +128,7 @@
 
         <div class="external">
           <a :href="this.content['realEstate'][this.projectID]['externalLink']">
-            <p>{{$t('message.realEstate.website')}}</p>
+            <p>{{ $t("message.realEstate.website") }}</p>
           </a>
         </div>
 
@@ -156,7 +156,7 @@
 
         <gap :height="57" />
         <p ref="location" class="f-s-24 font-bold f-c-2 f-f-Noto title">
-          {{$t('message.realEstate.project-location')}}
+          {{ $t("message.realEstate.project-location") }}
         </p>
         <gap :height="32" />
       </div>
@@ -179,12 +179,27 @@
     >
       <div class="box">
         <div class="flex-row align-items-center">
-          <p class="flex-1 f-c-2 f-f-Noto f-s-16 flex-row align-items-center">
+          <p
+            class="flex-1 f-c-2 f-f-Noto f-s-16 flex-row align-items-center"
+            v-if="this.projectList.indexOf(this.projectID) !== 0"
+          >
             <i class="iconfont iconarrow-left"></i
-            ><span class="cursor-pointer">Previous</span>
+            ><span class="cursor-pointer" @click="goto(previousID)"
+              >Previous</span
+            >
           </p>
+
+          <p
+            class="flex-1 f-c-2 f-f-Noto f-s-16 flex-row align-items-center"
+            v-else
+          ></p>
           <p
             class="f-c-2 f-f-Noto f-s-16 cursor-pointer flex-row align-items-center"
+            @click="goto(nextID)"
+            v-if="
+              this.projectList.indexOf(this.projectID) !==
+              projectList.length -1
+            "
           >
             Next<i class="iconfont iconarrow-right"></i>
           </p>
@@ -193,10 +208,22 @@
         <gap :height="16" />
 
         <div class="flex-row">
-          <p class="flex-1 f-c-2 f-s-24 f-f-Noto font-bold">
-            The Alps Residences
+          <p
+            class="flex-1 f-c-2 f-s-24 f-f-Noto font-bold"
+            v-if="this.projectList.indexOf(this.projectID) !== 0"
+          >
+            {{ $t("message.realEstate." + this.previousID + ".name") }}
           </p>
-          <p class="f-c-2 f-s-24 f-f-Noto font-bold">The Poiz</p>
+          <p class="flex-1 f-c-2 f-s-24 f-f-Noto font-bold" v-else></p>
+          <p
+            class="f-c-2 f-s-24 f-f-Noto font-bold"
+            v-if="
+              this.projectList.indexOf(this.projectID) !==
+              projectList.length -1
+            "
+          >
+            {{ $t("message.realEstate." + this.nextID + ".name") }}
+          </p>
         </div>
       </div>
     </div>
@@ -213,7 +240,10 @@ export default {
     return {
       id: "Queens Peak",
       projectID: null,
+      previousID: null,
+      nextID: null,
       projectDetails: null,
+      projectList: [],
       currentLabel: 0,
       projectInfo: {
         name: "Queens Peak",
@@ -238,7 +268,10 @@ export default {
       },
       overview: {
         details: [
-          { title: this.$i18n.t('message.realEstate.project-name'), label: "Queens Peak" },
+          {
+            title: this.$i18n.t("message.realEstate.project-name"),
+            label: "Queens Peak",
+          },
           { title: "Project Type", label: "Condominium For Sale" },
           { title: "Developer", label: "MCC Land" },
           { title: "Tenure", label: "99-year Leasehold" },
@@ -324,6 +357,40 @@ export default {
       });
     }
     this.projectInfo.current.cover = this.projectInfo.images[0].imageSrc;
+
+    if (this.content["realEstate"][this.projectID]["type"] !== "construction") {
+      this.projectList = [
+        "queensPeak",
+        "theAlpsResidences",
+        "northwave",
+        "thePoiz",
+        "theSantorini",
+        "seaHorizon",
+        "forestville",
+        "oneCanberra",
+        "theNautical",
+        "canberraResidences",
+        "theCanopy",
+        "daraSakor",
+        "skyVilla",
+      ];
+    } else {
+      this.projectList = [
+        "resortsWorldSentosa",
+        "singaporeExpo",
+        "sunshineGarden",
+        "emerald",
+        "anchorvaleHorizon",
+        "T311MrtStation",
+        "daraSakor",
+      ];
+    }
+    this.previousID = this.projectList[
+      this.projectList.indexOf(this.projectID) - 1
+    ];
+    this.nextID = this.projectList[
+      this.projectList.indexOf(this.projectID) + 1
+    ];
   },
 
   computed: {
@@ -339,48 +406,113 @@ export default {
   },
 
   methods: {
+    goto(where) {
+      this.$router.push("/project-detail/?id=" + where);
+      const urlParams = new URLSearchParams(window.location.search);
+      this.projectID = urlParams.get("id");
+      this.content = require("../../assets/homepage/content.json");
+
+      this.updateDom();
+
+      this.location.lat = this.content["realEstate"][this.projectID]["lat"];
+      this.location.lng = this.content["realEstate"][this.projectID]["lng"];
+
+      this.projectInfo.images = [];
+      for (
+        let i = 0;
+        i < this.content["realEstate"][this.projectID]["numOfPics"];
+        i++
+      ) {
+        this.projectInfo.images.push({
+          id: i,
+          imageSrc: require("../../assets/imgs/real-estate/" +
+            this.content["realEstate"][this.projectID]["name"] +
+            "/" +
+            (i + 1) +
+            ".jpg"),
+        });
+      }
+      this.projectInfo.current.cover = this.projectInfo.images[0].imageSrc;
+
+      if (
+        this.content["realEstate"][this.projectID]["type"] !== "construction"
+      ) {
+        this.projectList = [
+          "queensPeak",
+          "theAlpsResidences",
+          "northwave",
+          "thePoiz",
+          "theSantorini",
+          "seaHorizon",
+          "forestville",
+          "oneCanberra",
+          "theNautical",
+          "canberraResidences",
+          "theCanopy",
+          "daraSakor",
+          "skyVilla",
+        ];
+      } else {
+        this.projectList = [
+          "resortsWorldSentosa",
+          "singaporeExpo",
+          "sunshineGarden",
+          "emerald",
+          "anchorvaleHorizon",
+          "T311MrtStation",
+          "daraSakor",
+        ];
+      }
+      this.previousID = this.projectList[
+        this.projectList.indexOf(this.projectID) - 1
+      ];
+      this.nextID = this.projectList[
+        this.projectList.indexOf(this.projectID) + 1
+      ];
+    },
+
     updateDom: function () {
       this.overview = {
         details: [
           {
-            title: this.$i18n.t('message.realEstate.project-name'),
+            title: this.$i18n.t("message.realEstate.project-name"),
 
             label: this.$i18n.t(
               "message.realEstate." + this.projectID + ".name"
             ),
           },
           {
-            title: this.$i18n.t('message.realEstate.project-type'),
+            title: this.$i18n.t("message.realEstate.project-type"),
             label: this.$i18n.t(
               "message.realEstate." + this.projectID + ".type"
             ),
           },
           {
-            title: this.$i18n.t('message.realEstate.developer'),
+            title: this.$i18n.t("message.realEstate.developer"),
             label: this.$i18n.t(
               "message.realEstate." + this.projectID + ".developer"
             ),
           },
           {
-            title: this.$i18n.t('message.realEstate.tenure'),
+            title: this.$i18n.t("message.realEstate.tenure"),
             label: this.$i18n.t(
               "message.realEstate." + this.projectID + ".tenure"
             ),
           },
           {
-            title: this.$i18n.t('message.realEstate.psf'),
+            title: this.$i18n.t("message.realEstate.psf"),
             label: this.$i18n.t(
               "message.realEstate." + this.projectID + ".psf"
             ),
           },
           {
-            title: this.$i18n.t('message.realEstate.completion-year'),
+            title: this.$i18n.t("message.realEstate.completion-year"),
             label: this.$i18n.t(
               "message.realEstate." + this.projectID + ".top"
             ),
           },
           {
-            title: this.$i18n.t('message.realEstate.total-units'),
+            title: this.$i18n.t("message.realEstate.total-units"),
             label: this.$i18n.t(
               "message.realEstate." + this.projectID + ".unitNum"
             ),
@@ -446,13 +578,13 @@ export default {
 
         {
           id: 1,
-          label: this.$i18n.t("message.realEstate.location"), 
+          label: this.$i18n.t("message.realEstate.location"),
           icon: "icon535239",
           //translate: 39,
           translate: 19,
           ref: "location",
         },
-      ]
+      ];
     },
 
     onSwitchCover({ id, imageSrc }) {

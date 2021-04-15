@@ -31,9 +31,16 @@ const routes = [
     component: () => import('../views/news/AllPhotos.vue'),
   },
   {
-    path: '/test',
-    component: () => import('../views/home/Test.vue'),
-  }, {
+    path: '/homepage-test',
+    component: () => import('../views/tests/HomepageTest.vue'),
+  }, 
+  {
+    path: '/panoramas-test',
+    component: () => import('../views/tests/PanoramasTest.vue'), 
+  }, 
+  
+  
+  {
     path: '/consultation',
     component: () => import('../views/consultation/Consultation')
   },

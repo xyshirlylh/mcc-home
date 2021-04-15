@@ -106,11 +106,11 @@ export default {
     }
   ],
   "consultation": {
-    "description": "With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management. MCC Land has been venturing into different type and scale of development as well as expanding from Singapore to other Southeast Asian countries, Australia and the United Kingdom. With the extensive knowledge and experience of China and Singapore in urban planning, urban governance, and industrial development, etc., MCC Land is committed to creating a sustainable, resilient, smart and high-quality of life.",
+    "description": "With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management. MCC Land has been venturing into different type and scale of development as well as expanding from Singapore to other Southeast Asian countries, Australia and the United Kingdom. \n\nWith the extensive knowledge and experience of China and Singapore in urban planning, urban governance, and industrial development, etc., MCC Land is committed to creating a sustainable, resilient, smart and high-quality of life.",
     "shortDescription": "With more than 10 years of real estate development experience in Singapore, MCC Land has built-up strong capacities in urban planning, real estate development, construction and operation management.",
     "title-1": "MCC Singapore",
     "title-2": "Consultation",
-    "title-3": "Services",
+    "title-3": "Our Services",
     "count-1": "Full",
     "label-1": "Urban planning and design capabilities",
     "label-2": "Ongoing projects",

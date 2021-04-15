@@ -29,9 +29,12 @@
         -->
       </div>
 
+      <img class="img-1" src="../../assets/imgs/home/consultation.png" alt="" />
+
       <gap :width="124" />
 
-      <ul
+      <!--
+           <ul
         class="flex-3 flex-row flex-wrap justify-content-between"
         ref="numbers"
         :key="componentKey"
@@ -63,31 +66,59 @@
           <p class="f-c-13 f-f-sans f-s-25 label-comment">{{ item.label }}</p>
         </li>
       </ul>
+
+
+      -->
     </section>
 
-    <gap :height="150" />
-
     <div class="services">
-      <div class="services-title">
+      <div class="services-title flex-row">
         <p class="f-f-sans">{{ $t("message.consultation.title-3") }}</p>
+        <div class="pic">
+          <img src="../../assets/imgs/consultation/consultation.jpg" alt="" />
+        </div>
       </div>
 
-      <div class="services-row-1 flex-row">
+      <div class="flex-row justify-content-between service-list">
         <ul>
           <li
-            v-for="(item, index) in this.content.consultation.services"
+            v-for="(item, index) in this.content.consultation.services.slice(
+              0,
+              5
+            )"
             :key="index"
             class="f-f-sans"
           >
             {{ $t("message.consultation.services." + index) }}
           </li>
         </ul>
-        <div class="pic">
-          <img src="../../assets/imgs/consultation/consultation.jpg" alt="" />
-        </div>
+        <ul>
+          <li
+            v-for="(item, index) in this.content.consultation.services.slice(
+              5,
+              10
+            )"
+            :key="index"
+            class="f-f-sans"
+          >
+            {{ $t("message.consultation.services." + (5 + index)) }}
+          </li>
+        </ul>
+        <ul class="ul-3">
+          <li
+            v-for="(item, index) in this.content.consultation.services.slice(
+              10,
+              15
+            )"
+            :key="index"
+            class="f-f-sans"
+          >
+            {{ $t("message.consultation.services." + (10 + index)) }}
+          </li>
+        </ul>
       </div>
     </div>
-    <gap :height="50" />
+    <gap :height="155" />
   </div>
 </template>
 
@@ -340,7 +371,11 @@ $unit-size: 100vw/1366;
 
   .top-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    .img-1 {
+      margin-top: $unit-size * 13;
+    }
 
     .subtitle {
       font-size: $unit-size * 14;
@@ -351,15 +386,15 @@ $unit-size: 100vw/1366;
       height: 29 * $unit-size;
       line-height: 29 * $unit-size;
       font-size: $unit-size * 24;
-      font-family: 'Raleway';
+      font-family: "Raleway";
     }
     .content {
       //overflow-y: scroll;
       //height: 50rem;
-  
+
       white-space: pre-line;
       text-align: justify;
-      line-height: 20*$unit-size;
+      line-height: 25 * $unit-size;
       font-size: $unit-size * 14;
       margin-top: 15 * $unit-size;
     }
@@ -422,34 +457,69 @@ $unit-size: 100vw/1366;
   }
 
   .services {
+    margin-top: $unit-size * 123;
     .services-title {
-      font-size: 5rem;
+      font-size: 24 * $unit-size;
       font-weight: 700;
-    }
-    ul {
-      padding-left: 2%;
-      margin-top: 50px;
-      width: 40%;
-      //background-color: red;
-      column-count: 2;
-    }
-    .pic {
-      width: 60%;
-      img {
-        width: 100%;
-        margin-top: 10%;
-        margin-left: 5%;
-        height: auto;
-        object-fit: cover;
+      .pic {
+        width: 60%;
+        img {
+          width: $unit-size * 172;
+          margin-top: -8%;
+          margin-left: 5%;
+          height: auto;
+          object-fit: cover;
+        }
       }
     }
-    li {
-      //background-color: red;
-      margin-right: 2rem;
-      font-size: 2.7rem;
-      margin-bottom: 3rem;
-      list-style-type: circle;
-      //max-width: 280px;
+
+    .service-list {
+      ul {
+        padding: $unit-size * 51 $unit-size * 58 $unit-size * 21 $unit-size * 30;
+        margin-top: 50px;
+        width: 345 * $unit-size - 58 * $unit-size - 30 * $unit-size;
+        //background-color: red;
+        column-count: 1;
+
+        background-color: rgba(226, 238, 255, 1);
+        border-radius: $unit-size * 10;
+        letter-spacing: 0;
+        white-space: nowrap;
+        
+      }
+      .ul-3{
+        width: 375 * $unit-size - 58 * $unit-size - 30 * $unit-size;
+      }
+
+      li {
+        //background-color: red;
+        //background-color: red;
+        //margin-right: 2rem;
+        font-size: 16 * $unit-size;
+        margin-bottom: 30*$unit-size;
+        list-style-type: initial;
+        height: fit-content;
+        //max-width: 280px;
+      }
+    }
+  }
+
+ 
+
+  @media screen and (max-width: 768px) {
+    .service-list {
+     
+      flex-direction: column;
+      overflow: hidden;
+      ul {
+         
+        width: 100% !important;
+        //padding: 0 0 0 0;
+        li{
+          margin-left: 35%;
+        }
+        
+      }
     }
   }
 }
