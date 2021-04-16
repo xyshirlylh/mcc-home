@@ -1,18 +1,32 @@
 <template>
   <div class="panoramas">
     <div id="viewer" class="photosphere"></div>
+    <div class="buttons">
+      <button @click="previousPhoto()">Previous</button>
+      <button @click="nextPhoto()">Next</button>
+    </div>
   </div>
 </template>
-
+ 
 <script>
 import { Viewer } from "photo-sphere-viewer";
 import "photo-sphere-viewer/dist/photo-sphere-viewer.css";
 export default {
   data() {
-    return {};
+    return {
+      viewer: null,
+      currentPhotoIndex: 0,
+      photos: [],
+    };
   },
 
-  created() {},
+  created() {
+    this.photos = [
+      require("../../assets/imgs/home/DJI_0556.jpg"),
+      require("../../assets/imgs/home/NP360_VIEW_SMALL.jpg"),
+      require("../../assets/imgs/home/NP_360_VIEW.jpg"),
+    ];
+  },
 
   mounted() {
     this.showPhoto();
@@ -20,21 +34,41 @@ export default {
 
   methods: {
     showPhoto: function () {
-      const viewer = new Viewer({
+      this.viewer = new Viewer({
         container: document.querySelector("#viewer"),
-        panorama: require("../../assets/imgs/home/DJI_0556.jpg"),
+
+        panorama: this.photos[this.currentPhotoIndex],
         navbar: [
           "autorotate",
           "zoom",
           //"move",
           "caption",
           "fullscreen",
-          "download",
+          //"download",
           "caption",
         ],
       });
+    },
 
-      viewer;
+    nextPhoto: function () {
+      this.currentPhotoIndex += 1;
+
+      if (this.viewer) {
+        this.viewer.destroy();
+      }
+      this.$nextTick(() => {
+        this.showPhoto();
+      });
+    },
+    previousPhoto: function () {
+      this.currentPhotoIndex -= 1;
+
+      if (this.viewer) {
+        this.viewer.destroy();
+      }
+      this.$nextTick(() => {
+        this.showPhoto();
+      });
     },
   },
 };
@@ -44,6 +78,12 @@ export default {
 $unit-size: 100vw/1366;
 .panoramas {
   height: 100vh;
+  .buttons{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 /* the viewer container must have a defined size */
