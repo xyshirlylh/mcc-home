@@ -24,7 +24,7 @@ export default {
     this.photos = [
       require("../../assets/imgs/home/DJI_0556.jpg"),
       require("../../assets/imgs/home/NP360_VIEW_SMALL.jpg"),
-      require("../../assets/imgs/home/NP_360_VIEW.jpg"),
+      //require("../../assets/imgs/home/NP_360_VIEW.jpg"),  //2021-04-19:XY 由于图片太大，暂时注释本行代码 
     ];
   },
 
