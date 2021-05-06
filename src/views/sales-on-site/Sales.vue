@@ -1,6 +1,8 @@
 <template>
   <div class="container-sales flex-row">
     <div class="container-left">
+      <h1>UNIT DISTRIBUTION CHART</h1>
+
       <ul class="flex-row row-1">
         <li v-for="i in 13" :key="i">{{ i - 1 | filterVal}}</li>
       </ul>
@@ -147,10 +149,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container-sales {
-  padding-top: 50px;
+  padding-top: 10px;
   justify-content: center;
 
   .container-left {
+    h1 { font-size: 20px; }
     .row-1 {
       border: 1px solid black;
       border-right: none;
@@ -195,6 +198,7 @@ export default {
   }
 
   .container-right {
+    margin-top: 50px;
     margin-left: 50px;
     li {
       display: flex;
