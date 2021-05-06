@@ -23,7 +23,7 @@ export default {
     };
   },
   created() {
-    this.showHeaderFooter = window.location.href.indexOf('salary-caculator') > -1 ? false : true;
+    this.showHeaderFooter = (window.location.href.indexOf('salary-caculator') > -1 || window.location.href.indexOf('sales-on-site') > -1) ? false : true;
   },
   methods: {
 

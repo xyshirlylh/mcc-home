@@ -68,6 +68,10 @@ const routes = [
   {
     path: '/salary-caculator',
     component: () => import("../views/salary-caculator/SalaryCaculator.vue"),
+  },
+  {
+    path: '/sales-on-site',
+    component: () => import("@/views/sales-on-site/Sales"),
   }
 ];
 
