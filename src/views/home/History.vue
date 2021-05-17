@@ -39,7 +39,7 @@
         <div class="text flex-column">
           <div class="flex-row">
             <p class="year">{{ this.content.history[5].year }}</p>
-            <p class="title">{{ this.content.history[5].title }}</p>
+            <p class="title">{{ this.content.history[5].title2 }}</p>
           </div>
           <p class="content">{{ this.content.history[5].content }}</p>
           <p class="content" style="margin-top: 40%">
