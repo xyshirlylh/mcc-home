@@ -168,17 +168,21 @@
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.development')}}</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+            {{ $t("message.footer.development") }}
+          </p>
           <gap :height="18" />
-          <p class="f-f-arial f-s-16 f-c-16">T: 0065 6508 2288</p>
+          <p class="f-f-arial f-s-16 f-c-16">T: +65 6508 2288</p>
           <gap :height="10" />
           <p class="f-f-arial f-s-16 f-c-16">E:info@mcc.sg</p>
 
           <gap :height="38" />
 
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.construction')}}</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+            {{ $t("message.footer.construction") }}
+          </p>
           <gap :height="18" />
-          <p class="f-f-arial f-s-16 f-c-16">T: 0065 6766 6883</p>
+          <p class="f-f-arial f-s-16 f-c-16">T: +65 6766 6883</p>
           <gap :height="10" />
           <p class="f-f-arial f-s-16 f-c-16">E: info@mccsingapore.com.sg</p>
 
@@ -186,43 +190,52 @@
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.staff')}}</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+            {{ $t("message.footer.staff") }}
+          </p>
           <gap :height="36" />
           <a
             @click="goto('employee-operation')"
             style="text-decoration: none; cursor: pointer"
             class="f-f-arial f-s-16 f-c-16 label-hover operations"
           >
-            <p>{{$t('message.footer.employee')}}</p>
+            <p>{{ $t("message.footer.employee") }}</p>
           </a>
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">{{$t('message.footer.other')}}</p>
+          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+            {{ $t("message.footer.other") }}
+          </p>
 
           <gap :height="40" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.career')}}</p>
+          <p class="f-f-arial f-s-16 f-c-16 label-hover">
+            {{ $t("message.footer.career") }}
+          </p>
 
           <gap :height="15" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.privacy')}}</p>
+          <p class="f-f-arial f-s-16 f-c-16 label-hover">
+            {{ $t("message.footer.privacy") }}
+          </p>
 
           <gap :height="15" />
 
           <div class="flex-row">
-            <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.language')}} :</p>
+            <p class="f-f-arial f-s-16 f-c-16 label-hover">
+              {{ $t("message.footer.language") }} :
+            </p>
             <select
               v-model="$i18n.locale"
               @click="showMenuList = true"
-              @change="changeLang($i18n.locale)" 
+              @change="changeLang($i18n.locale)"
               style="position: relative; margin-left: 1rem; top: -0.5rem"
             >
               <option
                 v-for="(lang, i) in langs"
                 :key="`Lang${i}`"
                 :value="lang[1]"
-                
               >
                 {{ lang[0] }}
               </option>
@@ -237,7 +250,9 @@
             style="cursor: pointer"
             @click="showContactUs"
           >
-            <p class="f-f-arial f-s-16 f-c-16 label-hover">{{$t('message.footer.contact')}}</p>
+            <p class="f-f-arial f-s-16 f-c-16 label-hover">
+              {{ $t("message.footer.contact") }}
+            </p>
           </div>
         </li>
       </ul>
