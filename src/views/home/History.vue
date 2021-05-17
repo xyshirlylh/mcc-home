@@ -2,7 +2,7 @@
   <div class="history">
     <div class="gallery">
       <div class="gallery-title">
-        <p>MCC Singapore History</p>
+        <p>{{ $t("message.history-title") }}</p>
       </div>
 
       <div class="row-1 flex-row">
@@ -12,9 +12,13 @@
             <p class="title">{{ this.content.history[7].title }}</p>
           </div>
           <p class="content">{{ this.content.history[7].content }}</p>
+          <p class="content" style="margin-top: 60%">
+            {{ this.content.history[7].content2 }}
+          </p>
         </div>
         <div class="pic">
-          <img src="../../assets/imgs/home/Artboard_1@2x.png" alt="" />
+          <img src="../../assets/imgs/home/热带雨林.jpg" alt="" />
+          <img src="../../assets/imgs/home/hotel.png" alt="" />
         </div>
       </div>
 
@@ -27,7 +31,7 @@
           <p class="content">{{ this.content.history[6].content }}</p>
         </div>
         <div class="pic flex-row">
-          <img src="../../assets/imgs/home/wooland checkpoint.jpg" alt="" />
+          <img src="../../assets/imgs/home/dangga heights.jpg" alt="" />
         </div>
       </div>
 
@@ -38,9 +42,21 @@
             <p class="title">{{ this.content.history[5].title }}</p>
           </div>
           <p class="content">{{ this.content.history[5].content }}</p>
+          <p class="content" style="margin-top: 40%">
+            {{ this.content.history[5].content2 }}
+          </p>
         </div>
         <div class="pic flex-row">
-          <img src="../../assets/imgs/home/singapore-expo.jpg" alt="" />
+          <img
+            style="margin-top: 20%"
+            src="../../assets/imgs/home/poiz + bedok south.jpg"
+            alt=""
+          />
+          <img
+            style="margin-top: 10%"
+            src="../../assets/imgs/home/sentorini + canopy.jpg"
+            alt=""
+          />
         </div>
       </div>
 
@@ -56,19 +72,6 @@
           <p class="content">{{ this.content.history[4].content }}</p>
         </div>
         <div class="pic">
-          <img src="../../assets/imgs/home/组屋.jpg" alt="" />
-        </div>
-      </div>
-
-      <div class="row-1 flex-row">
-        <div class="text flex-column">
-          <div class="flex-row">
-            <p class="year">{{ this.content.history[3].year }}</p>
-            <p class="title">{{ this.content.history[3].title }}</p>
-          </div>
-          <p class="content">{{ this.content.history[3].content }}</p>
-        </div>
-        <div class="pic">
           <img src="../../assets/imgs/home/sentosa zong+jubu.png" alt="" />
         </div>
       </div>
@@ -82,7 +85,7 @@
           <p class="content">{{ this.content.history[2].content }}</p>
         </div>
         <div class="pic">
-          <img src="../../assets/imgs/home/dangga heights.jpg" alt="" />
+          <img src="../../assets/imgs/home/组屋.jpg" alt="" />
         </div>
       </div>
 
@@ -95,7 +98,7 @@
           <p class="content">{{ this.content.history[1].content }}</p>
         </div>
         <div class="pic">
-          <img src="../../assets/imgs/home/热带雨林.jpg" alt="" />
+          <img src="../../assets/imgs/home/singapore-expo.jpg" alt="" />
         </div>
       </div>
       <div class="row-1 flex-row">
@@ -107,7 +110,7 @@
           <p class="content">{{ this.content.history[0].content }}</p>
         </div>
         <div class="pic">
-          <img src="../../assets/imgs/home/hotel.png" alt="" />
+          <img src="../../assets/imgs/home/Artboard_1@2x.png" alt="" />
         </div>
       </div>
     </div>
@@ -116,16 +119,34 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
       content: "",
     };
   },
-  created() {
-    this.content = require("../../assets/homepage/content.json");
+  computed: {
+    ...mapState(["lang"]),
   },
-  methods: {},
+
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
+  },
+
+  created() {
+    this.content = this.$i18n.t("message");
+    this.updateDom();
+  },
+  methods: {
+    updateDom: function () {
+      this.content = this.$i18n.t("message");
+    },
+  },
 };
 </script>
 
@@ -140,13 +161,14 @@ export default {
     font-size: 100vw/1366 * 21;
     color: rgba(0, 0, 0, 1);
     font-weight: 700;
+    line-height: 25 * 100vw/1366;
 
     p {
       text-align: center;
     }
   }
   .row-1 {
-    height: 100vw/1920 * 500;
+    min-height: 100vw/1920 * 500;
     //padding-left: 100px;
     padding-bottom: 100px;
     border-bottom: solid rgba(214, 214, 214, 1) 2px;
@@ -178,10 +200,13 @@ export default {
       }
     }
     .pic {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       overflow: hidden;
       width: 60%;
       img {
-        height: 100%;
+        //height: 100%;
       }
     }
   }
