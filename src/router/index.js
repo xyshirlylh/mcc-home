@@ -33,13 +33,18 @@ const routes = [
   {
     path: '/homepage-test',
     component: () => import('../views/tests/HomepageTest.vue'),
-  }, 
+  },
   {
     path: '/panoramas-test',
-    component: () => import('../views/tests/PanoramasTest.vue'), 
-  }, 
-  
-  
+    component: () => import('../views/tests/PanoramasTest.vue'),
+  },
+
+  {
+    path: '/panoramas/landmark',
+    component: () => import('../views/tests/LandmarkView.vue'),
+  },
+
+
   {
     path: '/consultation',
     component: () => import('../views/consultation/Consultation')
