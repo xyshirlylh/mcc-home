@@ -196,7 +196,7 @@ header {
     @include box-size(100%, 50px);
 
     .left {
-      padding-left: 14rem;
+      padding-left: 10rem;
     }
 
     .box-menu {
@@ -280,7 +280,7 @@ header {
     @include box-size(100%, 6rem);
 
     .left {
-      padding-left: 14rem;
+      padding-left: 10rem;
 
       img {
         width: 6.2rem;
