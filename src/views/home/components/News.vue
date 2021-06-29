@@ -208,6 +208,7 @@ export default {};
               background-color: rgba(74, 145, 242, 1);
               border-radius: 4px;
               text-align: center;
+              font-size: 16 * $unit-size;
               line-height: 40 * $unit-size;
               color: white;
             }
@@ -270,6 +271,7 @@ export default {};
         color: white;
         background-color: rgba(74, 145, 242, 1);
         border-radius: 4px;
+        font-size: 14 * $unit-size;
         .arrow {
           margin-left: 12 * $unit-size;
           width: 17.66 * $unit-size;
