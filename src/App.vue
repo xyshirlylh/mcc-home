@@ -2,6 +2,8 @@
   <div id="app">
     <Header v-if="showHeaderFooter" />
 
+    <gap :height="66" />
+    
     <router-view />
 
     <Footer v-if="showHeaderFooter" />

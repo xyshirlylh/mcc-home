@@ -61,8 +61,9 @@ body, html, #app {
 
 /*************** font size ******************/
 
-$unit-size:100vw/1366;
+// $unit-size:100vw/1366;
 
+.f-s-9  { font-size: .9rem; }
 .f-s-10 { font-size: 1rem;   }
 .f-s-11 { font-size: 1.1rem; }
 .f-s-12 { font-size: 1.2rem; }
@@ -97,12 +98,23 @@ $unit-size:100vw/1366;
 .f-c-14 { color: #AFAFB2 }
 .f-c-15 { color: #67686F }
 .f-c-16 { color: #8189A9 }
+.f-c-17 { color: #777777 }
+.f-c-18 { color: #478EF0 }
+.f-c-19 { color: #1F76AD }
 
 
 /*************** bg color *****************/
 .bg-c-0 { background-color: #ffff; }
 .bg-c-1 { background-color: #FBFBFB; }
 .bg-c-2 { background-color: #EFEFEF; }
+
+
+.l-h-12 { line-height: 1.2rem; }
+.l-h-14 { line-height: 1.4rem; }
+.l-h-19 { line-height: 1.9rem; }
+.l-h-20 { line-height: 2rem; }
+.l-h-25 { line-height: 2.5rem; }
+.l-h-26 { line-height: 2.6rem; }
 
 
 
@@ -144,26 +156,25 @@ a:hover {
 /*************** responsive ******************/
 @media screen and (max-width: 1920px) {
   body, html {
-    font-size: 10px;
+    font-size: 14.05px;
   }
 }
 
 @media screen and (max-width: 1600px) {
   body, html {
-    font-size: 8.33px;
+    font-size: 11.71px;
   }
 }
 
 @media screen and (max-width: 1500px) {
   body, html {
-    font-size: 7.2px;
+    font-size: 10.98px;
   }
 }
 
 @media screen and (max-width: 1400px) {
   body, html {
-    font-size: 7.29px;
-    //font-size: 10px;
+    font-size: 10.24px;
   }
 }
 
