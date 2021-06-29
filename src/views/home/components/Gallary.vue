@@ -127,11 +127,6 @@
               <p v-if="yearIndex === 0">{{ years[0] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[0] }}</p>
             </div>
-            <transition name="fade">
-              <div class="subtitle" v-if="index === 0">
-                <p>{{ $t("message.history[0].title") }}</p>
-              </div>
-            </transition>
 
             <transition name="fade">
               <div
@@ -186,12 +181,6 @@
               <p v-if="yearIndex === 1">{{ years[1] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[1] }}</p>
             </div>
-
-            <transition name="fade">
-              <div class="subtitle" v-if="index === 1">
-                <p>{{ $t("message.history[1].title") }}</p>
-              </div>
-            </transition>
 
             <transition name="fade">
               <div
@@ -249,12 +238,6 @@
             </div>
 
             <transition name="fade">
-              <div class="subtitle" v-if="index === 2">
-                <p>{{ $t("message.history[2].title") }}</p>
-              </div>
-            </transition>
-
-            <transition name="fade">
               <div
                 style="top: 13rem; width: 34rem"
                 class="content f-f-avenir"
@@ -305,12 +288,6 @@
               <p v-if="yearIndex === 3">{{ years[3] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[3] }}</p>
             </div>
-
-            <transition name="fade">
-              <div class="subtitle" v-if="index === 3">
-                <p>{{ $t("message.history[4].title") }}</p>
-              </div>
-            </transition>
 
             <transition name="fade">
               <div
@@ -377,12 +354,6 @@
               <p v-if="yearIndex === 4">{{ years[4] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[4] }}</p>
             </div>
-
-            <transition name="fade">
-              <div class="subtitle" v-if="index === 4">
-                <p>{{ $t("message.history[5].title") }}</p>
-              </div>
-            </transition>
 
             <transition name="fade">
               <div
@@ -458,12 +429,6 @@
             </div>
 
             <transition name="fade">
-              <div class="subtitle" v-if="index === 5">
-                <p>{{ $t("message.history[6].title") }}</p>
-              </div>
-            </transition>
-
-            <transition name="fade">
               <div
                 style="top: 13rem; max-width: 50rem"
                 class="content f-f-avenir"
@@ -515,12 +480,6 @@
               <p v-if="yearIndex === 6">{{ years[6] }}</p>
               <p v-else style="color: rgba(198, 198, 198, 1)">{{ years[6] }}</p>
             </div>
-
-            <transition name="fade">
-              <div class="subtitle" v-if="index === 6">
-                <p>{{ $t("message.history[7].title") }}</p>
-              </div>
-            </transition>
 
             <transition name="fade">
               <div
@@ -588,6 +547,10 @@ export default {
     this.year = this.$refs.year;
   },
 
+  destroyed() {
+    window.removeEventListener("scroll", this.resizeTrigger);
+  },
+
   computed: {
     userStyle() {
       return {};
@@ -605,6 +568,16 @@ export default {
   },
 
   methods: {
+    resizeTrigger: function () {
+      //console.log('resize')
+
+      anime({
+        targets: this.gallery,
+        scrollLeft: (this.gallery.offsetWidth / 1920) * 1270 * this.index,
+        duration: 500,
+        easing: "easeInOutQuad",
+      });
+    },
     moveRight: function () {
       if (this.index < 1) {
         this.index = 0;
@@ -1009,297 +982,292 @@ export default {
   font-family: "Avenir";
   src: url("../../../assets/custom-font/Avenir Book.ttf");
 }
-.gallary-component {
-  .outer-frame {
-    padding: 14.9rem 0 0 0;
-    height: 75rem;
-  }
-  .inner-frame {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-
-    .block-3-cercle {
-      z-index: 3;
-      position: absolute;
-      left: -1.6rem;
-      bottom: 50.1rem;
-      width: 3.4rem;
-      height: 3.4rem;
-      fill: transparent;
-      stroke: rgba(19, 129, 206, 1);
-      stroke-width: 2px;
+@mixin styling($unit-size) {
+  .gallary-component {
+    .outer-frame {
+      height: 700 * $unit-size;
     }
-
-    .block-3-line {
-      position: absolute;
-      z-index: 5;
-      left: 0.1rem;
-      bottom: 0;
-      width: 1rem;
-      height: 50rem;
-      stroke: rgba(198, 198, 198, 1);
-      stroke-width: 0.3;
-    }
-
-    .year-small {
-      position: absolute;
-      left: 3rem;
-      bottom: 49rem;
-      color: var(--unnamed-color-1381ce);
-      text-align: left;
-      font: normal normal bold 3.7rem/5.3rem Source Sans Pro;
-      letter-spacing: 0.148rem;
-      color: rgba(19, 129, 206, 1);
-    }
-
-    .year {
-      position: absolute;
-      z-index: 2;
-      left: 6.5vw;
-      bottom: 3rem;
-      width: 10vw;
-      color: var(--unnamed-color-1381ce);
-      text-align: left;
-
-      letter-spacing: 5.08px;
-      color: rgba(19, 129, 206, 1);
-      margin-top: 40vh;
-
-      div {
-        font-size: 6.5vw;
-        letter-spacing: 0.508rem;
-        line-height: 15.2rem;
-      }
-    }
-
-    .gallery {
+    .inner-frame {
       display: flex;
       flex-direction: column;
-      flex-wrap: nowrap;
-      //justify-content: space-between;
-      background-image: url("../../../assets/imgs/home/标尺.png");
-      z-index: 3;
-      background-position: 0% 100%;
-      background-repeat: repeat-x;
-      background-size: 100%;
-
-      $box1positionx: 26.09375vw;
-      $zoomedDistance: 65vw;
-      //$normalDistance: 42.4rem;
-
-      position: relative;
       height: 100%;
       width: 100%;
-      overflow: hidden;
 
-      .subtitle {
+      .block-3-cercle {
+        z-index: 3;
         position: absolute;
-        left: 3rem;
-        bottom: 44rem;
-        color: var(--unnamed-color-000000);
-        text-align: left;
-        font: normal normal 900 3.7rem/5.1rem Avenir;
-        //font-size: 1.5vw;
-        letter-spacing: 0px;
-        color: rgba(0, 0, 0, 1);
+        left: -1.6rem;
+        bottom: 50.1rem;
+        width: 3.4rem;
+        height: 3.4rem;
+        fill: transparent;
+        stroke: rgba(19, 129, 206, 1);
+        stroke-width: 2px;
       }
 
-      .content {
-        font-family: Avenir;
-        font-size: 2.4rem;
-        line-height: 3.3rem;
-        letter-spacing: 0.096rem;
+      .block-3-line {
         position: absolute;
-        left: 3rem;
-        //bottom: 35rem;
-        max-width: 45rem;
-        text-align: left;
-        white-space: pre-line;
+        z-index: 5;
+        left: 0.1rem;
+        bottom: 0;
+        width: 1rem;
+        height: 50rem;
+        stroke: rgba(198, 198, 198, 1);
+        stroke-width: 0.3;
       }
 
-      .box-1 {
-        background-image: url("../../../assets/imgs/home/Artboard_1@2x.png");
-        background-color: transparent;
+      .year-small {
+        position: absolute;
+        left: 3rem;
+        bottom: 49rem;
+        color: var(--unnamed-color-1381ce);
+        text-align: left;
+        font: normal normal Source Sans Pro;
+        font-size: 25 * $unit-size;
+        font-weight: 800;
+        line-height: 36 * $unit-size;
 
-        background-position: 20% 50%;
+        color: rgba(19, 129, 206, 1);
+      }
+
+      .year {
+        position: absolute;
+        z-index: 2;
+        left: 6.5vw;
+        bottom: 3rem;
+        width: 10vw;
+        color: var(--unnamed-color-1381ce);
+        text-align: left;
+
+        color: rgba(19, 129, 206, 1);
+        margin-top: 40vh;
+
+        div {
+          font-size: 87 * $unit-size;
+          line-height: 104 * $unit-size;
+        }
+      }
+
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        //justify-content: space-between;
+        background-image: url("../../../assets/imgs/home/标尺.png");
+        z-index: 3;
+        background-position: 0% 100%;
+        background-repeat: repeat-x;
         background-size: 100%;
-        background-repeat: no-repeat;
 
-        position: absolute;
-        top: 0;
-        left: $box1positionx;
+        $box1positionx: 26.09375vw;
+        $zoomedDistance: 65vw;
+        //$normalDistance: 42.4rem;
+
+        position: relative;
         height: 100%;
-        width: $zoomedDistance;
-      }
+        width: 100%;
+        overflow: hidden;
 
-      .box-2 {
-        background-image: url("../../../assets/imgs/home/wooland checkpoint.jpg"),
-          url("../../../assets/imgs/home/singapore-expo.jpg");
-        background-color: transparent;
-        background-position: 100% 65%, 10% 90%;
-        background-repeat: no-repeat;
-        background-size: 35%, 60%;
-
-        position: absolute;
-        bottom: 0;
-        left: $box1positionx + $zoomedDistance;
-        height: 100%;
-        width: 66.14583vw;
-      }
-
-      .box-3 {
-        background-image: url("../../../assets/imgs/home/组屋.jpg");
-
-        background-position: 60% 40%;
-        background-repeat: no-repeat;
-        background-size: 70%;
-
-        position: absolute;
-
-        bottom: 0;
-        left: $box1positionx + $zoomedDistance * 2;
-        height: 100%;
-        width: 66.14583vw;
-      }
-
-      .box-4 {
-        background-image: url("../../../assets/imgs/home/sentosa zong+jubu.png");
-
-        background-position: 5rem -5rem;
-        background-repeat: no-repeat;
-        background-size: 85%;
-
-        position: absolute;
-        bottom: 0;
-        left: $box1positionx + $zoomedDistance * 3;
-        height: 100%;
-        width: 140rem;
-      }
-
-      .box-5 {
-        //background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
-        z-index: 1;
-        background-position: 40% 60%;
-        background-repeat: no-repeat;
-        background-size: 85%;
-
-        .sentorini {
+        .content {
+          font-family: Avenir;
+          font-size: 16 * $unit-size;
+          line-height: 19 * $unit-size;
           position: absolute;
-          left: 10rem;
-          top: 12rem;
-          height: 100%;
-          width: 140rem;
-
-          img {
-            height: auto;
-            width: 80%;
-          }
+          left: 26.5 * $unit-size;
+          //bottom: 35rem;
+          max-width: 646 * $unit-size;
+          text-align: left;
+          white-space: pre-line;
         }
 
-        .bedok {
+        .box-1 {
+          background-image: url("../../../assets/imgs/home/Artboard_1@2x.png");
+          background-color: transparent;
+
+          background-position: 20% 50%;
+          background-size: 100%;
+          background-repeat: no-repeat;
+
+          position: absolute;
+          top: 0;
+          left: $box1positionx;
+          height: 100%;
+          width: $zoomedDistance;
+        }
+
+        .box-2 {
+          background-image: url("../../../assets/imgs/home/wooland checkpoint.jpg"),
+            url("../../../assets/imgs/home/singapore-expo.jpg");
+          background-color: transparent;
+          background-position: 100% 65%, 10% 90%;
+          background-repeat: no-repeat;
+          background-size: 35%, 60%;
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance;
+          height: 100%;
+          width: 66.14583vw;
+        }
+
+        .box-3 {
+          background-image: url("../../../assets/imgs/home/组屋.jpg");
+
+          background-position: 60% 40%;
+          background-repeat: no-repeat;
+          background-size: 70%;
+
           position: absolute;
 
-          left: 140rem;
-          top: 18rem;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 2;
+          height: 100%;
+          width: 66.14583vw;
+        }
+
+        .box-4 {
+          background-image: url("../../../assets/imgs/home/sentosa zong+jubu.png");
+
+          background-position: 5rem -5rem;
+          background-repeat: no-repeat;
+          background-size: 85%;
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 3;
           height: 100%;
           width: 140rem;
-
-          img {
-            height: auto;
-            width: 80%;
-          }
         }
 
-        position: absolute;
-        bottom: 0;
-        left: $box1positionx + $zoomedDistance * 4;
-        height: 100%;
-        width: 140rem;
-      }
+        .box-5 {
+          //background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
+          z-index: 1;
+          background-position: 40% 60%;
+          background-repeat: no-repeat;
+          background-size: 85%;
 
-      .box-6 {
-        background-image: url("../../../assets/imgs/home/dangga heights.jpg");
+          .sentorini {
+            position: absolute;
+            left: 10rem;
+            top: 12rem;
+            height: 100%;
+            width: 140rem;
 
-        background-position: 40rem -3rem;
-        background-repeat: no-repeat;
-        background-size: 70%;
-
-        position: absolute;
-        bottom: 0;
-        left: $box1positionx + $zoomedDistance * 5;
-        height: 100%;
-        width: 140rem;
-      }
-
-      .box-7 {
-        background-image: url("../../../assets/imgs/home/热带雨林.jpg"),
-          url("../../../assets/imgs/home/hotel.png");
-
-        background-position: 20% 80%, 100% 65%;
-        background-repeat: no-repeat;
-        background-size: 55%, 35%;
-
-        position: absolute;
-        bottom: 0;
-        left: $box1positionx + $zoomedDistance * 6;
-        height: 100%;
-        width: 140rem;
-      }
-    }
-
-    .block3-row-1 {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-
-      .column-1 {
-        max-width: 50%;
-        width: 30%;
-      }
-
-      .column-2 {
-        display: flex;
-        justify-content: center;
-        margin-top: 7.5rem;
-        font: normal normal bold 4.5rem/5.3rem Raleway;
-        color: rgba(31, 118, 173, 1);
-        max-width: 50%;
-        width: 40%;
-      }
-
-      .column-3 {
-        display: flex;
-        justify-content: right;
-        max-width: 50%;
-        width: 30%;
-        margin-top: 5rem;
-        z-index: 4;
-
-        .button-left {
-          margin-left: 22rem;
-        }
-
-        svg {
-          margin-top: 15%;
-
-          max-width: 50%;
-          max-height: 6rem;
-          margin-left: 5.5rem;
-
-          &:hover {
-            circle {
-              fill: #1381ce;
+            img {
+              height: auto;
+              width: 80%;
             }
+          }
 
-            path {
-              fill: white;
+          .bedok {
+            position: absolute;
+
+            left: 140rem;
+            top: 18rem;
+            height: 100%;
+            width: 140rem;
+
+            img {
+              height: auto;
+              width: 80%;
+            }
+          }
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 4;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-6 {
+          background-image: url("../../../assets/imgs/home/dangga heights.jpg");
+
+          background-position: 40rem -3rem;
+          background-repeat: no-repeat;
+          background-size: 70%;
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 5;
+          height: 100%;
+          width: 140rem;
+        }
+
+        .box-7 {
+          background-image: url("../../../assets/imgs/home/热带雨林.jpg"),
+            url("../../../assets/imgs/home/hotel.png");
+
+          background-position: 20% 80%, 100% 65%;
+          background-repeat: no-repeat;
+          background-size: 55%, 35%;
+
+          position: absolute;
+          bottom: 0;
+          left: $box1positionx + $zoomedDistance * 6;
+          height: 100%;
+          width: 140rem;
+        }
+      }
+
+      .block3-row-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .column-1 {
+          max-width: 50%;
+          width: 30%;
+        }
+
+        .column-2 {
+          display: flex;
+          justify-content: center;
+          margin-top: 69 * $unit-size;
+          font-family: Raleway;
+          font-size: 21 * $unit-size;
+          line-height: 25 * $unit-size;
+          color: rgba(31, 118, 173, 1);
+          font-weight: 800;
+          max-width: 50%;
+          width: 40%;
+        }
+
+        .column-3 {
+          display: flex;
+          justify-content: right;
+          max-width: 50%;
+          width: 30%;
+          //margin-top: 5rem;
+          z-index: 4;
+
+          .button-left {
+            margin-left: 120 * $unit-size;
+          }
+
+          svg {
+            margin-top: 15%;
+
+            max-width: 10%;
+
+            margin-left: 50 * $unit-size;
+
+            &:hover {
+              circle {
+                fill: #1381ce;
+              }
+
+              path {
+                fill: white;
+              }
             }
           }
         }
       }
     }
   }
+}
+@media (max-width: 100vw) {
+  @include styling($unit-size: 100vw/1366);
 }
 </style>

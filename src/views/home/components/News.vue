@@ -12,20 +12,74 @@
 
     <div class="row-2">
       <div class="news-1 flex-row">
-        <div class="left"></div>
-        <div class="right"></div>
+        <div class="left">
+          <img src="../../../assets/news/16/1.jpg" alt="" />
+        </div>
+        <div class="right">
+          <div class="p-1">News & Events</div>
+          <div class="p-2">
+            LTA Awards Contract for Changi East Depot to MCC Singapore
+          </div>
+          <div class="p-3">28 May 2021</div>
+          <div class="p-4">
+            On 28 May 2021, MCC Singapore was awarded the design and
+            construction contract for Changi East Depot. A project worth S$1.05
+            billion awarded by the Land Transport Authority (LTA) of Singapore…
+          </div>
+
+          <div class="functions flex-row">
+            <div class="icons flex-row">
+              <div class="icon-1 icon">
+                <img src="../../../assets/imgs/news/facebook.png" alt="" />
+              </div>
+              <div class="icon-2 icon">
+                <img src="../../../assets/imgs/news/Wechat.png" alt="" />
+              </div>
+              <div class="icon-3 icon">
+                <img src="../../../assets/imgs/news/tweeter.png" alt="" />
+              </div>
+            </div>
+            <div class="button">View more</div>
+          </div>
+        </div>
       </div>
       <div class="news-2 news flex-row">
-        <div class="left"></div>
-        <div class="right"></div>
+        <div class="left">
+          <img src="../../../assets/imgs/home/no image.jpg" alt="" />
+        </div>
+        <div class="right">
+          <div class="date">22 Nov 2021</div>
+          <div class="title">
+            MCC Singapore Celebrates Chinese New Year “A Letter Home” Wins First
+            Prize in CEA Virtual New Year’s Gala
+          </div>
+        </div>
       </div>
       <div class="news-3 news flex-row">
-        <div class="left"></div>
-        <div class="right"></div>
+        <div class="left">
+          <img src="../../../assets/news/14/1.jpg" alt="" />
+        </div>
+        <div class="right">
+          <div class="date">12 Feb 2021</div>
+          <div class="title">
+            Remote Video Inspection by Minister-Counselor Zhang Xumin of the
+            Chinese Embassy in Singapore MCC Singapore’s Preventive Measures for
+            COVID-19 and Resumption of Work
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="row-3"></div>
+    <div class="row-3">
+      <div class="button">
+        More News
+        <img
+          class="arrow"
+          src="../../../assets/imgs/home/Arrow Right.png"
+          alt=""
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,6 +94,7 @@ export default {};
     padding-left: 100 * $unit-size;
     padding-right: 100 * $unit-size;
     padding-top: 49 * $unit-size;
+    padding-bottom: 90 * $unit-size;
     .row-1 {
       display: flex;
       flex-direction: row;
@@ -82,6 +137,8 @@ export default {};
     }
     .row-2 {
       margin-top: 23 * $unit-size;
+      font-family: Arial;
+
       .news-1 {
         width: 100%;
         height: 330 * $unit-size;
@@ -89,12 +146,72 @@ export default {};
         .left {
           width: 486 * $unit-size;
           height: 100%;
-          background-color: red;
+          //background-color: red;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
         .right {
-          width: 680 * $unit-size;
+          padding-left: 60 * $unit-size;
+          padding-right: 49 * $unit-size;
+          width: 571 * $unit-size;
           height: 100%;
           background-color: rgba(234, 243, 255, 1);
+          .p-1 {
+            margin-top: 32 * $unit-size;
+            font-size: 14 * $unit-size;
+            height: 16 * $unit-size;
+            line-height: 16 * $unit-size;
+          }
+          .p-2 {
+            font-size: 20 * $unit-size;
+            font-weight: 800;
+            height: 22 * $unit-size;
+            line-height: 22 * $unit-size;
+            margin-top: 10 * $unit-size;
+            letter-spacing: -0.4 * $unit-size;
+          }
+          .p-3 {
+            margin-top: 9 * $unit-size;
+            height: 14 * $unit-size;
+            line-height: 14 * $unit-size;
+            font-size: 12 * $unit-size;
+          }
+          .p-4 {
+            font-size: 14 * $unit-size;
+            line-height: 24 * $unit-size;
+            width: 560 * $unit-size;
+            margin-top: 20 * $unit-size;
+          }
+          .functions {
+            justify-content: space-between;
+            margin-top: 62 * $unit-size;
+            img {
+              width: 19.64 * $unit-size;
+              height: 16.41 * $unit-size;
+            }
+            .icon {
+              cursor: pointer;
+            }
+            .icon-2 {
+              margin-left: 27.28 * $unit-size;
+            }
+            .icon-3 {
+              margin-left: 27.28 * $unit-size;
+            }
+            .button {
+              cursor: pointer;
+              width: 120 * $unit-size;
+              height: 40 * $unit-size;
+              background-color: rgba(74, 145, 242, 1);
+              border-radius: 4px;
+              text-align: center;
+              line-height: 40 * $unit-size;
+              color: white;
+            }
+          }
         }
       }
       .news {
@@ -106,17 +223,60 @@ export default {};
         .left {
           width: 191 * $unit-size;
           height: 100%;
-          background-color: red;
+          //background-color: red;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
         .right {
           width: 975 * $unit-size;
           height: 100%;
           background-color: rgba(234, 243, 255, 1);
         }
+        .date {
+          width: 69 * $unit-size;
+          height: 14 * $unit-size;
+          color: #868686;
+          margin-left: 893 * $unit-size;
+          font-size: 12 * $unit-size;
+          margin-top: 16 * $unit-size;
+          white-space: nowrap;
+        }
+        .title {
+          width: 800 * $unit-size;
+          font-weight: 800;
+          font-size: 18 * $unit-size;
+          margin-left: 50 * $unit-size;
+          margin-top: 5 * $unit-size;
+          line-height: 28 * $unit-size;
+        }
       }
-      .news-2 {
-      }
-      .news-3 {
+    }
+    .row-3 {
+      height: 40 * $unit-size;
+      //background-color: green;
+      margin-top: 22 * $unit-size;
+      .button {
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 142 * $unit-size;
+        height: 40 * $unit-size;
+        line-height: 40 * $unit-size;
+        text-align: center;
+        color: white;
+        background-color: rgba(74, 145, 242, 1);
+        border-radius: 4px;
+        .arrow {
+          margin-left: 12 * $unit-size;
+          width: 17.66 * $unit-size;
+          height: 15.61 * $unit-size;
+          filter: invert(100%) sepia(33%) saturate(2%) hue-rotate(161deg)
+            brightness(111%) contrast(100%);
+        }
       }
     }
   }

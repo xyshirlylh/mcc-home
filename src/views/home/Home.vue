@@ -237,17 +237,14 @@
               >{{ $t("message.read-more") }}...</span
             >
           </p>
-
-          <!--
-          <button class="button-2"> 
-            <p>Read More</p>
-
-            <svg class="button-arrow" viewBox="0 0 25 25">
-              <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
-            </svg>
-          </button>
-
-          -->
+        </div>
+        <div class="button">
+          Find out more
+          <img
+            class="arrow"
+            src="../../assets/imgs/home/Arrow Right.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -291,7 +288,7 @@
 </template>
 
 <script>
-import anime from "animejs/lib/anime.es.js";
+//import anime from "animejs/lib/anime.es.js";
 //import { Carousel, Slide } from "vue-carousel";
 import { mapState } from "vuex";
 import Gallary from "./components/Gallary.vue";
@@ -386,7 +383,7 @@ export default {
   },
 
   mounted() {
-    window.addEventListener("resize", this.resizeTrigger);
+    //window.addEventListener("resize", this.resizeTrigger);
     //console.log(document.height);
     //this.moveLeft = this.$refs.moveLeft;
     //this.moveRight = this.$refs.moveRight;
@@ -402,10 +399,6 @@ export default {
     this.bedok = this.$refs.bedok;
 
     this.year = this.$refs.year;
-  },
-
-  destroy() {
-    window.removeEventListener("scroll", this.resizeTrigger);
   },
 
   methods: {
@@ -459,17 +452,6 @@ export default {
 
     goto(where) {
       this.$router.push("/" + where);
-    },
-
-    resizeTrigger: function () {
-      //console.log('resize')
-
-      anime({
-        targets: this.gallery,
-        scrollLeft: (this.gallery.offsetWidth / 1920) * 1270 * this.index,
-        duration: 500,
-        easing: "easeInOutQuad",
-      });
     },
 
     consultation: function () {
@@ -837,7 +819,7 @@ export default {
 
     .block2 {
       //padding: 17.6rem 0 0 0;
-      height: 87.8rem;
+      height: 772 * $unit-size;
 
       .background {
         .block2-row-1 {
@@ -849,16 +831,16 @@ export default {
             flex-flow: column;
 
             .ID {
-              margin-left: 14rem;
-              margin-top: 14.9rem;
+              margin-left: 100 * $unit-size;
+              margin-top: 77 * $unit-size;
             }
 
             .title-underline {
-              margin-left: 14rem;
+              margin-left: 100 * $unit-size;
             }
 
             .title {
-              margin-left: 18.375rem;
+              margin-left: 149 * $unit-size;
             }
           }
 
@@ -868,17 +850,13 @@ export default {
             .content-head {
               color: var(--unnamed-color-000000);
               text-align: center;
-              font: normal normal bold 45px/53px Raleway;
+              font: Raleway;
+              font-size: 22 * $unit-size;
+              line-height: 26 * $unit-size;
+              letter-spacing: 0.88 * $unit-size;
+              font-weight: 800;
               position: relative;
-              margin-top: 21.6rem;
-
-              letter-spacing: 0.18rem;
-              //font: normal normal normal 3vw Source Sans Pro;
-              font-size: 4.5rem;
-              letter-spacing: 0.18rem;
-
-              color: #000000;
-              opacity: 1;
+              margin-top: 102 * $unit-size;
             }
           }
 
@@ -897,7 +875,7 @@ export default {
         background-color: white;
         background-position: bottom, center;
         background-repeat: no-repeat;
-        background-size: 102.6rem 19.7rem, 100% 100%;
+        background-size: 574 * $unit-size 106.65 * $unit-size, 100% 100%;
         //position: relative;
       }
 
@@ -905,8 +883,8 @@ export default {
         margin-top: 40rem;
         margin-left: 0rem;
 
-        max-width: 50.5rem;
-        max-height: 38.5rem;
+        width: 50.5rem;
+        height: 38.5rem;
         transform: scale(0.7);
         transform-origin: bottom left;
         transition: 1s;
@@ -918,17 +896,16 @@ export default {
         white-space: pre-line;
 
         margin-top: 0;
-        line-height: 4.5rem;
+        line-height: 35 * $unit-size;
 
-        width: 50vw;
+        width: 754 * $unit-size;
         height: 39%;
 
         color: var(--unnamed-color-000000);
         text-align: center;
         font: normal normal normal Source Sans Pro;
-        font-size: 1.9rem;
-        letter-spacing: 0.18rem;
-        letter-spacing: 0.88px;
+        font-size: 16 * $unit-size;
+        letter-spacing: 0.32 * $unit-size;
 
         color: #000000;
         opacity: 1;
@@ -937,47 +914,26 @@ export default {
             border-bottom: solid;
           }
         }
+      }
+      .button {
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20 * $unit-size;
 
-        .button-2 {
-          &:hover {
-            background-color: white;
-            border-color: white;
-          }
-
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 100vw/1920 * 24;
-          display: flex;
-
-          flex-direction: row;
-          justify-content: center;
-
-          background-color: transparent;
-          border: 0.1rem solid black;
-          /* Green */
-
-          width: 16.4rem;
-          height: 5.4rem;
-
-          border-radius: 4px;
-          opacity: 1;
-
-          p {
-            margin-top: 100vw/1920 * 15;
-            margin-left: 1.2rem;
-            white-space: nowrap;
-            font: normal normal normal 1.8rem/2.5rem Source Sans Pro;
-          }
-
-          .button-arrow {
-            margin-top: 100vw/1920 * 0;
-            margin-left: 10%;
-            width: 30%;
-            //margin-bottom: 90%;
-            height: 100%;
-            stroke: black;
-            stroke-width: 1px;
-          }
+        width: 154 * $unit-size;
+        height: 40 * $unit-size;
+        line-height: 40 * $unit-size;
+        text-align: center;
+        color: black;
+        border: solid black 1px;
+        border-radius: 4px;
+        font-size: 14 * $unit-size;
+        font-family: Helvetica;
+        .arrow {
+          margin-left: 12 * $unit-size;
+          width: 19.73 * $unit-size;
+          height: 15.62 * $unit-size;
         }
       }
     }
