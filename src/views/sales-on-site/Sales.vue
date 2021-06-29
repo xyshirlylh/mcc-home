@@ -120,6 +120,8 @@ export default {
     },
 
     onClickUnit(selFloor, selUnit) {
+      if (!this.checkUserRights()) return false;
+
       this.floors.forEach((floor) => {
         if (floor.floorNum === selFloor.floorNum) {
           floor.units.forEach((unit) => {
@@ -136,6 +138,8 @@ export default {
     },
 
     onClickTopFloor(selUnit) {
+      if (!this.checkUserRights()) return false;
+
       this.topFloor.forEach(item => {
         if (selUnit.unit === item.unit) {
           item.color = 'red';
@@ -143,7 +147,11 @@ export default {
       });
 
       window.localStorage.setItem('top-floor', JSON.stringify(this.topFloor));
-    }
+    },
+
+    checkUserRights() {
+      return this.$route.query.roleId === '0';
+    },
   },
 };
 </script>
