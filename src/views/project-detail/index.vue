@@ -97,8 +97,7 @@ export default {
         { title: "Completion Year", label: "2020" },
         { title: "Total Units", label: "300" },
       ],
-      description:
-          "In a competitive market and in an area - Alexandra - that shows all the signs of forthcoming investment, development and gentrification, Queens Park still manages to stand out from the crowd courtesy of its location directly opposite Queenstown MRT Station, and the quality of the units on offer. Just 15 – 20 minutes from Orchard Road and the CBD, Queens Park, offers single occupiers, couples and families a chance to affordably live within an easy commute of the city. 736 well designed and smartly functional units range from 1 bedroom flats up to 3, 4 and 5 bedroom apartments plus 4 very spacious penthouse suites.",
+      description: "",
       facilities: [
         { icon: "iconbasementcarpark", label: "Basement car park" },
         { icon: "icon2971019", label: "Children’s Playground" },
@@ -225,9 +224,10 @@ export default {
   },
   methods: {
     init() {
-      const {name, images} = json[this.$route.query.id];
+      const {name, images, desc} = json[this.$route.query.id];
       this.projectInfo.name = name;
       this.projectInfo.images = images;
+      this.description = desc;
     },
     goto(where) {
       this.$router.push("/project-detail/?id=" + where);
