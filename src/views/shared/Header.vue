@@ -277,20 +277,20 @@ header {
 
 @media screen and (min-width: 1025px) {
   header {
-    @include box-size(100%, 6rem);
+    @include box-size(100%, 4.593rem);
 
     .left {
       padding-left: 10rem;
 
       img {
-        width: 6.2rem;
-        height: 5.1rem;
+        width: 6.2/1.5rem;
+        height: 5.1/1.5rem;
       }
     }
 
     .box-menu {
       //@include box-size-line-height(20.3rem, 9.4rem);
-      @include box-size-line-height(20.3rem, 6rem);
+      @include box-size-line-height(20.3rem, 4.593rem);
 
       span:first-child {
         letter-spacing: 0.96px;
@@ -305,27 +305,27 @@ header {
           transform-origin: 7px;
           position: absolute;
           height: 2px;
-          left: 75%;
+          left: 100%;
           transition: all 500ms ease;
         }
         .line-1 {
-          width: 4.5rem;
-          margin-top: 1.8rem;
+          width: 2.613rem;
+          margin-top: 1.435rem;
         }
         .line-2 {
-          width: 3rem;
-          margin-top: 3.2rem;
+          width: 1.565rem;
+          margin-top: 1.435rem+0.996rem;
         }
         .line-3 {
-          width: 3.8rem;
-          margin-top: 4.7rem;
+          width: 1.992rem;
+          margin-top: 1.435rem+0.996+0.996rem;
         }
       }
 
       &:hover {
         .line-2,
         .line-3 {
-          width: 4.5rem;
+          width: 2.613rem;
         }
       }
     }

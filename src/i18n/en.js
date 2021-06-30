@@ -47,15 +47,15 @@ export default {
 
   "welcome": "Hello,\n Welcome to MCC Singapore!",
   "intro-title": "What we do",
-  "intro-subtitle-1": "Consultation",
-  "intro-subtitle-2": "Real Estate",
+  "intro-subtitle-1": "Urban Planning & Design",
+  "intro-subtitle-2": "Property Development",
   "intro-subtitle-3": "Construction",
   "about-title": "About Us",
   "about": "In response to the national Going Global Strategy, we entered the Singapore market in 1992. Over the past twenty years, MCC Singapore has undergone many trials and tribulations. Progressing from a small company to the big enterprise of today, we have become stronger and have also steadily reached new heights. Our business has undergone several transformations and upgrades, from the initial labor subcontracting to professional subcontracting, general contracting, and real estate development. Currently, we are promoting the transformation and upgrade from a real estate developer to an integrated urban operator, diversifying and digitalizing our business. We are striving to realize our vision of being an efficient, innovative, and the world’s leading integrated urban operator.",
   "about-poetry": "“The city makes life better,\nwe will continue to contribute to the development of the city, \nand while actively integrating into the world, we will also strive to\n transform lives and inspire society.”\n\n",
   "about-full": "MCC Singapore is the overseas branch of MCC Central Research Institute of Building and Construction (MCC CRIBC), a wholly-owned subsidiary of China Metallurgical Group Corporation (MCC Group). As an overseas regional company of the MCC Group, MCC Singapore represents the Group to carry out regional business activities in Singapore and is mainly engaged in urban planning, project planning, urban and property development, project management, general contracting of construction engineering and foundation engineering, as well as contracting of steel structure engineering. The company has made significant breakthroughs and achieved remarkable results in steel structure professional engineering, large-scale integrated entertainment projects, real estate development and project management, as well as public infrastructure projects. It has been awarded the Top Ten Successful Chinese Enterprises Entering into ASEAN for three consecutive years.\n\nAfter more than two decades of development since it first set foot in Southeast Asia, the blue mark of MCC has spread to all corners of Singapore and is also gradually extending to other countries and regions. In the process of overseas development, MCC Singapore has always adhered to the concept of green, sustainable, and smart development. With urban planning and project planning as the guide, and international first-class engineering contracting as the basis to promote the sustainable, stable, and healthy development of the company’s business, MCC Singapore strives to become an influential and innovative urban developer and operator in the region.\n\nSince 2006, all three companies of MCC Singapore have been certified by ISO9001, ISO14001 and ISO18001, bizSAFE Star and bizSAFE Partner in Singapore, and have been awarded the Green Mark Platinum and GoldPlus Awards, Green and Gracious Builders Award, and Construction Productivity Gold Award – Best Practices and Innovations Award by the Building and Construction Authority (BCA), the 2012 Construction Safety Award, 2012 Construction Award and 2013 Certification of Merit (Construction) by the Housing and Development Board (HDB), Workplace Safety and Health Award by the Ministry of Manpower (MOM), and the Structural Steel Design Awards by the Singapore Structural Steel Society (SSSS).\n\n",
   "read-more": "Read More",
-  "history-title": "MCC Singapore History",
+  "history-title": "History & Milestones",
   "mcc-history": "MCC History",
 
   "history": [
@@ -141,39 +141,39 @@ export default {
   "realEstate": {
     "description": "In 2010, MCC Land (Singapore) Pte Ltd was established to undertake real estate development in Singapore and the surrounding regions for China Metallurgical Group Corporation. As the representative for the group's joint-stock company, it is also responsible for the business activities in Singapore. The company has been ranked among the Top Ten Property Developers in Singapore for four consecutive years and has received Asia’s Top Influential Brand Award as well as Singapore Prestige Brand Award (SPBA) Global Brands Award.\n\nMCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
     "shortDescription": "MCC Land (Singapore) Pte Ltd has developed 15 commercial and residential complexes, private condominiums, executive condominiums, and other real estate projects in Singapore through sole proprietorship, joint venture and management, with more than 8,000 residential units and a total saleable area of over 600,000 square meters, ‘transforming lives’ for millions of owners in a limited space.",
-    "see-all":"See all projects",
+    "see-all": "See all projects",
 
     "overview": "Overview",
-    "location":"Location",
-    'details':"Details",
-    'project-name':"Project Name",
-    'project-type':"Project Type",
-    'developer':"Developer",
-    'tenure':"Tenure",
-    'psf':"PSF",
-    'completion-year':"Completion Year",
-    'total-units':"Total Units",
-    "project-description":"Description",
-    "project-facilities":"Facilities & Amenities",
-    "website":"Project Website",
-    "project-location":"Location",
+    "location": "Location",
+    'details': "Details",
+    'project-name': "Project Name",
+    'project-type': "Project Type",
+    'developer': "Developer",
+    'tenure': "Tenure",
+    'psf': "PSF",
+    'completion-year': "Completion Year",
+    'total-units': "Total Units",
+    "project-description": "Description",
+    "project-facilities": "Facilities & Amenities",
+    "website": "Project Website",
+    "project-location": "Location",
 
 
 
 
-    "singapore-projects":"Singapore property projects",
-    "international-projects":"International property projects",
-    "completion" :"Year of completion",
-    "facilities":{
-      
-      'carpark':'Basement car park',
-      'playground':'Children’s Playground',
-      'drop-off':'Drop Off Point',
-      'gym':'Gymnasium room',
-      'lift':'Lift lobby',
-      'swim':'Swimming pool',
-      'entrance':'Main entrance',
-      'security':'24 hours security',
+    "singapore-projects": "Singapore property projects",
+    "international-projects": "International property projects",
+    "completion": "Year of completion",
+    "facilities": {
+
+      'carpark': 'Basement car park',
+      'playground': 'Children’s Playground',
+      'drop-off': 'Drop Off Point',
+      'gym': 'Gymnasium room',
+      'lift': 'Lift lobby',
+      'swim': 'Swimming pool',
+      'entrance': 'Main entrance',
+      'security': '24 hours security',
 
     },
 
@@ -373,7 +373,7 @@ export default {
       "name": "Dara Sakor",
       "numOfPics": 3,
       "type": "construction",
-    
+
       'location': "South, Cambodia",
       "lat": 10.882636696430144,
       "lng": 103.15366494686302,
@@ -442,7 +442,7 @@ export default {
       "descriptionCN": "9座17层住宅建筑，共856个单位",
       "description": "9 blocks of 17 storey residential flats with a total of 856 dwelling units"
     },
-    
+
     "anchorvaleHorizon": {
       "name": "Anchorvale Horizon",
       "type": "construction",
@@ -457,22 +457,22 @@ export default {
   "construction": {
     "shortDescription": "MCC Singapore has obtained the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories from the Building and Construction Authority of Singapore (BCA), as well as L6 grade in Plumbing & Sanitary Works (ME12) and Electrical engineering (ME05). Several completed projects have been recognized and awarded by BCA and other related agencies in the safety and design categories, and the company's engineering and technical capabilities have been widely recognized by the Singapore industry.",
     "description": "China Jingye Engineering Corporation Limited (Singapore Branch) is a registered contractor with the Building and Construction Authority of Singapore (BCA) and the only State-owned enterprise in Singapore to obtain the highest A1 grade in both General Building (CW01) and Civil Engineering (CW02) categories. The company is influential in Singapore with excellent performance in both public and private construction sectors. The company is the main contractor for Singapore’s iconic landmark projects – Universal Studios Singapore and Maritime Experiential Museum, Resorts World, Sentosa.\n\nChina Jingye Construction Engineering (Singapore) Private Limited has extensive experience in the private civil engineering sector. As the general main contractor for MCC Land, it is responsible for most of its property development projects. The company has been part of MCC Singapore since its inception in 1996. It has accumulated comprehensive engineering performance and experiences in turnkey, specialized contracting, supply and subcontracting works.",
-    "class-2":"Building Our Home",
-    "class-3":"Building Our City",
-    "class-1":"Building Endless Joy",
-    "class-4":"Building Our World",
+    "class-2": "Building Our Home",
+    "class-3": "Building Our City",
+    "class-1": "Building Endless Joy",
+    "class-4": "Building Our World",
   },
 
   "news": {
 
     "title": "MCC News",
-    "view-more":"View More", 
-    "latest-news":"Latest News",
-    "back":"Back",
-    "show-all" :"Show All Photos",
-    "author":"MCC Media Department",
-    "previous":"previous",
-    "next":"next",
+    "view-more": "View More",
+    "latest-news": "Latest News",
+    "back": "Back",
+    "show-all": "Show All Photos",
+    "author": "MCC Media Department",
+    "previous": "previous",
+    "next": "next",
 
 
     "2_10_2020": {
