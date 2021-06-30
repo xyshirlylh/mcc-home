@@ -4,7 +4,7 @@
       <img src="../../assets/imgs/home/employee-operation.jpg" alt="" />
     </div>
     <div class="content">
-      <p class="f-f-sans f-s-30 font-bold">Employee Operations</p>
+      <p class="f-f-sans f-s-28 font-bold title">Employee Operations</p>
       <div class="logos">
         <ul>
           <li>
@@ -30,7 +30,7 @@
                 ><img src="../../assets/imgs/home/mcc school.png" alt=""
               /></a>
             </div>
-          </li> 
+          </li>
           <li>
             <div class="item flex-column">
               <p>OA</p>
@@ -50,7 +50,6 @@
         </ul>
       </div>
     </div>
-    <gap :height="50" />
   </div>
 </template>
 
@@ -67,40 +66,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.employee-operation {
-  padding-top: 6.5rem;
-  //background-color: red;
-  .pic {
-    img {
-      width: 100%;
-    }
-  }
-  .content {
-    padding: 10rem 40rem 10rem 40rem;
-
-    .logos {
-      border-bottom: solid grey 1px;
-      ul {
-        display: flex;
-        flex-flow: row wrap;
-
-        margin-top: 5rem;
-        p {
-          text-align: center;
-          font-size: 2rem;
-          color: #4a91f2;
-          margin-bottom: 1rem;
-        }
-      }
-      .item {
-        width: 190px;
-        padding: 40px;
-        img {
-          cursor: pointer;
-          width: 100%;
-        }
+@mixin styling($unit-size) {
+  .employee-operation {
+    //padding-top: 6.5rem;
+    //background-color: red;
+    .pic {
+      img {
+        width: 100%;
       }
     }
+    .content {
+      padding: 15 * $unit-size 200.72 * $unit-size 132 * $unit-size 203.9 *
+        $unit-size;
+
+      .title {
+        margin-left: 40 * $unit-size;
+      }
+
+      .logos {
+        border-bottom: solid grey 1px;
+        ul {
+          display: flex;
+          flex-flow: row wrap;
+
+          margin-top: 63 * $unit-size;
+          p {
+            text-align: center;
+            font-size: 2rem;
+            color: #4a91f2;
+            margin-bottom: 1rem;
+          }
+        }
+        .item {
+          width: 190px;
+          padding: 60px;
+          img {
+            cursor: pointer;
+            width: 100%;
+          }
+        }
+      }
+    }
   }
+}
+@media (max-width: 100vw) {
+  @include styling($unit-size: 100vw/1366);
 }
 </style>

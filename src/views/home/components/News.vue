@@ -4,9 +4,9 @@
       <div class="col-1">
         <div class="id">02</div>
         <div class="underline"></div>
-        <div class="subtitle">Our latest news & events</div>
+        <div class="subtitle">{{ $t("message.news.titleSmall") }}</div>
       </div>
-      <div class="col-2">MCC News</div>
+      <div class="col-2">{{ $t("message.news.title") }}</div>
       <div class="col-3"></div>
     </div>
 
@@ -16,30 +16,48 @@
           <img src="../../../assets/news/16/1.jpg" alt="" />
         </div>
         <div class="right">
-          <div class="p-1">News & Events</div>
+          <div class="p-1">{{ $t("message.news.title1") }}</div>
           <div class="p-2">
-            LTA Awards Contract for Changi East Depot to MCC Singapore
+            {{ this.news1.title }}
           </div>
-          <div class="p-3">28 May 2021</div>
+          <div class="p-3">{{ this.news1.date }}</div>
           <div class="p-4">
-            On 28 May 2021, MCC Singapore was awarded the design and
-            construction contract for Changi East Depot. A project worth S$1.05
-            billion awarded by the Land Transport Authority (LTA) of Singapore…
+            {{ this.news1.preview }}
           </div>
 
           <div class="functions flex-row">
             <div class="icons flex-row">
-              <div class="icon-1 icon">
-                <img src="../../../assets/imgs/news/facebook.png" alt="" />
-              </div>
-              <div class="icon-2 icon">
-                <img src="../../../assets/imgs/news/Wechat.png" alt="" />
-              </div>
-              <div class="icon-3 icon">
-                <img src="../../../assets/imgs/news/tweeter.png" alt="" />
-              </div>
+              <ShareNetwork
+                network="facebook"
+                title="I'd like to share this news with you."
+                :url="currentUrl"
+              >
+                <div class="icon-1 icon">
+                  <img src="../../../assets/imgs/news/facebook.png" alt="" />
+                </div>
+              </ShareNetwork>
+              <ShareNetwork
+                network="weibo"
+                title="I'd like to share this news with you."
+                :url="currentUrl"
+              >
+                <div class="icon-2 icon">
+                  <img src="../../../assets/imgs/news/Wechat.png" alt="" />
+                </div>
+              </ShareNetwork>
+              <ShareNetwork
+                network="twitter"
+                title="I'd like to share this news with you."
+                :url="currentUrl"
+              >
+                <div class="icon-3 icon">
+                  <img src="../../../assets/imgs/news/tweeter.png" alt="" />
+                </div>
+              </ShareNetwork>
             </div>
-            <div class="button" @click="goNews(allNews[0])">View more</div>
+            <div class="button" @click="goNews(allNews[0])">
+              {{ $t("message.news.button1") }}
+            </div>
           </div>
         </div>
       </div>
@@ -50,8 +68,7 @@
         <div class="right">
           <div class="date">22 Nov 2021</div>
           <div class="title">
-            MCC Singapore Celebrates Chinese New Year “A Letter Home” Wins First
-            Prize in CEA Virtual New Year’s Gala
+            {{ this.news2.title }}
           </div>
         </div>
       </div>
@@ -62,9 +79,7 @@
         <div class="right">
           <div class="date">12 Feb 2021</div>
           <div class="title">
-            Remote Video Inspection by Minister-Counselor Zhang Xumin of the
-            Chinese Embassy in Singapore MCC Singapore’s Preventive Measures for
-            COVID-19 and Resumption of Work
+            {{ this.news3.title }}
           </div>
         </div>
       </div>
@@ -72,7 +87,7 @@
 
     <div class="row-3">
       <div class="button" @click="goAllNews()">
-        More News
+        {{ $t("message.news.button2") }}
         <img
           class="arrow"
           src="../../../assets/imgs/home/Arrow Right.png"

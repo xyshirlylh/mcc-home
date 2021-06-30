@@ -9,10 +9,9 @@
         <div class="text flex-column">
           <div class="flex-row">
             <p class="year">{{ this.content.history[7].year }}</p>
-            <p class="title">{{ this.content.history[7].title }}</p>
           </div>
           <p class="content">{{ this.content.history[7].content }}</p>
-          <p class="content" style="margin-top: 60%">
+          <p class="content" style="margin-top: 50%">
             {{ this.content.history[7].content2 }}
           </p>
         </div>
@@ -26,7 +25,6 @@
         <div class="text flex-column">
           <div class="flex-row">
             <p class="year">{{ this.content.history[6].year }}</p>
-            <p class="title">{{ this.content.history[6].title }}</p>
           </div>
           <p class="content">{{ this.content.history[6].content }}</p>
         </div>
@@ -39,7 +37,6 @@
         <div class="text flex-column">
           <div class="flex-row">
             <p class="year">{{ this.content.history[5].year }}</p>
-            <p class="title">{{ this.content.history[5].title2 }}</p>
           </div>
           <p class="content">{{ this.content.history[5].content }}</p>
           <p class="content" style="margin-top: 40%">
@@ -65,7 +62,6 @@
           <div class="flex-row">
             <div class="flex-row">
               <p class="year">{{ this.content.history[4].year }}</p>
-              <p class="title">{{ this.content.history[4].title }}</p>
             </div>
           </div>
 
@@ -80,7 +76,6 @@
         <div class="text flex-column">
           <div class="flex-row">
             <p class="year">{{ this.content.history[2].year }}</p>
-            <p class="title">{{ this.content.history[2].title }}</p>
           </div>
           <p class="content">{{ this.content.history[2].content }}</p>
         </div>
@@ -93,7 +88,6 @@
         <div class="text flex-column">
           <div class="flex-row">
             <p class="year">{{ this.content.history[1].year }}</p>
-            <p class="title">{{ this.content.history[1].title }}</p>
           </div>
           <p class="content">{{ this.content.history[1].content }}</p>
         </div>
@@ -105,7 +99,6 @@
         <div class="text flex-column">
           <div class="flex-row">
             <p class="year">{{ this.content.history[0].year }}</p>
-            <p class="title">{{ this.content.history[0].title }}</p>
           </div>
           <p class="content">{{ this.content.history[0].content }}</p>
         </div>
@@ -152,7 +145,7 @@ export default {
 
 <style lang="scss" scoped>
 .history {
-  margin-top: 20rem;
+  margin-top: 100vw/1366 * 87.07;
   .gallery {
     padding: 0 100vw/1366 * 145 0 100vw/1366 * 162;
   }
@@ -196,7 +189,7 @@ export default {
       .content {
         margin-top: 100vw/1366 * 7;
         font-size: 100vw/1366 * 18;
-        line-height: 4rem;
+        line-height: 100/1366 * 25;
       }
     }
     .pic {

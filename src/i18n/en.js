@@ -466,6 +466,8 @@ export default {
   "news": {
 
     "title": "MCC News",
+    'titleSmall': 'Our latest news & events',
+
     "view-more": "View More",
     "latest-news": "Latest News",
     "back": "Back",
@@ -473,9 +475,14 @@ export default {
     "author": "MCC Media Department",
     "previous": "previous",
     "next": "next",
+    'button1': 'View More',
+    'button2': 'More News',
+    'title1': 'News & Events',
+
 
     "16": {
       "id": "16",
+      'preview': ' On 28 May 2021, MCC Singapore was awarded the design andconstruction contract for Changi East Depot.A project worth S$1.05 billion awarded by the Land Transport Authority(LTA) of Singapore…',
       "photocount": 3,
       "title": "LTA Awards Contract for Changi East Depot to MCC Singapore",
 
@@ -597,7 +604,7 @@ export default {
       "photocount": 1,
       "title": "Hong Xiaoyong, Chinese Ambassador to Singapore,Expresses Solicitude to Chinese workers of MCC Singapore in Video Conference",
 
-      "date": "April 4, 2020",
+      "date": "April 11, 2020",
 
       "content": "At 10am on 11 April 2020, Hong Xiaoyong, China’s Ambassador to Singapore, Qiu Yuanxing, Counsellor from the Consular Section of the Chinese Embassy in Singapore, Zhong Manying, Economic & Commercial Minister-Counsellor, and four Chinese workers’ representatives living in Punggol’s foreign worker dormitory, S11 PPT Lodge 1B, conducted a video conference while other Chinese workers view the whole conference on their mobile phones.\n\nAs the conference commences, Minister-Counselor Zhong Manying expressed her deepest sympathies and concern to the Chinese workers living in Punggol S11 PPT Lodge 1B, and encouraged them to speak freely. The four representatives expressed their gratitude to Ambassador Hong Xiaoyong, Counsellor Qiu Yuanxing, and Minister-Counselor Zhong Manying for their concern for the Chinese workers living in the Punggol dormitory. The representatives explained the current situation of the dormitory, including the standard of food and living, dormitory management, hygiene and sanitation, medical supplies and services, and also expressed their concerns regarding the current pandemic as well as the improvements in management which they hoped to see from the relevant departments of the Singapore government. During the conference, Ambassador Hong Xiaoyong, Counsellor Qiu Yuanxing, and Minister-Counselor Zhong Manying had a cordial exchange with the workers, listening to their difficulties and needs, helping to soothe their anxieties as well as answering the questions raised by the workers. At the end of the conference, Ambassador Hong Xiaoyong once again expressed his heartfelt concern for the workers on behalf of the Chinese Embassy in Singapore, assuring them that in this current pandemic, China is always concerned for the safety and health of Chinese citizens overseas. As for the concerns of the workers, Ambassador Hong Xiaoyong and the Embassy will closely communicate with the relevant departments of the Singapore government and actively respond to their demands. He hopes that everyone can maintain a positive outlook while also taking care of one’s own health and helping each other in these difficult times. The Chinese Embassy will do its best to help the workers and resolve their various concerns.\n\nMCC Singapore"
     },
@@ -618,7 +625,7 @@ export default {
       "author": "Chen Luning",
       "title": "MCC Singapore Wins the Bid for the Mandai Rainforest Park South Project",
 
-      "date": "April 6, 2020",
+      "date": "Jan 13, 2020",
 
       "content": "On January 13, 2020, MCC Singapore successfully won the bid for the Singapore Mandai Tropical Rainforest Park project. This is MCC Singapore's second major project relating to Singapore's tourism industry following the Universal Studios Singapore project.\n\nThe Mandai Rainforest Park is a new park in the Mandai Project, adjacent to the new Bird Park, Singapore Night Safari, Singapore Zoo, Singapore River Safari, and Mandai eco-resort, forming a complete eco-experience park and providing the public and tourists with opportunities to get closer to nature while also serving as a place for leisure and entertainment. The completed Mandai Project is expected to provide a major boost to Singapore's tourism industry, doubling the number of annual visitors to 10 million and creating more jobs in Singapore.\n\nTen years ago, in 2010, MCC Singapore completed the Universal Studios Singapore project with breath-taking speed and quality. Today, ten years later, MCC Singapore has once again taken on the responsibility of designing and constructing the Mandai Rainforest Park, demonstrating the industry's trust and recognition of MCC Singapore's strength in the design and construction of theme park projects. \n\n"
     },

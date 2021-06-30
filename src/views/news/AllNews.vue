@@ -6,14 +6,28 @@
         v-for="(item, index) in this.allNews"
         :key="index"
         @click="goNews(item)"
+        :style="{ height: index === 0 ? '14vw' : '' }"
       >
-        <div class="image">
+        <div
+          class="image"
+          :style="{
+            height: index === 0 ? '14vw' : '',
+            width: index === 0 ? '35%' : '',
+          }"
+        >
           <img :src="require('../../assets/news/' + item + '/1.jpg')" />
         </div>
         <div class="content">
-          <p class="title">
+          <p
+            class="title"
+            :style="{
+              'font-size': index === 0 ? '1.5vw' : '',
+              'margin-top': index === 0 ? '11%' : '',
+            }"
+          >
             {{ $t("message.news." + item + ".title") }}
           </p>
+          <div class="date">{{ $t("message.news." + item + ".date") }}</div>
           <!--
             <p class="text">
             9月3日至6日，新加坡海湾金沙会展中心举办了以 “引领建筑业转型”
@@ -119,8 +133,9 @@ export default {
 
       .item {
         //height: 420px;
-        border: solid rgba(188, 188, 188, 1);
+        //border: solid rgba(188, 188, 188, 1);
         //border: solid black;
+        background-color: #eaf3ff;
         border-width: 1px;
         //background-color: green;
 
@@ -131,13 +146,13 @@ export default {
             //width: 100%;
 
             width: 100%;
+
             object-fit: cover;
           }
         }
         .content {
           width: 90%;
-          padding-left: 5%;
-          padding-top: 3%;
+
           display: flex;
           flex-direction: column;
           justify-content: left;
@@ -147,8 +162,18 @@ export default {
           font: normal normal 2.5rem Raleway;
           font-size: 16 * $unit-size;
           line-height: 24 * $unit-size;
+          font-weight: 800;
           p {
+            margin-left: 5%;
+            margin-top: 2%;
             //background-color: green;
+            width: 90%;
+          }
+          .date {
+            margin-left: 5%;
+            //background-color: green;
+            font-size: 11 * $unit-size;
+            font-weight: 400;
             width: 90%;
           }
         }

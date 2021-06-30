@@ -160,15 +160,15 @@
                   {{ $t("message.realEstate.shortDescription") }}
                 </p>
 
-                <div class="button" @click="goRealEstate()">
+                <button class="button" @click="goRealEstate()">
                   <p :style="{ 'margin-left': lang === 'zh' ? '17%' : '13%' }">
                     {{ $t("message.read-more") }}
                   </p>
 
-                  <svg class="button-arrow" viewBox="0 8 25 25">
+                  <svg class="button-arrow" viewBox="0 8 28 28">
                     <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
             <div v-else class="image-2" @mouseover="blur"></div>
@@ -190,7 +190,7 @@
                   {{ $t("message.read-more") }}
                 </p>
 
-                <svg class="button-arrow" viewBox="0 8 25 25">
+                <svg class="button-arrow" viewBox="0 8 28 28">
                   <path d="M0 15 L20 15 M20 15 L12 22 M20 15 L12 8"></path>
                 </svg>
               </button>
@@ -620,7 +620,7 @@ export default {
         }
 
         .button {
-          cursor: pointer;
+          // cursor: pointer;
           margin-left: auto;
           margin-right: auto;
 
@@ -641,7 +641,7 @@ export default {
 
           p {
             margin-left: 10%;
-            width: 40%;
+            width: 30%;
             margin-top: 0;
             white-space: nowrap;
             font-size: 10 * $unit-size;
@@ -651,8 +651,8 @@ export default {
 
           .button-arrow {
             margin-top: 6%;
-            margin-left: 10%;
-            width: 30%;
+            margin-left: 5%;
+            width: 40%;
             //margin-bottom: 90%;
             height: 100%;
             stroke: white;
@@ -682,8 +682,9 @@ export default {
         }
 
         .image-2-blur {
-          //position: relative;
-          //display: flex;
+          position: relative;
+          display: flex;
+          flex-direction: column;
 
           width: auto;
 
