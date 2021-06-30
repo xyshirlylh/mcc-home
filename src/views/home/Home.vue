@@ -230,15 +230,9 @@
         <div class="content">
           <p style="margin-top: 2rem; height: 17rem">
             {{ $t("message.about") }}
-            <span
-              class="read-more"
-              @click="goto('about-us')"
-              style="color: rgb(6, 69, 173); cursor: pointer"
-              >{{ $t("message.read-more") }}...</span
-            >
           </p>
         </div>
-        <div class="button">
+        <div class="button" @click="goto('about-us')">
           Find out more
           <img
             class="arrow"
@@ -326,14 +320,6 @@ export default {
       box5: null,
       box6: null,
       box7: null,
-
-      newsID: null,
-      photos: [],
-      allNews: null,
-      news1: null,
-      news2: null,
-      news3: null,
-      news4: null,
     };
   },
 
@@ -359,28 +345,7 @@ export default {
     },
   },
 
-  created() {
-    this.allNews = [
-      "2_10_2020",
-      "7_9_2020",
-      "20_8_2020",
-      "23_6_2020",
-      "19_5_2020",
-      "11_4_2020",
-      "6_4_2020",
-      "27_3_2020",
-      "13_1_2020",
-      "11_10_2019",
-      "30_9_2019",
-    ];
-
-    this.content = require("../../assets/homepage/content.json");
-
-    this.news1 = this.$i18n.t("message.news." + this.allNews[0]);
-    this.news2 = this.$i18n.t("message.news." + this.allNews[1]);
-    this.news3 = this.$i18n.t("message.news." + this.allNews[2]);
-    this.news4 = this.$i18n.t("message.news." + this.allNews[3]);
-  },
+  created() {},
 
   mounted() {
     //window.addEventListener("resize", this.resizeTrigger);
@@ -402,13 +367,6 @@ export default {
   },
 
   methods: {
-    updateDom: function () {
-      this.news1 = this.$i18n.t("message.news." + this.allNews[0]);
-      this.news2 = this.$i18n.t("message.news." + this.allNews[1]);
-      this.news3 = this.$i18n.t("message.news." + this.allNews[2]);
-      this.news4 = this.$i18n.t("message.news." + this.allNews[3]);
-    },
-
     goLeft: function () {
       if (this.block4status > 0) {
         this.block4status--;
@@ -421,9 +379,8 @@ export default {
       }
     },
 
-    goNews: function (id) {
-      this.$router.push("/news/?id=" + id);
-      window.scrollTo(0, 0);
+    goto(where) {
+      this.$router.push("/" + where);
     },
 
     blur: function () {
@@ -434,24 +391,12 @@ export default {
       this.mouseover = false;
     },
 
-    gonews: function () {
-      this.$router.push("/news");
-    },
-
-    goAllNews: function () {
-      this.$router.push("/all-news");
-    },
-
     goRealEstate: function () {
       this.$router.push("/real-estate");
     },
 
     goConstruction: function () {
       this.$router.push("/construction");
-    },
-
-    goto(where) {
-      this.$router.push("/" + where);
     },
 
     consultation: function () {
