@@ -292,6 +292,7 @@ export default {
         }
       }
       .news {
+        cursor: pointer;
         width: 100%;
         height: 117 * $unit-size;
 

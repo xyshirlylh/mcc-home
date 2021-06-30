@@ -168,62 +168,62 @@
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+          <p class="f-f-arial f-s-8 f-c-15 font-bold">
             {{ $t("message.footer.development") }}
           </p>
           <gap :height="18" />
-          <p class="f-f-arial f-s-16 f-c-16">T: +65 6508 2288</p>
+          <p class="f-f-arial f-s-11 f-c-16" style="">T: +65 6508 2288</p>
           <gap :height="10" />
-          <p class="f-f-arial f-s-16 f-c-16">E:info@mcc.sg</p>
+          <p class="f-f-arial f-s-11 f-c-16">E:info@mcc.sg</p>
 
           <gap :height="38" />
 
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+          <p class="f-f-arial f-s-8 f-c-15 font-bold">
             {{ $t("message.footer.construction") }}
           </p>
           <gap :height="18" />
-          <p class="f-f-arial f-s-16 f-c-16">T: +65 6766 6883</p>
+          <p class="f-f-arial f-s-11 f-c-16">T: +65 6766 6883</p>
           <gap :height="10" />
-          <p class="f-f-arial f-s-16 f-c-16">E: info@mccsingapore.com.sg</p>
+          <p class="f-f-arial f-s-11 f-c-16">E: info@mccsingapore.com.sg</p>
 
           <gap :height="38" />
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+          <p class="f-f-arial f-s-8 f-c-15 font-bold">
             {{ $t("message.footer.staff") }}
           </p>
           <gap :height="36" />
           <a
             @click="goto('employee-operation')"
             style="text-decoration: none; cursor: pointer"
-            class="f-f-arial f-s-16 f-c-16 label-hover operations"
+            class="f-f-arial f-s-11 f-c-16 label-hover operations"
           >
             <p>{{ $t("message.footer.employee") }}</p>
           </a>
         </li>
 
         <li>
-          <p class="f-f-arial f-s-12 f-c-15 font-bold">
+          <p class="f-f-arial f-s-8 f-c-15 font-bold">
             {{ $t("message.footer.other") }}
           </p>
 
           <gap :height="40" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">
+          <p class="f-f-arial f-s-11 f-c-16 label-hover">
             {{ $t("message.footer.career") }}
           </p>
 
           <gap :height="15" />
 
-          <p class="f-f-arial f-s-16 f-c-16 label-hover">
+          <p class="f-f-arial f-s-11 f-c-16 label-hover">
             {{ $t("message.footer.privacy") }}
           </p>
 
           <gap :height="15" />
 
           <div class="flex-row">
-            <p class="f-f-arial f-s-16 f-c-16 label-hover">
+            <p class="f-f-arial f-s-11 f-c-16 label-hover">
               {{ $t("message.footer.language") }} :
             </p>
             <select
@@ -250,7 +250,7 @@
             style="cursor: pointer"
             @click="showContactUs"
           >
-            <p class="f-f-arial f-s-16 f-c-16 label-hover">
+            <p class="f-f-arial f-s-11 f-c-16 label-hover">
               {{ $t("message.footer.contact") }}
             </p>
           </div>
@@ -260,7 +260,7 @@
 
     <gap :height="84" />
 
-    <p class="flex-row justify-content-center f-c-14 f-f-arial f-s-12">
+    <p class="flex-row justify-content-center f-c-14 f-f-arial f-s-8">
       Mcc land (S) pte. ltd. | China Jingye engineering corporation ltd
       (Singapore branch) | China Jingye engineering corporation ltd (Singapore
       branch)
