@@ -81,6 +81,10 @@ const routes = [
   {
     path: "/property-dev",
     component: () => import("@/views/property-dev/index.vue"),
+  },
+  {
+    path: "/urban-design",
+    component: () => import("@/views/urban-planning/index")
   }
 ];
 

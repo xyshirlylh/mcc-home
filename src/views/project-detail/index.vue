@@ -23,7 +23,7 @@
         <gap :height="30" />
 
         <div class="external">
-          <a>
+          <a :href="website" >
             <p>{{ $t("message.realEstate.website") }}</p>
           </a>
         </div>
@@ -40,7 +40,7 @@
 
     <Location :location="location"/>
 
-    <Pagination/>
+    <!-- <Pagination/> -->
   </section>
 </template>
 <script>
@@ -51,13 +51,13 @@ import Details from "./components/Details";
 import Description from "./components/Description";
 import Facilities from "./components/Facilities";
 import Location from "./components/Location";
-import Pagination from "./components/Pagination"
+// import Pagination from "./components/Pagination"
 
 import { mapState } from "vuex";
 export default {
   components: {
-    ImageGallery, Menu, Details, Description, Facilities, Location, Pagination
-  },
+    ImageGallery, Menu, Details, Description, Facilities, Location,
+  },  //Pagination
   data() {
     return {
       id: "Queens Peak",
@@ -88,15 +88,6 @@ export default {
           },
         ],
       },
-      details: [
-        { title: this.$i18n.t("message.realEstate.project-name"), label: "Queens Peak" },
-        { title: "Project Type", label: "Condominium For Sale" },
-        { title: "Developer", label: "MCC Land" },
-        { title: "Tenure", label: "99-year Leasehold" },
-        { title: "PSF", label: "S$ 1,483.91 psf" },
-        { title: "Completion Year", label: "2020" },
-        { title: "Total Units", label: "300" },
-      ],
       description: "",
       facilities: [
         { icon: "iconbasementcarpark", label: "Basement car park" },
@@ -144,6 +135,16 @@ export default {
         lng: 103.8045647,
       },
       operations: [],
+      website: '',
+      details: [
+        { title: this.$i18n.t("message.realEstate.project-name"), label: "Queens Peak" },
+        { title: "Project Type", label: "Condominium For Sale" },
+        { title: "Developer", label: "MCC Land" },
+        { title: "Tenure", label: "99-year Leasehold" },
+        { title: "PSF", label: "S$ 1,483.91 psf" },
+        { title: "Completion Year", label: "2020" },
+        { title: "Total Units", label: "300" },
+      ],
     };
   },
   created() {
@@ -224,10 +225,16 @@ export default {
   },
   methods: {
     init() {
-      const {name, images, desc} = json[this.$route.query.id];
+      const {name, projectType, developer, tenure, psf, completionYear, totalUnits, website, location, images, desc} = json[this.$route.query.id];
       this.projectInfo.name = name;
       this.projectInfo.images = images;
       this.description = desc;
+      this.location = location;
+      const d = [name, projectType, developer, tenure, psf, completionYear, totalUnits];
+      d.forEach((item, i) => {
+        this.details[i].label = item;
+      });
+      this.website = website;
     },
     goto(where) {
       this.$router.push("/project-detail/?id=" + where);
