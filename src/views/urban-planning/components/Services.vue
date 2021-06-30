@@ -30,7 +30,7 @@ export default {
         {label: 'Urban Design', imageSrc: require('@/assets/images/urban-design/4.jpg')},
         {label: 'Architectural & Building Design', imageSrc: require('@/assets/images/urban-design/建筑设计.jpg')},
         {label: 'Sustainable Environmental Planning', imageSrc: require('@/assets/images/urban-design/5.jpg')},
-        {label: 'Transportation / Traffic/Roads Planning', imageSrc: require('@/assets/images/urban-design/运输:交通:道路规划.png')},
+        {label: 'Transportation / Traffic/Roads Planning', imageSrc: require('@/assets/images/urban-design/运输-交通-道路规划.png')},
         {label: 'Integrated Water Resource Strategy & Management', imageSrc: require('@/assets/images/urban-design/水资源战略与管理.jpg')},
         {label: 'Wastewater Management Planning', imageSrc: require('@/assets/images/urban-design/7.jpg')},
         {label: 'Stormwater Management Planning', imageSrc: require('@/assets/images/urban-design/11.jpg')},
