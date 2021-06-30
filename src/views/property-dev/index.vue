@@ -37,59 +37,120 @@ export default {
   components: {Awards, Instruction, Projects, OnSaleProjects},
   data() {
     return {
-      otherProjects: [
-        {id: '0', name: 'The ALPS', image: require('@/assets/imgs/real-estate/alps-residences-img-001@2x.png') },
-        {id: '1', name: 'Poiz', image: require('@/assets/imgs/real-estate/poiz-img-002@2x.png') },
-        {id: '2', name: 'One Canberra', image: require('@/assets/imgs/real-estate/one-canberra-img-004@2x.png') },
-        {id: '3', name: 'Canberra Residences', image: require('@/assets/imgs/real-estate/alps-residences-img-001@2x.png') },
-        {id: '4', name: 'The Canopy', image: require('@/assets/imgs/real-estate/alps-residences-img-001@2x.png') },
-      ],
-      projectMag: [
-        {id: '0', name: 'The Nautical', image: require('@/assets/imgs/real-estate/nautical-img-001@2x.png')},
-        {id: '1', name: 'Forestville', image: require('@/assets/imgs/real-estate/nautical-img-001@2x.png')},
-        {id: '2', name: 'Sea Horizon', image: require('@/assets/imgs/real-estate/nautical-img-001@2x.png')},
-        {id: '3', name: 'Queens Peak', image: require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png')},
-        {id: '4', name: 'NorthWave', image: require('@/assets/imgs/real-estate/nautical-img-001@2x.png')},
-      ],
+      otherProjects: {
+        title: 'Other Project', 
+        subtitle: '',
+        list: [
+          {id: '0', name: 'The ALPS', image: require('@/assets/images/property-dev/alps/1.jpg') },
+          {id: '1', name: 'Poiz', image: require('@/assets/images/property-dev/poiz/2.jpg') },
+          {id: '2', name: 'One Canberra', image: require('@/assets/images/property-dev/one-canberra/4.jpg') },
+          {id: '3', name: 'Canberra Residences', image: require('@/assets/images/property-dev/canberra-residences/3.jpg') },
+          {id: '4', name: 'The Canopy', image: require('@/assets/images/property-dev/one-canopy/2.jpg') },
+        ]
+      },
+      projectMag: {
+        title: 'Other Project',
+        subtitle: 'Management Project',
+        list: [
+          {id: '0', name: 'The Nautical', image: require('@/assets/images/property-dev/nautical/1.jpg')},
+          {id: '1', name: 'Forestville', image: require('@/assets/images/property-dev/forestville/1.jpg')},
+          {id: '2', name: 'Sea Horizon', image: require('@/assets/images/property-dev/sea-horizon/1.jpg')},
+          {id: '3', name: 'Queens Peak', image: require('@/assets/images/property-dev/queens-peak/1.jpg')},
+          {id: '4', name: 'NorthWave', image: require('@/assets/images/property-dev/north-wave/1.jpg')},
+        ]
+      },
       onSalesProjects: [
         {
-          title: 'Singapore',
+          title: 'On Sale Project',
+          subtitle: 'Singapore',
           projects: [
             {
-              name: 'The Landmark', 
+              name: 'One Bernam', 
               location: 'Singapore', 
-              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              desc: 'One Bernam is served by the Tanjong Pagar MRT Station and Prince Edward Road MRT Station, as well as the Ayer Rajah Expressway (AYE). Within reach are Cantonment Primary School and the National Library, while VivoCity is just a short drive away. One Bernam also enjoys proximity to Marina Bay Sands and Great World City. The project commenced work in 2019 with completion slated for 2023.',
               images: [
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png'), 
-                require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), 
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
+                // require('@/assets/images/property-dev/one-bernam/1.JPG'), 
+                require('@/assets/images/property-dev/one-bernam/ClubhouseNite-6K-Fn4.jpg'),
+                require('@/assets/images/property-dev/one-bernam/L34_FunctionRoom-6K-3.jpg'),
+                require('@/assets/images/property-dev/one-bernam/2.jpg'), 
+                require('@/assets/images/property-dev/one-bernam/Aerial02-6K-ExtFn1.jpg'),
+                require('@/assets/images/property-dev/one-bernam/ClubhouseINTDay-6K-Fn3.jpg'),
+                require('@/assets/images/property-dev/one-bernam/Hammock-8K-Fn2.jpg'),
+                require('@/assets/images/property-dev/one-bernam/Hero02-6K-Fn2.jpg'),
+                require('@/assets/images/property-dev/one-bernam/Pool1-8k-Fn5.jpg'),
+               /*  require('@/assets/images/property-dev/one-bernam/PoolCabana-8K-Fn4.jpg'),
+                require('@/assets/images/property-dev/one-bernam/Retail-6K-Fn1.jpg'),
+                require('@/assets/images/property-dev/one-bernam/Spa-8K-Fn3.jpg'),
+                require('@/assets/images/property-dev/one-bernam/Tatami-8k-Fn3.jpg'), */
               ]
             },
             {
-              name: 'The Landmark2', 
+              name: 'Provence Residence', 
+              location: 'Singapore', 
+              desc: 'Provence Residence is inspired by the effortless sophistication and elegance of French design. Various shopping malls like the Sun Plaza and Sembawang Shopping Centre also offer convenient options for lifestyle, dining and entertainment. Provence Residence commenced work in 2020 with completion slated for 2026.',
+              images: [
+                /* require('@/assets/images/property-dev/provence-residence/6Z2A0107.JPG'), 
+                require('@/assets/images/property-dev/provence-residence/6Z2A0131.JPG'),
+                require('@/assets/images/property-dev/provence-residence/6Z2A0148.JPG'), */
+                require('@/assets/images/property-dev/provence-residence/PR6.jpg'),
+                require('@/assets/images/property-dev/provence-residence/PR1.jpg'),
+                require('@/assets/images/property-dev/provence-residence/PR2.jpg'), 
+                require('@/assets/images/property-dev/provence-residence/PR3.jpg'),
+                require('@/assets/images/property-dev/provence-residence/PR4.jpg'),
+                require('@/assets/images/property-dev/provence-residence/PR5.jpg'),
+              ]
+            },
+            {
+              name: 'Landmark', 
               location: 'Singapore', 
               desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
               images: [
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png'), 
-                require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), 
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
+                require('@/assets/images/property-dev/landmark/7.jpg'),
+                require('@/assets/images/property-dev/landmark/6.jpg'), 
+                require('@/assets/images/property-dev/landmark/11.jpg'),
+                require('@/assets/images/property-dev/landmark/1.jpg'), 
+                require('@/assets/images/property-dev/landmark/2.jpg'),
+                require('@/assets/images/property-dev/landmark/4.jpg'),
+                require('@/assets/images/property-dev/landmark/5.jpg'),
+                require('@/assets/images/property-dev/landmark/8.jpg'),
+                require('@/assets/images/property-dev/landmark/9.jpg'),
+                require('@/assets/images/property-dev/landmark/10.jpg'), 
               ]
-            }
+            },
           ]
         },
         {
-          title: 'Southeast Asia',
+          title: 'On Sale Project',
+          subtitle: 'Southeast Asia',
           projects: [
             {
-              name: 'sky vila', 
+              name: 'Sky Vila', 
               location: 'Phnom Penh, Cambodia', 
-              desc: 'Designed by internationally renowned Taiwanese architect Chu-Yuan Lee (C.Y. Lee), developed by Greatview Investment and managed by MCC Land (Singapore) Pte Ltd, the project has a total construction area of 120,000 square metres. Sky Villa comprises two 35-storey towers of luxury residential apartments in the prime district of central Phnom Penh.', 
+              desc: 'The project has a total construction area of 120,000 square metres. Sky Villa comprises two 35-storey towers of luxury residential apartments in the prime district of central Phnom Penh. The property features 256 units ideal for personal or multi-generational family living with generous residential spaces that range from 272 square metres to 509 square metres. ', 
               images: [
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png'),
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png'),
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png'),
+                require('@/assets/images/property-dev/sky-vila/1.jpg'),
+                require('@/assets/images/property-dev/sky-vila/2.jpg'),
+                require('@/assets/images/property-dev/sky-vila/3.jpg'),
+                require('@/assets/images/property-dev/sky-vila/4.jpg'),
               ]
-            }
+            },
+            {
+              name: 'JKT Living Star', 
+              location: 'Jakarta', 
+              desc: 'The core location of the Southeast Jakarta area with urban facilities and convenient living. JKT Living Star also enjoys proximity to the upcoming Jakarta Light Rail Transit (LRT) as well as the Ciracas and Cibubur Station. The project commenced work in 2019 and was completed in 2021.', 
+              images: [
+                require('@/assets/images/property-dev/living-star/6.jpg'),
+                require('@/assets/images/property-dev/living-star/1.jpg'),
+                require('@/assets/images/property-dev/living-star/2.jpg'),
+                // require('@/assets/images/property-dev/living-star/3.jpg'),
+                require('@/assets/images/property-dev/living-star/4.jpg'),
+                require('@/assets/images/property-dev/living-star/5.jpg'),
+                // require('@/assets/images/property-dev/living-star/7.jpg'),
+                require('@/assets/images/property-dev/living-star/8.jpg'),
+                // require('@/assets/images/property-dev/living-star/9.jpg'),
+                require('@/assets/images/property-dev/living-star/10.jpg'),
+              ]
+            },
           ]
         },
       ]

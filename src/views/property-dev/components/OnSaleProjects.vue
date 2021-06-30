@@ -25,6 +25,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .on-sale-project {
+    margin-top: 8.5rem;
     .title { padding-left: 10rem; }
   }
 </style>

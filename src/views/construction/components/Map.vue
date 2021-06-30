@@ -10,6 +10,8 @@ export default {
   .container-map {
     width: 100%;
     height: 56.7rem;
-    background: green;
+    background-image: url('../../../assets/images/constructions/others/image-map.png');
+    background-size: cover;
+    background-position: center center;
   }
 </style>

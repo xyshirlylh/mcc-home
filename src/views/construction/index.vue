@@ -58,7 +58,7 @@ export default {
         list: [
           {id: '0', name: 'Singapore Expo', image: require('@/assets/images/constructions/project-public/expo/1.jpg')},
           {id: '1', name: 'Woodlands Checkpoint', image: require('@/assets/images/constructions/project-public/woodlands/1.jpg')},
-          {id: '2', name: 'Keppel Distripark', image: ''},
+          {id: '2', name: 'Keppel Distripark', image: require('@/assets/images/constructions/project-public/keppel-distripark/img-kepple.jpg')},
           {id: '3', name: 'Tagore 66KV Electrical Substation', image: ''},
         ]
       },
@@ -86,8 +86,8 @@ export default {
                 require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
               ]
             },
-            {
-              name: 'The Landmark2', 
+            /* {
+              name: 'Normanton Park (2022)', 
               location: 'Singapore', 
               desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
               images: [
@@ -95,7 +95,48 @@ export default {
                 require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), 
                 require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
               ]
-            }
+            },
+            {
+              name: 'Changi East Depot for the Cross Island Line (CRL) (2030)', 
+              location: 'Singapore', 
+              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              images: [
+                require('@/assets/images/constructions/changi-east/10-6b.jpg'), 
+                require('@/assets/images/constructions/changi-east/10-7.jpg'), 
+                require('@/assets/images/constructions/changi-east/10-8.jpg'),
+                require('@/assets/images/constructions/changi-east/10-9.jpg'), 
+                require('@/assets/images/constructions/changi-east/10-10.jpg')
+              ]
+            },
+            {
+              name: 'T311 Bedok South Station and Tunnels for the Thomson-East Coast Line (TEL) (2024)', 
+              location: 'Singapore', 
+              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              images: [
+                require('@/assets/images/constructions/t311/1.jpg'), 
+                require('@/assets/images/constructions/t311/2.jpg'), 
+              ]
+            },
+            {
+              name: 'Jalan Papan Factory & Office', 
+              location: 'Singapore', 
+              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              images: [
+                require('@/assets/images/constructions/jalan-papan/图片4.jpg'),
+                require('@/assets/images/constructions/jalan-papan/图片2.png'), 
+                require('@/assets/images/constructions/jalan-papan/图片3.png'), 
+              ]
+            },
+            {
+              name: 'Short Street Hotel', 
+              location: 'Singapore', 
+              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              images: [
+                require('@/assets/imgs/real-estate/nautical-img-001@2x.png'), 
+                require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), 
+                require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
+              ]
+            }, */
           ]
         },
       ]
