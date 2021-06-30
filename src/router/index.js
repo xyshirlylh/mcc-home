@@ -50,10 +50,6 @@ const routes = [
     component: () => import('../views/real-estate/RealEstate')
   },
   {
-    path: '/construction',
-    component: () => import('../views/construction/index.vue')
-  },
-  {
     path: '/construction-old',
     component: () => import('../views/construction-old/Construction')
   },
@@ -77,6 +73,10 @@ const routes = [
   {
     path: '/sales-on-site',
     component: () => import("@/views/sales-on-site/Sales"),
+  },
+  {
+    path: '/construction',
+    component: () => import('../views/construction/index.vue')
   },
   {
     path: "/property-dev",

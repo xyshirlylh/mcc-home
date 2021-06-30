@@ -12,8 +12,8 @@
 
     <!-- On sale Project -->
     <div ref="titleOfSectionOne">
-      <template v-for="item in onSalesProjects">
-        <OnSaleProjects :key="item.title" :list="item" />
+      <template v-for="(item, i) in onSalesProjects">
+        <OnSaleProjects :key="`${item.title}${i}`" :list="item" />
       </template>
     </div>
 

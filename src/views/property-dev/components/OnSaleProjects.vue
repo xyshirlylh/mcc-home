@@ -4,8 +4,8 @@
       <span>{{ list.title }}</span><span v-if="list.subtitle"> - </span><span class="f-c-1">{{ list.subtitle }}</span>
     </div>
 
-    <template v-for="project in list.projects">
-      <ProjectGallary :key="project.name" :data="project" />
+    <template v-for="(project,i) in list.projects">
+      <ProjectGallary :key="`${project.name}${i}`" :data="project" />
     </template>
   </div>
 </template>

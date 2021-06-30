@@ -12,9 +12,6 @@
       class="box-menu cursor-pointer"
       @click="onClickMenu"
     >
-      <!--
-
-      -->
 
       <span class="icon-menu position-relative">
         <em class="line line-1"></em>
@@ -34,16 +31,6 @@
         class="row-icon flex-row"
         @blur="showMenuList = false"
       >
-        <!--
-           <p
-          class="flex-1 flex-row align-items-center"
-          style="background-color: red"
-        >
-          <img :src="imgSvg" width="50px" height="45px" />
-        </p>
-
-        -->
-
         <p
           class="cursor-pointer position-relative"
           @click="showMenuList = false"
@@ -57,10 +44,10 @@
         <div class="item" @click="goto('')">
           {{ $t("message.header.home") }}
         </div>
-        <div class="item" @click="goto('consultation')">
+        <div class="item" @click="goto('urban-design')">
           {{ $t("message.header.consultation") }}
         </div>
-        <div class="item" @click="goto('real-estate')">
+        <div class="item" @click="goto('property-dev')">
           {{ $t("message.header.real-estate") }}
         </div>
         <div class="item" @click="goto('construction')">
@@ -200,7 +187,7 @@ header {
     }
 
     .box-menu {
-      @include box-size-line-height(120px, 50px);
+      @include box-size-line-height(110px, 50px);
 
       span:first-child {
         letter-spacing: 0.96px;
@@ -290,7 +277,7 @@ header {
 
     .box-menu {
       //@include box-size-line-height(20.3rem, 9.4rem);
-      @include box-size-line-height(20.3rem, 4.593rem);
+      @include box-size-line-height(18.3rem, 4.593rem);
 
       span:first-child {
         letter-spacing: 0.96px;
