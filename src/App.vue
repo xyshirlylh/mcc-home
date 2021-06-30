@@ -2,10 +2,10 @@
   <div id="app">
     <Header v-if="showHeaderFooter" />
 
-    <gap :height="66" />
+    <gap :height="45" />
 
     <router-view />
-    
+
     <Footer v-if="showHeaderFooter" />
   </div>
 </template>
@@ -25,11 +25,13 @@ export default {
     };
   },
   created() {
-    this.showHeaderFooter = (window.location.href.indexOf('salary-caculator') > -1 || window.location.href.indexOf('sales-on-site') > -1) ? false : true;
+    this.showHeaderFooter =
+      window.location.href.indexOf("salary-caculator") > -1 ||
+      window.location.href.indexOf("sales-on-site") > -1
+        ? false
+        : true;
   },
-  methods: {
-
-  }
+  methods: {},
 };
 </script>
 <style lang="scss">
