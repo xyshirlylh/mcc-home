@@ -42,7 +42,7 @@
               ></ellipse>
             </svg>
             <span
-              @click="goto('consultation')"
+              @click="goto('urban-design')"
               v-if="selected === 1"
               style="color: black; cursor: pointer"
               >{{ $t("message.intro-subtitle-1") }}</span
@@ -135,7 +135,7 @@
                   {{ $t("message.consultation.shortDescription") }}
                 </p>
 
-                <button class="button" @click="goto('consultation')">
+                <button class="button" @click="goto('urban-design')">
                   <p :style="{ 'margin-left': lang === 'zh' ? '17%' : '13%' }">
                     {{ $t("message.read-more") }}
                   </p>
@@ -392,7 +392,7 @@ export default {
     },
 
     goRealEstate: function () {
-      this.$router.push("/real-estate");
+      this.$router.push("/property-dev");
     },
 
     goConstruction: function () {
@@ -620,6 +620,7 @@ export default {
         }
 
         .button {
+          cursor: pointer;
           margin-left: auto;
           margin-right: auto;
 
