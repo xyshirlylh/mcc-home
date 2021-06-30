@@ -12,12 +12,12 @@
 
     <Map/>
 
-    <gap :height="71" />
-
-    <template v-for="item in onSalesProjects">
+    <div ref="titleOfSectionOne">
+      <template v-for="item in onSalesProjects">
         <OnSaleProjects :key="item.title" :list="item" />
-    </template>
-
+      </template>
+    </div>
+    
     <gap :height="54" />
 
     <!-- Other Project -->
@@ -86,10 +86,10 @@ export default {
                 require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
               ]
             },
-            /* {
-              name: 'Normanton Park (2022)', 
+            {
+              name: 'Normanton Park', 
               location: 'Singapore', 
-              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              desc: 'Normanton Park is served by the Kent Ridge MRT Station and is just a short drive away from the Queensway Shopping Centre, Anchorpoint Shopping Centre, West Coast Plaza and the Harbourfront Centre. Within reach are various entertainment and dining options including Queenstown Stadium, Temasek Club, Singapore Botanic Gardens and Tanglin Halt Food Centre.',
               images: [
                 require('@/assets/imgs/real-estate/nautical-img-001@2x.png'), 
                 require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), 
@@ -97,9 +97,9 @@ export default {
               ]
             },
             {
-              name: 'Changi East Depot for the Cross Island Line (CRL) (2030)', 
+              name: 'Changi East Depot', 
               location: 'Singapore', 
-              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              desc: 'The Changi East Depot designed and constructed by MCC Singapore, with China Jingye Engineering Corporation Limited (Singapore Branch) as the contractor, will be the second LTA-related project undertaken by the company since the Bedok South Station and Tunnels project for the Thomson-East Coast Line (TEL). ',
               images: [
                 require('@/assets/images/constructions/changi-east/10-6b.jpg'), 
                 require('@/assets/images/constructions/changi-east/10-7.jpg'), 
@@ -109,9 +109,9 @@ export default {
               ]
             },
             {
-              name: 'T311 Bedok South Station and Tunnels for the Thomson-East Coast Line (TEL) (2024)', 
+              name: 'T311 Bedok South Station', 
               location: 'Singapore', 
-              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              desc: 'Designed and constructed by China Jingye Engineering Corporation Limited (Singapore Branch), the Bedok South Station and Tunnels project is an underground station with tunnels spanning 270 metres. Together with Bayshore, Marine Parade, Marine Terrace, Siglap and Tanjong Rhu stations.',
               images: [
                 require('@/assets/images/constructions/t311/1.jpg'), 
                 require('@/assets/images/constructions/t311/2.jpg'), 
@@ -120,7 +120,7 @@ export default {
             {
               name: 'Jalan Papan Factory & Office', 
               location: 'Singapore', 
-              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              desc: 'The six-storey office building includes a parking lot, an in-house cafeteria, a multi-purpose hall, a roof garden, a koi pond and other facilities with a view of the Jurong River. The in-house cafeteria on the second floor will serve meals to employees working in the office and provide meal service to workers in various projects of the company.',
               images: [
                 require('@/assets/images/constructions/jalan-papan/图片4.jpg'),
                 require('@/assets/images/constructions/jalan-papan/图片2.png'), 
@@ -130,13 +130,13 @@ export default {
             {
               name: 'Short Street Hotel', 
               location: 'Singapore', 
-              desc: 'Located along Chin Swee Road, The Landmark enjoys proximity to the Outram Park MRT Station and Chinatown MRT Station. Within walking distance is the Robertson Quay, and River Valley Primary School is also a short drive away',
+              desc: 'The Short Street Hotel project with a contract sum of S$60 million covers an area of 2,251 square metres. The building comprises 14 floors, one basement level and a total of 528 guest rooms. Located near an MRT station and only five to six metres away from the heritage conservation area, the project commenced work in 2020 with completion slated for 2022.',
               images: [
                 require('@/assets/imgs/real-estate/nautical-img-001@2x.png'), 
                 require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), 
                 require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
               ]
-            }, */
+            },
           ]
         },
       ]
@@ -144,7 +144,16 @@ export default {
   },
   methods: {
     showAllProject() {
+      const $ = window.$;
+      const el = this.$refs.titleOfSectionOne;
+      const h = $(el).offset().top;
 
+      // const marginTop = $(this.$refs.contentRef).css("marginTop");
+      // const marginTop = 100;
+      $("body,html").animate(
+        { scrollTop: h - 60 },
+        200
+      );
     }
   }
 }
