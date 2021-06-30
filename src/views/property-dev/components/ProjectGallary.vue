@@ -12,11 +12,11 @@
       <div class="content">
         <p class="f-s-30 f-f-raleway font-bold l-h-35 f-c-1">{{ data.name }}</p>
         <gap :height="7" />
-        <p class="f-s-14 l-h-16 location"><i class="iconfont icon535239"></i>{{ data.location }}</p>
+        <p class="l-h-16 location"><i class="iconfont icon535239"></i><span class="f-s-14">{{ data.location }}</span></p>
         <gap :height="39" />
         <div class="f-s-16 l-h-30 f-c-1 f-f-arial desc">{{ data.desc }}</div>
-        <gap :height="38" />
-        <button class="f-s-14 f-c-0">Find out more -></button>
+        <gap :height="24" />
+        <button class="f-s-14 f-c-0" @click="onProject(data)">Find out more -></button>
       </div>
     </div>
   </div>
@@ -38,6 +38,9 @@ export default {
   methods: {
     switchImage(item) {
       this.currentImage = item;
+    },
+    onProject() {
+      this.$router.push({path: '/project-detail'});
     }
   }
 }
@@ -77,10 +80,12 @@ export default {
         text-align: right;
         .location { 
           color: rgba(0, 0, 0, .5);
-          i { padding-right: 1rem; }
+          i { padding-right: 1rem; font-size: 1.3rem; }
         }
         .desc { letter-spacing: 0.08px; }
         button { border-radius: 4px; border: 0; background-color: #4A91F2; width: 15.7rem; height: 4.3rem; }
+        
+
       }
     }
   }

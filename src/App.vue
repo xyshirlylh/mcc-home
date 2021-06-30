@@ -3,9 +3,9 @@
     <Header v-if="showHeaderFooter" />
 
     <gap :height="66" />
-    
-    <router-view />
 
+    <router-view />
+    
     <Footer v-if="showHeaderFooter" />
   </div>
 </template>

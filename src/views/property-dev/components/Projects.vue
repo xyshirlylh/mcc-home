@@ -1,13 +1,16 @@
 <template>
   <div class="container-projects">
     <div class="f-c-19 f-s-22 font-bold f-f-raleway l-h-26 title">
-      <span>Other Project <label v-if="showSubtitle"> - </label></span>
-      <span v-if="showSubtitle" class="f-c-1">Management Project</span>
+      <span>{{ data.title }} <label v-if="data.subtitle"> - </label></span>
+      <span class="f-c-1">{{ data.subtitle }}</span>
     </div>
 
     <ul class="flex-row flex-wrap">
-      <template v-for="(project, i) in data">
-        <li :key="project.id" :style="{marginRight: (i+1)%3 === 0 ? '0' : '2.8rem'}">
+      <template v-for="(project, i) in data.list">
+        <li 
+          :key="project.id" 
+          :style="{marginRight: (i+1)%3 === 0 ? '0' : '2.8rem'}" 
+          @click="onProject(project)">
           <div class="image-box position-relative">
             <div :style="{backgroundImage: 'url(' + project.image + ')'}"></div>
           </div>
@@ -22,15 +25,16 @@
 export default {
   name: "Projects",
   props: {
-    showSubtitle: {
-      type: Boolean,
-      default: false
-    },
     data: {
-      type: Array,
-      default: () => [],
+      type: Object,
+      default: null,
     },
   },
+  methods: {
+    onProject() {
+      this.$router.push({path: '/project-detail'});
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

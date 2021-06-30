@@ -51,7 +51,11 @@ const routes = [
   },
   {
     path: '/construction',
-    component: () => import('../views/construction/Construction')
+    component: () => import('../views/construction/index.vue')
+  },
+  {
+    path: '/construction-old',
+    component: () => import('../views/construction-old/Construction')
   },
   {
     path: '/employee-operation',

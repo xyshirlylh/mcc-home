@@ -10,10 +10,13 @@ import messages from './i18n/index';
 import VueI18n from 'vue-i18n';
 import VueSocialSharing from 'vue-social-sharing'
 window.$ = window.jQuery = require('jquery');
+import PerfectScrollbar from 'vue2-perfect-scrollbar';
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 
 Vue.config.productionTip = false;
 Vue.use(components);
 Vue.use(VueSocialSharing);
+Vue.use(PerfectScrollbar);
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDqaMato3Fx8Svy8pK66oBpJYHnOLkMGgE',

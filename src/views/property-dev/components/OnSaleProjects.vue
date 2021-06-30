@@ -1,7 +1,7 @@
 <template>
   <div class="on-sale-project">
     <div class="f-c-19 f-s-22 f-f-raleway font-bold title l-h-26">
-      <span>On sale Project - </span><span class="f-c-1">{{ list.title }}</span>
+      <span>{{ list.title }}</span><span v-if="list.subtitle"> - </span><span class="f-c-1">{{ list.subtitle }}</span>
     </div>
 
     <template v-for="project in list.projects">
@@ -25,8 +25,6 @@ export default {
 </script>
 <style lang="scss" scoped>
   .on-sale-project {
-    margin-top: 8.5rem;
-
     .title { padding-left: 10rem; }
   }
 </style>
