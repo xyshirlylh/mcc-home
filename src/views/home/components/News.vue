@@ -39,11 +39,11 @@
                 <img src="../../../assets/imgs/news/tweeter.png" alt="" />
               </div>
             </div>
-            <div class="button">View more</div>
+            <div class="button" @click="goNews(allNews[0])">View more</div>
           </div>
         </div>
       </div>
-      <div class="news-2 news flex-row">
+      <div class="news-2 news flex-row" @click="goNews(allNews[1])">
         <div class="left">
           <img src="../../../assets/imgs/home/no image.jpg" alt="" />
         </div>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-      <div class="news-3 news flex-row">
+      <div class="news-3 news flex-row" @click="goNews(allNews[2])">
         <div class="left">
           <img src="../../../assets/news/14/1.jpg" alt="" />
         </div>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="row-3">
-      <div class="button">
+      <div class="button" @click="goAllNews()">
         More News
         <img
           class="arrow"
@@ -84,7 +84,83 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  data() {
+    return {
+      newsID: null,
+      photos: [],
+      allNews: null,
+      news1: null,
+      news2: null,
+      news3: null,
+      news4: null,
+    };
+  },
+
+  created() {
+    this.allNews = [
+      "16",
+      "15",
+      "14",
+      "2_10_2020",
+      "7_9_2020",
+      "20_8_2020",
+      "23_6_2020",
+      "19_5_2020",
+      "11_4_2020",
+      "6_4_2020",
+      "27_3_2020",
+      "13_1_2020",
+      "11_10_2019",
+      "30_9_2019",
+    ];
+
+    this.content = require("../../../assets/homepage/content.json");
+
+    this.news1 = this.$i18n.t("message.news." + this.allNews[0]);
+    this.news2 = this.$i18n.t("message.news." + this.allNews[1]);
+    this.news3 = this.$i18n.t("message.news." + this.allNews[2]);
+  },
+
+  computed: {
+    userStyle() {
+      return {};
+    },
+
+    ...mapState(["lang"]),
+  },
+
+  watch: {
+    lang(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.updateDom();
+      }
+    },
+  },
+
+  methods: {
+    updateDom: function () {
+      this.news1 = this.$i18n.t("message.news." + this.allNews[0]);
+      this.news2 = this.$i18n.t("message.news." + this.allNews[1]);
+      this.news3 = this.$i18n.t("message.news." + this.allNews[2]);
+      this.news4 = this.$i18n.t("message.news." + this.allNews[3]);
+    },
+
+    goNews: function (id) {
+      this.$router.push("/news/?id=" + id);
+      window.scrollTo(0, 0);
+    },
+
+    goAllNews: function () {
+      this.$router.push("/all-news");
+    },
+
+    goto(where) {
+      this.$router.push("/" + where);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

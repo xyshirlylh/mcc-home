@@ -96,7 +96,11 @@
 
       <div class="navigations">
         <div class="privious">
-          <div class="button-left" @click="goto(previousID)" v-if="this.allNews.indexOf(this.newsID) !== 0">
+          <div
+            class="button-left"
+            @click="goto(previousID)"
+            v-if="this.allNews.indexOf(this.newsID) !== 0"
+          >
             <img src="../../assets/imgs/news/arrow-left.png" alt="" />
             <p>{{ $t("message.news.previous") }}</p>
           </div>
@@ -109,11 +113,18 @@
           <div class="title-left" v-else></div>
         </div>
         <div class="next">
-          <div class="button-right" @click="goto(nextID)" v-if="this.allNews.indexOf(this.newsID) !== (allNews.length-1)">
+          <div
+            class="button-right"
+            @click="goto(nextID)"
+            v-if="this.allNews.indexOf(this.newsID) !== allNews.length - 1"
+          >
             <p>{{ $t("message.news.next") }}</p>
             <img src="../../assets/imgs/news/arrow-right.png" alt="" />
           </div>
-          <div class="title-right" v-if="this.allNews.indexOf(this.newsID) !== (allNews.length-1)">
+          <div
+            class="title-right"
+            v-if="this.allNews.indexOf(this.newsID) !== allNews.length - 1"
+          >
             {{ $t("message.news." + this.nextID + ".title") }}
           </div>
         </div>
@@ -156,6 +167,9 @@ export default {
       this.content = this.$i18n.t("message.news." + this.newsID);
 
       this.allNews = [
+        "16",
+        "15",
+        "14",
         "2_10_2020",
         "7_9_2020",
         "20_8_2020",
@@ -188,6 +202,9 @@ export default {
     this.content = this.$i18n.t("message.news." + this.newsID);
 
     this.allNews = [
+      "16",
+      "15",
+      "14",
       "2_10_2020",
       "7_9_2020",
       "20_8_2020",
