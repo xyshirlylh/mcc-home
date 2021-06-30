@@ -9,7 +9,7 @@
       <template v-for="(project, i) in data.list">
         <li 
           :key="project.id" 
-          :style="{marginRight: (i+1)%3 === 0 ? '0' : '2.8rem'}" 
+          :style="{marginRight: (i+1)%3 === 0 ? '0' : '2.6rem'}" 
           @click="onProject(project)">
           <div class="image-box position-relative">
             <div :style="{backgroundImage: 'url(' + project.image + ')'}"></div>

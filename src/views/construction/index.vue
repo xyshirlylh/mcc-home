@@ -48,7 +48,7 @@ export default {
         title: 'Other Project',
         subtitle: 'Theme Park Project',
         list: [
-          {id: '0', name: 'Maritime Experiential Museum', image: '' },
+          {id: '0', name: 'Maritime Experiential Museum', image: require('@/assets/images/constructions/project-theme-park/museum/1.png') },
           {id: '1', name: 'Universal Studios Singapore', image: require('@/assets/images/constructions/project-theme-park/studio/1.jpg') },
         ]
       },

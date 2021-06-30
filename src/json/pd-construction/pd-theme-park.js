@@ -11,7 +11,7 @@ export default {
     website:"",
     location: {lat: "", lng: ""},
     images: [
-      // {id: 0, imageSrc: },
+      {id: 0, imageSrc: require('@/assets/images/constructions/project-theme-park/museum/1.png')},
     ]
   },
   "Universal Studios Singapore": {
