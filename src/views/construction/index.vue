@@ -59,7 +59,7 @@ export default {
           {id: '0', name: 'Singapore Expo', image: require('@/assets/images/constructions/project-public/expo/1.jpg')},
           {id: '1', name: 'Woodlands Checkpoint', image: require('@/assets/images/constructions/project-public/woodlands/1.jpg')},
           {id: '2', name: 'Keppel Distripark', image: require('@/assets/images/constructions/project-public/keppel-distripark/img-kepple.jpg')},
-          {id: '3', name: 'Tagore 66KV Electrical Substation', image: ''},
+          {id: '3', name: 'Tagore 66KV Electrical Substation', image: require('@/assets/images/constructions/project-public/tagore/111625030014_.pic.jpg')},
         ]
       },
       projectHDB: {
@@ -81,9 +81,7 @@ export default {
               location: 'Singapore', 
               desc: 'The Mandai Rainforest Park is MCC Singapore’s second major integrated theme park project. Located along Mandai Lake Road, facing the new Bird Park, it will also feature walking trails and visitors can expect to set out on a multi-layered adventure in the new 12.5-ha Rainforest Park on the forest floor pathways to the tree-top canopies.',
               images: [
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png'), 
-                require('@/assets/imgs/real-estate/queens-peak-img-006_ct@2x.png'), 
-                require('@/assets/imgs/real-estate/nautical-img-001@2x.png')
+                require('@/assets/images/constructions/mandai/rain-forest.png'), 
               ]
             },
             {

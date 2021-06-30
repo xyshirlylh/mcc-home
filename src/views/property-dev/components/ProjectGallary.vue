@@ -16,7 +16,7 @@
         <gap :height="39" />
         <div class="f-s-16 l-h-30 f-c-1 f-f-arial desc">{{ data.desc }}</div>
         <gap :height="24" />
-        <button class="f-s-14 f-c-0" @click="onProject(data)">Find out more -></button>
+        <button class="f-s-14 f-c-0" @click="onProject()">Find out more -></button>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@ export default {
       this.currentImage = item;
     },
     onProject() {
-      this.$router.push({path: '/project-detail'});
+      this.$router.push({path: '/project-detail', query: {id: this.data.name}});
     }
   }
 }

@@ -31,8 +31,8 @@ export default {
     },
   },
   methods: {
-    onProject() {
-      this.$router.push({path: '/project-detail'});
+    onProject(project) {
+      this.$router.push({path: '/project-detail', query: {id: project.name}});
     }
   }
 };
