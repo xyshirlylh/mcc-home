@@ -86,27 +86,27 @@
 
           <div class="box-1" ref="box1">
             <svg
-              viewBox="0 0 3.5rem 3.5rem"
+              viewBox="0 0 1.684vw 1.684vw"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 0"
             >
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
-            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
+            <svg viewBox="0 0 1.684vw 1.684vw" class="block-3-cercle" v-else>
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
@@ -120,7 +120,7 @@
             </svg>
 
             <svg viewBox="0 0 1 51" class="block-3-line" v-else>
-              <line x1="0" y1="0" x2="1" y2="51" />
+              <line x1="0" y1="0" x2="0" y2="51" />
             </svg>
 
             <div class="year-small">
@@ -129,38 +129,34 @@
             </div>
 
             <transition name="fade">
-              <div
-                style="top: 13rem"
-                class="content f-f-avenir"
-                v-if="index === 0"
-              >
-                <p>{{ $t("message.history[0].content") }}</p>
+              <div class="content f-f-avenir" v-if="index === 0">
+                {{ $t("message.history[0].content") }}
               </div>
             </transition>
           </div>
           <div class="box-2" ref="box2">
             <svg
-              viewBox="0 0 3.5rem 3.5rem"
+              viewBox="0 0 1.684vw 1.684vw"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 1"
             >
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" viewBox="0 0 3.5rem 3.5rem" v-else>
+            <svg viewBox="0 0 1.684vw 1.684vw" class="block-3-cercle" v-else>
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
@@ -184,7 +180,7 @@
 
             <transition name="fade">
               <div
-                style="top: 13rem; min-width: 60rem"
+                style="min-width: 60rem"
                 class="content f-f-avenir"
                 v-if="index === 1"
               >
@@ -194,28 +190,27 @@
           </div>
           <div class="box-3" ref="box3">
             <svg
-              viewBox="0 0 3.5rem 3.5rem"
+              viewBox="0 0 1.684vw 1.684vw"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 2"
             >
               <ellipse
                 id="Ellipse_178_o"
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
-            <svg class="block-3-cercle" v-else>
+            <svg viewBox="0 0 1.684vw 1.684vw" class="block-3-cercle" v-else>
               <ellipse
-                viewBox="0 0 3.5rem 3.5rem"
                 id="Ellipse_178_o"
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
@@ -239,7 +234,7 @@
 
             <transition name="fade">
               <div
-                style="top: 13rem; width: 34rem"
+                style="width: 34rem"
                 class="content f-f-avenir"
                 v-if="index === 2"
               >
@@ -249,25 +244,27 @@
           </div>
           <div class="box-4" ref="box4">
             <svg
-              viewBox="0 0 3.5rem 3.5rem"
+              viewBox="0 0 1.684vw 1.684vw"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 3"
             >
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
-            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
+            <svg viewBox="0 0 1.684vw 1.684vw" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
@@ -291,7 +288,7 @@
 
             <transition name="fade">
               <div
-                style="top: 13rem; background-color: rgba(255, 255, 255, 0.8)"
+                style="background-color: rgba(255, 255, 255, 0.8); width: 50%"
                 class="content f-f-avenir"
                 v-if="index === 3"
               >
@@ -315,25 +312,27 @@
             </div>
 
             <svg
-              viewBox="0 0 3.5rem 3.5rem"
+              viewBox="0 0 1.684vw 1.684vw"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 4"
             >
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
-            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
+            <svg viewBox="0 0 1.684vw 1.684vw" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
@@ -358,7 +357,6 @@
             <transition name="fade">
               <div
                 style="
-                  top: 13rem;
                   max-width: 70rem;
                   background-color: rgba(255, 255, 255, 0);
                 "
@@ -372,7 +370,6 @@
 
               <div
                 style="
-                  top: 13rem;
                   max-width: 70rem;
                   background-color: rgba(255, 255, 255, 0);
                 "
@@ -388,25 +385,27 @@
 
           <div class="box-6" ref="box6">
             <svg
-              viewBox="0 0 3.5rem 3.5rem"
+              viewBox="0 0 1.684vw 1.684vw"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 5"
             >
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
-            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
+            <svg viewBox="0 0 1.684vw 1.684vw" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
@@ -430,9 +429,9 @@
 
             <transition name="fade">
               <div
-                style="top: 13rem; max-width: 50rem"
                 class="content f-f-avenir"
                 v-if="index === 5"
+                style="width: 33%"
               >
                 <p>{{ $t("message.history[6].content2") }}</p>
               </div>
@@ -441,25 +440,27 @@
 
           <div class="box-7" ref="box7">
             <svg
-              viewBox="0 0 3.5rem 3.5rem"
+              viewBox="0 0 1.684vw 1.684vw"
               class="block-3-cercle"
               style="fill: black; stroke: black"
               v-if="yearIndex === 6"
             >
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
-            <svg viewBox="0 0 3.5rem 3.5rem" class="block-3-cercle" v-else>
+            <svg viewBox="0 0 1.684vw 1.684vw" class="block-3-cercle" v-else>
               <ellipse
-                rx="1.5rem"
-                ry="1.5rem"
-                cx="1.7rem"
-                cy="1.7rem"
+                id="Ellipse_178_o"
+                rx="0.7vw"
+                ry="0.7vw"
+                cx="0.84vw"
+                cy="0.84vw"
               ></ellipse>
             </svg>
 
@@ -483,11 +484,7 @@
 
             <transition name="fade">
               <div
-                style="
-                  top: 12.5rem;
-                  width: 44rem;
-                  background-color: rgba(255, 255, 255, 0);
-                "
+                style="background-color: rgba(255, 255, 255, 0)"
                 class="content f-f"
                 v-if="index === 6"
               >
@@ -603,7 +600,7 @@ export default {
         anime({
           targets: this.sentorini,
 
-          left: "-130rem",
+          left: "-50vw",
           duration: 500,
           opacity: 0.3,
           easing: "easeInOutQuad",
@@ -790,18 +787,17 @@ export default {
           this.index2010--;
         }
 
-        console.log("hahaha" + this.index2010);
         anime({
           targets: this.sentorini,
 
-          left: "10rem",
+          left: "0",
           duration: 500,
           opacity: 1,
           easing: "easeInOutQuad",
         });
         anime({
           targets: this.bedok,
-          left: "140rem",
+          left: "90%",
           duration: 500,
           easing: "easeInOutQuad",
         });
@@ -848,7 +844,7 @@ export default {
             easing: "easeInOutQuad",
           });
         } else if (this.index === 2) {
-          this.box2.style.backgroundSize = "40%, 60%";
+          this.box2.style.backgroundSize = "30%, 50%";
           anime({
             targets: this.box2,
             //width: this.box2.offsetWidth * 20,
@@ -948,7 +944,7 @@ export default {
             easing: "easeInOutQuad",
           });
         } else if (this.index === 6) {
-          this.box6.style.backgroundSize = "80%";
+          this.box6.style.backgroundSize = "70%";
           anime({
             targets: this.box6,
             //width: this.box6.offsetWidth * 20,
@@ -985,7 +981,7 @@ export default {
 @mixin styling($unit-size) {
   .gallary-component {
     .outer-frame {
-      height: 700 * $unit-size;
+      height: 545.27 * $unit-size;
     }
     .inner-frame {
       display: flex;
@@ -996,10 +992,10 @@ export default {
       .block-3-cercle {
         z-index: 3;
         position: absolute;
-        left: -1.6rem;
-        bottom: 50.1rem;
-        width: 3.4rem;
-        height: 3.4rem;
+        left: -9.5 * $unit-size;
+        bottom: 357 * $unit-size;
+        width: 23 * $unit-size;
+        height: 23 * $unit-size;
         fill: transparent;
         stroke: rgba(19, 129, 206, 1);
         stroke-width: 2px;
@@ -1011,15 +1007,15 @@ export default {
         left: 0.1rem;
         bottom: 0;
         width: 1rem;
-        height: 50rem;
+        height: 358.04 * $unit-size;
         stroke: rgba(198, 198, 198, 1);
         stroke-width: 0.3;
       }
 
       .year-small {
         position: absolute;
-        left: 3rem;
-        bottom: 49rem;
+        left: 26.5 * $unit-size;
+        bottom: 352 * $unit-size;
         color: var(--unnamed-color-1381ce);
         text-align: left;
         font: normal normal Source Sans Pro;
@@ -1069,12 +1065,14 @@ export default {
         overflow: hidden;
 
         .content {
+          //background-color: red;
           font-family: Avenir;
+          height: 101 * $unit-size;
           font-size: 16 * $unit-size;
           line-height: 19 * $unit-size;
           position: absolute;
           left: 26.5 * $unit-size;
-          //bottom: 35rem;
+          bottom: 240 * $unit-size;
           max-width: 646 * $unit-size;
           text-align: left;
           white-space: pre-line;
@@ -1084,7 +1082,7 @@ export default {
           background-image: url("../../../assets/imgs/home/Artboard_1@2x.png");
           background-color: transparent;
 
-          background-position: 20% 50%;
+          background-position: 20% 85%;
           background-size: 100%;
           background-repeat: no-repeat;
 
@@ -1099,9 +1097,9 @@ export default {
           background-image: url("../../../assets/imgs/home/wooland checkpoint.jpg"),
             url("../../../assets/imgs/home/singapore-expo.jpg");
           background-color: transparent;
-          background-position: 100% 65%, 10% 90%;
+          background-position: 90% 80%, 10% 90%;
           background-repeat: no-repeat;
-          background-size: 35%, 60%;
+          background-size: 35%, 50%;
 
           position: absolute;
           bottom: 0;
@@ -1113,7 +1111,7 @@ export default {
         .box-3 {
           background-image: url("../../../assets/imgs/home/组屋.jpg");
 
-          background-position: 60% 40%;
+          background-position: 70% 80%;
           background-repeat: no-repeat;
           background-size: 70%;
 
@@ -1128,48 +1126,55 @@ export default {
         .box-4 {
           background-image: url("../../../assets/imgs/home/sentosa zong+jubu.png");
 
-          background-position: 5rem -5rem;
+          background-position: 40% 75%;
           background-repeat: no-repeat;
-          background-size: 85%;
+          background-size: 80%;
 
           position: absolute;
           bottom: 0;
           left: $box1positionx + $zoomedDistance * 3;
           height: 100%;
-          width: 140rem;
+          width: 66.14583vw;
         }
 
         .box-5 {
           //background-image: url("../../assets/imgs/home/sentorini + canopy.jpg");
           z-index: 1;
-          background-position: 40% 60%;
+          //background-position: 40% 60%;
           background-repeat: no-repeat;
-          background-size: 85%;
+          background-size: 100%;
+          //background-color: red;
 
           .sentorini {
             position: absolute;
-            left: 10rem;
-            top: 12rem;
+            //background-color: green;
+            left: 0%;
+            top: 0%;
             height: 100%;
-            width: 140rem;
+            width: 66.14583vw;
 
             img {
-              height: auto;
+              position: absolute;
               width: 80%;
+              top: 30%;
+              left: 10%;
             }
           }
 
           .bedok {
             position: absolute;
 
-            left: 140rem;
-            top: 18rem;
+            left: 90%;
+            top: 0%;
             height: 100%;
-            width: 140rem;
+            width: 66.14583vw;
 
             img {
+              position: absolute;
               height: auto;
               width: 80%;
+              left: 15%;
+              top: 40%;
             }
           }
 
@@ -1177,13 +1182,13 @@ export default {
           bottom: 0;
           left: $box1positionx + $zoomedDistance * 4;
           height: 100%;
-          width: 140rem;
+          width: 66.14583vw;
         }
 
         .box-6 {
           background-image: url("../../../assets/imgs/home/dangga heights.jpg");
 
-          background-position: 40rem -3rem;
+          background-position: 100% 50%;
           background-repeat: no-repeat;
           background-size: 70%;
 
@@ -1191,16 +1196,16 @@ export default {
           bottom: 0;
           left: $box1positionx + $zoomedDistance * 5;
           height: 100%;
-          width: 140rem;
+          width: 66.14583vw;
         }
 
         .box-7 {
           background-image: url("../../../assets/imgs/home/热带雨林.jpg"),
             url("../../../assets/imgs/home/hotel.png");
 
-          background-position: 20% 80%, 100% 65%;
+          background-position: 15% 80%, 55% 80%;
           background-repeat: no-repeat;
-          background-size: 55%, 35%;
+          background-size: 30%, 20%;
 
           position: absolute;
           bottom: 0;
