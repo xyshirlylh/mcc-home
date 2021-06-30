@@ -68,7 +68,7 @@ const routes = [
   },
   {
     path: '/project-detail',
-    component: () => import("../views/real-estate/ProjectDetail.vue"),
+    component: () => import("@/views/project-detail/index.vue"),
   },
   {
     path: '/salary-caculator',

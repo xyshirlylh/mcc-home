@@ -3,12 +3,12 @@
     <div
       class="section-one position-relative"
       :style="{ backgroundImage: `url(${current.imageSrc})` }">
-      <span
+      <!-- <span
         class="position-absolute z-index-50 f-s-50 f-c-0 f-f-raleway font-bold"
         style="background-color: rgba(1, 1, 1, 0.3); padding: 1rem"
       >
         {{ name }}
-      </span>
+      </span> -->
     </div>
 
     <div class="flex-row section-gallery bg-c-0 justify-content-center">
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .image-gallery {
   .section-one {
-    height: 71rem;
+    height: 51.3rem;
     background-size: cover;
     background-position: center center;
 
@@ -66,11 +66,11 @@ export default {
   .section-gallery {
     // padding-left: 49.9rem;
     ul {
-      padding: 1.1rem 0 2.3rem 0;
+      padding: .6rem 0;
 
       li {
-        width: 16rem;
-        height: 10rem;
+        width: 12.9rem;
+        height: 7.6rem;
         background-size: cover;
         background-position: center center;
         opacity: 0.53;
