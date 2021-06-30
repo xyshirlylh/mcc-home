@@ -4,11 +4,7 @@
       <p>{{ $t("message.about-title") }}</p>
     </div>
     <div class="content">
-      <p style="text-align:center;padding-bottom:20px;padding-top:20px; line-height:25px;font-style: italic;">
-        {{ $t("message.about-poetry") }}
-      </p>
-      <p  class="f-f-sans">
-        
+      <p class="f-f-sans">
         {{ $t("message.about-full") }}
       </p>
     </div>
