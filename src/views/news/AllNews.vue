@@ -1,15 +1,5 @@
 <template>
   <div class="all-news">
-    <div class="button-back f-f-sans" @click="back" style="cursor:pointer">
-      <div class="arrow-back">
-        <img src="../../assets/imgs/news/arrow-left.png" alt="" />
-      </div>
-      <div class="div"><p>{{$t('message.news.back')}}</p></div>
-    </div>
-    <div class="head">
-      <p>{{$t('message.news.latest-news')}}</p>  
-    </div>
-    <div class="box"></div>
     <div class="gallery" ref="gallery">
       <div
         class="item"
@@ -22,8 +12,7 @@
         </div>
         <div class="content">
           <p class="title">
-          
-            {{$t('message.news.'+item+".title") }}
+            {{ $t("message.news." + item + ".title") }}
           </p>
           <!--
             <p class="text">
@@ -49,6 +38,9 @@ export default {
 
   created() {
     this.allNews = [
+      "16",
+      "15",
+      "14",
       "2_10_2020",
       "7_9_2020",
       "20_8_2020",
@@ -93,114 +85,76 @@ export default {
 </script>
 
 <style lang="scss">
-.all-news {
-  padding: (118px) 0 (100vw/1920 * 119) 0;
-  .button-back {
-    position: fixed;
-    left: 100vw/1920 * 42;
-    display: flex;
-    flex-direction: row;
-    padding: 0 0 0 0;
-    //margin-left: 100vw/1920 * 42;
-    height: 100vw/1920 * 34;
-    width: 100vw/1920 * 98.45;
-    border-radius: 2.5rem;
-    text-align: center;
-    cursor: pointer;
+@mixin styling($unit-size) {
+  .all-news {
+    padding: (50px) 0 (100vw/1920 * 119) 0;
 
-    p {
-      line-height: 100vw/1920 * 34;
+    .box {
+      width: 100vw/1920 * 1360;
+      height: 100vw/1920 * 52.5;
+      margin-left: 100vw/1920 * 270;
+      border-top: 1px;
+      border-style: solid;
     }
 
-    .arrow-back {
-      height: 100vw/1920 * 13.71;
-      width: 100vw/1920 * 9;
-      margin-left: 20%;
-      margin-right: 10%;
+    .gallery {
+      width: 73vw;
+      margin-left: auto;
+      margin-right: auto;
 
-      img {
-        margin-top: 0.5rem;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &:hover {
-      background-color: rgba(229, 229, 229, 1);
-    }
-    font: normal normal normal 2rem/2.8rem Source Sans Pro;
-  }
-  .head {
-    margin-left: 100vw/1920 * 268;
-    margin-bottom: 100vw/1920 * 12.5;
-    font: normal normal bold 2.8rem/5rem Noto Sans;
-    text-align: left;
-    p {
-      width: 17.1rem;
-      height: 3.8rem;
-    }
-  }
-  .box {
-    width: 100vw/1920 * 1360;
-    height: 100vw/1920 * 52.5;
-    margin-left: 100vw/1920 * 270;
-    border-top: 1px;
-    border-style: solid;
-  }
-
-  .gallery {
-    width: 73vw;
-    margin-left: auto;
-    margin-right: auto;
-
-    div {
-      width: 100rem;
-      height: 20rem;
-      //background-color: red;
-      //background-color: white;
-      //border: solid rgba(188, 188, 188, 1);
-      display: flex;
-      flex-direction: row;
-      cursor: pointer;
-
-      //border-radius: 8px;
-    }
-
-    .item {
-      //height: 420px;
-      border: solid rgba(188, 188, 188, 1);
-      //border: solid black;
-      border-width: 1px;
-      //background-color: green;
-
-      .image {
-        width: 30%;
-        img {
-          //max-height: 45rem;
-          //width: 100%;
-
-          width: 100%;
-          object-fit: cover;
-        }
-      }
-      .content {
-        width: 90%;
-        padding-left: 5%;
-        padding-top: 3%;
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        
+      div {
+        width: 100rem;
+        height: 100 * $unit-size;
         //background-color: red;
-        text-align: left;
-        font: normal normal  2.5rem Raleway; 
-        p {
-          //background-color: green;
+        //background-color: white;
+        //border: solid rgba(188, 188, 188, 1);
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+
+        //border-radius: 8px;
+      }
+
+      .item {
+        //height: 420px;
+        border: solid rgba(188, 188, 188, 1);
+        //border: solid black;
+        border-width: 1px;
+        //background-color: green;
+
+        .image {
+          width: 15%;
+          img {
+            //max-height: 45rem;
+            //width: 100%;
+
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .content {
           width: 90%;
-          line-height:4rem;
+          padding-left: 5%;
+          padding-top: 3%;
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+
+          //background-color: red;
+          text-align: left;
+          font: normal normal 2.5rem Raleway;
+          font-size: 16 * $unit-size;
+          line-height: 24 * $unit-size;
+          p {
+            //background-color: green;
+            width: 90%;
+          }
         }
       }
     }
   }
+}
+@media (max-width: 100vw) {
+  @include styling($unit-size: 100vw/1366);
 }
 </style>
