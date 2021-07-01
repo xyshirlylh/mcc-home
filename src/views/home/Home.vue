@@ -228,7 +228,7 @@
         </div>
 
         <div class="content">
-          <p style="margin-top: 2rem; height: 17rem">
+          <p>
             {{ $t("message.about") }}
           </p>
         </div>
@@ -469,35 +469,49 @@ export default {
     }
 
     .block1 {
-      padding: 70 * $unit-size 101 * $unit-size 0 100 * $unit-size;
+      padding: 77 * $unit-size 101 * $unit-size 0 100 * $unit-size;
 
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       position: relative;
       //background-color: red;
+
+      .ID {
+        margin-top: 95 * $unit-size;
+        font-size: 28 * $unit-size;
+        font-family: PT Sans;
+        font-weight: 800;
+      }
+
+      .title-underline {
+        margin-top: 6.18 * $unit-size;
+      }
+
+      .title {
+        margin-top: 9.82 * $unit-size;
+      }
     }
 
     .ID {
-      margin-top: 100 * $unit-size;
-      height: 36 * $unit-size;
+      height: 33 * $unit-size;
       width: 33 * $unit-size;
       text-align: left;
       color: #4a9ef2;
       letter-spacing: 1.12 * $unit-size;
       //background-color: red;
 
-      font: PT Sans;
+      font-family: PT Sans;
       font-size: 28 * $unit-size;
       line-height: 36 * $unit-size;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .title-underline {
       margin-top: 11.31 * $unit-size;
       fill: transparent;
       stroke: rgba(113, 113, 113, 1);
-      stroke-width: 3px;
+      stroke-width: 2px;
       stroke-linejoin: miter;
       stroke-linecap: butt;
       stroke-miterlimit: 4;
@@ -532,6 +546,7 @@ export default {
         font-size: 11 * $unit-size;
         white-space: pre-line;
         line-height: 23 * $unit-size;
+        height: 34 * $unit-size;
       }
 
       .subtitle-s {
@@ -539,11 +554,13 @@ export default {
         flex-direction: column;
         //width: 50rem;
         margin-top: 69.5 * $unit-size;
+        margin-bottom: 31 * $unit-size;
 
         .subtitle {
           width: 393 * $unit-size;
           display: flex;
           flex-direction: row;
+          height: 46 * $unit-size;
 
           &:hover {
             color: var(--unnamed-color-000000);
@@ -766,7 +783,7 @@ export default {
 
     .block2 {
       //padding: 17.6rem 0 0 0;
-      height: 772 * $unit-size;
+      height: 727 * $unit-size;
 
       .background {
         .block2-row-1 {
@@ -776,26 +793,34 @@ export default {
           .column-1 {
             width: 30%;
             flex-flow: column;
+            height: 128 * $unit-size;
 
             .ID {
               margin-left: 100 * $unit-size;
               margin-top: 77 * $unit-size;
+              font-size: 28 * $unit-size;
+              font-family: PT Sans;
+              font-weight: 800;
             }
 
             .title-underline {
               margin-left: 100 * $unit-size;
+              margin-top: 7 * $unit-size;
             }
 
             .title {
               margin-left: 149 * $unit-size;
+              margin-top: 7 * $unit-size;
             }
           }
 
           .column-2 {
             width: 40%;
+            height: 128 * $unit-size;
 
             .content-head {
               color: var(--unnamed-color-000000);
+              height: 22 * $unit-size;
               text-align: center;
               font: Raleway;
               font-size: 22 * $unit-size;
@@ -803,12 +828,13 @@ export default {
               letter-spacing: 0.88 * $unit-size;
               font-weight: 800;
               position: relative;
-              margin-top: 102 * $unit-size;
+              margin-top: 106 * $unit-size;
             }
           }
 
           .column-3 {
             width: 30%;
+            height: 128 * $unit-size;
           }
         }
 
@@ -842,7 +868,7 @@ export default {
         margin-right: auto;
         white-space: pre-line;
 
-        margin-top: 0;
+        margin-top: 27 * $unit-size;
         line-height: 35 * $unit-size;
 
         width: 754 * $unit-size;
@@ -850,7 +876,7 @@ export default {
 
         color: var(--unnamed-color-000000);
         text-align: center;
-        font: normal normal normal Source Sans Pro;
+        font-family: Arial;
         font-size: 16 * $unit-size;
         letter-spacing: 0.32 * $unit-size;
 
@@ -866,7 +892,7 @@ export default {
         cursor: pointer;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 20 * $unit-size;
+        margin-top: 5 * $unit-size;
 
         width: 154 * $unit-size;
         height: 40 * $unit-size;

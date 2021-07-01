@@ -1,8 +1,12 @@
 <template>
   <header class="flex-row position-fix bg-c-0 z-index-100">
     <p class="flex-1 flex-row align-items-center left">
-      <router-link to="/">
-        <img :src="imgSvg" width="50px" height="45px" class="cursor-pointer" />
+      <router-link to="/" style="outline: none">
+        <img
+          style="width: 3.244vw; height: 2.063vw"
+          :src="imgSvg"
+          class="cursor-pointer"
+        />
       </router-link>
     </p>
 
@@ -12,7 +16,6 @@
       class="box-menu cursor-pointer"
       @click="onClickMenu"
     >
-
       <span class="icon-menu position-relative">
         <em class="line line-1"></em>
         <em class="line line-2"></em>

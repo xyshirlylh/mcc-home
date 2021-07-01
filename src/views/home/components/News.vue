@@ -186,7 +186,7 @@ export default {
     //background-color: yellow;
     padding-left: 100 * $unit-size;
     padding-right: 100 * $unit-size;
-    padding-top: 49 * $unit-size;
+    padding-top: 60 * $unit-size;
     padding-bottom: 90 * $unit-size;
     .row-1 {
       display: flex;
@@ -218,6 +218,7 @@ export default {
         }
       }
       .col-2 {
+        margin-top: 4 * $unit-size;
         text-align: center;
         color: #1f76ad;
         font-family: Raleway;
