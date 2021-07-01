@@ -13,9 +13,10 @@
     <p
       v-if="!showMenuList"
       ref="boxMenu"
-      class="box-menu cursor-pointer"
+      class="box-menu cursor-pointer flex-row"
       @click="onClickMenu"
     >
+      <span class="text-menu">Menu</span>
       <span class="icon-menu position-relative">
         <em class="line line-1"></em>
         <em class="line line-2"></em>
@@ -157,7 +158,7 @@ export default {
 
       anime({
         targets: el,
-        translateX: -250,
+        translateX: 0,
         easing: "easeInOutQuad",
         duration: 300,
       });
@@ -271,22 +272,25 @@ header {
 
     .left {
       padding-left: 10rem;
-
-      img {
-        width: 6.2/1.5rem;
-        height: 5.1/1.5rem;
-      }
     }
 
     .box-menu {
       //@include box-size-line-height(20.3rem, 9.4rem);
-      @include box-size-line-height(18.3rem, 4.593rem);
-
+      position: absolute;
+      right: 0;
+      @include box-size-line-height(13.4rem, 4.5rem);
       span:first-child {
         letter-spacing: 0.96px;
-        padding-left: 5rem;
-        padding-right: 10px;
-        font-size: 2.4rem;
+        padding-left: 31 * 100vw/1366;
+        font-size: 1.098vw;
+        letter-spacing: 0.06rem;
+        font-family: Source Sans Pro;
+      }
+      span:nth-child(2) {
+        letter-spacing: 0.96px;
+        margin-left: 1.129rem;
+        padding-right: 2.559rem;
+        //font-size: 2.4rem;
       }
 
       .icon-menu {
@@ -295,7 +299,7 @@ header {
           transform-origin: 7px;
           position: absolute;
           height: 2px;
-          left: 100%;
+          // left: 100%;
           transition: all 500ms ease;
         }
         .line-1 {
@@ -321,6 +325,7 @@ header {
     }
 
     .menu-list {
+      z-index: 100;
       width: 0;
       height: 100vw;
       background-color: rgba(210, 227, 250, 1);
